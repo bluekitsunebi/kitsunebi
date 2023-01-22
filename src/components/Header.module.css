@@ -1,0 +1,39 @@
+.html {
+    font-size: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 15%;
+    width: 100%;
+
+    background-color: transparent;
+    position: absolute;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    align-items: center;
+    
+}
+
+.button {
+    font-size: 1.2rem;
+    width: 7rem;
+    padding: 1rem;
+    color: aliceblue;
+    background-color: transparent;
+    border-radius: 20%;
+    border-color: lightskyblue;
+}
+
+.svg {
+    display:inline;
+    height: 8rem;
+    width: 8rem;
+    padding: 1rem;
+    align-items: center;
+}

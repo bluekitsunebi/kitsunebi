@@ -1,0 +1,33 @@
+.heroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.background {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    /* position: absolute; */
+    height: 100vh;
+}
+
+.overlay {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.557);
+    min-height: 100vh;
+}
+
+.title {
+    font-size:2.5rem;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+
+.slogan {
+    font-size:2.5rem;
+    color: aliceblue;
+}
