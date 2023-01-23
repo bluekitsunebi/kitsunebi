@@ -6,10 +6,9 @@ import "./App.css";
 
 function App() {
   return (
-    <Fragment className="app">
+    <Fragment>
       <Header />
-      <HeroSection>
-      </HeroSection>
+      <HeroSection />
       {/* <FreeAppointment /> */}
       {/* <About /> */}
       {/* <Pricing /> */}

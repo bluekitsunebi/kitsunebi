@@ -5,11 +5,12 @@
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 15%;
     width: 100%;
-
     background-color: transparent;
     position: absolute;
+    z-index: 1;
 }
 
 .buttons {
@@ -17,23 +18,32 @@
     justify-content: space-around;
     width: 50%;
     align-items: center;
-    
 }
 
 .button {
     font-size: 1.2rem;
     width: 7rem;
     padding: 1rem;
-    color: aliceblue;
     background-color: transparent;
     border-radius: 20%;
+}
+
+.button__empty {
+    color: aliceblue;
+    background-color: transparent;
     border-color: lightskyblue;
 }
 
+.button__full {
+    color: darkblue;
+    background-color: lightskyblue;
+    border-color: transparent;
+}
+
 .svg {
-    display:inline;
-    height: 8rem;
-    width: 8rem;
-    padding: 1rem;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 10vw;
+    height: 15vh;
 }
