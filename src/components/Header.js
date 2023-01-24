@@ -14,13 +14,45 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <ReactSVG src={logo} className={styles.svg} />
+      <div className={styles.logoWithText}>
+        <ReactSVG src={logo} className={styles.logo} />
+        <div className={styles.logoName}>
+          <p>Kitsunebi</p>
+          <p>Japanese</p>
+        </div>
+      </div>
+
       <div className={styles.buttons}>
-        <button className={`${styles.button} ${styles.button__empty}`} onClick={() => handleClick("home")}>Home</button>
-        <button className={`${styles.button} ${styles.button__empty}`} onClick={() => handleClick("about")}>About</button>
-        <button className={`${styles.button} ${styles.button__full}`} onClick={() => handleClick("pricing")}>Pricing</button>
-        <button className={`${styles.button} ${styles.button__empty}`} onClick={() => handleClick("contact")}>Contact</button>
-        <button className={`${styles.button} ${styles.button__empty}`} onClick={() => handleClick("FAQ")}>FAQ</button>
+        <button
+          className={`${styles.button} ${styles.button__empty}`}
+          onClick={() => handleClick("home")}
+        >
+          Home
+        </button>
+        <button
+          className={`${styles.button} ${styles.button__empty}`}
+          onClick={() => handleClick("about")}
+        >
+          About
+        </button>
+        <button
+          className={`${styles.button} ${styles.button__full}`}
+          onClick={() => handleClick("pricing")}
+        >
+          Pricing
+        </button>
+        <button
+          className={`${styles.button} ${styles.button__empty}`}
+          onClick={() => handleClick("contact")}
+        >
+          Contact
+        </button>
+        <button
+          className={`${styles.button} ${styles.button__empty}`}
+          onClick={() => handleClick("FAQ")}
+        >
+          FAQ
+        </button>
       </div>
     </header>
   );
