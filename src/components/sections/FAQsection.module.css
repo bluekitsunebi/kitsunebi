@@ -1,0 +1,17 @@
+.faqSection {
+    height: 50vh;
+    background-color: blanchedalmond;
+}
+
+.title {
+    height: 15vh;
+    display: flex;
+    align-items: end;
+}
+
+.title__text {
+    font-size: 5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 3rem;
+}

@@ -1,57 +1,79 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import logo from "../images/logo.svg";
 import { ReactSVG } from "react-svg";
+import logo from "../images/logo.svg";
 import styles from "./Header.module.css";
 
 const Header = () => {
-  const dispatch = useDispatch();
-  const currentSection = useSelector((state) => state.currentSection);
-
-  const handleClick = (section) => {
-    dispatch({ type: "CHANGE_SECTION", payload: section });
-  };
-
   return (
-    <header className={styles.header}>
+    <header
+      className={styles.header}
+    >
       <div className={styles.logoWithText}>
         <ReactSVG src={logo} className={styles.logo} />
         <div className={styles.logoName}>
-          <p>Kitsunebi</p>
-          <p>Japanese</p>
+          <p>Blue Kitsunebi</p>
         </div>
       </div>
 
-      <div className={styles.buttons}>
+      <div className={styles.buttonsContainer}>
         <button
-          className={`${styles.button} ${styles.button__empty}`}
-          onClick={() => handleClick("home")}
+          className={`${styles.button} ${styles.button__menu}`}
+          onClick={() => {
+            let element = document.getElementById("heroSection");
+            element.scrollIntoView();
+          }}
         >
           Home
         </button>
+
         <button
-          className={`${styles.button} ${styles.button__empty}`}
-          onClick={() => handleClick("about")}
+          className={`${styles.button} ${styles.button__menu}`}
+          onClick={() => {
+            let element = document.getElementById("aboutSection");
+            element.scrollIntoView();
+          }}
         >
           About
         </button>
+
         <button
-          className={`${styles.button} ${styles.button__full}`}
-          onClick={() => handleClick("pricing")}
+          className={`${styles.button} ${styles.button__menu}`}
+          onClick={() => {
+            let element = document.getElementById("languageCoursesSection");
+            element.scrollIntoView();
+          }}
         >
-          Pricing
+          Language courses
         </button>
+
         <button
-          className={`${styles.button} ${styles.button__empty}`}
-          onClick={() => handleClick("contact")}
+          className={`${styles.button} ${styles.button__menu}`}
+          onClick={() => {
+            let element = document.getElementById("programmingCoursesSection");
+            element.scrollIntoView();
+          }}
         >
-          Contact
+          Programming courses
         </button>
+
         <button
-          className={`${styles.button} ${styles.button__empty}`}
-          onClick={() => handleClick("FAQ")}
+          className={`${styles.button} ${styles.button__menu}`}
+          onClick={() => {
+            let element = document.getElementById("FAQsection");
+            element.scrollIntoView();
+          }}
         >
           FAQ
+        </button>
+
+        <button
+          className={`${styles.button} ${styles.button__menu}`}
+          onClick={() => {
+            let element = document.getElementById("contactSection");
+            element.scrollIntoView();
+          }}
+        >
+          Contact
         </button>
       </div>
     </header>
@@ -59,7 +81,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// home, freeAppointment, about, pricing(pricing, see details, fiecare modul are pagina lui), contact, FAQ
-
-// button:pricing -> modulul respectiv (buton: inscriere) - deschide un formular mai jos (button: send)

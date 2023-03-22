@@ -6,15 +6,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10rem;
-    width: 100vw;
+    height: 9rem;
+    width: 100%;
     background-color: transparent;
     position: absolute;
     z-index: 1;
+    position: fixed;
 }
+
+/* LOGO */
 
 .logoWithText {
     display: flex;
+    align-items: center;
+    width: 20rem;
 }
 
 .logo {
@@ -30,13 +35,8 @@
     margin-bottom: 1vh;
 }
 
-.svg:first-child {
-    /*  */
-}
-
 .logoName{
     display:flex;
-    flex-direction: column;
     justify-content: center;
     color: aliceblue;
     font-size: 3rem;
@@ -46,10 +46,12 @@
     margin: 0;
 }
 
-.buttons {
+/* BUTTONS */
+
+.buttonsContainer {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 60vw;
     min-width: 40rem;
     align-items: center;
     margin-right: 2rem;
@@ -57,11 +59,16 @@
 }
 
 .button {
-    font-size: 1.2rem;
-    width: 7rem;
+    font-size: 1.8rem;
     padding: 1rem;
     background-color: transparent;
     border-radius: 20%;
+}
+
+.button__menu {
+    color: aliceblue;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 .button__empty {

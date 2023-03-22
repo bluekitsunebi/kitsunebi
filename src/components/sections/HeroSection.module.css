@@ -1,0 +1,78 @@
+.heroSection {
+    height: 100vh;
+    /* background-image: url("../../images/background.jpg"); */
+    /* background-size: cover; */
+    position: relative;
+}
+
+.cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.halfBackground {
+    content: "";
+    position: absolute;
+    height: 100vh;
+}
+
+.halfBackground__left {
+    top: 0;
+    left: 0;
+    width: 60vw;
+    z-index: -1;
+    background-image: url("../../images/background.jpg");
+    background-size: cover;
+
+    /* clip */
+    clip-path: polygon(0% 0%, 0% 100%, 40vw 100%, 100% 0%);
+    /* clip-path: polygon(0% 0%, 0% 100%, 20vw 100%, 40vw 0%); */
+}
+
+.halfBackground__right {
+    top: 0;
+    right: 0;
+    width: 60vw;
+    z-index: -2;
+    background-color: rgb(18,23,52)
+}
+
+.coverContentContainer {
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+}
+.topCover {
+    content: "";
+    height: 15rem;
+    width: 100%;
+}
+
+.coverText{
+    content: "";
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title, .subtitle {
+    color: aliceblue;
+    background-color: transparent;
+    position: relative;
+}
+
+.title {
+    font-size:4rem;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size:3rem;
+}
