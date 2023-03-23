@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ReactSVG } from "react-svg";
 import logo from "../images/logo.svg";
 import styles from "./Header.module.css";
 
 const Header = () => {
+  const [headerColor, setHeaderColor] = useState("transparent")
+
+  const listenScrollEvent = () => {
+    window.scrollY > 0
+      ? setHeaderColor("rgb(18,23,52)")
+      : setHeaderColor("transparent")
+  }
+  
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent)
+  })
+
   return (
     <header
       className={styles.header}
+      style={{background: headerColor}}
     >
       <div className={styles.logoWithText}>
         <ReactSVG src={logo} className={styles.logo} />
