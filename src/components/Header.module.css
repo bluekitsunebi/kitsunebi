@@ -69,12 +69,18 @@
     padding: 1rem;
     background-color: transparent;
     border-radius: 20%;
+    
 }
 
 .button__menu {
     color: aliceblue;
     background-color: transparent;
     border-color: transparent;
+}
+
+.button__underline {
+    text-decoration: underline;
+    text-decoration-color: lightblue;
 }
 
 .button__empty {

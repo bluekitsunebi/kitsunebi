@@ -4,12 +4,42 @@ import logo from "../images/logo.svg";
 import styles from "./Header.module.css";
 
 const Header = () => {
-  const [headerColor, setHeaderColor] = useState("transparent")
+  const [underlineButton, setUnderlineButton] = useState("home")
 
+  const [headerColor, setHeaderColor] = useState("transparent")
+  
   const listenScrollEvent = () => {
     window.scrollY > 0
       ? setHeaderColor("rgb(18,23,52)")
       : setHeaderColor("transparent")
+
+    if(window.scrollY < window.innerHeight/2){
+      setUnderlineButton("home")
+      return
+    }
+    if(window.scrollY < window.innerHeight){
+      setUnderlineButton("about")
+      return
+    }
+    if(window.scrollY < window.innerHeight * 3/2){
+      setUnderlineButton("language")
+      return
+    }
+    if(window.scrollY < window.innerHeight * 4/2){
+      setUnderlineButton("programming")
+      return
+    }
+    if(window.scrollY < window.innerHeight * 5/2){
+      setUnderlineButton("faq")
+      return
+    }
+    if(window.scrollY < window.innerHeight * 6/2){
+      setUnderlineButton("contact")
+      return
+    }
+    // window.scrollY > window.innerHeight
+    //   ? setUnderlineButton("about")
+    //   : setUnderlineButton("home")
   }
   
   useEffect(() => {
@@ -30,7 +60,7 @@ const Header = () => {
 
       <div className={styles.buttonsContainer}>
         <button
-          className={`${styles.button} ${styles.button__menu}`}
+          className={`${styles.button} ${styles.button__menu} ${underlineButton == "home" ? styles.button__underline : ""}`}
           onClick={() => {
             let element = document.getElementById("heroSection");
             element.scrollIntoView();
@@ -40,7 +70,7 @@ const Header = () => {
         </button>
 
         <button
-          className={`${styles.button} ${styles.button__menu}`}
+          className={`${styles.button} ${styles.button__menu} ${underlineButton == "about" ? styles.button__underline : ""}`}
           onClick={() => {
             let element = document.getElementById("aboutSection");
             element.scrollIntoView();
@@ -50,7 +80,7 @@ const Header = () => {
         </button>
 
         <button
-          className={`${styles.button} ${styles.button__menu}`}
+          className={`${styles.button} ${styles.button__menu} ${underlineButton == "language" ? styles.button__underline : ""}`}
           onClick={() => {
             let element = document.getElementById("languageCoursesSection");
             element.scrollIntoView();
@@ -60,7 +90,7 @@ const Header = () => {
         </button>
 
         <button
-          className={`${styles.button} ${styles.button__menu}`}
+          className={`${styles.button} ${styles.button__menu} ${underlineButton == "programming" ? styles.button__underline : ""}`}
           onClick={() => {
             let element = document.getElementById("programmingCoursesSection");
             element.scrollIntoView();
@@ -70,7 +100,7 @@ const Header = () => {
         </button>
 
         <button
-          className={`${styles.button} ${styles.button__menu}`}
+          className={`${styles.button} ${styles.button__menu} ${underlineButton == "faq" ? styles.button__underline : ""}`}
           onClick={() => {
             let element = document.getElementById("FAQsection");
             element.scrollIntoView();
@@ -80,7 +110,7 @@ const Header = () => {
         </button>
 
         <button
-          className={`${styles.button} ${styles.button__menu}`}
+          className={`${styles.button} ${styles.button__menu} ${underlineButton == "contact" ? styles.button__underline : ""}`}
           onClick={() => {
             let element = document.getElementById("contactSection");
             element.scrollIntoView();
