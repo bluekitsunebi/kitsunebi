@@ -84,25 +84,27 @@ const Header = () => {
       </button>
 
       <div
-        className={open ? styles.dropdown : styles.button}
+        className={open ? styles.dropdown : ""}
         onMouseEnter={handleOpen}
         onMouseLeave={handleOpen}
       >
-        <button
-          className={`${styles.button} ${styles.button__menu} ${
-            styles.stretch
-          } ${underlineButton == "language" ? styles.button__underline : ""}`}
-          onClick={() => {
-            let element = document.getElementById("languageCoursesSection");
-            element.scrollIntoView();
-          }}
-        >
-          Language courses
-        </button>
+        <div className={`${styles.stretch} ${styles.padding}`}>
+          <button
+            className={`${styles.button} ${styles.button__menu} ${
+              styles.stretch
+            } ${underlineButton == "language" ? styles.button__underline : ""}`}
+            onClick={() => {
+              let element = document.getElementById("languageCoursesSection");
+              element.scrollIntoView();
+            }}
+          >
+            Language courses
+          </button>
+        </div>
 
         {open ? (
           <div
-            className={`${styles.dropdown__item}`}
+            className={styles.dropdown__item}
             style={{ background: headerColor }}
           >
             <button
