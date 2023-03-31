@@ -1,10 +1,47 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
 
+let timer = 0;
+
 function HeroSection() {
+  window.addEventListener('resize', function () {
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    } else {
+      this.document.getElementById("halfBackgroundLeft").style.transition = "none"
+      this.document.getElementById("halfBackgroundRight").style.transition = "none"
+      this.document.getElementById("coverContentContainerLeft").style.transition = "none"
+      this.document.getElementById("coverContentContainerRight").style.transition = "none"
+    }
+    timer = setTimeout(() => {
+      this.document.getElementById("halfBackgroundLeft").style.transition = "all .2s linear"
+      this.document.getElementById("halfBackgroundRight").style.transition = "all .2s linear"
+      this.document.getElementById("coverContentContainerLeft").style.transition = "all .2s linear"
+      this.document.getElementById("coverContentContainerRight").style.transition = "all .2s linear"
+      timer = null;
+    }, 100);
+  })
+
+  // document.getElementById("cover").addEventListener("mouseleave", () => {
+   
+  // })
+
   return (
     <section id="heroSection" className={styles.heroSection}>
-      <div className={styles.cover}>
+      <div
+        className={styles.cover}
+        onMouseLeave={() => {
+          document.getElementById("titleLeft").innerHTML = "Language Courses"
+          document.getElementById("titleRight").innerHTML = "Programming Courses"
+          document.getElementById("halfBackgroundLeft").style.width = "60vw"
+          document.getElementById("halfBackgroundRight").style.width = "60vw"
+          document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 66.6% 100%, 100% 0%)"
+          document.getElementById("halfBackgroundRight").style.clipPath = "polygon(33.4% 0%, 0% 100%, 100% 100%, 100% 0%)"
+          document.getElementById("coverContentContainerLeft").style.width = "40vw"
+          document.getElementById("coverContentContainerRight").style.width = "40vw"
+        }}
+      >
         
         <div 
           id="halfBackgroundLeft" 
@@ -12,8 +49,8 @@ function HeroSection() {
           onMouseOver={() => {
             document.getElementById("titleLeft").innerHTML = "Language Courses"
             document.getElementById("titleRight").innerHTML = "Programming<br>Courses"
-            document.getElementById("halfBackgroundLeft").style.width = (window.innerWidth / 100 * 70).toString() + "px"
-            document.getElementById("halfBackgroundRight").style.width = (window.innerWidth / 100 * 50).toString() + "px"
+            document.getElementById("halfBackgroundLeft").style.width = "70vw"
+            document.getElementById("halfBackgroundRight").style.width = "50vw"
             document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 71.42% 100%, 100% 0%)"
             document.getElementById("halfBackgroundRight").style.clipPath = "polygon(40% 0%, 0% 100%, 100% 100%, 100% 0%)"
             document.getElementById("coverContentContainerLeft").style.width = "50vw"
@@ -43,8 +80,8 @@ function HeroSection() {
           onMouseOver={() => {
             document.getElementById("titleLeft").innerHTML = "Language<br>Courses"
             document.getElementById("titleRight").innerHTML = "Programming Courses"
-            document.getElementById("halfBackgroundLeft").style.width = (window.innerWidth / 100 * 50).toString() + "px"
-            document.getElementById("halfBackgroundRight").style.width = (window.innerWidth / 100 * 70).toString() + "px"
+            document.getElementById("halfBackgroundLeft").style.width = "50vw"
+            document.getElementById("halfBackgroundRight").style.width = "70vw"
             document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 60% 100%, 100% 0%)"
             document.getElementById("halfBackgroundRight").style.clipPath = "polygon(28.57% 0%, 0% 100%, 100% 100%, 100% 0%)"
             document.getElementById("coverContentContainerLeft").style.width = "30vw"
@@ -67,6 +104,7 @@ function HeroSection() {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

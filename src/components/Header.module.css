@@ -62,7 +62,12 @@
     padding: 1rem;
     background-color: transparent;
     border-radius: 20%;
+    cursor:pointer;
 }
+
+/* .button:hover {
+    
+} */
 
 .button__menu {
     padding: 0;
