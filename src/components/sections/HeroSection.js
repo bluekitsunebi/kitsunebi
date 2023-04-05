@@ -48,7 +48,7 @@ function HeroSection() {
           onMouseEnter={() => {
             document.getElementById("descriptionRight").style.display = "none"
             document.getElementById("titleRight").innerHTML = "Programming<br>Courses"
-            document.getElementById("titleRight").innerHTML = "Language<br>Courses"
+            document.getElementById("titleLeft").innerHTML = "Language<br>Courses"
             document.getElementById("halfBackgroundLeft").style.width = "70vw"
             document.getElementById("halfBackgroundRight").style.width = "50vw"
             document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 71.42% 100%, 100% 0%)"
@@ -93,7 +93,7 @@ function HeroSection() {
           onMouseEnter={() => {
             document.getElementById("descriptionLeft").style.display = "none"
             document.getElementById("titleLeft").innerHTML = "Language<br>Courses"
-            document.getElementById("titleLeft").innerHTML = "Programming<br>Courses"
+            document.getElementById("titleRight").innerHTML = "Programming<br>Courses"
             document.getElementById("halfBackgroundLeft").style.width = "50vw"
             document.getElementById("halfBackgroundRight").style.width = "70vw"
             document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 60% 100%, 100% 0%)"

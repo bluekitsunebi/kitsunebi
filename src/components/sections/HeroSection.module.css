@@ -124,6 +124,7 @@
 
 .description li {
     text-align: left;
+    padding: 1.5rem 0;
 }
 
 @keyframes show {
