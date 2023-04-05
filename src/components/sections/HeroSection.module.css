@@ -1,8 +1,9 @@
 .heroSection {
     height: 100vh;
-    /* background-image: url("../../images/background.jpg"); */
-    /* background-size: cover; */
     position: relative;
+    background-image: url("../../images/backgroundRight.png");
+    background-size: cover;
+    background-position: bottom;
 }
 
 .cover {
@@ -26,7 +27,7 @@
     top: 0;
     left: 0;
     z-index: 2;
-    background-image: url("../../images/background.jpg");
+    background-image: url("../../images/backgroundLeft.jpg");
     background-size: cover;
     clip-path: polygon(0% 0%, 0% 100%, 66.6% 100%, 100% 0%);
     transition: all .2s linear;
@@ -36,7 +37,6 @@
     top: 0;
     right: 0;
     z-index: 1;
-    background-color: rgb(18,23,52);
     clip-path: polygon(33.4% 0%, 0% 100%, 100% 100%, 100% 0%);
     transition: all .2s linear;
 }
@@ -54,32 +54,87 @@
     margin-right: 0;
 }
 
-.topCover {
+/* .topCover {
     content: "";
     height: 90px;
     width: 100%;
-}
+} */
 
 .coverText{
     content: "";
-    height: 100%;
     width: 100%;
+    color: aliceblue;
+    align-items: center;
+    margin-top: 5rem;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
-.title, .subtitle {
-    color: aliceblue;
-    background-color: transparent;
-    position: relative;
+.titleImageCategoriesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3rem;
+}
+
+.coverImage {
+    height: 15vh;
+    border-radius: 50%;
+    border: solid;
+    border-width: 20px;
+}
+
+.coverImageLeft {
+    background-color: #ff7155;
+    color: #ff7155;
+}
+
+.coverImageRight {
+    background-color: #0a3152;
+    color: #0a3152;
 }
 
 .title {
-    font-size:4rem;
+    height: 30vh;
+    background-color: transparent;
+    font-size: 4rem;
+    font-weight: 700;
     text-transform: uppercase;
+    align-content: center;
+    display: flex;
+    align-items: center;
+    margin: 6vh 0;
 }
 
-.subtitle {
-    font-size:3rem;
+/* .coursesCategories {
+    display: flex;
+} */
+
+.coursesCategories button {
+    font-size: 3rem;
+}
+
+.description {
+    font-size: 2.5rem;
+    display: none;
+    margin: 0;
+    padding: 0;
+    transition: width .2s linear;
+    transition-delay: 0s;
+    list-style-type: none;
+    -webkit-mask-image: linear-gradient(to left, transparent 40%,  aliceblue 60%);
+    -webkit-mask-size: 250% 100%;
+    animation: show 1s linear forwards;
+    animation-direction: reverse;
+}
+
+@keyframes show {
+    from {
+      -webkit-mask-position: left;
+    }
+    to {
+      -webkit-mask-position: right;
+    }
 }

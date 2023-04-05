@@ -1,5 +1,8 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
+import Button from "../Button"
+import coverImageLeft from "../../images/coverLeft.png"
+import coverImageRight from "../../images/coverRight.png"
 
 let timer = 0;
 
@@ -23,10 +26,6 @@ function HeroSection() {
     }, 100);
   })
 
-  // document.getElementById("cover").addEventListener("mouseleave", () => {
-   
-  // })
-
   return (
     <section id="heroSection" className={styles.heroSection}>
       <div
@@ -46,8 +45,9 @@ function HeroSection() {
         <div 
           id="halfBackgroundLeft" 
           className={`${styles.halfBackground} ${styles.halfBackground__left}`}
-          onMouseOver={() => {
-            document.getElementById("titleLeft").innerHTML = "Language Courses"
+          onMouseEnter={() => {
+            document.getElementById("descriptionRight").style.display = "none"
+            // document.getElementById("titleLeft").innerHTML = "Language Courses"
             document.getElementById("titleRight").innerHTML = "Programming<br>Courses"
             document.getElementById("halfBackgroundLeft").style.width = "70vw"
             document.getElementById("halfBackgroundRight").style.width = "50vw"
@@ -55,21 +55,36 @@ function HeroSection() {
             document.getElementById("halfBackgroundRight").style.clipPath = "polygon(40% 0%, 0% 100%, 100% 100%, 100% 0%)"
             document.getElementById("coverContentContainerLeft").style.width = "50vw"
             document.getElementById("coverContentContainerRight").style.width = "30vw"
+            document.getElementById("descriptionLeft").style.display = "block"
+            document.getElementById("descriptionLeft").style.color = "transparent"
+            document.getElementById("descriptionLeft").style.width = "0"
+            setTimeout(() => {
+              document.getElementById("descriptionLeft").style.width = "30vw"
+            }, 0)
+            setTimeout(() => {
+              document.getElementById("descriptionLeft").style.color = "aliceblue"
+            }, 200)
+          }}
+          onMouseLeave={() => {
+            document.getElementById("descriptionLeft").style.display = "none"
           }}
         >
           <div id="coverContentContainerLeft" className={styles.coverContentContainer}>
-            <div className={styles.topCover}></div>
+            {/* <div className={styles.topCover}></div> */}
             <div className={styles.coverText}>
-              <h1 id="titleLeft" className={styles.title}>Language Courses</h1>
-              <p className={styles.subtitle}>
-                Japanese
-              </p>
-              <p className={styles.subtitle}>
-                English
-              </p>
-              <p className={styles.subtitle}>
-                Romanian
-              </p>
+              <div className={styles.titleImageCategoriesContainer}>
+                <img src={coverImageLeft} className={`${styles.coverImage} ${styles.coverImageLeft}`}></img>
+                <div id="titleLeft" className={styles.title}>Language Courses</div>
+                {/* <div className={styles.coursesCategories}> */}
+                <Button text="Find out more"></Button>
+                {/* </div> */}
+              </div>
+              <ul id="descriptionLeft" className={styles.description}>
+                <li>_______________</li>
+                <li>_______________</li>
+                <li>_______________</li>
+                <li>_______________</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -77,30 +92,48 @@ function HeroSection() {
         <div 
           id="halfBackgroundRight"
           className={`${styles.halfBackground} ${styles.halfBackground__right}`}
-          onMouseOver={() => {
+          onMouseEnter={() => {
+            document.getElementById("descriptionLeft").style.display = "none"
             document.getElementById("titleLeft").innerHTML = "Language<br>Courses"
-            document.getElementById("titleRight").innerHTML = "Programming Courses"
+            // document.getElementById("titleRight").innerHTML = "Programming Courses"
             document.getElementById("halfBackgroundLeft").style.width = "50vw"
             document.getElementById("halfBackgroundRight").style.width = "70vw"
             document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 60% 100%, 100% 0%)"
             document.getElementById("halfBackgroundRight").style.clipPath = "polygon(28.57% 0%, 0% 100%, 100% 100%, 100% 0%)"
             document.getElementById("coverContentContainerLeft").style.width = "30vw"
             document.getElementById("coverContentContainerRight").style.width = "50vw"
+            document.getElementById("descriptionRight").style.display = "block"
+            document.getElementById("descriptionRight").style.color = "transparent"
+            document.getElementById("descriptionRight").style.width = "0"
+            setTimeout(() => {
+              document.getElementById("descriptionRight").style.width = "30vw"
+            }, 0)
+            setTimeout(() => {
+              document.getElementById("descriptionRight").style.color = "aliceblue"
+            }, 200)
+            
+          }}
+
+          onMouseLeave={() => {
+            document.getElementById("descriptionRight").style.display = "none"
           }}
         >
           <div id="coverContentContainerRight" className={`${styles.coverContentContainer} ${styles.coverContentContainer__right}`}>
-            <div className={styles.topCover}></div>
+            {/* <div className={styles.topCover}></div> */}
             <div className={styles.coverText}>
-              <h1 id="titleRight" className={styles.title}>Programming Courses</h1>
-              <p className={styles.subtitle}>
-                HTML
-              </p>
-              <p className={styles.subtitle}>
-                CSS
-              </p>
-              <p className={styles.subtitle}>
-                JavaScript
-              </p>
+              <ul id="descriptionRight" className={styles.description}>
+                <li>_______________</li>
+                <li>_______________</li>
+                <li>_______________</li>
+                <li>_______________</li>
+              </ul>
+              <div className={styles.titleImageCategoriesContainer}>
+                <img src={coverImageRight} className={`${styles.coverImage} ${styles.coverImageRight}`}></img>
+                <div id="titleRight" className={styles.title}>Programming Courses</div>
+                {/* <div className={styles.coursesCategories}> */}
+                <Button text="Find out more"></Button>
+                {/* </div> */}
+              </div>
             </div>
           </div>
         </div>
