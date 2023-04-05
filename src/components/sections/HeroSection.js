@@ -47,15 +47,15 @@ function HeroSection() {
           className={`${styles.halfBackground} ${styles.halfBackground__left}`}
           onMouseEnter={() => {
             document.getElementById("descriptionRight").style.display = "none"
-            // document.getElementById("titleLeft").innerHTML = "Language Courses"
             document.getElementById("titleRight").innerHTML = "Programming<br>Courses"
+            document.getElementById("titleRight").innerHTML = "Language<br>Courses"
             document.getElementById("halfBackgroundLeft").style.width = "70vw"
             document.getElementById("halfBackgroundRight").style.width = "50vw"
             document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 71.42% 100%, 100% 0%)"
             document.getElementById("halfBackgroundRight").style.clipPath = "polygon(40% 0%, 0% 100%, 100% 100%, 100% 0%)"
             document.getElementById("coverContentContainerLeft").style.width = "50vw"
             document.getElementById("coverContentContainerRight").style.width = "30vw"
-            document.getElementById("descriptionLeft").style.display = "block"
+            document.getElementById("descriptionLeft").style.display = "flex"
             document.getElementById("descriptionLeft").style.color = "transparent"
             document.getElementById("descriptionLeft").style.width = "0"
             setTimeout(() => {
@@ -70,20 +70,18 @@ function HeroSection() {
           }}
         >
           <div id="coverContentContainerLeft" className={styles.coverContentContainer}>
-            {/* <div className={styles.topCover}></div> */}
             <div className={styles.coverText}>
               <div className={styles.titleImageCategoriesContainer}>
                 <img src={coverImageLeft} className={`${styles.coverImage} ${styles.coverImageLeft}`}></img>
                 <div id="titleLeft" className={styles.title}>Language Courses</div>
-                {/* <div className={styles.coursesCategories}> */}
                 <Button text="Find out more"></Button>
-                {/* </div> */}
               </div>
               <ul id="descriptionLeft" className={styles.description}>
-                <li>_______________</li>
-                <li>_______________</li>
-                <li>_______________</li>
-                <li>_______________</li>
+                <li>courses available for Japanese and English languages</li>
+                <li>interactive learning activities</li>
+                <li>structured curriculum</li>
+                <li>taught by experienced instructor</li>
+                <li>opportunities for one-on-one tutoring</li>
               </ul>
             </div>
           </div>
@@ -95,14 +93,14 @@ function HeroSection() {
           onMouseEnter={() => {
             document.getElementById("descriptionLeft").style.display = "none"
             document.getElementById("titleLeft").innerHTML = "Language<br>Courses"
-            // document.getElementById("titleRight").innerHTML = "Programming Courses"
+            document.getElementById("titleLeft").innerHTML = "Programming<br>Courses"
             document.getElementById("halfBackgroundLeft").style.width = "50vw"
             document.getElementById("halfBackgroundRight").style.width = "70vw"
             document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 60% 100%, 100% 0%)"
             document.getElementById("halfBackgroundRight").style.clipPath = "polygon(28.57% 0%, 0% 100%, 100% 100%, 100% 0%)"
             document.getElementById("coverContentContainerLeft").style.width = "30vw"
             document.getElementById("coverContentContainerRight").style.width = "50vw"
-            document.getElementById("descriptionRight").style.display = "block"
+            document.getElementById("descriptionRight").style.display = "flex"
             document.getElementById("descriptionRight").style.color = "transparent"
             document.getElementById("descriptionRight").style.width = "0"
             setTimeout(() => {
@@ -119,20 +117,18 @@ function HeroSection() {
           }}
         >
           <div id="coverContentContainerRight" className={`${styles.coverContentContainer} ${styles.coverContentContainer__right}`}>
-            {/* <div className={styles.topCover}></div> */}
             <div className={styles.coverText}>
               <ul id="descriptionRight" className={styles.description}>
-                <li>_______________</li>
-                <li>_______________</li>
-                <li>_______________</li>
-                <li>_______________</li>
+                <li>latest HTML and CSS standards and modern JavaScript</li>
+                <li>hands-on learning</li>
+                <li>real-world projects</li>
+                <li>structured curriculum</li>
+                <li>support and feedback</li>
               </ul>
               <div className={styles.titleImageCategoriesContainer}>
                 <img src={coverImageRight} className={`${styles.coverImage} ${styles.coverImageRight}`}></img>
                 <div id="titleRight" className={styles.title}>Programming Courses</div>
-                {/* <div className={styles.coursesCategories}> */}
                 <Button text="Find out more"></Button>
-                {/* </div> */}
               </div>
             </div>
           </div>

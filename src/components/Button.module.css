@@ -1,5 +1,4 @@
 .button {
-    /* padding: 0; */
     font-family: 'Nanum Brush Script', cursive;
     color: aliceblue;
     background-color: transparent;
@@ -7,14 +6,12 @@
     border-radius: 20%;
     border-color: aliceblue;
     cursor:pointer;
-    /* margin: 0.5rem 0.5rem; */
     font-size: 3rem;
 }
 
 .button:hover{
     background-color: #0a3152;
     border-color: #0a3152;
-    /* color: aliceblue; */
 }
 
 .buttonContainer {

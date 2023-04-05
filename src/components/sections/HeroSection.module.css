@@ -54,12 +54,6 @@
     margin-right: 0;
 }
 
-/* .topCover {
-    content: "";
-    height: 90px;
-    width: 100%;
-} */
-
 .coverText{
     content: "";
     width: 100%;
@@ -72,11 +66,12 @@
 }
 
 .titleImageCategoriesContainer {
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 3rem;
+    margin: 0 5rem;
 }
 
 .coverImage {
@@ -108,26 +103,27 @@
     margin: 6vh 0;
 }
 
-/* .coursesCategories {
-    display: flex;
-} */
-
 .coursesCategories button {
     font-size: 3rem;
 }
 
 .description {
-    font-size: 2.5rem;
+    height: 75vh;
+    font-size: 3rem;
     display: none;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    
     transition: width .2s linear;
     transition-delay: 0s;
-    list-style-type: none;
     -webkit-mask-image: linear-gradient(to left, transparent 40%,  aliceblue 60%);
     -webkit-mask-size: 250% 100%;
     animation: show 1s linear forwards;
     animation-direction: reverse;
+}
+
+.description li {
+    text-align: left;
 }
 
 @keyframes show {
