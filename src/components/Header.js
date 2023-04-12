@@ -13,8 +13,8 @@ export default function Header() {
   const listenScrollEvent = () => {
     window.scrollY > 0
       ? setHeaderColor("rgb(18,23,52)")
-      : setHeaderColor("transparent");
-
+      : setHeaderColor("transparent")
+    
     if (window.scrollY < window.innerHeight / 2) {
       setUnderlineButton("home");
       return;
@@ -50,7 +50,11 @@ export default function Header() {
   };
 
   return (
-    <header className={styles.header} style={{ background: headerColor }}>
+    <header
+      id="header"
+      className={styles.header}
+      style={{ background: headerColor }}
+    >
       <Logo></Logo>
 
       <nav className={styles.navbar}>
@@ -62,7 +66,7 @@ export default function Header() {
           underlinedButton={underlineButton}
           transform="capitalize"
           section="heroSection"
-        ></Button>
+        />
 
         <Button
           name="about"
@@ -72,17 +76,41 @@ export default function Header() {
           underlinedButton={underlineButton}
           transform="capitalize"
           section="aboutSection"
-        ></Button>
+        />
 
-        <Button
-          name="language"
-          text="language courses"
-          type="withoutBorder"
-          position=""
-          underlinedButton={underlineButton}
-          transform="capitalize"
-          section="languageCoursesSection"
-        ></Button>
+        <div className={styles.dropdown}>
+          <Button
+            name="language"
+            text="language courses"
+            type="withoutBorder"
+            position=""
+            underlinedButton={underlineButton}
+            transform="capitalize"
+            section="languageCoursesSection"
+          />
+          <div
+            className={styles.dropdownContent}
+            style={{ background: headerColor }}
+          >
+            <Button
+              name="japanese"
+              text="japanese"
+              type="withoutBorder"
+              position=""
+              underlinedButton=""
+              transform="capitalize"
+            />
+            <Button
+              name="english"
+              text="english"
+              type="withoutBorder"
+              position=""
+              underlinedButton=""
+              transform="capitalize"
+            />
+          </div>
+        </div>
+
 
         <Button
           name="programming"
@@ -113,20 +141,6 @@ export default function Header() {
           transform="capitalize"
           section="contactSection"
         ></Button>
-
-        {/* DROPDOWN */}
-
-        {/* <Button
-          name="dropdown"
-          text="japanese"
-          type="withoutBorder"
-          position=""
-          underlinedButton=""
-          transform="capitalize"
-          section=""
-          display = "show"
-        ></Button> */}
-
       </nav>
     </header>
   );
