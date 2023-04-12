@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { ReactSVG } from "react-svg";
-import logo from "../images/logo.svg";
 import styles from "./Header.module.css";
+import Logo from "./Logo";
+import Button from "./Button";
 
-const Header = () => {
+export default function Header() {
   const [underlineButton, setUnderlineButton] = useState("home");
 
   const [headerColor, setHeaderColor] = useState("transparent");
@@ -51,121 +51,83 @@ const Header = () => {
 
   return (
     <header className={styles.header} style={{ background: headerColor }}>
-      <div className={styles.logoWithText}>
-        <ReactSVG src={logo} className={styles.logo} />
-        <div className={styles.logoName}>
-          <p>Blue Kitsunebi</p>
-        </div>
-      </div>
+      <Logo></Logo>
 
-      <div></div>
-      <button
-        className={`${styles.button} ${styles.button__menu} ${
-          underlineButton == "home" ? styles.button__underline : ""
-        }`}
-        onClick={() => {
-          let element = document.getElementById("heroSection");
-          element.scrollIntoView();
-        }}
-      >
-        Home
-      </button>
+      <nav className={styles.navbar}>
+        <Button
+          name="home"
+          text="home"
+          type="withoutBorder"
+          position=""
+          underlinedButton={underlineButton}
+          transform="capitalize"
+          section="heroSection"
+        ></Button>
 
-      <button
-        className={`${styles.button} ${styles.button__menu} ${
-          underlineButton == "about" ? styles.button__underline : ""
-        }`}
-        onClick={() => {
-          let element = document.getElementById("aboutSection");
-          element.scrollIntoView();
-        }}
-      >
-        About
-      </button>
+        <Button
+          name="about"
+          text="about"
+          type="withoutBorder"
+          position=""
+          underlinedButton={underlineButton}
+          transform="capitalize"
+          section="aboutSection"
+        ></Button>
 
-      <div
-        className={open ? styles.dropdown : ""}
-        onMouseEnter={handleOpen}
-        onMouseLeave={handleOpen}
-      >
-        <div className={`${styles.stretch} ${styles.padding}`}>
-          <button
-            className={`${styles.button} ${styles.button__menu} ${
-              styles.stretch
-            } ${underlineButton == "language" ? styles.button__underline : ""}`}
-            onClick={() => {
-              let element = document.getElementById("languageCoursesSection");
-              element.scrollIntoView();
-            }}
-          >
-            Language courses
-          </button>
-        </div>
+        <Button
+          name="language"
+          text="language courses"
+          type="withoutBorder"
+          position=""
+          underlinedButton={underlineButton}
+          transform="capitalize"
+          section="languageCoursesSection"
+        ></Button>
 
-        {open ? (
-          <div
-            className={styles.dropdown__item}
-            style={{ background: headerColor }}
-          >
-            <button
-              className={`${styles.button} ${styles.button__menu} ${styles.stretch}`}
-            >
-              japanese
-            </button>
-          </div>
-        ) : null}
+        <Button
+          name="programming"
+          text="programming courses"
+          type="withoutBorder"
+          position=""
+          underlinedButton={underlineButton}
+          transform="capitalize"
+          section="programmingCoursesSection"
+        ></Button>
 
-        {open ? (
-          <div
-            className={`${styles.dropdown__item}`}
-            style={{ background: headerColor }}
-          >
-            <button
-              className={`${styles.button} ${styles.button__menu} ${styles.stretch}`}
-            >
-              english
-            </button>
-          </div>
-        ) : null}
-      </div>
+        <Button
+          name="faq"
+          text="faq"
+          type="withoutBorder"
+          position=""
+          underlinedButton={underlineButton}
+          transform="uppercase"
+          section="faqSection"
+        ></Button>
 
-      <button
-        className={`${styles.button} ${styles.button__menu} ${
-          underlineButton == "programming" ? styles.button__underline : ""
-        }`}
-        onClick={() => {
-          let element = document.getElementById("programmingCoursesSection");
-          element.scrollIntoView();
-        }}
-      >
-        Programming courses
-      </button>
+        <Button
+          name="contact"
+          text="contact"
+          type="withoutBorder"
+          position=""
+          underlinedButton={underlineButton}
+          transform="capitalize"
+          section="contactSection"
+        ></Button>
 
-      <button
-        className={`${styles.button} ${styles.button__menu} ${
-          underlineButton == "faq" ? styles.button__underline : ""
-        }`}
-        onClick={() => {
-          let element = document.getElementById("FAQsection");
-          element.scrollIntoView();
-        }}
-      >
-        FAQ
-      </button>
+        {/* DROPDOWN */}
 
-      <button
-        className={`${styles.button} ${styles.button__menu} ${
-          underlineButton == "contact" ? styles.button__underline : ""
-        }`}
-        onClick={() => {
-          let element = document.getElementById("contactSection");
-          element.scrollIntoView();
-        }}
-      >
-        Contact
-      </button>
+        {/* <Button
+          name="dropdown"
+          text="japanese"
+          type="withoutBorder"
+          position=""
+          underlinedButton=""
+          transform="capitalize"
+          section=""
+          display = "show"
+        ></Button> */}
+
+      </nav>
     </header>
   );
-};
-
-export default Header;
+}

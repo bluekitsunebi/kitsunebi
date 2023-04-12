@@ -1,0 +1,28 @@
+.logoWithText {
+    display: flex;
+    align-items: center;
+    width: 20rem;
+    /* margin-right: auto; */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 4rem;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.logoName{
+    display:flex;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 2.5rem;
+}
+
+.logoName p {
+    margin: 0;
+}

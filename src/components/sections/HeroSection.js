@@ -6,7 +6,7 @@ import coverImageRight from "../../images/coverRight.png"
 
 let timer = 0;
 
-function HeroSection() {
+export default function HeroSection() {
   window.addEventListener('resize', function () {
     if (timer) {
       clearTimeout(timer);
@@ -74,7 +74,7 @@ function HeroSection() {
               <div className={styles.titleImageCategoriesContainer}>
                 <img src={coverImageLeft} className={`${styles.coverImage} ${styles.coverImageLeft}`}></img>
                 <div id="titleLeft" className={styles.title}>Language Courses</div>
-                <Button text="Find out more"></Button>
+                <Button name="" text="Find out more" type="empty" position="left"></Button>
               </div>
               <ul id="descriptionLeft" className={styles.description}>
                 <li>courses available for Japanese and English languages</li>
@@ -128,7 +128,7 @@ function HeroSection() {
               <div className={styles.titleImageCategoriesContainer}>
                 <img src={coverImageRight} className={`${styles.coverImage} ${styles.coverImageRight}`}></img>
                 <div id="titleRight" className={styles.title}>Programming Courses</div>
-                <Button text="Find out more"></Button>
+                <Button name="" text="Find out more" type="empty" position="right"></Button>
               </div>
             </div>
           </div>
@@ -138,5 +138,3 @@ function HeroSection() {
     </section>
   );
 }
-
-export default HeroSection;

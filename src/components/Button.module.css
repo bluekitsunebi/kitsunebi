@@ -1,20 +1,68 @@
-.button {
-    font-family: 'Nanum Brush Script', cursive;
-    color: aliceblue;
-    background-color: transparent;
-    border: solid;
-    border-radius: 20%;
-    border-color: aliceblue;
-    cursor:pointer;
+.Button {
     font-size: 3rem;
+    padding: 0.1rem 0.8rem;
+    border-radius: 20px;
+    border-width: 5px;
+    cursor:pointer;
+    transition: all .2s linear;
 }
 
-.button:hover{
+/* WITHOUT BORDER */
+
+.button__withoutBorder {
+    color: aliceblue;
+    background-color: transparent;
+    border: none;
+}
+
+.button__withoutBorder:hover{
+    color: #add8e6;
+}
+
+/* EMPTY */
+
+.button__empty {
+    color: aliceblue;
+    background-color: transparent;
+    border-style: solid;
+    border-color: aliceblue;
+}
+
+.button__empty:hover {
+    background-color: #ff7155;
+    border-color: #ff7155;
+}
+
+/* FULL */
+
+.button__full {
+    color: #121734;
+    background-color: #ff7155;
+    border-style: solid;
+    border-color: #ff7155;
+}
+
+.button__full:hover {
+    background-color: #ff5258;
+    border-color: #ff5258;
+}
+
+/* --------------------------------------------- */
+
+.right:hover {
     background-color: #0a3152;
     border-color: #0a3152;
 }
 
-.buttonContainer {
-    width: fit-content;
-    margin: 0 auto;
+.underline {
+    text-decoration: underline;
+    text-decoration-color: #add8e6;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }
