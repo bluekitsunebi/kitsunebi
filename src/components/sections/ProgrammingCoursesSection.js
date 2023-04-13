@@ -1,14 +1,18 @@
 import React from "react";
 import styles from "./ProgrammingCoursesSection.module.css";
+import SectionTitle from "../SectionTitle"
+import CardsGrid from "../Cards/CardsGrid";
+import Card from "../Cards/Card";
 
-function ProgrammingCoursesSection() {
+export default function ProgrammingCoursesSection() {
   return (
     <section id="programmingCoursesSection" className={styles.programmingCoursesSection}>
-        <div className={styles.title}>
-            <h1 className={styles.title__text}>Programming Courses</h1>
-        </div>
+      <SectionTitle text="Programming Courses" />
+      <CardsGrid>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+      </CardsGrid>
     </section>
   );
 }
-
-export default ProgrammingCoursesSection;

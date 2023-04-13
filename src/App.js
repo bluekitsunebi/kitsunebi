@@ -19,7 +19,6 @@ function App() {
       <ProgrammingCoursesSection />
       <FAQsection />
       <ContactSection />
-      {/* <FreeAppointment /> */}
     </Fragment>
   );
 }

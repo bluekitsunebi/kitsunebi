@@ -64,7 +64,7 @@ export default function Header() {
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
-          transform="capitalize"
+          transform="capitalizeFirstLetter"
           section="heroSection"
         />
 
@@ -74,7 +74,7 @@ export default function Header() {
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
-          transform="capitalize"
+          transform="capitalizeFirstLetter"
           section="aboutSection"
         />
 
@@ -85,7 +85,7 @@ export default function Header() {
             type="withoutBorder"
             position=""
             underlinedButton={underlineButton}
-            transform="capitalize"
+            transform="capitalizeFirstLetter"
             section="languageCoursesSection"
           />
           <div
@@ -98,7 +98,7 @@ export default function Header() {
               type="withoutBorder"
               position=""
               underlinedButton=""
-              transform="capitalize"
+              transform="capitalizeFirstLetter"
             />
             <Button
               name="english"
@@ -106,7 +106,7 @@ export default function Header() {
               type="withoutBorder"
               position=""
               underlinedButton=""
-              transform="capitalize"
+              transform="capitalizeFirstLetter"
             />
           </div>
         </div>
@@ -118,7 +118,7 @@ export default function Header() {
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
-          transform="capitalize"
+          transform="capitalizeFirstLetter"
           section="programmingCoursesSection"
         ></Button>
 
@@ -138,7 +138,7 @@ export default function Header() {
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
-          transform="capitalize"
+          transform="capitalizeFirstLetter"
           section="contactSection"
         ></Button>
       </nav>

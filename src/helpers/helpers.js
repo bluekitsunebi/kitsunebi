@@ -5,7 +5,7 @@ export function scroll(section) {
 
   const offset = document.getElementById("header").offsetHeight;
 
-  const y = rect.top + scrollTop - offset;
+  const y = rect.top + scrollTop - offset + 1;
   window.scroll(0, y);
 }
 

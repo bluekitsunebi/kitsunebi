@@ -74,7 +74,14 @@ export default function HeroSection() {
               <div className={styles.titleImageCategoriesContainer}>
                 <img src={coverImageLeft} className={`${styles.coverImage} ${styles.coverImageLeft}`}></img>
                 <div id="titleLeft" className={styles.title}>Language Courses</div>
-                <Button name="" text="Find out more" type="empty" position="left"></Button>
+                <Button
+                  name="find out more"
+                  text="find out more"
+                  type="empty"
+                  position="left"
+                  underlinedButton=""
+                  transform="capitalizeFirstLetter"
+                />
               </div>
               <ul id="descriptionLeft" className={styles.description}>
                 <li>courses available for Japanese and English languages</li>
@@ -128,7 +135,14 @@ export default function HeroSection() {
               <div className={styles.titleImageCategoriesContainer}>
                 <img src={coverImageRight} className={`${styles.coverImage} ${styles.coverImageRight}`}></img>
                 <div id="titleRight" className={styles.title}>Programming Courses</div>
-                <Button name="" text="Find out more" type="empty" position="right"></Button>
+                <Button
+                  name="find out more"
+                  text="find out more"
+                  type="empty"
+                  position="right"
+                  underlinedButton=""
+                  transform="capitalizeFirstLetter"
+                />
               </div>
             </div>
           </div>

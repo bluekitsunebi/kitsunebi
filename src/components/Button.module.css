@@ -1,5 +1,5 @@
 .Button {
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 0.1rem 0.8rem;
     border-radius: 20px;
     border-width: 5px;
@@ -60,6 +60,10 @@
 }
 
 .capitalize {
+    text-transform: capitalize;
+}
+
+.capitalize__FirstLetter::first-letter {
     text-transform: capitalize;
 }
 

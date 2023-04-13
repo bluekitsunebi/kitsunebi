@@ -1,15 +1,11 @@
 import React from "react";
 import styles from "./AboutSection.module.css";
-import { useRef } from "react";
+import SectionTitle from "../SectionTitle"
 
 function AboutSection() {
-  const aboutRef = useRef(null);
-
   return (
-    <section id="aboutSection" ref={aboutRef} className={styles.aboutSection}>
-        <div className={styles.title}>
-            <h1 className={styles.title__text}>About</h1>
-        </div>
+    <section id="aboutSection" className={styles.aboutSection}>
+      <SectionTitle text="About" />
     </section>
   );
 }

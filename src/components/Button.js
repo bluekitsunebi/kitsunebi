@@ -22,6 +22,7 @@ function Button(props) {
         ${position === "right" && styles.right}
         ${name === underlinedButton && styles.underline}
         ${transform === "capitalize" && styles.capitalize}
+        ${transform === "capitalizeFirstLetter" && styles.capitalize__FirstLetter}
         ${transform === "uppercase" && styles.uppercase}
       `}
       onClick={() => {
