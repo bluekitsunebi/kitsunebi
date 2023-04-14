@@ -13,22 +13,30 @@ export default function Card(props) {
 
   return (
     <div className={styles.Card}>
-      <img className={styles.img} src={imgSrc}></img>
-      <div className={styles.title}>{title}</div>
-      <ul
-        className={styles.details}
-      >
-        {details.map(item => <li key={item}>{item}</li>)}
-      </ul>
-      <p className={styles.price}>{price}</p>
-      <Button
-        name={buttonText}
-        text={buttonText}
-        type={buttonType}
-        position=""
-        underlinedButton=""
-        transform={buttonTransform}
-      />
+      <div className={styles.titleContainer}>
+        <div className={styles.img}>{imgSrc}</div>
+        <div className={styles.title}>{title}</div>
+      </div>
+
+      <div className={styles.detailsContainer}>
+        <ul
+          className={styles.details}
+        >
+          {details.map(item => <li key={item}>{item}</li>)}
+        </ul>
+        <div className={styles.price}>{price}</div>
+      </div>
+
+      <div className={styles.Button}>
+        <Button
+          name={buttonText}
+          text={buttonText}
+          type={buttonType}
+          position=""
+          underlinedButton=""
+          transform={buttonTransform}
+        />
+      </div>
     </div>
   );
 }

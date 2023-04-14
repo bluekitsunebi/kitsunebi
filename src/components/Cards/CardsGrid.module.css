@@ -1,6 +1,9 @@
 .CardsGrid {
-    width: 100vw;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    row-gap: 10rem;
+    justify-content: space-between;
+    justify-items: center;
 }

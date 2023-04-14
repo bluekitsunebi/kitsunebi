@@ -1,5 +1,6 @@
 .languageCoursesSection {
-    height: 92vh;
+    height: fit-content;
     background-color: #ede6d3;
+    padding: 5rem 5rem 10rem 5rem;
 }
 

@@ -5,7 +5,7 @@ import CardsGrid from "../Cards/CardsGrid";
 import { languageModulesCards } from "../../helpers/cardsData";
 
 export default function LanguageCoursesSection() {
-  const cards = languageModulesCards()
+  const cards = languageModulesCards();
   return (
     <section
       id="languageCoursesSection"
