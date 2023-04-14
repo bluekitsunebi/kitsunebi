@@ -13,6 +13,8 @@ export default function LanguageCoursesSection() {
     >
       <SectionTitle text="Language Courses" />
       <CardsGrid cards={cards} category="language" />
+      <div className={styles.firstArrow}>^</div>
+      <div className={styles.secondArrow}>^</div>
     </section>
   );
 }

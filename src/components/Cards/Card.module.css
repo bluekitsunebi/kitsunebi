@@ -4,7 +4,7 @@
     flex-direction: column;
     color: aliceblue;
     background-color: #0a3152;
-    width: 30rem;
+    width: 25rem;
     height: fit-content;
     border: solid;
     border-width: 10px;
@@ -29,12 +29,12 @@
 }
 
 .img{
-    font-size: 3rem;
+    font-size: 2rem;
     align-self: center;
 }
 
 .title{
-    font-size: 3rem;
+    font-size: 2rem;
     color: #ff7155;
     align-self: center;
     text-transform: uppercase;
@@ -42,15 +42,15 @@
 
 .details li {
     margin: 1rem 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .price {
-    font-size: 2rem;
+    font-size: 1.5rem;
     align-self: center;
 }
 
 .Button {
     align-self: center;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
