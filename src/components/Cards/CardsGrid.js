@@ -3,7 +3,8 @@ import styles from "./CardsGrid.module.css";
 import Card from "./Card";
 
 export default function CardsGrid(props) {
-  const cards = {...props.cards};
+  const cards = { ...props.cards };
+  const category = props.category;
   const modules = [...Object.keys(cards)];
   const buttonText = "register";
 
@@ -11,6 +12,7 @@ export default function CardsGrid(props) {
     <div className={styles.CardsGrid}>
       {modules.map((item) => (
         <Card
+          category={category}
           key={cards[item].id}
           imgSrc={cards[item].imgSrc}
           title={cards[item].title}

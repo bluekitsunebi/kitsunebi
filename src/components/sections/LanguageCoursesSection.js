@@ -12,7 +12,7 @@ export default function LanguageCoursesSection() {
       className={styles.languageCoursesSection}
     >
       <SectionTitle text="Language Courses" />
-      <CardsGrid cards={cards} />
+      <CardsGrid cards={cards} category="language" />
     </section>
   );
 }

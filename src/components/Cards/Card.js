@@ -3,6 +3,7 @@ import styles from "./Card.module.css";
 import Button from "../Button";
 
 export default function Card(props) {
+  const category = props.category
   const imgSrc = props.imgSrc;
   const title = props.title;
   const details = [ ...props.details ];
@@ -22,7 +23,7 @@ export default function Card(props) {
         <ul
           className={styles.details}
         >
-          {details.map(item => <li key={item}>{item}</li>)}
+          {details.map((item, index) => <li key={`${category}_${title}_${index}`}>{item}</li>)}
         </ul>
         <div className={styles.price}>{price}</div>
       </div>
