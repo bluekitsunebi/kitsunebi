@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import Logo from "./Logo";
 import Button from "./Button";
+import { getHeight, headerHeight } from "../helpers/helpers";
 
 export default function Header() {
   const [underlineButton, setUnderlineButton] = useState("home");
@@ -13,31 +14,62 @@ export default function Header() {
   const listenScrollEvent = () => {
     window.scrollY > 0
       ? setHeaderColor("rgb(18,23,52)")
-      : setHeaderColor("transparent")
-    
-    if (window.scrollY < window.innerHeight / 2) {
+      : setHeaderColor("transparent");
+
+      if (
+      // HOME
+      window.scrollY + headerHeight() >= 0 &&
+      window.scrollY + headerHeight() <
+        getHeight("aboutSection") - (window.innerHeight - headerHeight()) / 2
+    ) {
       setUnderlineButton("home");
-      return;
-    }
-    if (window.scrollY < window.innerHeight) {
+
+    } else if (
+      // ABOUT
+      window.scrollY + headerHeight() >=
+        getHeight("aboutSection") - (window.innerHeight - headerHeight()) / 2 &&
+      window.scrollY + headerHeight() <
+        getHeight("languageCoursesSection") -
+          (window.innerHeight - headerHeight()) / 2
+    ) {
       setUnderlineButton("about");
-      return;
-    }
-    if (window.scrollY < (window.innerHeight * 3) / 2) {
+
+    } else if (
+      // LANGUAGE
+      window.scrollY + headerHeight() >=
+        getHeight("languageCoursesSection") -
+          (window.innerHeight - headerHeight()) / 2 &&
+      window.scrollY + headerHeight() <
+        getHeight("programmingCoursesSection") -
+          (window.innerHeight - headerHeight()) / 2
+    ) {
       setUnderlineButton("language");
-      return;
-    }
-    if (window.scrollY < (window.innerHeight * 4) / 2) {
+
+    } else if (
+      // PROGRAMMING
+      window.scrollY + headerHeight() >=
+        getHeight("programmingCoursesSection") -
+          (window.innerHeight - headerHeight()) / 2 &&
+      window.scrollY + headerHeight() <
+        getHeight("faqSection") - (window.innerHeight - headerHeight()) / 2
+    ) {
       setUnderlineButton("programming");
-      return;
-    }
-    if (window.scrollY < (window.innerHeight * 5) / 2) {
+
+    } else if (
+      // FAQ
+      window.scrollY + headerHeight() >=
+        getHeight("faqSection") - (window.innerHeight - headerHeight()) / 2 &&
+      window.scrollY + headerHeight() <
+        getHeight("contactSection") - (window.innerHeight - headerHeight()) / 2
+    ) {
       setUnderlineButton("faq");
-      return;
-    }
-    if (window.scrollY < (window.innerHeight * 6) / 2) {
+
+    } else if (
+      // CONTACT
+      window.scrollY + headerHeight() >=
+      getHeight("contactSection") - (window.innerHeight - headerHeight()) / 2
+    ) {
       setUnderlineButton("contact");
-      return;
     }
   };
 
@@ -110,7 +142,6 @@ export default function Header() {
             />
           </div>
         </div>
-
 
         <Button
           name="programming"

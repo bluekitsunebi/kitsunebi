@@ -1,11 +1,17 @@
-export function scroll(section, behavior) {
-  const element = document.getElementById(section);
+export function getHeight(item) {
+  const element = document.getElementById(item);
   const rect = element.getBoundingClientRect();
   const scrollTop = document.documentElement.scrollTop;
+  const height = rect.top + scrollTop;
+  return height;
+}
 
-  const offset = document.getElementById("header").offsetHeight;
+export function headerHeight(){
+  return document.getElementById("header").offsetHeight;
+}
 
-  const y = rect.top + scrollTop - offset + 1;
+export function scroll(section, behavior) {
+  const y = getHeight(section) - headerHeight() + 1;
 
   window.scroll({
     top: y,
@@ -15,13 +21,7 @@ export function scroll(section, behavior) {
 }
 
 export function scrollToArrow(arrow, behavior) {
-  const element = document.getElementById(arrow);
-  const rect = element.getBoundingClientRect();
-  const scrollTop = document.documentElement.scrollTop;
-
-  const offset = document.getElementById("header").offsetHeight;
-
-  const y = rect.top + scrollTop - offset - 120;
+  const y = getHeight(arrow) - headerHeight() - 120;
 
   window.scroll({
     top: y,
