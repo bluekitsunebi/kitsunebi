@@ -38,6 +38,7 @@ export default function Card(props) {
           position=""
           underlinedButton=""
           transform={buttonTransform}
+          section=""
         />
       </div>
 

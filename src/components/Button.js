@@ -17,6 +17,7 @@ function Button(props) {
         ${styles.Button}
         ${type === "withoutBorder" && styles.button__withoutBorder}
         ${type === "empty" && styles.button__empty}
+        ${type === "empty__colored" && styles.button__emptyColored}
         ${type === "full" && styles.button__full}
         ${position === "left" && styles.left}
         ${position === "right" && styles.right}
@@ -25,6 +26,7 @@ function Button(props) {
         ${transform === "capitalizeFirstLetter" && styles.capitalize__FirstLetter}
         ${transform === "uppercase" && styles.uppercase}
       `}
+
       onClick={() => {
         scroll(section, "instant");
       }}

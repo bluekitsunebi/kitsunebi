@@ -15,7 +15,7 @@ export function languageModulesCards() {
     },
     internediate: {
       id: "internediate",
-      imgSrc: "中級",
+      imgSrc: "中間",
       title: "intermediate",
       details: [
         "----------------------------- - - - - -",
@@ -28,7 +28,7 @@ export function languageModulesCards() {
     },
     advanced: {
       id: "advanced",
-      imgSrc: "高度な",
+      imgSrc: "先進",
       title: "advanced",
       details: [
         "----------------------------- - - - - -",
@@ -55,7 +55,7 @@ export function languageModulesCards() {
     },
     business: {
       id: "business",
-      imgSrc: "事業",
+      imgSrc: "営業",
       title: "business",
       details: [
         "----------------------------- - - - - -",

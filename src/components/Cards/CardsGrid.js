@@ -19,7 +19,7 @@ export default function CardsGrid(props) {
           details={cards[item].details}
           price={cards[item].price}
           buttonText={buttonText}
-          buttonType="empty"
+          buttonType="empty__colored"
           buttonTransform="uppercase"
           arrows={cards[item].arrows}
         />

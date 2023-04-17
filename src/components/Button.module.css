@@ -33,6 +33,19 @@
     border-color: #ff7155;
 }
 
+.button__emptyColored {
+    color: #ff7155;
+    background-color: transparent;
+    border-style: solid;
+    border-color: #ff7155;
+}
+
+.button__emptyColored:hover {
+    color: aliceblue;
+    background-color: #ff7155;
+    border-color: #ff7155;
+}
+
 /* FULL */
 
 .button__full {
