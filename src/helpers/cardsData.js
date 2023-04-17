@@ -11,6 +11,7 @@ export function languageModulesCards() {
         "----------------------------- - - - - -",
       ],
       price: "--$",
+      arrows: "hide",
     },
     internediate: {
       id: "internediate",
@@ -23,6 +24,7 @@ export function languageModulesCards() {
         "----------------------------- - - - - -",
       ],
       price: "--$",
+      arrows: "hide",
     },
     advanced: {
       id: "advanced",
@@ -35,6 +37,7 @@ export function languageModulesCards() {
         "----------------------------- - - - - -",
       ],
       price: "--$",
+      arrows: "show",
     },
     "anime-focused": {
       id: "anime-focused",
@@ -47,6 +50,8 @@ export function languageModulesCards() {
         "----------------------------- - - - - -",
       ],
       price: "--$",
+      arrows: "hide",
+
     },
     business: {
       id: "business",
@@ -59,6 +64,7 @@ export function languageModulesCards() {
         "----------------------------- - - - - -",
       ],
       price: "--$",
+      arrows: "hide",
     },
   };
 

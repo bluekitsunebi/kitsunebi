@@ -21,6 +21,7 @@ export default function CardsGrid(props) {
           buttonText={buttonText}
           buttonType="empty"
           buttonTransform="uppercase"
+          arrows={cards[item].arrows}
         />
       ))}
     </div>

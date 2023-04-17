@@ -26,7 +26,7 @@ function Button(props) {
         ${transform === "uppercase" && styles.uppercase}
       `}
       onClick={() => {
-        scroll(section);
+        scroll(section, "instant");
       }}
     >
       {text}

@@ -2,37 +2,5 @@
   height: fit-content;
   background-color: #ede6d3;
   padding: 3rem 5rem 10rem 5rem;
-  position: relative;
 }
 
-.firstArrow,
-.secondArrow {
-  color: #0a3152;
-  font-size: 7rem;
-  position: absolute;
-  height: fit-content;
-  width: fit-content;
-  animation: float 3s ease-in-out infinite;
-}
-
-.firstArrow {
-  top: 72vh;
-  right: 1rem;
-}
-
-.secondArrow {
-  top: 75vh;
-  right: 1rem;
-}
-
-@keyframes float {
-  0% {
-    transform: translatey(0px);
-  }
-  50% {
-    transform: translatey(40px);
-  }
-  100% {
-    transform: translatey(0px);
-  }
-}
