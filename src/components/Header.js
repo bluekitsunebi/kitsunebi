@@ -9,8 +9,6 @@ export default function Header() {
 
   const [headerColor, setHeaderColor] = useState("transparent");
 
-  const [open, setOpen] = useState(false);
-
   const listenScrollEvent = () => {
     window.scrollY > 0
       ? setHeaderColor("rgb(18,23,52)")
@@ -76,10 +74,6 @@ export default function Header() {
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
   });
-
-  const handleOpen = () => {
-    setOpen(!open);
-  };
 
   return (
     <header

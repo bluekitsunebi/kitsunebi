@@ -21,7 +21,8 @@ export function scroll(section, behavior) {
 }
 
 export function scrollToArrow(arrow, behavior) {
-  const y = getHeight(arrow) - headerHeight() - 120;
+  console.log("pau")
+  const y = getHeight(arrow) + headerHeight() - 60;
 
   window.scroll({
     top: y,
