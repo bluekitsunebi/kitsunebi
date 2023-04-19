@@ -16,30 +16,34 @@ export default function Card(props) {
 
   return (
     <div className={styles.Card}>
-      <div className={styles.titleContainer}>
-        <div className={styles.img}>{imgSrc}</div>
-        <div className={styles.title}>{title}</div>
+      <div className={styles.cardContainer}>
+        <div className={styles.titleContainer}>
+          <div className={styles.img}>{imgSrc}</div>
+          <div className={styles.title}>{title}</div>
+        </div>
+        <div className={styles.detailsContainer}>
+          <ul className={styles.details}>
+            {details.map((item, index) => (
+              <li key={`${category}_${title}_${index}`}>{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <div className={styles.detailsContainer}>
-        <ul className={styles.details}>
-          {details.map((item, index) => (
-            <li key={`${category}_${title}_${index}`}>{item}</li>
-          ))}
-        </ul>
+      <div className={styles.buttonContainer}>
         <div className={styles.price}>{price}</div>
-      </div>
 
-      <div className={styles.Button}>
-        <Button
-          name={buttonText}
-          text={buttonText}
-          type={buttonType}
-          position=""
-          underlinedButton=""
-          transform={buttonTransform}
-          section=""
-        />
+        <div className={styles.Button}>
+          <Button
+            name={buttonText}
+            text={buttonText}
+            type={buttonType}
+            position=""
+            underlinedButton=""
+            transform={buttonTransform}
+            section=""
+          />
+        </div>
       </div>
 
       <Arrows arrows={arrows} order="first" direction="down" opposite="up" category={category} title={title} section="languageCoursesSection"></Arrows>

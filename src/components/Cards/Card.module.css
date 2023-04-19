@@ -1,12 +1,15 @@
 .Card {
   display: flex;
-  gap: 1rem;
   flex-direction: column;
+  justify-content: space-between;
+
   position: relative;
+
   color: #244661;
   background-color: aliceblue;
   width: 25rem;
-  height: fit-content;
+  height: 36rem;
+
   border: solid;
   border-width: 10px;
   border-color: #0a3152;
@@ -15,10 +18,11 @@
 }
 
 .titleContainer {
-  background-color: #0a3152;
-  padding: 1rem 0;
   display: flex;
   flex-direction: column;
+
+  background-color: #0a3152;
+  padding: 1rem 0;
   gap: 1rem;
 }
 
@@ -42,9 +46,20 @@
   text-transform: uppercase;
 }
 
+.details {
+  margin: 0;
+}
+
 .details li {
   margin: 1rem 0;
   font-size: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 12rem;
 }
 
 .price {
@@ -55,5 +70,5 @@
 
 .Button {
   align-self: center;
-  margin: 2rem 0;
+  /* margin: 0 0 2rem 0; */
 }
