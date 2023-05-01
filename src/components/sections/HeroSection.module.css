@@ -1,7 +1,7 @@
 .heroSection {
     height: 100vh;
     position: relative;
-    background-image: url("../../images/backgroundRight.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../../images/backgroundRight.png");
     background-size: cover;
     background-position: bottom;
 }
@@ -27,7 +27,7 @@
     top: 0;
     left: 0;
     z-index: 2;
-    background-image: url("../../images/backgroundLeft.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../../images/backgroundLeft.jpg");
     background-size: cover;
     clip-path: polygon(0% 0%, 0% 100%, 66.6% 100%, 100% 0%);
     transition: all .2s linear;
@@ -106,34 +106,6 @@
     color: #fff;
     align-self: center;
 }
-
-/* .gear1 {
-    color: #3b5a75;
-    transform: translate(-0.5rem, 1rem);
-}
-
-.gear2 {
-    color: #6c8397;
-    transform: translate(1rem);
-}
-
-.gear3 {
-    color: #9dadba;
-    transform: translate(-0.5rem, -1rem);
-}
-
-.gear1, .gear2, .gear3 {
-    animation: spin 2s infinite linear;
-}
-
-@keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(359deg);
-    }
-} */
 
 .gear1 {
     color: #3b5a75;
@@ -221,7 +193,7 @@
 
 .description {
     height: 75vh;
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: none;
     flex-direction: column;
     justify-content: center;
