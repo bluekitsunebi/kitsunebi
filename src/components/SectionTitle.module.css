@@ -1,7 +1,9 @@
+@import url(../helpers/colors.css);
+
 .title {
     font-size: 3rem;
     font-weight: 500;
-    margin-bottom: 5rem;
+    color: var(--navy);
     display: flex;
     width: 100%;
     justify-content: center;

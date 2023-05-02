@@ -1,3 +1,5 @@
+@import url('../../helpers/colors.css');
+
 .Card {
   display: flex;
   flex-direction: column;
@@ -5,14 +7,14 @@
 
   position: relative;
 
-  color: #244661;
-  background-color: aliceblue;
+  color: var(--navy);
+  background-color: var(--blueTint90);
   width: 25rem;
   height: 36rem;
 
   border: solid;
   border-width: 10px;
-  border-color: #0a3152;
+  border-color: var(--navy);
   border-radius: 20px;
   box-shadow: 10px 10px 10px rgb(100, 100, 100);
 }
@@ -21,7 +23,7 @@
   display: flex;
   flex-direction: column;
 
-  background-color: #0a3152;
+  background-color: var(--navy);
   padding: 1rem 0;
   gap: 1rem;
 }
@@ -36,12 +38,12 @@
 .img {
   font-size: 2rem;
   align-self: center;
-  color: aliceblue;
+  color: var(--textLight);
 }
 
 .title {
   font-size: 2rem;
-  color: #ff7155;
+  color: var(--blueTint30);
   align-self: center;
   text-transform: uppercase;
 }
@@ -65,10 +67,9 @@
 .price {
   font-size: 1.5rem;
   align-self: center;
-  color: #ff7155;
+  color: var(--cinnabarTint30);
 }
 
 .Button {
   align-self: center;
-  /* margin: 0 0 2rem 0; */
 }

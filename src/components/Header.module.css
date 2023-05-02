@@ -1,3 +1,5 @@
+@import url("../helpers/colors.css");
+
 .header {
     display: flex;
     justify-content: space-around;
@@ -13,9 +15,9 @@
     background-color: transparent;
 }
 
-.header__opaque {
-    background-color: #0a3152;
-}
+/* .header__opaque {
+    background-color: var(--navyTint10);
+} */
 
 .navbar {
     display: flex;
@@ -42,7 +44,7 @@
 }
 
 .dropdownContent Button:hover {
-    color: #add8e6;
+    color: var(--blueTint10);
 }
   
 .dropdown:hover .dropdownContent {

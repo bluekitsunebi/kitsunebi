@@ -1,7 +1,10 @@
+@import url("../../helpers/colors.css");
+
 .heroSection {
     height: 100vh;
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../../images/backgroundRight.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url("../../images/backgroundRight.jpg");
+    /* background-image: url("../../images/backgroundRight.png"); */
     background-size: cover;
     background-position: bottom;
 }
@@ -27,7 +30,8 @@
     top: 0;
     left: 0;
     z-index: 2;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../../images/backgroundLeft.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("../../images/backgroundLeft.jpg");
+    /* background-image: url("../../images/backgroundLeft.jpg"); */
     background-size: cover;
     clip-path: polygon(0% 0%, 0% 100%, 66.6% 100%, 100% 0%);
     transition: all .2s linear;
@@ -57,7 +61,7 @@
 .coverText{
     content: "";
     width: 100%;
-    color: aliceblue;
+    color: var(--textLight);
     align-items: center;
     margin-top: 5rem;
     height: 100vh;
@@ -84,12 +88,12 @@
 }
 
 .coverLeft {
-    background-color: #ff7155;
+    background-color: var(--cinnabarTint10);
     justify-content: center;
 }
 
 .coverRight {
-    background-color: #0a3152;
+    background-color: var(--navyTint10);
     flex-direction: column;
 }
 
@@ -103,20 +107,20 @@
 
 .iconLeft {
     font-size: 6rem;
-    color: #fff;
+    color: var(--textLight);
     align-self: center;
 }
 
 .gear1 {
-    color: #3b5a75;
+    color: var(--blue);
 }
 
 .gear2 {
-    color: #6c8397;
+    color:  var(--blueTint20);
 }
 
 .gear3 {
-    color: #9dadba;
+    color: var(--blueTint40);
 }
 
 .gear1, .gear2, .gear3 {
@@ -200,10 +204,17 @@
 
     transition: width .2s linear;
     transition-delay: 0s;
-    -webkit-mask-image: linear-gradient(to left, transparent 40%,  aliceblue 60%);
+    -webkit-mask-image: linear-gradient(to left, transparent 40%, var(--textLight) 60%);
     -webkit-mask-size: 250% 100%;
     animation: show 1s linear forwards;
     animation-direction: reverse;
+    
+
+    /* text-shadow:
+        0px 1px 0px black,
+        0px -1px 0px black,		
+        1px 0px 0px black,               
+        0px 1px 0px black; */
 }
 
 .description li {

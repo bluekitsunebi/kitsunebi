@@ -11,7 +11,7 @@ export default function Header() {
 
   const listenScrollEvent = () => {
     window.scrollY > 0
-      ? setHeaderColor("rgb(18,23,52)")
+      ? setHeaderColor("var(--navyShadow50)")
       : setHeaderColor("transparent");
 
       if (
@@ -139,7 +139,7 @@ export default function Header() {
 
         <Button
           name="programming"
-          text="programming courses"
+          text="programming"
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}

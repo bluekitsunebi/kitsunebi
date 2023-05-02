@@ -1,5 +1,7 @@
+@import url('../../helpers/colors.css');
+
 .aboutSection {
     height: 50vh;
-    background-color: #0a3152;
-    padding: 5rem 5rem 10rem 5rem;
+    background-color: var(--blueTint10);
+    padding: 3rem 5rem 10rem 5rem;
 }

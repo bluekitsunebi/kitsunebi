@@ -1,6 +1,11 @@
+@import url('../../helpers/colors.css');
+
 .languageCoursesSection {
   height: fit-content;
-  background-color: #ede6d3;
+  background-color: var(--orangeTint90);
   padding: 3rem 5rem 10rem 5rem;
 }
 
+.title {
+  padding-bottom: 5rem;
+}

@@ -1,75 +1,78 @@
+@import url("../helpers/colors.css");
+
 .Button {
     font-size: 2rem;
     padding: 0.1rem 0.8rem;
     border-radius: 20px;
-    border-width: 5px;
+    border-width: 3px;
     cursor:pointer;
-    transition: all .2s linear;
+    transition: background-color .2s linear, border-color .2s linear, color .2s linear;
 }
 
 /* WITHOUT BORDER */
 
 .button__withoutBorder {
-    color: aliceblue;
+    color: var(--textLight);
     background-color: transparent;
     border: none;
 }
 
 .button__withoutBorder:hover{
-    color: #add8e6;
+    color: var(--blueTint10);
 }
 
 /* EMPTY */
 
 .button__empty {
-    color: aliceblue;
+    color: var(--textLight);
     background-color: transparent;
     border-style: solid;
-    border-color: aliceblue;
+    border-color: var(--textLight);
 }
 
 .button__empty:hover {
-    background-color: #ff7155;
-    border-color: #ff7155;
+    background-color: var(--cinnabarTint10);
+    border-color: var(--cinnabarTint10);
 }
 
 .button__emptyColored {
-    color: #ff7155;
+    color: var(--cinnabarTint30);
     background-color: transparent;
     border-style: solid;
-    border-color: #ff7155;
+    border-color: var(--cinnabarTint30);
 }
 
 .button__emptyColored:hover {
-    color: aliceblue;
-    background-color: #ff7155;
-    border-color: #ff7155;
+    color: var(--textLight);
+    background-color: var(--cinnabarTint30);
+    border-color: var(--cinnabarTint30);
 }
 
 /* FULL */
 
 .button__full {
-    color: #121734;
-    background-color: #ff7155;
+    /* color: var(--navy); */
+    background-color: var(--cinnabarTint40);
     border-style: solid;
-    border-color: #ff7155;
+    border-color: var(--cinnabarTint40);
 }
 
 .button__full:hover {
-    background-color: #ff5258;
-    border-color: #ff5258;
+    background-color: var(--cinnabarTint40);
+    border-color: var(--cinnabarTint40);
+    color: var(--textLight);
 }
 
 /* --------------------------------------------- */
 
 .right:hover {
-    background-color: #0a3152;
-    border-color: #0a3152;
+    background-color: var(--navyTint10);
+    border-color: var(--navyTint10);
 }
 
 .underline {
     text-decoration: underline;
-    text-decoration-color: #add8e6;
+    text-decoration-color: var(--blueTint10);
 }
 
 .capitalize {

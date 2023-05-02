@@ -11,7 +11,9 @@ export default function LanguageCoursesSection() {
       id="languageCoursesSection"
       className={styles.languageCoursesSection}
     >
-      <SectionTitle text="Language Courses" />
+      <div className={styles.title}>
+        <SectionTitle text="Language Courses" />
+      </div>
       <CardsGrid cards={cards} category="language" />
     </section>
   );

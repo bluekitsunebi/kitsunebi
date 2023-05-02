@@ -1,3 +1,5 @@
+@import url(../../helpers/colors.css);
+
 .arrow_container {
     width: 5rem;
     height: fit-content;
@@ -16,7 +18,7 @@
   }
   
   .arrows__text {
-    color: #0a3152;
+    color: var(--navyTint);
     font-size: 7rem;
     height: fit-content;
     width: fit-content;

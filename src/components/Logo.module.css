@@ -5,18 +5,13 @@
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    width: 4rem;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    height: 4rem;
+    margin-right: 1rem;
 }
 
 .logoName{
     display:flex;
+    gap: 0.7rem;
     justify-content: center;
     color: aliceblue;
     font-size: 2rem;

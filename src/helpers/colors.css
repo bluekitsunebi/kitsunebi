@@ -1,0 +1,103 @@
+/* COLORS */
+
+:root {
+    --textLight: #fff;
+    --textDark: #000;
+
+    --orange: #FD841F;
+    --cinnabar: #E14D2A;
+    
+    --blue: #3E6D9C;
+    --navy: #001253;
+  
+    /* shadows and tints */
+  
+    
+    /* ORANGE */
+  
+    --orangeShadow10: #E4771C;
+    --orangeShadow20: #CA6A19;
+    --orangeShadow30: #B15C16;
+    --orangeShadow40: #984F13;
+    --orangeShadow50: #7F4210;
+    --orangeShadow60: #65350C;
+    --orangeShadow70: #4C2809;
+    --orangeShadow80: #331A06;
+    --orangeShadow90: #190D03;
+  
+    --orangeTint10: #FD9035;
+    --orangeTint20: #FD9D4C;
+    --orangeTint30: #FEA962;
+    --orangeTint40: #FEB579;
+    --orangeTint50: #FEC28F;
+    --orangeTint60: #FECEA5;
+    --orangeTint70: #FEDABC;
+    --orangeTint80: #FFE6D2;
+    --orangeTint90: #FFF3E9;
+    
+    /* CINNABAR */
+    
+    --cinnabarShadow10: #CB4526;
+    --cinnabarShadow20: #B43E22;
+    --cinnabarShadow30: #9E361D;
+    --cinnabarShadow40: #872E19;
+    --cinnabarShadow50: #712715;
+    --cinnabarShadow60: #5A1F11;
+    --cinnabarShadow70: #43170D;
+    --cinnabarShadow80: #2D0F08;
+    --cinnabarShadow90: #160804;
+  
+    --cinnabarTint10: #E45F3F;
+    --cinnabarTint20: #E77155;
+    --cinnabarTint30: #EA826A;
+    --cinnabarTint40: #ED947F;
+    --cinnabarTint50: #F0A695;
+    --cinnabarTint60: #F3B8AA;
+    --cinnabarTint70: #F6CABF;
+    --cinnabarTint80: #F9DBD4;
+    --cinnabarTint90: #FCEDEA;
+    
+    /* BLUE */
+  
+    --blueShadow10: #38628C;
+    --blueShadow20: #32577D;
+    --blueShadow30: #2B4C6D;
+    --blueShadow40: #25415E;
+    --blueShadow50: #1F374E;
+    --blueShadow60: #192C3E;
+    --blueShadow70: #13212F;
+    --blueShadow80: #0C161F;
+    --blueShadow90: #060B10;
+  
+    --blueTint10: #517CA6;
+    --blueTint20: #658AB0;
+    --blueTint30: #7899BA;
+    --blueTint40: #8BA7C4;
+    --blueTint50: #9FB6CE;
+    --blueTint60: #B2C5D7;
+    --blueTint70: #C5D3E1;
+    --blueTint80: #D8E2EB;
+    --blueTint90: #ECF0F5;
+  
+    /* NAVY */
+  
+    --navyShadow10: #00104B;
+    --navyShadow20: #000E42;
+    --navyShadow30: #000D3A;
+    --navyShadow40: #000B32;
+    --navyShadow50: #00092A;
+    --navyShadow60: #000721;
+    --navyShadow70: #000519;
+    --navyShadow80: #000411;
+    --navyShadow90: #000208;
+  
+    --navyTint10: #1A2A64;
+    --navyTint20: #334175;
+    --navyTint30: #4D5987;
+    --navyTint40: #667198;
+    --navyTint50: #8089A9;
+    --navyTint60: #99A0BA;
+    --navyTint70: #B3B8CB;
+    --navyTint80: #CCD0DD;
+    --navyTint90: #E6E7EE;
+}
