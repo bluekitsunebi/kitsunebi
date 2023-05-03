@@ -9,15 +9,12 @@
     width: 100%;
     z-index: 3;
     position: fixed;
+    padding: 0.5rem;
 }
 
 .header__transparent {
     background-color: transparent;
 }
-
-/* .header__opaque {
-    background-color: var(--navyTint10);
-} */
 
 .navbar {
     display: flex;
