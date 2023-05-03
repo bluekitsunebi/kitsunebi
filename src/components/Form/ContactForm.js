@@ -1,15 +1,26 @@
+// 
 import React, { useRef, useState } from "react";
 import styles from "./ContactForm.module.css";
 import emailjs from "@emailjs/browser";
 import buttonstyles from "../Button.module.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm(props) {
   const form = useRef();
-
   const [isSend, setIsSend] = useState("false");
+
+  const RECAPTCHA_KEY = "6Lcty9olAAAAANAHje9EXqyXC4v6G29_JdJVxAIW";
+  const [isRecaptchaCompleted, setIsRecaptchaCompleted] = useState(false);
+  const handleRecaptchaChange = (value) => {
+    setIsRecaptchaCompleted(true);
+  };  
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (!isRecaptchaCompleted) {
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -44,6 +55,9 @@ export default function ContactForm(props) {
           I agree to the <a href="" className={styles.link}>Confidentiality and GDPR Policy</a>
         </label>
       </div>
+
+      <ReCAPTCHA sitekey={RECAPTCHA_KEY} onChange={handleRecaptchaChange} />
+
 
       <div className={styles.confirmationContainer}>
         <div className={`${styles.confirmation} ${isSend === "false" && styles.hide} ${isSend === "true" && styles.show}`}>The message was sent!</div>

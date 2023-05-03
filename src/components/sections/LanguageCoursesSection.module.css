@@ -4,8 +4,30 @@
   height: fit-content;
   background-color: var(--orangeTint90);
   padding: 3rem 5rem 10rem 5rem;
+  
+  overflow: hidden;
 }
 
 .title {
   padding-bottom: 5rem;
+}
+
+.description, .cardsDescription {
+  color: var(--navy);
+}
+
+.description {
+  font-size: 2rem;
+  margin-bottom: 5rem;
+  height: 60vh;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardsDescription {
+  width: 100%;
+  height: fit-content;
+  font-size: 2rem;
 }

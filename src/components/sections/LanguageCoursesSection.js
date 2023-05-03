@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./LanguageCoursesSection.module.css";
-import SectionTitle from "../SectionTitle";
-import CardsGrid from "../Cards/CardsGrid";
-import { languageModulesCards } from "../../helpers/cardsData";
+import SectionTitle from "../title/SectionTitle"
+import CardsSubsection from "../Cards/CardsSubsection";
+import { languageModulesDescription } from "../../helpers/data/generalData"
 
 export default function LanguageCoursesSection() {
-  const cards = languageModulesCards();
+  const description = languageModulesDescription();
   return (
     <section
       id="languageCoursesSection"
@@ -14,7 +14,10 @@ export default function LanguageCoursesSection() {
       <div className={styles.title}>
         <SectionTitle text="Language Courses" />
       </div>
-      <CardsGrid cards={cards} category="language" />
+
+      <div className={styles.description}>{description}</div>
+
+      <CardsSubsection id="CardsSubsectionEnglish"/>
     </section>
   );
 }

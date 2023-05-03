@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ContactSection.module.css";
 
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../title/SectionTitle"
 import ContactForm from "../Form/ContactForm";
 
 function ContactSection() {

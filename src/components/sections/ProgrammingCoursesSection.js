@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ProgrammingCoursesSection.module.css";
-import SectionTitle from "../SectionTitle"
+import SectionTitle from "../title/SectionTitle"
 import CardsGrid from "../Cards/CardsGrid";
 import Card from "../Cards/Card";
 

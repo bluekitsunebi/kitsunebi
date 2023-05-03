@@ -11,8 +11,7 @@ export default function Arrows(props) {
   const arrows = props.arrows;
   const order = props.order;
   const direction = props.direction;
-  const opposite = props.opposite;
-  const category = props.category;
+  const id = props.id;
   const title = props.title;
   const section = props.section;
 
@@ -21,13 +20,13 @@ export default function Arrows(props) {
   const listenScrollEvent = () => {
     if (
       window.scrollY + (window.innerHeight - headerHeight()) / 2 <=
-      getHeight("languageCoursesSection") + window.innerHeight - headerHeight()
+      getHeight(id) + window.innerHeight - headerHeight()
     ) {
       setHidden("second");
     }
     if (
       window.scrollY + (window.innerHeight - headerHeight()) / 2 >
-      getHeight("languageCoursesSection") + window.innerHeight - headerHeight()
+      getHeight(id) + window.innerHeight - headerHeight()
     ) {
       setHidden("first");
     }
@@ -46,14 +45,14 @@ export default function Arrows(props) {
             ${arrows === "hide" && styles.hide}
             ${arrows === "show" && order === hidden && styles.hide}
             `}
-      id={`arrow_${direction}_${category}_${title}`}
+      id={`arrow_${direction}_${id}_${title}`}
     >
       <div className={styles.arrows__text}>»</div>
       <button
         className={styles.arrowsButton}
         onClick={() => {
           if (order === "first") {
-            scrollToArrow(`arrow_${direction}_${category}_${title}`, "smooth");
+            scrollToArrow(`arrow_${direction}_${id}_${title}`, "smooth");
           }
           if (order === "second") {
             scroll(section, "smooth");

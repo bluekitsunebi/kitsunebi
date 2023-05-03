@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./AboutSection.module.css";
-import SectionTitle from "../SectionTitle"
+import SectionTitle from "../title/SectionTitle"
 
 function AboutSection() {
   return (

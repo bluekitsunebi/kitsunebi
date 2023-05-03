@@ -1,6 +1,6 @@
-@import url(../helpers/colors.css);
+@import url(../../helpers/colors.css);
 
-.title {
+.Title {
     font-size: 3rem;
     font-weight: 500;
     color: var(--navy);

@@ -4,7 +4,7 @@ import Card from "./Card";
 
 export default function CardsGrid(props) {
   const cards = { ...props.cards };
-  const category = props.category;
+  const id = props.id;
   const modules = [...Object.keys(cards)];
   const buttonText = "register";
 
@@ -12,12 +12,14 @@ export default function CardsGrid(props) {
     <div className={styles.CardsGrid}>
       {modules.map((item) => (
         <Card
-          category={category}
+          id={id}
           key={cards[item].id}
           imgSrc={cards[item].imgSrc}
           title={cards[item].title}
+          lessons={cards[item].lessons}
           details={cards[item].details}
           price={cards[item].price}
+          timeframe={cards[item].timeframe}
           buttonText={buttonText}
           buttonType="empty__colored"
           buttonTransform="uppercase"
