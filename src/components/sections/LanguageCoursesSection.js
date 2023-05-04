@@ -18,6 +18,10 @@ export default function LanguageCoursesSection() {
       <div className={styles.description}>{description}</div>
 
       <CardsSubsection id="CardsSubsectionEnglish"/>
+
+      <CardsSubsection id="CardsSubsectionJapanese"/>
+
+      <CardsSubsection id="CardsSubsectionRomanian"/>
     </section>
   );
 }

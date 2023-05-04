@@ -6,12 +6,13 @@ import Arrows from "./Arrows";
 export default function Card(props) {
   const id = props.id;
   const imgSrc = props.imgSrc;
-  const title = props.title;
+  const title = [...props.title];
   const lessons = props.lessons;
   const details = [...props.details];
   const price = props.price;
   const timeframeFirstRow = props.timeframe[0];
   const timeframeSecondRow = props.timeframe[1];
+  const greyed = props.greyed;
   const buttonText = props.buttonText;
   const buttonType = props.buttonType;
   const buttonTransform = props.buttonTransform;
@@ -22,7 +23,11 @@ export default function Card(props) {
       <div className={styles.cardContainer}>
         <div className={styles.titleContainer}>
           <div className={styles.img}>{imgSrc}</div>
-          <div className={styles.title}>{title}</div>
+          <div className={styles.title}>
+            {title[0] && <div>{title[0]}</div>}
+            {title[1] && <div>{title[1]}</div>}
+            {title[2] && <div>{title[2]}</div>}
+          </div>
         </div>
         <div className={styles.lessons}>{lessons}</div>
         <div className={styles.detailsContainer}>

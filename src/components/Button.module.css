@@ -63,6 +63,18 @@
     color: var(--textLight);
 }
 
+/* GREYED OUT */
+
+.button__greyedOut {
+    color: grey;
+    background-color: transparent;
+    border-style: solid;
+    border-color: grey;
+}
+
+.button__greyedOut:hover {
+}
+
 /* --------------------------------------------- */
 
 .right:hover {

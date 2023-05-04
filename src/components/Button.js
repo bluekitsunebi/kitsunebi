@@ -19,6 +19,7 @@ function Button(props) {
         ${type === "empty" && styles.button__empty}
         ${type === "empty__colored" && styles.button__emptyColored}
         ${type === "full" && styles.button__full}
+        ${type === "greyedOut" && styles.button__greyedOut}
         ${position === "left" && styles.left}
         ${position === "right" && styles.right}
         ${name === underlinedButton && styles.underline}
