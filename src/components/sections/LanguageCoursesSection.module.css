@@ -2,6 +2,7 @@
 
 .languageCoursesSection {
   height: fit-content;
+  min-height: fit-content;
   background-color: var(--orangeTint90);
   padding: 3rem 5rem 10rem 5rem;
   

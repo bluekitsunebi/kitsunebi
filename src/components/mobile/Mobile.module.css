@@ -1,0 +1,26 @@
+@import url("../../helpers/colors.css");
+
+.Mobile {
+    height: 100vh;
+    width: 100vw;
+    color: var(--navy);
+    background-color: var(--orangeTint90);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+p {
+    align-self: center;
+    text-align: center;
+    width: 80vw;
+    margin: 1rem 0;
+}
+
+p:first-child {
+    font-size: 2rem;
+}
+
+p:nth-child(2) {
+    font-size: 1.5rem;
+}

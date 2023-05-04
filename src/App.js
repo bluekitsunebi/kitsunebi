@@ -1,5 +1,7 @@
 import React from "react";
 import { Fragment } from "react";
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+import Mobile from "./components/mobile/Mobile";
 import Header from "./components/Header";
 import HeroSection from "./components/sections/HeroSection";
 import AboutSection from "./components/sections/AboutSection";
@@ -12,13 +14,19 @@ import ProgrammingCoursesSection from "./components/sections/ProgrammingCoursesS
 function App() {
   return (
     <Fragment>
-      <Header />
-      <HeroSection />
-      <AboutSection />
-      <LanguageCoursesSection />
-      <ProgrammingCoursesSection />
-      <FAQsection />
-      <ContactSection />
+      <BrowserView>
+        <Header />
+        <HeroSection />
+        <AboutSection />
+        <LanguageCoursesSection />
+        <ProgrammingCoursesSection />
+        <FAQsection />
+        <ContactSection />
+      </BrowserView>
+
+      <MobileView>
+        <Mobile />
+      </MobileView>
     </Fragment>
   );
 }

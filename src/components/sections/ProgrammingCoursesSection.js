@@ -7,7 +7,7 @@ import Card from "../Cards/Card";
 export default function ProgrammingCoursesSection() {
   return (
     <section id="programmingCoursesSection" className={styles.programmingCoursesSection}>
-      <SectionTitle text="Programming Courses" />
+      <SectionTitle text="Programming" />
       <CardsGrid>
         <Card></Card>
         <Card></Card>

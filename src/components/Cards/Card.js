@@ -41,9 +41,10 @@ export default function Card(props) {
           <div className={styles.timeframe}>
             <div>{timeframeFirstRow}</div>
             <div>{timeframeSecondRow}</div>
-            </div>        
+          </div>        
         </div>
         
+        <div className={styles.total}>(1080 RON for 3 months)</div>
 
         <div className={styles.Button}>
           <Button
