@@ -1,71 +1,74 @@
 export function languageCoursesCardsData__Romanian() {
-    const lessons = "12 lessons + 1 free"
-    const timeframe = ["1 hour and", "30 minutes"]
-    const price = "90 RON"
+    const timeframe = ["1 hour and", "30 minutes"];
+    const greyedOut = "true";
   
     const cards = {
       individualCustomJapanese: {
         id: "individual custom japanese",
         imgSrc: "[ ]",
         title: ["individual custom", "japanese"],
-        lessons,
+        lessons: "12 lessons + 1 free",
         details: [
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
         ],
-        price,
+        price: "130 RON",
         timeframe,
-        greyed: "false",
+        total: "1560",
+        greyedOut: "false",
         arrows: "hide",
       },
       grupCustomJapanese: {
         id: "grup custom japanese",
         imgSrc: "[ ]",
         title: ["grup custom", "japanese"],
-        lessons,
+        lessons: "12 lessons + 1 free",
         details: [
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
         ],
-        price,
+        price: "90 RON",
         timeframe,
-        greyed: "false",
+        total: "1080",
+        greyedOut: "false",
         arrows: "hide",
       },
       individualCustomJapaneseIntensive: {
         id: "individual custom japanese (intensive)",
         imgSrc: "[ ]",
         title: ["individual custom", "japanese (intensive)"],
-        lessons,
+        lessons: "24 lessons + 2 free",
         details: [
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
         ],
-        price,
+        price: "110 RON",
         timeframe,
-        greyed: "false",
+        total: "2640",
+        greyedOut: "false",
         arrows: "show",
       },
       grupCustomJapaneseIntensive: {
         id: "grup custom japanese (intensive)",
         imgSrc: "[ ]",
         title: ["grup custom", "japanese (intensive)"],
-        lessons,
+        lessons: "24 lessons + 2 free",
         details: [
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
         ],
-        price,
+        price: "80 RON",
         timeframe,
-        greyed: "false",
+        total: "1920",
+        greyedOut: "false",
         arrows: "hide",
   
       },
@@ -73,20 +76,20 @@ export function languageCoursesCardsData__Romanian() {
         id: "anime japanese",
         imgSrc: "アニメ",
         title: ["anime japanese"],
-        lessons,
+        lessons: "12 lessons + 1 free",
         details: [
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
           "---- ---- ---- --- --- --- - - -",
         ],
-        price,
+        price: "",
         timeframe,
-        greyed: "true",
+        total: "",
+        greyedOut,
         arrows: "hide",
       },
     };
   
     return cards;
   }
-  

@@ -5,7 +5,6 @@ import Card from "./Card";
 export default function CardsGrid(props) {
   const cards = { ...props.cards };
   const id = props.id;
-  const greyed = props.greyed;
   const modules = [...Object.keys(cards)];
 
   
@@ -22,9 +21,9 @@ export default function CardsGrid(props) {
           details={cards[item].details}
           price={cards[item].price}
           timeframe={cards[item].timeframe}
-          greyed={cards[item].greyed}
-          buttonText={greyed === "true" ? "coming soon" : "register"}
-          buttonType={greyed === "true" ? "greyedOut" : "empty__colored"}
+          total={cards[item].total}
+          buttonText={cards[item].greyedOut === "true" ? "coming soon" : "register"}
+          buttonType={cards[item].greyedOut === "true" ? "greyedOut" : "empty__colored"}
           buttonTransform="uppercase"
           arrows={cards[item].arrows}
         />

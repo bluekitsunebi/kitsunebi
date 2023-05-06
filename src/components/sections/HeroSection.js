@@ -82,6 +82,7 @@ export default function HeroSection() {
                   position="left"
                   underlinedButton=""
                   transform="capitalizeFirstLetter"
+                  section="languageCoursesSection"
                 />
               </div>
               <ul id="descriptionLeft" className={styles.description}>
@@ -155,6 +156,7 @@ export default function HeroSection() {
                   position="right"
                   underlinedButton=""
                   transform="capitalizeFirstLetter"
+                  section="programmingSection"
                 />
               </div>
             </div>

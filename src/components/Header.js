@@ -1,73 +1,71 @@
-import React, { useState, useEffect } from "react";
+import { React, useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setHeight, setUnderlined, setColor } from "../store/headerSlice";
 import styles from "./Header.module.css";
 import Logo from "./Logo";
 import Button from "./Button";
-import { getHeight, headerHeight } from "../helpers/helpers";
 
 export default function Header() {
-  const [underlineButton, setUnderlineButton] = useState("home");
+  const headerRef = useRef(null);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setHeight(headerRef.current.offsetHeight));
+  }, [dispatch]);
 
-  const [headerColor, setHeaderColor] = useState("transparent");
+  const headerHeight = useSelector((state) => state.header.height);
+  let headerColor = useSelector((state) => state.header.color);
+  let underlineButton = useSelector((state) => state.header.underlined);
+
+  const aboutSectionPosition = useSelector(
+    (state) => state.aboutSection.yAxisPosition
+  );
+  const contactSectionPosition = useSelector(
+    (state) => state.contactSection.yAxisPosition
+  );
+  const FAQsectionPosition = useSelector(
+    (state) => state.FAQsection.yAxisPosition
+  );
+  const languageCoursesSectionPosition = useSelector(
+    (state) => state.languageCoursesSection.yAxisPosition
+  );
+  const programmingSectionPosition = useSelector(
+    (state) => state.programmingSection.yAxisPosition
+  );
+
+  const middle = (window.innerHeight - headerHeight) / 2 + headerHeight;
 
   const listenScrollEvent = () => {
     window.scrollY > 0
-      ? setHeaderColor("var(--navyShadow50)")
-      : setHeaderColor("transparent");
+      ? dispatch(setColor("var(--navyShadow50)"))
+      : dispatch(setColor("transparent"));
 
-      if (
-      // HOME
-      window.scrollY + headerHeight() >= 0 &&
-      window.scrollY + headerHeight() <
-        getHeight("aboutSection") - (window.innerHeight - headerHeight()) / 2
+    if (
+      window.scrollY + middle >= 0 &&
+      window.scrollY + middle < aboutSectionPosition
     ) {
-      setUnderlineButton("home");
-
+      dispatch(setUnderlined("home"));
     } else if (
-      // ABOUT
-      window.scrollY + headerHeight() >=
-        getHeight("aboutSection") - (window.innerHeight - headerHeight()) / 2 &&
-      window.scrollY + headerHeight() <
-        getHeight("languageCoursesSection") -
-          (window.innerHeight - headerHeight()) / 2
+      window.scrollY + middle >= aboutSectionPosition &&
+      window.scrollY + middle < languageCoursesSectionPosition
     ) {
-      setUnderlineButton("about");
-
+      dispatch(setUnderlined("about"));
     } else if (
-      // LANGUAGE
-      window.scrollY + headerHeight() >=
-        getHeight("languageCoursesSection") -
-          (window.innerHeight - headerHeight()) / 2 &&
-      window.scrollY + headerHeight() <
-        getHeight("programmingCoursesSection") -
-          (window.innerHeight - headerHeight()) / 2
+      window.scrollY + middle >= languageCoursesSectionPosition &&
+      window.scrollY + middle < programmingSectionPosition
     ) {
-      setUnderlineButton("language");
-
+      dispatch(setUnderlined("language"));
     } else if (
-      // PROGRAMMING
-      window.scrollY + headerHeight() >=
-        getHeight("programmingCoursesSection") -
-          (window.innerHeight - headerHeight()) / 2 &&
-      window.scrollY + headerHeight() <
-        getHeight("faqSection") - (window.innerHeight - headerHeight()) / 2
+      window.scrollY + middle >= programmingSectionPosition &&
+      window.scrollY + middle < FAQsectionPosition
     ) {
-      setUnderlineButton("programming");
-
+      dispatch(setUnderlined("programming"));
     } else if (
-      // FAQ
-      window.scrollY + headerHeight() >=
-        getHeight("faqSection") - (window.innerHeight - headerHeight()) / 2 &&
-      window.scrollY + headerHeight() <
-        getHeight("contactSection") - (window.innerHeight - headerHeight()) / 2
+      window.scrollY + middle >= FAQsectionPosition &&
+      window.scrollY + middle < contactSectionPosition
     ) {
-      setUnderlineButton("faq");
-
-    } else if (
-      // CONTACT
-      window.scrollY + headerHeight() >=
-      getHeight("contactSection") - (window.innerHeight - headerHeight()) / 2
-    ) {
-      setUnderlineButton("contact");
+      dispatch(setUnderlined("faq"));
+    } else if (window.scrollY + middle >= contactSectionPosition) {
+      dispatch(setUnderlined("contact"));
     }
   };
 
@@ -78,6 +76,7 @@ export default function Header() {
   return (
     <header
       id="header"
+      ref={headerRef}
       className={styles.header}
       style={{ background: headerColor }}
     >
@@ -120,19 +119,30 @@ export default function Header() {
           >
             <Button
               name="japanese"
-              text="japanese"
+              text="japanese &nbsp; &nbsp; &nbsp; &nbsp; (in English)"
               type="withoutBorder"
               position=""
               underlinedButton=""
               transform="capitalizeFirstLetter"
+              section="engSubsection"
             />
             <Button
               name="english"
-              text="english"
+              text="english &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (in Japanese)"
               type="withoutBorder"
               position=""
               underlinedButton=""
               transform="capitalizeFirstLetter"
+              section="jpSubsection"
+            />
+            <Button
+              name="japanese"
+              text="japanese &nbsp; &nbsp; &nbsp; &nbsp; (in Romanian)"
+              type="withoutBorder"
+              position=""
+              underlinedButton=""
+              transform="capitalizeFirstLetter"
+              section="roSubsection"
             />
           </div>
         </div>
@@ -144,7 +154,7 @@ export default function Header() {
           position=""
           underlinedButton={underlineButton}
           transform="capitalizeFirstLetter"
-          section="programmingCoursesSection"
+          section="programmingSection"
         ></Button>
 
         <Button
@@ -154,7 +164,7 @@ export default function Header() {
           position=""
           underlinedButton={underlineButton}
           transform="uppercase"
-          section="faqSection"
+          section="FAQsection"
         ></Button>
 
         <Button

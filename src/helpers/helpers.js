@@ -6,12 +6,8 @@ export function getHeight(item) {
   return height;
 }
 
-export function headerHeight(){
-  return document.getElementById("header").offsetHeight;
-}
-
-export function scroll(section, behavior) {
-  const y = getHeight(section) - headerHeight() + 1;
+export function scroll(section, behavior, headerHeight) {
+  const y = getHeight(section) - headerHeight + 1;
 
   window.scroll({
     top: y,
@@ -20,8 +16,8 @@ export function scroll(section, behavior) {
   });
 }
 
-export function scrollToArrow(arrow, behavior) {
-  const y = getHeight(arrow) + headerHeight() - 60;
+export function scrollToArrow(arrow, behavior, headerHeight) {
+  const y = getHeight(arrow) + headerHeight - 60;
 
   window.scroll({
     top: y,

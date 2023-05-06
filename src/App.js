@@ -9,7 +9,12 @@ import ContactSection from "./components/sections/ContactSection";
 import LanguageCoursesSection from "./components/sections/LanguageCoursesSection";
 import FAQsection from "./components/sections/FAQsection";
 import "./App.css";
-import ProgrammingCoursesSection from "./components/sections/ProgrammingCoursesSection";
+import ProgrammingSection from "./components/sections/ProgrammingSection";
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 
 function App() {
   return (
@@ -19,7 +24,7 @@ function App() {
         <HeroSection />
         <AboutSection />
         <LanguageCoursesSection />
-        <ProgrammingCoursesSection />
+        <ProgrammingSection />
         <FAQsection />
         <ContactSection />
       </BrowserView>

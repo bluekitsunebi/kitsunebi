@@ -1,7 +1,18 @@
 @import url('../../helpers/colors.css');
 
 .aboutSection {
-    height: 50vh;
+    height: fit-content;
     background-color: var(--blueTint10);
-    padding: 3rem 5rem 10rem 5rem;
+    padding: 3rem 5rem 5rem 5rem;
 }
+
+.description {
+    color: var(--navy);
+    font-size: 2rem;
+    margin-top: 4rem;
+    height: 65vh;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }

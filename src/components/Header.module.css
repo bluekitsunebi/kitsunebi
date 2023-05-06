@@ -38,6 +38,7 @@
 
 .dropdownContent Button {
     margin-top: 10px;
+    text-align: start;
 }
 
 .dropdownContent Button:hover {

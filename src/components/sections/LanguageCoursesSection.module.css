@@ -1,11 +1,11 @@
-@import url('../../helpers/colors.css');
+@import url("../../helpers/colors.css");
 
 .languageCoursesSection {
   height: fit-content;
   min-height: fit-content;
   background-color: var(--orangeTint90);
   padding: 3rem 5rem 5rem 5rem;
-  
+
   overflow: hidden;
 }
 
@@ -13,7 +13,8 @@
   padding-bottom: 5rem;
 }
 
-.description, .cardsDescription {
+.description,
+.cardsDescription {
   color: var(--navy);
 }
 

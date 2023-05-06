@@ -12,11 +12,13 @@ export default function Card(props) {
   const price = props.price;
   const timeframeFirstRow = props.timeframe[0];
   const timeframeSecondRow = props.timeframe[1];
-  const greyed = props.greyed;
+  const total = props.total;
   const buttonText = props.buttonText;
   const buttonType = props.buttonType;
   const buttonTransform = props.buttonTransform;
   const arrows = props.arrows;
+  const isGreyed = ((id === "CardsSubsectionRomanian" || id === "CardsSubsectionEnglish") && buttonType === "greyedOut");
+  const slash = !isGreyed ? "/" : ""; 
 
   return (
     <div className={styles.Card}>
@@ -42,14 +44,19 @@ export default function Card(props) {
       <div className={styles.buttonContainer}>
         <div className={styles.price}>
           {price}
-          <div className={styles.slash}>/</div>
+          {slash}
           <div className={styles.timeframe}>
             <div>{timeframeFirstRow}</div>
             <div>{timeframeSecondRow}</div>
           </div>        
         </div>
         
-        <div className={styles.total}>(1080 RON for 3 months)</div>
+        <div className={styles.total}>
+          {((id === "CardsSubsectionRomanian" || id === "CardsSubsectionEnglish") 
+            && buttonType === "greyedOut") 
+            ? "" : `(${total} RON for 3 months)`
+          }
+        </div>
 
         <div className={styles.Button}>
           <Button

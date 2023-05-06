@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import styles from "./Arrows.module.css";
 import {
   getHeight,
-  headerHeight,
   scroll,
   scrollToArrow,
 } from "../../helpers/helpers";
@@ -14,19 +14,20 @@ export default function Arrows(props) {
   const id = props.id;
   const title = props.title;
   const section = props.section;
-
+  const headerHeight = useSelector((state) => state.header.height);
+  
   const [hidden, setHidden] = useState("first");
 
   const listenScrollEvent = () => {
     if (
-      window.scrollY + (window.innerHeight - headerHeight()) / 2 <=
-      getHeight(id) + window.innerHeight - headerHeight()
+      window.scrollY + (window.innerHeight - headerHeight) / 2 <=
+      getHeight(id) + window.innerHeight - headerHeight
     ) {
       setHidden("second");
     }
     if (
-      window.scrollY + (window.innerHeight - headerHeight()) / 2 >
-      getHeight(id) + window.innerHeight - headerHeight()
+      window.scrollY + (window.innerHeight - headerHeight) / 2 >
+      getHeight(id) + window.innerHeight - headerHeight
     ) {
       setHidden("first");
     }
@@ -52,10 +53,10 @@ export default function Arrows(props) {
         className={styles.arrowsButton}
         onClick={() => {
           if (order === "first") {
-            scrollToArrow(`arrow_${direction}_${id}_${title}`, "smooth");
+            scrollToArrow(`arrow_${direction}_${id}_${title}`, "smooth", headerHeight);
           }
           if (order === "second") {
-            scroll(section, "smooth");
+            scroll(section, "smooth", headerHeight);
           }
         }}
       ></button>
