@@ -3,23 +3,23 @@ import { useDispatch } from "react-redux";
 import {
   setHeight,
   setYaxisPosition,
-} from "../../store/languageCoursesSectionSlice";
+} from "../../../../store/languageCoursesSectionSlice";
 import {
   setHeight__eng,
   setYaxisPosition__eng,
-} from "../../store/engSubsectionSlice";
+} from "../../../../store/engSubsectionSlice";
 import {
   setHeight__jp,
   setYaxisPosition__jp,
-} from "../../store/jpSubsectionSlice";
+} from "../../../../store/jpSubsectionSlice";
 import {
   setHeight__ro,
   setYaxisPosition__ro,
-} from "../../store/roSubsectionSlice";
+} from "../../../../store/roSubsectionSlice";
 import styles from "./LanguageCoursesSection.module.css";
-import SectionTitle from "../title/SectionTitle";
-import CardsSubsection from "../Cards/CardsSubsection";
-import { languageModulesDescription } from "../../helpers/data/generalData";
+import SectionTitle from "../../../title/SectionTitle";
+import CardsSubsection from "../../../Cards/CardsSubsection";
+import { languageModulesDescription } from "../../../../helpers/data/generalData";
 
 export default function LanguageCoursesSection() {
   const languageCoursesSectionRef = useRef(null);

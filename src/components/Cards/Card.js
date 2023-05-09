@@ -17,14 +17,25 @@ export default function Card(props) {
   const buttonType = props.buttonType;
   const buttonTransform = props.buttonTransform;
   const arrows = props.arrows;
+  const link = props.link;
   const isGreyed = ((id === "CardsSubsectionRomanian" || id === "CardsSubsectionEnglish") && buttonType === "greyedOut");
   const slash = !isGreyed ? "/" : ""; 
 
   return (
-    <div className={styles.Card}>
+    <div className={`
+      ${styles.Card}
+      ${id === "CardsSubsectionEnglish" && styles.Card__eng}
+      ${id === "CardsSubsectionJapanese" && styles.Card__jp}
+      ${id === "CardsSubsectionRomanian" && styles.Card__ro}
+      `}>
       <div className={styles.cardContainer}>
-        <div className={styles.titleContainer}>
-          <div className={styles.img}>{imgSrc}</div>
+        <div className={`
+          ${styles.titleContainer}
+          ${id === "CardsSubsectionEnglish" && styles.titleContainer__eng}
+          ${id === "CardsSubsectionJapanese" && styles.titleContainer__jp}
+          ${id === "CardsSubsectionRomanian" && styles.titleContainer__ro}
+          `}>
+          {/* <div className={styles.img}>{imgSrc}</div> */}
           <div className={styles.title}>
             {title[0] && <div>{title[0]}</div>}
             {title[1] && <div>{title[1]}</div>}
@@ -54,7 +65,7 @@ export default function Card(props) {
         <div className={styles.total}>
           {((id === "CardsSubsectionRomanian" || id === "CardsSubsectionEnglish") 
             && buttonType === "greyedOut") 
-            ? "" : `(${total} RON for 3 months)`
+            ? "" : `(payment once every ${total} classes)`
           }
         </div>
 
@@ -66,7 +77,8 @@ export default function Card(props) {
             position=""
             underlinedButton=""
             transform={buttonTransform}
-            section=""
+            subsection={id}
+            link={link}
           />
         </div>
       </div>

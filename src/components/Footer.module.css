@@ -1,0 +1,30 @@
+@import url("../helpers/colors.css");
+
+.Footer {
+    height: fit-content;
+    font-size: 1.3rem;
+    color: var(--navyTint70);
+    background-color: var(--navyShadow50);
+    padding: 1rem 4rem;
+    display: grid;
+    grid-template-columns: 4fr 4fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 0.2rem;
+}
+
+.phoneIcon, .mailIcon{
+    margin-right: 1.5rem;
+}
+
+.social {
+    grid-column: 3;
+    /* color: var(--cinnabarTint40); */
+}
+
+.copyright {
+    /* margin-top: 1rem; */
+    font-size: 1rem;
+    grid-column: 1/4;
+    text-align: center;
+}

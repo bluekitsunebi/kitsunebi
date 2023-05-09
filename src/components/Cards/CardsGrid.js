@@ -26,6 +26,7 @@ export default function CardsGrid(props) {
           buttonType={cards[item].greyedOut === "true" ? "greyedOut" : "empty__colored"}
           buttonTransform="uppercase"
           arrows={cards[item].arrows}
+          link={cards[item].link}
         />
       ))}
     </div>

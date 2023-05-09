@@ -1,4 +1,5 @@
-import { React, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setHeight, setUnderlined, setColor } from "../store/headerSlice";
 import styles from "./Header.module.css";
@@ -33,11 +34,16 @@ export default function Header() {
   );
 
   const middle = (window.innerHeight - headerHeight) / 2 + headerHeight;
-
+  const path = useLocation().pathname;
+  
   const listenScrollEvent = () => {
-    window.scrollY > 0
-      ? dispatch(setColor("var(--navyShadow50)"))
-      : dispatch(setColor("transparent"));
+    if(path === "/") {
+      window.scrollY > 0
+        ? dispatch(setColor("var(--navyShadow50)"))
+        : dispatch(setColor("transparent"));
+    } else {
+      dispatch(setColor("var(--navyShadow50)"))
+    }
 
     if (
       window.scrollY + middle >= 0 &&

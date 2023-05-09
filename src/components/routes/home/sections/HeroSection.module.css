@@ -1,9 +1,9 @@
-@import url("../../helpers/colors.css");
+@import url("../../../../helpers/colors.css");
 
 .heroSection {
     height: 100vh;
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url("../../images/backgroundRight.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url("../../../../images/backgroundRight.jpg");
     /* background-image: url("../../images/backgroundRight.png"); */
     background-size: cover;
     background-position: bottom;
@@ -30,7 +30,7 @@
     top: 0;
     left: 0;
     z-index: 2;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("../../images/backgroundLeft.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("../../../../images/backgroundLeft.jpg");
     /* background-image: url("../../images/backgroundLeft.jpg"); */
     background-size: cover;
     clip-path: polygon(0% 0%, 0% 100%, 66.6% 100%, 100% 0%);

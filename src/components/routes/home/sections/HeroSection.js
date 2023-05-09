@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
-import Button from "../Button"
+import Button from "../../../Button"
 
 let timer = 0;
 

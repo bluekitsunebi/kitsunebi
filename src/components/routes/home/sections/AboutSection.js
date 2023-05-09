@@ -1,9 +1,9 @@
 import { React, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { setHeight, setYaxisPosition } from "../../store/aboutSectionSlice";
+import { setHeight, setYaxisPosition } from "../../../../store/aboutSectionSlice";
 import styles from "./AboutSection.module.css";
-import SectionTitle from "../title/SectionTitle";
-import { aboutSectionDescription } from "../../helpers/data/generalData";
+import SectionTitle from "../../../title/SectionTitle";
+import { aboutSectionDescription } from "../../../../helpers/data/generalData";
 
 function AboutSection() {
   const aboutSectionRef = useRef(null);
@@ -25,7 +25,7 @@ function AboutSection() {
       ref={aboutSectionRef}
       className={styles.aboutSection}
     >
-      <SectionTitle text="About" />
+      <SectionTitle text="About us" />
       <div className={styles.description}>{description}</div>
     </section>
   );

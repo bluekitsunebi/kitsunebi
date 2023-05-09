@@ -1,8 +1,8 @@
 import { React, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setHeight, setYaxisPosition } from "../../store/programmingSectionSlice";
+import { setHeight, setYaxisPosition } from "../../../../store/programmingSectionSlice";
 import styles from "./ProgrammingSection.module.css";
-import SectionTitle from "../title/SectionTitle";
+import SectionTitle from "../../../title/SectionTitle";
 
 export default function ProgrammingSection() {
   const programmingSectionRef = useRef(null);

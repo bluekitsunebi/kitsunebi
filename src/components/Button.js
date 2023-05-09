@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from 'react';
+import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./Button.module.css";
 import { scroll } from "../helpers/helpers";
 
 function Button(props) {
+  const path = useLocation().pathname;
   const headerHeight = useSelector((state) => state.header.height);
 
   const name = props.name;
@@ -13,6 +15,11 @@ function Button(props) {
   const underlinedButton = props.underlinedButton;
   const transform = props.transform;
   const section = props.section;
+  const subsection = props.subsection;
+  // CardsSubsectionEnglish
+  // CardsSubsectionJapanese
+  // CardsSubsectionRomanian
+  const link = props.link === undefined ? "*" : props.link;
   let sectionPosition = undefined;
   
   const aboutSectionPosition = useSelector((state) => state.aboutSection.yAxisPosition);
@@ -36,7 +43,7 @@ function Button(props) {
   } else if (section === "programmingSection") {
     sectionPosition = programmingSectionPosition - headerHeight + 1; 
   } else if (section === "heroSection") {
-    sectionPosition = 0; 
+    sectionPosition = 0;
   } else if (section === "engSubsection") {
     sectionPosition = engSubsectionPosition - headerHeight + 1; 
   } else if (section === "jpSubsection") {
@@ -45,36 +52,40 @@ function Button(props) {
     sectionPosition = roSubsectionPosition - headerHeight + 1; 
   }
 
-  // engSubsection
+  const handleClick = () => {
+    if(path === "/") {
+      window.scroll({
+        top: sectionPosition,
+        left: 0,
+        behavior: "instant",
+      });
+    } 
+  };
 
   return (
-    <button
-      className={`
-        ${styles.Button}
-        ${type === "withoutBorder" && styles.button__withoutBorder}
-        ${type === "empty" && styles.button__empty}
-        ${type === "empty__colored" && styles.button__emptyColored}
-        ${type === "full" && styles.button__full}
-        ${type === "greyedOut" && styles.button__greyedOut}
-        ${position === "left" && styles.left}
-        ${position === "right" && styles.right}
-        ${name === underlinedButton && styles.underline}
-        ${transform === "capitalize" && styles.capitalize}
-        ${transform === "capitalizeFirstLetter" && styles.capitalize__FirstLetter}
-        ${transform === "uppercase" && styles.uppercase}
-      `}
+    <Link to={link}>
+      <button
+        className={`
+          ${styles.Button}
+          ${type === "withoutBorder" && styles.button__withoutBorder}
+          ${type === "empty" && styles.button__empty}
+          ${type === "empty__colored" && styles.button__emptyColored}
+          ${type === "full" && styles.button__full}
+          ${type === "greyedOut" && styles.button__greyedOut}
+          ${position === "left" && styles.left}
+          ${position === "right" && styles.right}
+          ${name === underlinedButton && styles.underline}
+          ${transform === "capitalize" && styles.capitalize}
+          ${transform === "capitalizeFirstLetter" && styles.capitalize__FirstLetter}
+          ${transform === "uppercase" && styles.uppercase}
+        `}
 
-      onClick={() => {
-        window.scroll({
-          top: sectionPosition,
-          left: 0,
-          behavior: "instant",
-        });
-      }}
-      
-    >
-      {text}
-    </button>
+        disabled={type === "greyedOut"}
+        onClick={handleClick}
+      >
+        {text}
+      </button>
+    </Link>
   );
 }
 

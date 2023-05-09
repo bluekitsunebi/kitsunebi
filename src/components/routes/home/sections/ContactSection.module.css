@@ -1,4 +1,4 @@
-@import url('../../helpers/colors.css');
+@import url('../../../../helpers/colors.css');
 
 .contactSection {
     background-color: var(--blueTint90);

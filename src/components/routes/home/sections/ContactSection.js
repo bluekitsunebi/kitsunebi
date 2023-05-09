@@ -1,10 +1,10 @@
 import { React, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { setHeight, setYaxisPosition } from "../../store/contactSectionSlice";
+import { setHeight, setYaxisPosition } from "../../../../store/contactSectionSlice";
 import styles from "./ContactSection.module.css";
 
-import SectionTitle from "../title/SectionTitle";
-import ContactForm from "../Form/ContactForm";
+import SectionTitle from "../../../title/SectionTitle";
+import ContactForm from "../../../Form/ContactForm";
 
 function ContactSection() {
   const contactSectionRef = useRef(null);

@@ -12,10 +12,6 @@
     padding: 0.5rem;
 }
 
-.header__transparent {
-    background-color: transparent;
-}
-
 .navbar {
     display: flex;
     justify-content: space-around;

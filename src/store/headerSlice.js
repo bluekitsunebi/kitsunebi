@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   height: undefined,
   underlined: "home",
-  color: "transparent",
+  color: undefined,
 };
 
 export const headerSlice = createSlice({

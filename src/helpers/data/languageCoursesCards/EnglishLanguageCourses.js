@@ -1,13 +1,14 @@
 export function languageCoursesCardsData__English() {
   const timeframe = ["1 hour and", "30 minutes"];
   const greyedOut = "true";
+  const lessons = "First lesson free";
 
   const cards = {
     individualCustomJapanese: {
       id: "individual custom japanese",
       imgSrc: "[ ]",
       title: ["individual custom", "japanese"],
-      lessons: "12 lessons + 1 free",
+      lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
         "---- ---- ---- --- --- --- - - -",
@@ -16,15 +17,16 @@ export function languageCoursesCardsData__English() {
       ],
       price: "$50",
       timeframe,
-      total: "$600",
+      total: "6",
       greyedOut: "false",
       arrows: "hide",
+      link: "/en-individual-custom-japanese",
     },
-    grupCustomJapanese: {
+    groupCustomJapanese: {
       id: "group custom japanese",
       imgSrc: "[ ]",
       title: ["group custom", "japanese"],
-      lessons: "12 lessons + 1 free",
+      lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
         "---- ---- ---- --- --- --- - - -",
@@ -33,15 +35,16 @@ export function languageCoursesCardsData__English() {
       ],
       price: "$35",
       timeframe,
-      total: "$420",
+      total: "6",
       greyedOut: "false",
       arrows: "hide",
+      link: "/en-group-custom-japanese",
     },
     individualCustomJapaneseIntensive: {
       id: "individual custom japanese (intensive)",
       imgSrc: "[ ]",
       title: ["individual custom", "japanese (intensive)"],
-      lessons: "24 lessons + 2 free",
+      lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
         "---- ---- ---- --- --- --- - - -",
@@ -50,15 +53,16 @@ export function languageCoursesCardsData__English() {
       ],
       price: "$45",
       timeframe,
-      total: "$1080",
+      total: "12",
       greyedOut: "false",
       arrows: "show",
+      link: "/en-individual-custom-japanese-intensive",
     },
-    grupCustomJapaneseIntensive: {
-      id: "grup custom japanese (intensive)",
+    groupCustomJapaneseIntensive: {
+      id: "group custom japanese (intensive)",
       imgSrc: "[ ]",
-      title: ["grup custom", "japanese (intensive)"],
-      lessons: "24 lessons + 2 free",
+      title: ["group custom", "japanese (intensive)"],
+      lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
         "---- ---- ---- --- --- --- - - -",
@@ -67,16 +71,16 @@ export function languageCoursesCardsData__English() {
       ],
       price: "$30",
       timeframe,
-      total: "$720",
+      total: "12",
       greyedOut: "false",
       arrows: "hide",
-
+      link: "/en-group-custom-japanese-intensive",
     },
     animeJapanese: {
       id: "anime japanese",
       imgSrc: "アニメ",
       title: ["anime japanese"],
-      lessons: "12 lessons + 1 free",
+      lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
         "---- ---- ---- --- --- --- - - -",
@@ -85,9 +89,10 @@ export function languageCoursesCardsData__English() {
       ],
       price: "",
       timeframe,
-      total: "",
+      total: "6",
       greyedOut,
       arrows: "hide",
+      link: "/en-anime",
     },
   };
 
