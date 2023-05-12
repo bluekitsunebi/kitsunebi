@@ -1,4 +1,4 @@
-import { React, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import {
   setHeight,
@@ -21,7 +21,13 @@ import SectionTitle from "../../../title/SectionTitle";
 import CardsSubsection from "../../../Cards/CardsSubsection";
 import { languageModulesDescription } from "../../../../helpers/data/generalData";
 
-export default function LanguageCoursesSection() {
+export default function LanguageCoursesSection({ onRender }) {
+  useEffect(() => {
+    if (typeof onRender === "function") {
+      onRender();
+    }
+  }, [onRender]);
+
   const languageCoursesSectionRef = useRef(null);
   const engSubsectionRef = useRef(null);
   const jpSubsectionRef = useRef(null);

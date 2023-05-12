@@ -21,7 +21,11 @@ window.onbeforeunload = function () {
 
 export default function Home() {
   const headerHeight = useSelector((state) => state.header.height);
+
+  const heroSectionRef = useRef(null);
   const aboutSectionRef = useRef(null);
+  const languageCoursesSectionRef = useRef(null);
+  const programmingSectionRef = useRef(null);
   const faqSectionRef = useRef(null);
   const contactSectionRef = useRef(null);
 
@@ -32,10 +36,24 @@ export default function Home() {
   const toSection = useSelector((state) => state.router.toSection);
   const wasClicked = useSelector((state) => state.router.wasClicked);
 
+  console.log("previousLocation: ", previousLocation)
+  console.log("link: ", link)
+  console.log("toSection: ", toSection)
+  console.log("wasClicked: ", wasClicked)
+
   const [isAllRendered, setIsAllRendered] = useState(false);
   const handleComponentRender = () => {
+    console.log(heroSectionRef.current);
+    console.log(aboutSectionRef.current);
+    console.log(languageCoursesSectionRef.current);
+    console.log(programmingSectionRef.current);
+    console.log(faqSectionRef.current);
+    console.log(contactSectionRef.current);
     if (
+      heroSectionRef.current &&
       aboutSectionRef.current &&
+      languageCoursesSectionRef.current &&
+      programmingSectionRef.current &&
       faqSectionRef.current &&
       contactSectionRef.current
     ) {
@@ -44,23 +62,46 @@ export default function Home() {
   };
 
   useEffect(() => {
-    if (wasClicked && link === "/" && previousLocation !== "/" && isAllRendered) {
+    if (
+      wasClicked &&
+      link === "/" &&
+      previousLocation !== "/" &&
+      isAllRendered
+    ) {
       let element;
-      if (toSection === "about") {
-        element = aboutSectionRef.current;     
-      } else if (toSection === "faq") {
+      if (toSection === "heroSection") {
+        element = heroSectionRef.current;
+      } else if (toSection === "aboutSection") {
+        element = aboutSectionRef.current;
+      } else if (toSection === "languageCoursesSection") {
+        element = languageCoursesSectionRef.current;
+      } else if (toSection === "programmingSection") {
+        element = programmingSectionRef.current;
+      } else if (toSection === "FAQsection") {
         element = faqSectionRef.current;
-      } else if (toSection === "contact") {
+      } else if (toSection === "contactSection") {
         element = contactSectionRef.current;
       }
+
       if (element) {
         const rect = element.getBoundingClientRect();
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        window.scrollTo({ top: rect.top + scrollTop - headerHeight, behavior: "smooth" });
+        window.scrollTo({
+          top: rect.top + scrollTop - headerHeight,
+          behavior: "smooth",
+        });
         dispatch(switchWasClicked());
       }
     }
-  }, [isAllRendered, wasClicked, link, previousLocation, toSection, headerHeight, dispatch]);
+  }, [
+    isAllRendered,
+    wasClicked,
+    link,
+    previousLocation,
+    toSection,
+    headerHeight,
+    dispatch,
+  ]);
 
   useEffect(() => {
     dispatch(setColor("transparent"));
@@ -69,18 +110,24 @@ export default function Home() {
   return (
     <section className={styles.Home}>
       <Header />
-      <HeroSection />
+      <section ref={heroSectionRef}>
+        <HeroSection onRender={handleComponentRender} />
+      </section>
       <section ref={aboutSectionRef}>
         <AboutSection onRender={handleComponentRender} />
       </section>
-      <LanguageCoursesSection />
-      <ProgrammingSection />
+      <section ref={languageCoursesSectionRef}>
+        <LanguageCoursesSection onRender={handleComponentRender} />
+      </section>
+      <section ref={programmingSectionRef}>
+        <ProgrammingSection onRender={handleComponentRender} />
+      </section>
       <section ref={faqSectionRef}>
         <FAQsection onRender={handleComponentRender} />
       </section>
       <section ref={contactSectionRef}>
         <ContactSection onRender={handleComponentRender} />
-      </section>
+      </section >
       <Footer />
     </section>
   );

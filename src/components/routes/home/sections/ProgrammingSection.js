@@ -4,7 +4,13 @@ import { setHeight, setYaxisPosition } from "../../../../store/programmingSectio
 import styles from "./ProgrammingSection.module.css";
 import SectionTitle from "../../../title/SectionTitle";
 
-export default function ProgrammingSection() {
+export default function ProgrammingSection({ onRender }) {
+  useEffect(() => {
+    if (typeof onRender === "function") {
+      onRender();
+    }
+  }, [onRender]);
+  
   const programmingSectionRef = useRef(null);
   const dispatch = useDispatch();
   useEffect(() => {

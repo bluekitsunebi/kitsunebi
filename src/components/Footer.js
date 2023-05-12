@@ -40,7 +40,7 @@ export default function Footer() {
       <Link to={"/"} className={styles.link}>
         <div
           className={styles.about}
-          onClick={() => handleClick(aboutSectionPosition, "/", "about")}
+          onClick={() => handleClick(aboutSectionPosition, "/", "aboutSection")}
         >
           About
         </div>
@@ -56,7 +56,7 @@ export default function Footer() {
       <Link to={"/"} className={styles.link}>
         <div
           className={styles.faq}
-          onClick={() => handleClick(FAQsectionPosition, "/", "faq")}
+          onClick={() => handleClick(FAQsectionPosition, "/", "FAQsection")}
         >
           FAQ
         </div>
@@ -65,7 +65,7 @@ export default function Footer() {
       <Link to={"/"} className={styles.link}>
         <div
           className={styles.contact}
-          onClick={() => handleClick(contactSectionPosition, "/", "contact")}
+          onClick={() => handleClick(contactSectionPosition, "/", "contactSection")}
         >
           Contact
         </div>

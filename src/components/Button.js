@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./Button.module.css";
 import { scroll } from "../helpers/helpers";
+import { setLocation, setLink, setSection, switchWasClicked } from "../store/routerSlice";
 
 function Button(props) {
-  const path = useLocation().pathname;
+  const location = useLocation().pathname;
+  const dispatch = useDispatch();
+  
   const headerHeight = useSelector((state) => state.header.height);
 
   const name = props.name;
@@ -15,8 +18,8 @@ function Button(props) {
   const underlinedButton = props.underlinedButton;
   const transform = props.transform;
   const section = props.section;
-  const subsection = props.subsection;
   const link = props.link === undefined ? "*" : props.link;
+  const category = props.category;
   let sectionPosition = undefined;
 
   const aboutSectionPosition = useSelector(
@@ -71,6 +74,10 @@ function Button(props) {
       left: 0,
       behavior: "instant",
     });
+    dispatch(setLocation(location));
+    dispatch(setLink(link));
+    dispatch(setSection(section));
+    dispatch(switchWasClicked());
   };
 
   return (

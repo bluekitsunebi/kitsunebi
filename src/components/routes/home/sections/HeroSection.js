@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./HeroSection.module.css";
 import Button from "../../../Button"
 
 let timer = 0;
 
-export default function HeroSection() {
+export default function HeroSection({ onRender }) {
+  useEffect(() => {
+    if (typeof onRender === "function") {
+      onRender();
+    }
+  }, [onRender]);
+
   window.addEventListener('resize', function () {
     if (timer) {
       clearTimeout(timer);

@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { setHeight, setYaxisPosition } from "../../../../store/aboutSectionSlice";
+import {
+  setHeight,
+  setYaxisPosition,
+} from "../../../../store/aboutSectionSlice";
 import styles from "./AboutSection.module.css";
 import SectionTitle from "../../../title/SectionTitle";
 import { aboutSectionDescription } from "../../../../helpers/data/generalData";
@@ -20,7 +23,6 @@ function AboutSection({ onRender }) {
     if (typeof onRender === "function") {
       onRender();
     }
-
   }, [onRender]);
 
   const description = aboutSectionDescription();
