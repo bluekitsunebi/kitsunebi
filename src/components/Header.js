@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setHeight, setUnderlined, setColor } from "../store/headerSlice";
 import styles from "./Header.module.css";
@@ -34,10 +34,10 @@ export default function Header() {
   );
 
   const middle = (window.innerHeight - headerHeight) / 2 + headerHeight;
-  const path = useLocation().pathname;
+  const location = useLocation().pathname;
 
   const listenScrollEvent = () => {
-    if (path === "/") {
+    if (location === "/") {
       window.scrollY > 0
         ? dispatch(setColor("var(--navyShadow50)"))
         : dispatch(setColor("transparent"));
@@ -79,6 +79,12 @@ export default function Header() {
     window.addEventListener("scroll", listenScrollEvent);
   });
 
+  const handleLogoClick = () => {
+    if(location === "/") {
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <header
       id="header"
@@ -86,7 +92,11 @@ export default function Header() {
       className={styles.header}
       style={{ background: headerColor }}
     >
-      <Logo></Logo>
+      <Link to={"/"} className={styles.Logo}>
+        <div onClick={handleLogoClick}>
+          <Logo />
+        </div>
+      </Link>
 
       <nav className={styles.navbar}>
         <Button
