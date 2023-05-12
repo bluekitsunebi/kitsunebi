@@ -35,7 +35,6 @@ export default function Card(props) {
           ${id === "CardsSubsectionJapanese" && styles.titleContainer__jp}
           ${id === "CardsSubsectionRomanian" && styles.titleContainer__ro}
           `}>
-          {/* <div className={styles.img}>{imgSrc}</div> */}
           <div className={styles.title}>
             {title[0] && <div>{title[0]}</div>}
             {title[1] && <div>{title[1]}</div>}

@@ -30,7 +30,6 @@ export default function HeroSection() {
         className={styles.cover}
         onMouseLeave={() => {
           document.getElementById("titleLeft").innerHTML = "Language Courses"
-          // document.getElementById("titleRight").innerHTML = "Programming Courses"
           document.getElementById("halfBackgroundLeft").style.width = "60vw"
           document.getElementById("halfBackgroundRight").style.width = "60vw"
           document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 66.6% 100%, 100% 0%)"
@@ -45,7 +44,6 @@ export default function HeroSection() {
           className={`${styles.halfBackground} ${styles.halfBackground__left}`}
           onMouseEnter={() => {
             document.getElementById("descriptionRight").style.display = "none"
-            // document.getElementById("titleRight").innerHTML = "Programming<br>Courses"
             document.getElementById("titleLeft").innerHTML = "Language<br>Courses"
             document.getElementById("halfBackgroundLeft").style.width = "70vw"
             document.getElementById("halfBackgroundRight").style.width = "50vw"
@@ -102,7 +100,6 @@ export default function HeroSection() {
           onMouseEnter={() => {
             document.getElementById("descriptionLeft").style.display = "none"
             document.getElementById("titleLeft").innerHTML = "Language<br>Courses"
-            // document.getElementById("titleRight").innerHTML = "Programming<br>Courses"
             document.getElementById("halfBackgroundLeft").style.width = "50vw"
             document.getElementById("halfBackgroundRight").style.width = "70vw"
             document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 60% 100%, 100% 0%)"

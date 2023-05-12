@@ -19,11 +19,16 @@ import {
   groupCustomJapaneseIntensive__ro,
 } from "../../../helpers/data/data__languageCustomCourses";
 
+// SCROLL TO TOP ON PAGE RELOAD 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 export default function LanguageCustomCourses(props) {
+  {window.scrollTo(0, 0);}
   const module = props.module;
   let title, description;
   const headerHeight = useSelector((state) => state.header.height);
-  console.log("header color: ", useSelector((state) => state.header.color));
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -75,7 +80,6 @@ export default function LanguageCustomCourses(props) {
     <Fragment>
       <Header />
       <section className={styles.LanguageCustomCourses}>
-        {/* <div className={styles.title} style={{ paddingTop: headerHeight*2 }}> */}
         <div className={styles.title}>{title}</div>
         <div className={styles.description}>{description}</div>
       </section>

@@ -1,13 +1,14 @@
-import { React, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { setHeight, setYaxisPosition } from "../../../../store/aboutSectionSlice";
 import styles from "./AboutSection.module.css";
 import SectionTitle from "../../../title/SectionTitle";
 import { aboutSectionDescription } from "../../../../helpers/data/generalData";
 
-function AboutSection() {
+function AboutSection({ onRender }) {
   const aboutSectionRef = useRef(null);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(setHeight(aboutSectionRef.current.offsetHeight));
     dispatch(
@@ -15,7 +16,12 @@ function AboutSection() {
         aboutSectionRef.current.getBoundingClientRect().top + window.pageYOffset
       )
     );
-  }, [dispatch]);
+
+    if (typeof onRender === "function") {
+      onRender();
+    }
+
+  }, [onRender]);
 
   const description = aboutSectionDescription();
 

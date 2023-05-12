@@ -33,8 +33,6 @@
 .titleContainer {
   height: 6rem;
   padding: 1rem 1rem;
-
-  /* background-color: var(--navy); */
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
   display: flex;
@@ -56,12 +54,6 @@
   background-color: var(--cinnabar);
   color: var(--cinnabarTint90);
 }
-
-/* .img {
-  font-size: 2rem;
-  align-self: center;
-  color: var(--textLight);
-} */
 
 .title {
   font-size: 2rem;

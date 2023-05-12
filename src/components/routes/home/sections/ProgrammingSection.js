@@ -20,5 +20,3 @@ export default function ProgrammingSection() {
     </section>
   );
 }
-
-// + window.pageYOffset

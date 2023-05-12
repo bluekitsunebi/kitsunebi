@@ -11,26 +11,11 @@ import LanguageCustomCourses from "./components/routes/languageCourses/LanguageC
 // mobile (temporary)
 import Mobile from "./components/mobile/Mobile";
 
-// SCROLL TO TOP ON PAGE RELOAD
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
-
-// SCROLL TO TOP ON PATHNAME CHANGE
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-}
-
 function App() {
   return (
     <Fragment>
       <BrowserView>
         <BrowserRouter>
-          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
 
@@ -115,8 +100,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </BrowserView>
-
-      {/* mobile (temporary) */}
       <MobileView>
         <Mobile />
       </MobileView>

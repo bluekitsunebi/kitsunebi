@@ -35,14 +35,14 @@ export default function Header() {
 
   const middle = (window.innerHeight - headerHeight) / 2 + headerHeight;
   const path = useLocation().pathname;
-  
+
   const listenScrollEvent = () => {
-    if(path === "/") {
+    if (path === "/") {
       window.scrollY > 0
         ? dispatch(setColor("var(--navyShadow50)"))
         : dispatch(setColor("transparent"));
     } else {
-      dispatch(setColor("var(--navyShadow50)"))
+      dispatch(setColor("var(--navyShadow50)"));
     }
 
     if (
@@ -97,6 +97,7 @@ export default function Header() {
           underlinedButton={underlineButton}
           transform="capitalizeFirstLetter"
           section="heroSection"
+          link="/"
         />
 
         <Button
@@ -107,6 +108,7 @@ export default function Header() {
           underlinedButton={underlineButton}
           transform="capitalizeFirstLetter"
           section="aboutSection"
+          link="/"
         />
 
         <div className={styles.dropdown}>
@@ -118,6 +120,7 @@ export default function Header() {
             underlinedButton={underlineButton}
             transform="capitalizeFirstLetter"
             section="languageCoursesSection"
+            link="/"
           />
           <div
             className={styles.dropdownContent}
@@ -131,6 +134,7 @@ export default function Header() {
               underlinedButton=""
               transform="capitalizeFirstLetter"
               section="engSubsection"
+              link="/"
             />
             <Button
               name="english"
@@ -140,6 +144,7 @@ export default function Header() {
               underlinedButton=""
               transform="capitalizeFirstLetter"
               section="jpSubsection"
+              link="/"
             />
             <Button
               name="japanese"
@@ -149,6 +154,7 @@ export default function Header() {
               underlinedButton=""
               transform="capitalizeFirstLetter"
               section="roSubsection"
+              link="/"
             />
           </div>
         </div>
@@ -161,6 +167,7 @@ export default function Header() {
           underlinedButton={underlineButton}
           transform="capitalizeFirstLetter"
           section="programmingSection"
+          link="/"
         ></Button>
 
         <Button
@@ -171,6 +178,7 @@ export default function Header() {
           underlinedButton={underlineButton}
           transform="uppercase"
           section="FAQsection"
+          link="/"
         ></Button>
 
         <Button
@@ -181,6 +189,7 @@ export default function Header() {
           underlinedButton={underlineButton}
           transform="capitalizeFirstLetter"
           section="contactSection"
+          link="/"
         ></Button>
       </nav>
     </header>

@@ -8,6 +8,7 @@ import programmingSectionReducer from './programmingSectionSlice';
 import engSubsectionReducer from './engSubsectionSlice';
 import jpSubsectionReducer from './jpSubsectionSlice';
 import roSubsectionReducer from './roSubsectionSlice';
+import routerSlice from './routerSlice';
 
 export const store = configureStore({
   reducer: {
@@ -20,5 +21,6 @@ export const store = configureStore({
     engSubsection: engSubsectionReducer,
     jpSubsection: jpSubsectionReducer,
     roSubsection: roSubsectionReducer,
+    router: routerSlice,
   }
 });
