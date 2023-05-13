@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import styles from "./LanguageCustomCourses.module.css";
 import Header from "../../Header";
 import Footer from "../../Footer";
+import ContactForm from "../../Form/ContactForm";
 import { useSelector, useDispatch } from "react-redux";
 import { setColor } from "../../../store/headerSlice";
 import {
@@ -82,6 +83,8 @@ export default function LanguageCustomCourses(props) {
       <section className={styles.LanguageCustomCourses}>
         <div className={styles.title}>{title}</div>
         <div className={styles.description}>{description}</div>
+        <div className={styles.title}>Register for a free lesson</div>
+        <ContactForm className={styles.ContactForm}/>
       </section>
       <Footer />
     </Fragment>

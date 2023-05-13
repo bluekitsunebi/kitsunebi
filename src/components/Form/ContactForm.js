@@ -8,7 +8,7 @@ export default function ContactForm(props) {
   const form = useRef();
   const [isSend, setIsSend] = useState("false");
 
-  const RECAPTCHA_KEY = "6Lcty9olAAAAANAHje9EXqyXC4v6G29_JdJVxAIW";
+  const RECAPTCHA_KEY = "6Leu5AUmAAAAAJVC7lT0cMLGgy4hzSK2kqRtE2_h";
   const [isRecaptchaCompleted, setIsRecaptchaCompleted] = useState(false);
   const handleRecaptchaChange = (value) => {
     setIsRecaptchaCompleted(true);
@@ -23,10 +23,10 @@ export default function ContactForm(props) {
 
     emailjs
       .sendForm(
-        "kitsunebiContact",
-        "contactForm",
+        "BlueKitsunebiForm",
+        "BlueKitsunebiForm",
         form.current,
-        "emF53fN-efJlSe2Oj"
+        "2kpClbJCkav0Qd87S"
       )
       .then(
         (result) => {
@@ -42,10 +42,12 @@ export default function ContactForm(props) {
 
   return (
     <form ref={form} onSubmit={sendEmail} className={styles.ContactForm}>
-      <label>Name</label>
-      <input type="text" name="form_name" autoComplete="name" onFocus={() => setIsSend("false")} required/>
+      <label>First name</label>
+      <input type="text" name="form_firstName" autoComplete="given-name" onFocus={() => setIsSend("false")} required/>
+      <label>Last name</label>
+      <input type="text" name="form_lastName" autoComplete="family-name" onFocus={() => setIsSend("false")} required/>
       <label>Email</label>
-      <input type="email" name="form_email" onFocus={() => setIsSend("false")} required/>
+      <input type="email" name="form_email" autoComplete="email" onFocus={() => setIsSend("false")} required/>
       <label>Message</label>
       <textarea name="message" rows="7" onFocus={() => setIsSend("false")} required/>
       <div className={styles.checkboxContainer}>

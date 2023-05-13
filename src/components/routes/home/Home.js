@@ -36,19 +36,8 @@ export default function Home() {
   const toSection = useSelector((state) => state.router.toSection);
   const wasClicked = useSelector((state) => state.router.wasClicked);
 
-  console.log("previousLocation: ", previousLocation)
-  console.log("link: ", link)
-  console.log("toSection: ", toSection)
-  console.log("wasClicked: ", wasClicked)
-
   const [isAllRendered, setIsAllRendered] = useState(false);
   const handleComponentRender = () => {
-    console.log(heroSectionRef.current);
-    console.log(aboutSectionRef.current);
-    console.log(languageCoursesSectionRef.current);
-    console.log(programmingSectionRef.current);
-    console.log(faqSectionRef.current);
-    console.log(contactSectionRef.current);
     if (
       heroSectionRef.current &&
       aboutSectionRef.current &&
