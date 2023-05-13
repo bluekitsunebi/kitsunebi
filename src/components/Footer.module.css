@@ -18,8 +18,25 @@
   margin-right: 1.5rem;
 }
 
+.email {
+  width: fit-content;
+  transition: transform 0.3s ease;
+}
+
+.email:hover .mailIcon,
+.email:active .mailIcon {
+  color: var(--navyTint90);
+  transform: scale(1.2);
+}
+
 .social {
   grid-column: 3;
+  width: fit-content;
+  transition: transform 0.3s ease;
+}
+
+.social:hover, .social:active {
+  transform: scale(1.2);
 }
 
 .copyright {
@@ -32,4 +49,11 @@
   text-decoration: none;
   color: var(--navyTint70);
   background-color: var(--navyShadow50);
+}
+
+.contact:hover, .contact:active,
+.faq:hover, .faq:active,
+.about:hover, .about:active,
+.email:hover, .email:active {
+  color: var(--navyTint90);
 }

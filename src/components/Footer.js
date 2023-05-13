@@ -16,7 +16,7 @@ export default function Footer() {
   const FAQsectionPosition = useSelector((state) => state.FAQsection.yAxisPosition) - headerHeight;
   const contactSectionPosition = useSelector((state) => state.contactSection.yAxisPosition) - headerHeight;
 
-  const handleClick = (sectionPosition, link, section) => {
+  const handleSectionClick = (sectionPosition, link, section) => {
     window.scroll({
       top: sectionPosition,
       left: 0,
@@ -28,9 +28,17 @@ export default function Footer() {
     dispatch(switchWasClicked());
   };
 
+  const handleEmailClick = () => {
+    const recipientEmail = 'bluekitsunebi@gmail.com';
+    const subject = 'Contact Blue Kitsunebi';
+
+    const emailUrl = `https://mail.google.com/mail/?view=cm&to=${recipientEmail}&su=${subject}`;
+    window.open(emailUrl, '_blank');
+  };
+
   return (
     <footer className={styles.Footer}>
-      <div className={styles.email}>
+      <div className={styles.email} onClick={handleEmailClick}>
         <span className={`${"material-icons-round"} ${styles.mailIcon}`}>
           email
         </span>
@@ -40,7 +48,7 @@ export default function Footer() {
       <Link to={"/"} className={styles.link}>
         <div
           className={styles.about}
-          onClick={() => handleClick(aboutSectionPosition, "/", "aboutSection")}
+          onClick={() => handleSectionClick(aboutSectionPosition, "/", "aboutSection")}
         >
           About
         </div>
@@ -56,7 +64,7 @@ export default function Footer() {
       <Link to={"/"} className={styles.link}>
         <div
           className={styles.faq}
-          onClick={() => handleClick(FAQsectionPosition, "/", "FAQsection")}
+          onClick={() => handleSectionClick(FAQsectionPosition, "/", "FAQsection")}
         >
           FAQ
         </div>
@@ -65,7 +73,7 @@ export default function Footer() {
       <Link to={"/"} className={styles.link}>
         <div
           className={styles.contact}
-          onClick={() => handleClick(contactSectionPosition, "/", "contactSection")}
+          onClick={() => handleSectionClick(contactSectionPosition, "/", "contactSection")}
         >
           Contact
         </div>

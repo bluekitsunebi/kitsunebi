@@ -1,7 +1,7 @@
 @import url('../../../../helpers/colors.css');
 
 .programmingSection {
-    height: 90vh;
+    height: 70vh;
     background-color: var(--blueTint10);
     padding: 3rem 5rem 10rem 5rem;
 }

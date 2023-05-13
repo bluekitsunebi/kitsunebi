@@ -82,8 +82,8 @@ export default function Card(props) {
         </div>
       </div>
 
-      <Arrows arrows={arrows} order="first" direction="down" opposite="up" id={id} title={title} section="languageCoursesSection"></Arrows>
-      <Arrows arrows={arrows} order="second" direction="up" opposite="down" id={id} title={title} section={id}></Arrows>
+      {/* <Arrows arrows={arrows} order="first" direction="down" opposite="up" id={id} title={title} section="languageCoursesSection"></Arrows> */}
+      {/* <Arrows arrows={arrows} order="second" direction="up" opposite="down" id={id} title={title} section={id}></Arrows> */}
     </div>
   );
 }
