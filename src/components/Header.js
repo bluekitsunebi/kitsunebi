@@ -45,33 +45,37 @@ export default function Header() {
       dispatch(setColor("var(--navyShadow50)"));
     }
 
-    if (
-      window.scrollY + middle >= 0 &&
-      window.scrollY + middle < aboutSectionPosition
-    ) {
-      dispatch(setUnderlined("home"));
-    } else if (
-      window.scrollY + middle >= aboutSectionPosition &&
-      window.scrollY + middle < languageCoursesSectionPosition
-    ) {
-      dispatch(setUnderlined("about"));
-    } else if (
-      window.scrollY + middle >= languageCoursesSectionPosition &&
-      window.scrollY + middle < programmingSectionPosition
-    ) {
+    if (location === "/"){
+      if (
+        window.scrollY + middle >= 0 &&
+        window.scrollY + middle < aboutSectionPosition
+      ) {
+        dispatch(setUnderlined("home"));
+      } else if (
+        window.scrollY + middle >= aboutSectionPosition &&
+        window.scrollY + middle < languageCoursesSectionPosition
+      ) {
+        dispatch(setUnderlined("about"));
+      } else if (
+        window.scrollY + middle >= languageCoursesSectionPosition &&
+        window.scrollY + middle < programmingSectionPosition
+      ) {
+        dispatch(setUnderlined("language"));
+      } else if (
+        window.scrollY + middle >= programmingSectionPosition &&
+        window.scrollY + middle < FAQsectionPosition
+      ) {
+        dispatch(setUnderlined("programming"));
+      } else if (
+        window.scrollY + middle >= FAQsectionPosition &&
+        window.scrollY + middle < contactSectionPosition
+      ) {
+        dispatch(setUnderlined("faq"));
+      } else if (window.scrollY + middle >= contactSectionPosition) {
+        dispatch(setUnderlined("contact"));
+      }
+    } else if (location.match(/individual-custom-japanese.*/) || location.match(/group-custom-japanese.*/) || location.match(/individual-custom-english.*/) || location.match(/group-custom-english.*/)){
       dispatch(setUnderlined("language"));
-    } else if (
-      window.scrollY + middle >= programmingSectionPosition &&
-      window.scrollY + middle < FAQsectionPosition
-    ) {
-      dispatch(setUnderlined("programming"));
-    } else if (
-      window.scrollY + middle >= FAQsectionPosition &&
-      window.scrollY + middle < contactSectionPosition
-    ) {
-      dispatch(setUnderlined("faq"));
-    } else if (window.scrollY + middle >= contactSectionPosition) {
-      dispatch(setUnderlined("contact"));
     }
   };
 
