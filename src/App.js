@@ -14,7 +14,7 @@ import Mobile from "./components/mobile/Mobile";
 function App() {
   return (
     <Fragment>
-      <BrowserView>
+      {/* <BrowserView> */}
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -99,10 +99,10 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-      </BrowserView>
-      <MobileView>
+      {/* </BrowserView> */}
+      {/* <MobileView>
         <Mobile />
-      </MobileView>
+      </MobileView> */}
     </Fragment>
   );
 }
