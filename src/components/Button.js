@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./Button.module.css";
-import { scroll } from "../helpers/helpers";
+// import { scroll } from "../helpers/helpers";
 import { setLocation, setLink, setSection, switchWasClicked } from "../store/routerSlice";
+import { setMenu } from "../store/headerSlice";
 
 function Button(props) {
   const location = useLocation().pathname;
@@ -68,6 +69,9 @@ function Button(props) {
     sectionPosition = roSubsectionPosition - headerHeight;
   }
 
+  let isOpen = useSelector((state) => state.header.isOpen);
+  console.log(isOpen)
+
   const handleClick = () => {
     window.scroll({
       top: sectionPosition,
@@ -78,6 +82,10 @@ function Button(props) {
     dispatch(setLink(link));
     dispatch(setSection(section));
     dispatch(switchWasClicked());
+    if(category === "header"){
+      dispatch(setMenu());
+      console.log(isOpen)
+    }
   };
 
   return (

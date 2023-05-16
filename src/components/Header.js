@@ -126,6 +126,7 @@ export default function Header() {
       <nav className={`${styles.navbar} ${!isOpen && styles.navbar__close}`} >
         <Button
           name="home"
+          category="header"
           text="home"
           type="withoutBorder"
           position=""
@@ -137,6 +138,7 @@ export default function Header() {
 
         <Button
           name="about"
+          category="header"
           text="about"
           type="withoutBorder"
           position=""
@@ -149,6 +151,7 @@ export default function Header() {
         <div className={styles.dropdown}>
           <Button
             name="language"
+            category="header"
             text="language courses"
             type="withoutBorder"
             position=""
@@ -196,6 +199,7 @@ export default function Header() {
 
         <Button
           name="programming"
+          category="header"
           text="programming"
           type="withoutBorder"
           position=""
@@ -207,6 +211,7 @@ export default function Header() {
 
         <Button
           name="faq"
+          category="header"
           text="faq"
           type="withoutBorder"
           position=""
@@ -218,6 +223,7 @@ export default function Header() {
 
         <Button
           name="contact"
+          category="header"
           text="contact"
           type="withoutBorder"
           position=""

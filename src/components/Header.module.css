@@ -55,7 +55,7 @@
     display: none;
     color: var(--textLight);
     font-size: 2rem;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .menu:hover, .menu:active {
@@ -87,10 +87,6 @@
     display: block;
     align-self: flex-start;
     position: absolute;
-  }
-
-  .Logo {
-    padding: 1rem;
   }
 
   .navbar {
