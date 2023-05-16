@@ -20,3 +20,6 @@
 .logoName p {
     margin: 0;
 }
+
+@media (max-width: 1470px) {
+}

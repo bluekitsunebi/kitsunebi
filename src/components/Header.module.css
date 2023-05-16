@@ -1,59 +1,109 @@
 @import url("../helpers/colors.css");
 
-.header {
-    display: flex;
-    justify-content: space-around;
-    justify-items: center;
-    align-items: center;
-    height: min-content;
-    width: 100%;
-    z-index: 3;
-    position: fixed;
-    padding: 0.5rem;
+.Header {
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  height: min-content;
+  width: 100%;
+  z-index: 3;
+  position: fixed;
+  padding: 0.5rem;
 }
 
-/* @media (min-width: 1470px) { */
-    /* … */
-/* } */
-
 .Logo {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    width: 70vw;
+  display: flex;
+  justify-content: space-around;
+  width: 70vw;
 }
 
 /* DROPDOWN */
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: transparent;
-    z-index: 4;
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  z-index: 4;
 }
 
 .dropdownContent Button {
-    margin-top: 10px;
-    text-align: start;
+  margin-top: 10px;
+  text-align: start;
 }
 
 .dropdownContent Button:hover {
-    color: var(--blueTint10);
+  color: var(--blueTint10);
 }
-  
+
 .dropdown:hover .dropdownContent {
+  display: block;
+}
+
+/* Mobile Header */
+
+.menu {
+    display: none;
+    color: var(--textLight);
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.menu:hover, .menu:active {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
     display: block;
 }
 
-@media screen and (min-width: 30rem) and (orientation: landscape) {
-    /* … */
+@media (max-width: 1470px) {
+  .Header {
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  
+
+  .logoContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu {
+    display: block;
+    align-self: flex-start;
+    position: absolute;
+  }
+
+  .Logo {
+    padding: 1rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: auto;
+    align-items: center;
+    width: fit-content;
+    height: 90vh;
+    padding: 1rem;
+  }
+
+  .dropdown:hover .dropdownContent {
+    display: none;
+  }
+}

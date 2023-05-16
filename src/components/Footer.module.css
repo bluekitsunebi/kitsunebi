@@ -21,6 +21,7 @@
 .email {
   width: fit-content;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .email:hover .mailIcon,
@@ -37,6 +38,7 @@
 
 .social:hover, .social:active {
   transform: scale(1.2);
+  cursor: pointer;
 }
 
 .copyright {

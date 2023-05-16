@@ -98,3 +98,11 @@
 .uppercase {
     text-transform: uppercase;
 }
+
+/* Mobile version */
+
+@media (max-width: 1470px) {
+    .underline {
+        text-decoration: none;
+    }
+}

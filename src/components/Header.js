@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setHeight, setUnderlined, setColor } from "../store/headerSlice";
+import { setHeight, setUnderlined, setColor, setMenu } from "../store/headerSlice";
 import styles from "./Header.module.css";
 import Logo from "./Logo";
 import Button from "./Button";
@@ -14,7 +14,10 @@ export default function Header() {
   }, [dispatch]);
 
   const headerHeight = useSelector((state) => state.header.height);
-  let headerColor = useSelector((state) => state.header.color);
+  const color = useSelector((state) => state.header.color);
+  let isOpen = useSelector((state) => state.header.isOpen);
+  let headerColor = !isOpen ? color : "var(--navyShadow50)";
+
   let underlineButton = useSelector((state) => state.header.underlined);
 
   const aboutSectionPosition = useSelector(
@@ -45,7 +48,7 @@ export default function Header() {
       dispatch(setColor("var(--navyShadow50)"));
     }
 
-    if (location === "/"){
+    if (location === "/") {
       if (
         window.scrollY + middle >= 0 &&
         window.scrollY + middle < aboutSectionPosition
@@ -74,7 +77,12 @@ export default function Header() {
       } else if (window.scrollY + middle >= contactSectionPosition) {
         dispatch(setUnderlined("contact"));
       }
-    } else if (location.match(/individual-custom-japanese.*/) || location.match(/group-custom-japanese.*/) || location.match(/individual-custom-english.*/) || location.match(/group-custom-english.*/)){
+    } else if (
+      location.match(/individual-custom-japanese.*/) ||
+      location.match(/group-custom-japanese.*/) ||
+      location.match(/individual-custom-english.*/) ||
+      location.match(/group-custom-english.*/)
+    ) {
       dispatch(setUnderlined("language"));
     }
   };
@@ -84,25 +92,38 @@ export default function Header() {
   });
 
   const handleLogoClick = () => {
-    if(location === "/") {
+    if (location === "/") {
       window.scrollTo(0, 0);
     }
+  };
+
+  console.log("isOpen: ", isOpen);
+  const handleMenu = () => {
+    dispatch(setMenu());
   };
 
   return (
     <header
       id="header"
       ref={headerRef}
-      className={styles.header}
+      className={styles.Header}
       style={{ background: headerColor }}
     >
+      <div
+        className={`${styles.menu} material-icons-round`}
+        onClick={handleMenu}
+      >
+        <span>
+          {isOpen ? "close" : "menu"}
+        </span>
+      </div>
       <Link to={"/"} className={styles.Logo}>
         <div onClick={handleLogoClick}>
           <Logo />
         </div>
       </Link>
 
-      <nav className={styles.navbar}>
+      <nav className={`${styles.navbar}`} >
         <Button
           name="home"
           text="home"
