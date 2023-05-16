@@ -70,7 +70,6 @@ function Button(props) {
   }
 
   let isOpen = useSelector((state) => state.header.isOpen);
-  console.log(isOpen)
 
   const handleClick = () => {
     window.scroll({
@@ -84,7 +83,6 @@ function Button(props) {
     dispatch(switchWasClicked());
     if(category === "header"){
       dispatch(setMenu());
-      console.log(isOpen)
     }
   };
 

@@ -1,7 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setHeight, setUnderlined, setColor, setMenu } from "../store/headerSlice";
+import {
+  setHeight,
+  setUnderlined,
+  setColor,
+  setMenu,
+} from "../store/headerSlice";
 import styles from "./Header.module.css";
 import Logo from "./Logo";
 import Button from "./Button";
@@ -96,8 +101,7 @@ export default function Header() {
       window.scrollTo(0, 0);
     }
   };
-
-  console.log("isOpen: ", isOpen);
+  
   const handleMenu = () => {
     dispatch(setMenu());
   };
@@ -113,9 +117,7 @@ export default function Header() {
         className={`${styles.menu} material-icons-round`}
         onClick={handleMenu}
       >
-        <span>
-          {isOpen ? "close" : "menu"}
-        </span>
+        <span>{isOpen ? "close" : "menu"}</span>
       </div>
       <Link to={"/"} className={styles.Logo}>
         <div onClick={handleLogoClick}>
@@ -123,7 +125,21 @@ export default function Header() {
         </div>
       </Link>
 
-      <nav className={`${styles.navbar} ${!isOpen && styles.navbar__close}`} >
+      <div className={styles.header__phone}>
+        <div
+          className={`${styles.menu__phone} material-icons-round`}
+          onClick={handleMenu}
+        >
+          <span>{isOpen ? "close" : "menu"}</span>
+        </div>
+        <Link to={"/"} className={styles.Logo__phone}>
+          <div onClick={handleLogoClick}>
+            <Logo />
+          </div>
+        </Link>
+      </div>
+
+      <nav className={`${styles.navbar} ${!isOpen && styles.navbar__close}`}>
         <Button
           name="home"
           category="header"

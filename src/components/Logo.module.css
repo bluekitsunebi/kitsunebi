@@ -21,5 +21,33 @@
     margin: 0;
 }
 
-@media (max-width: 1470px) {
+@media (max-width: 450px) {
+    .logoWithText {
+        width: fit-content;
+    }
+
+    .logo {
+        height: 2.5rem;
+    }
+
+    .logoName {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 300px) {
+    .logo {
+        height: 2rem;
+    }
+
+    .logoName {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 220px) {
+    /* .logoName {
+        display: none;
+    } */
 }

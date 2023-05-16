@@ -68,7 +68,7 @@
 }
 
 .titleImageCategoriesContainer {
-    height: 75vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -194,7 +194,7 @@
 }
 
 .description {
-    height: 75vh;
+    height: 100%;
     font-size: 2rem;
     display: none;
     flex-direction: column;
@@ -221,3 +221,58 @@
       -webkit-mask-position: right;
     }
 }
+
+.cover {
+    /* background-color: green; */
+}
+
+.halfBackground {
+    /* background-color: blue; */
+}
+
+.halfBackground__left {
+    /* background-color: orange; */
+}
+
+.halfBackground__right {
+    /* background-color: yellow; */
+}
+
+
+.coverContentContainer {
+    /* background-color: indigo; */
+}
+
+.coverText{
+    /* background-color: darkcyan; */
+}
+
+
+.titleImageCategoriesContainer {
+    /* background-color: red; */
+}
+
+.description {
+    /* background-color: red; */
+}
+
+/* MOBILE HERO SECTION */
+
+/* @media (min-width: 1670px) {
+    .description{
+        padding: 0 0 0.5rem 0;
+    }
+
+    .description__right{
+        padding-right: 0.2rem;
+    }
+
+    .description__left{
+        padding-left: 0.2rem;
+    }
+
+    .titleImageCategoriesContainer{
+        margin: 0;
+    }
+} */
+/* 1670 */

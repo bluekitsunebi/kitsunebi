@@ -1,10 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./HeroSection.module.css";
 import Button from "../../../Button"
 
 let timer = 0;
 
 export default function HeroSection({ onRender }) {
+  const heroSectionRef = useRef(null);
+  const halfBackgroundLeftRef = useRef(null);
+  const halfBackgroundRightRef = useRef(null);
+  const coverContentContainerLeftRef = useRef(null);
+  const coverContentContainerRightRef = useRef(null);
+  const descriptionLeftRef = useRef(null);
+  const descriptionRightRef = useRef(null);
+  const titleLeftRef = useRef(null);
+  const titleRightRef = useRef(null);
+  
+
   useEffect(() => {
     if (typeof onRender === "function") {
       onRender();
@@ -16,69 +27,69 @@ export default function HeroSection({ onRender }) {
       clearTimeout(timer);
       timer = null;
     } else {
-      this.document.getElementById("halfBackgroundLeft").style.transition = "none"
-      this.document.getElementById("halfBackgroundRight").style.transition = "none"
-      this.document.getElementById("coverContentContainerLeft").style.transition = "none"
-      this.document.getElementById("coverContentContainerRight").style.transition = "none"
+      halfBackgroundLeftRef.current.style.transition = "none"
+      halfBackgroundRightRef.current.style.transition = "none"
+      coverContentContainerLeftRef.current.style.transition = "none"
+      coverContentContainerRightRef.current.style.transition = "none"
     }
     timer = setTimeout(() => {
-      this.document.getElementById("halfBackgroundLeft").style.transition = "all .2s linear"
-      this.document.getElementById("halfBackgroundRight").style.transition = "all .2s linear"
-      this.document.getElementById("coverContentContainerLeft").style.transition = "all .2s linear"
-      this.document.getElementById("coverContentContainerRight").style.transition = "all .2s linear"
+      halfBackgroundLeftRef.current.style.transition = "all .2s linear"
+      halfBackgroundRightRef.current.style.transition = "all .2s linear"
+      coverContentContainerLeftRef.current.style.transition = "all .2s linear"
+      coverContentContainerRightRef.current.style.transition = "all .2s linear"
       timer = null;
     }, 100);
   })
 
   return (
-    <section id="heroSection" className={styles.heroSection}>
+    <section id="heroSection" ref={heroSectionRef} className={styles.heroSection}>
       <div
         className={styles.cover}
         onMouseLeave={() => {
-          document.getElementById("titleLeft").innerHTML = "Language Courses"
-          document.getElementById("halfBackgroundLeft").style.width = "60vw"
-          document.getElementById("halfBackgroundRight").style.width = "60vw"
-          document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 66.6% 100%, 100% 0%)"
-          document.getElementById("halfBackgroundRight").style.clipPath = "polygon(33.4% 0%, 0% 100%, 100% 100%, 100% 0%)"
-          document.getElementById("coverContentContainerLeft").style.width = "40vw"
-          document.getElementById("coverContentContainerRight").style.width = "40vw"
+          titleLeftRef.current.innerHTML = "Language Courses"
+          halfBackgroundLeftRef.current.style.width = "60vw"
+          halfBackgroundRightRef.current.style.width = "60vw"
+          halfBackgroundLeftRef.current.style.clipPath = "polygon(0% 0%, 0% 100%, 66.6% 100%, 100% 0%)"
+          halfBackgroundRightRef.current.style.clipPath = "polygon(33.4% 0%, 0% 100%, 100% 100%, 100% 0%)"
+          coverContentContainerLeftRef.current.style.width = "40vw"
+          coverContentContainerRightRef.current.style.width = "40vw"
         }}
       >
         
         <div 
-          id="halfBackgroundLeft" 
+          id="halfBackgroundLeft" ref={halfBackgroundLeftRef}
           className={`${styles.halfBackground} ${styles.halfBackground__left}`}
           onMouseEnter={() => {
-            document.getElementById("descriptionRight").style.display = "none"
-            document.getElementById("titleLeft").innerHTML = "Language<br>Courses"
-            document.getElementById("halfBackgroundLeft").style.width = "70vw"
-            document.getElementById("halfBackgroundRight").style.width = "50vw"
-            document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 71.42% 100%, 100% 0%)"
-            document.getElementById("halfBackgroundRight").style.clipPath = "polygon(40% 0%, 0% 100%, 100% 100%, 100% 0%)"
-            document.getElementById("coverContentContainerLeft").style.width = "50vw"
-            document.getElementById("coverContentContainerRight").style.width = "30vw"
-            document.getElementById("descriptionLeft").style.display = "flex"
-            document.getElementById("descriptionLeft").style.color = "transparent"
-            document.getElementById("descriptionLeft").style.width = "0"
+            descriptionRightRef.current.style.display = "none"
+            titleLeftRef.current.innerHTML = "Language<br>Courses"
+            halfBackgroundLeftRef.current.style.width = "70vw"
+            halfBackgroundRightRef.current.style.width = "50vw"
+            halfBackgroundLeftRef.current.style.clipPath = "polygon(0% 0%, 0% 100%, 71.42% 100%, 100% 0%)"
+            halfBackgroundRightRef.current.style.clipPath = "polygon(40% 0%, 0% 100%, 100% 100%, 100% 0%)"
+            coverContentContainerLeftRef.current.style.width = "50vw"
+            coverContentContainerRightRef.current.style.width = "30vw"
+            descriptionLeftRef.current.style.display = "flex"
+            descriptionLeftRef.current.style.color = "transparent"
+            descriptionLeftRef.current.style.width = "0"
             setTimeout(() => {
-              document.getElementById("descriptionLeft").style.width = "30vw"
+              descriptionLeftRef.current.style.width = "30vw"
             }, 0)
             setTimeout(() => {
-              document.getElementById("descriptionLeft").style.color = "aliceblue"
+              descriptionLeftRef.current.style.color = "aliceblue"
             }, 200)
           }}
           onMouseLeave={() => {
-            document.getElementById("descriptionLeft").style.display = "none"
+            descriptionLeftRef.current.style.display = "none"
           }}
         >
-          <div id="coverContentContainerLeft" className={styles.coverContentContainer}>
+          <div id="coverContentContainerLeft" ref={coverContentContainerLeftRef} className={styles.coverContentContainer}>
             <div className={styles.coverText}>
               <div className={styles.titleImageCategoriesContainer}>
                 <div className={`${styles.coverContainer} ${styles.coverLeft}`}>
                   <div className={`${styles.iconLeft} ${styles.icon}`}>和</div>
                 </div>
                 
-                <div id="titleLeft" className={styles.title}>Language Courses</div>
+                <div id="titleLeft" ref={titleLeftRef} className={styles.title}>Language Courses</div>
                 <Button
                   name="find out more"
                   text="find out more"
@@ -89,7 +100,7 @@ export default function HeroSection({ onRender }) {
                   section="languageCoursesSection"
                 />
               </div>
-              <ul id="descriptionLeft" className={styles.description}>
+              <ul id="descriptionLeft" ref={descriptionLeftRef} className={`${styles.description} ${styles.description__left}`}>
                 <li>courses available for Japanese and English languages</li>
                 <li>interactive learning activities</li>
                 <li>structured curriculum</li>
@@ -101,36 +112,36 @@ export default function HeroSection({ onRender }) {
         </div>
 
         <div 
-          id="halfBackgroundRight"
+          id="halfBackgroundRight" ref={halfBackgroundRightRef}
           className={`${styles.halfBackground} ${styles.halfBackground__right}`}
           onMouseEnter={() => {
-            document.getElementById("descriptionLeft").style.display = "none"
-            document.getElementById("titleLeft").innerHTML = "Language<br>Courses"
-            document.getElementById("halfBackgroundLeft").style.width = "50vw"
-            document.getElementById("halfBackgroundRight").style.width = "70vw"
-            document.getElementById("halfBackgroundLeft").style.clipPath = "polygon(0% 0%, 0% 100%, 60% 100%, 100% 0%)"
-            document.getElementById("halfBackgroundRight").style.clipPath = "polygon(28.57% 0%, 0% 100%, 100% 100%, 100% 0%)"
-            document.getElementById("coverContentContainerLeft").style.width = "30vw"
-            document.getElementById("coverContentContainerRight").style.width = "50vw"
-            document.getElementById("descriptionRight").style.display = "flex"
-            document.getElementById("descriptionRight").style.color = "transparent"
-            document.getElementById("descriptionRight").style.width = "0"
+            descriptionLeftRef.current.style.display = "none"
+            titleLeftRef.current.innerHTML = "Language<br>Courses"
+            halfBackgroundLeftRef.current.style.width = "50vw"
+            halfBackgroundRightRef.current.style.width = "70vw"
+            halfBackgroundLeftRef.current.style.clipPath = "polygon(0% 0%, 0% 100%, 60% 100%, 100% 0%)"
+            halfBackgroundRightRef.current.style.clipPath = "polygon(28.57% 0%, 0% 100%, 100% 100%, 100% 0%)"
+            coverContentContainerLeftRef.current.style.width = "30vw"
+            coverContentContainerRightRef.current.style.width = "50vw"
+            descriptionRightRef.current.style.display = "flex"
+            descriptionRightRef.current.style.color = "transparent"
+            descriptionRightRef.current.style.width = "0"
             setTimeout(() => {
-              document.getElementById("descriptionRight").style.width = "30vw"
+              descriptionRightRef.current.style.width = "30vw"
             }, 0)
             setTimeout(() => {
-              document.getElementById("descriptionRight").style.color = "aliceblue"
+              descriptionRightRef.current.style.color = "aliceblue"
             }, 200)
             
           }}
 
           onMouseLeave={() => {
-            document.getElementById("descriptionRight").style.display = "none"
+            descriptionRightRef.current.style.display = "none"
           }}
         >
-          <div id="coverContentContainerRight" className={`${styles.coverContentContainer} ${styles.coverContentContainer__right}`}>
+          <div id="coverContentContainerRight" ref={coverContentContainerRightRef} className={`${styles.coverContentContainer} ${styles.coverContentContainer__right}`}>
             <div className={styles.coverText}>
-              <ul id="descriptionRight" className={styles.description}>
+              <ul id="descriptionRight" ref={descriptionRightRef} className={`${styles.description} ${styles.description__right}`}>
                 <li>latest HTML and CSS standards and modern JavaScript</li>
                 <li>hands-on learning</li>
                 <li>real-world projects</li>
@@ -151,7 +162,7 @@ export default function HeroSection({ onRender }) {
                   </span>
                 </div>
 
-                <div id="titleRight" className={styles.title}>Programming</div>
+                <div id="titleRight" ref={titleRightRef} className={styles.title}>Programming</div>
                 <Button
                   name="find out more"
                   text="find out more"
