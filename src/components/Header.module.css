@@ -103,7 +103,15 @@
     padding: 1rem;
   }
 
+  .navbar__close {
+    display: none;
+  }
+
   .dropdown:hover .dropdownContent {
     display: none;
+  }
+
+  .Header__close {
+    height: fit-content;
   }
 }

@@ -106,7 +106,7 @@ export default function Header() {
     <header
       id="header"
       ref={headerRef}
-      className={styles.Header}
+      className={`${styles.Header} ${!isOpen && styles.Header__close}`}
       style={{ background: headerColor }}
     >
       <div
@@ -123,7 +123,7 @@ export default function Header() {
         </div>
       </Link>
 
-      <nav className={`${styles.navbar}`} >
+      <nav className={`${styles.navbar} ${!isOpen && styles.navbar__close}`} >
         <Button
           name="home"
           text="home"
