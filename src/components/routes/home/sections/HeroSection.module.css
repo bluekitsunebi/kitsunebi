@@ -195,7 +195,7 @@
 
 .description {
     height: 100%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -222,57 +222,28 @@
     }
 }
 
-.cover {
-    /* background-color: green; */
-}
-
-.halfBackground {
-    /* background-color: blue; */
-}
-
-.halfBackground__left {
-    /* background-color: orange; */
-}
-
-.halfBackground__right {
-    /* background-color: yellow; */
-}
+/* ANIMATION */
 
 
-.coverContentContainer {
-    /* background-color: indigo; */
-}
-
-.coverText{
-    /* background-color: darkcyan; */
-}
-
-
-.titleImageCategoriesContainer {
-    /* background-color: red; */
-}
-
-.description {
-    /* background-color: red; */
-}
 
 /* MOBILE HERO SECTION */
 
-/* @media (min-width: 1670px) {
-    .description{
-        padding: 0 0 0.5rem 0;
+@media (max-width: 900px) {
+    .title {
+        font-size: 2rem;
     }
 
-    .description__right{
-        padding-right: 0.2rem;
+    .description {
+        font-size: 1.3rem
+    }
+}
+
+@media (max-width: 550px) {
+    .title {
+        font-size: 1.5rem;
     }
 
-    .description__left{
-        padding-left: 0.2rem;
+    .description {
+        font-size: 1rem
     }
-
-    .titleImageCategoriesContainer{
-        margin: 0;
-    }
-} */
-/* 1670 */
+}

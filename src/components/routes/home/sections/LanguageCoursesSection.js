@@ -72,7 +72,7 @@ export default function LanguageCoursesSection({ onRender }) {
       className={styles.languageCoursesSection}
     >
       <div className={styles.title}>
-        <SectionTitle text="Language Courses" />
+        <SectionTitle text="Cursuri de limbi straine" />
       </div>
 
       <div className={styles.description}>{description}</div>

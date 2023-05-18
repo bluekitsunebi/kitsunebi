@@ -7,7 +7,7 @@ export function languageCoursesCardsData__Romanian() {
     individualCustomJapanese: {
       id: "individual custom japanese",
       imgSrc: "[ ]",
-      title: ["individual custom", "japanese"],
+      title: "individual custom japanese",
       lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
@@ -25,7 +25,7 @@ export function languageCoursesCardsData__Romanian() {
     groupCustomJapanese: {
       id: "group custom japanese",
       imgSrc: "[ ]",
-      title: ["group custom", "japanese"],
+      title: "group custom japanese",
       lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
@@ -43,7 +43,7 @@ export function languageCoursesCardsData__Romanian() {
     individualCustomJapaneseIntensive: {
       id: "individual custom japanese (intensive)",
       imgSrc: "[ ]",
-      title: ["individual custom", "japanese (intensive)"],
+      title: "individual custom japanese (intensive)",
       lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
@@ -61,7 +61,7 @@ export function languageCoursesCardsData__Romanian() {
     groupCustomJapaneseIntensive: {
       id: "group custom japanese (intensive)",
       imgSrc: "[ ]",
-      title: ["group custom", "japanese (intensive)"],
+      title: "group custom japanese (intensive)",
       lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
@@ -79,7 +79,7 @@ export function languageCoursesCardsData__Romanian() {
     animeJapanese: {
       id: "anime japanese",
       imgSrc: "アニメ",
-      title: ["anime japanese"],
+      title: "anime japanese",
       lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",

@@ -49,7 +49,7 @@ export default function ContactForm(props) {
       <label>Email</label>
       <input type="email" name="form_email" autoComplete="email" onFocus={() => setIsSend("false")} required/>
       <label>Message</label>
-      <textarea name="message" rows="7" onFocus={() => setIsSend("false")} required/>
+      <textarea name="message" rows="8" onFocus={() => setIsSend("false")} required/>
       <div className={styles.checkboxContainer}>
         <input type="checkbox" id="gdprContact" name="form_checkbox" value="agree" className={styles.checkbox} onFocus={() => setIsSend("false")} required/>
         <label>

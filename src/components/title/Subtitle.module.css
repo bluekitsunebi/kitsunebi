@@ -3,11 +3,17 @@
 @import url(../../helpers/colors.css);
 
 .Subtitle {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 500;
     color: var(--navy);
     display: flex;
     width: 100%;
     justify-content: center;
     padding-top: 1.5rem;
+}
+
+@media (max-width: 550px) {
+    .Subtitle {
+        font-size: 2rem;
+    }
 }

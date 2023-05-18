@@ -1,10 +1,16 @@
 @import url(../../helpers/colors.css);
 
 .Title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 500;
     color: var(--navy);
     display: flex;
     width: 100%;
     justify-content: center;
+}
+
+@media (max-width: 550px) {
+    .Title {
+        font-size: 2rem;
+    }
 }

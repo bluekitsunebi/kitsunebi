@@ -1,77 +1,98 @@
 @import url("../../helpers/colors.css");
 
 .ContactForm {
-    font-size: 1.5rem;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    color: var(--navy);
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--navy);
 }
 
-input, textarea {
-    margin-bottom: 1rem;
+input,
+textarea {
+  margin-bottom: 1rem;
 }
 
-.ContactForm, input[type="text"], input[type="email"], textarea {
-    font-size: 1.5rem;
-    color: var(--navy);
+.ContactForm,
+input[type="text"],
+input[type="email"],
+textarea {
+  font-size: 2rem;
+  color: var(--navy);
 }
 
 label {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .checkboxContainer {
-    display: flex;
+  display: flex;
 }
 
 .checkbox {
-    width: 1.7rem;
-    height: 1.7rem;
-    margin-right: 2rem;
-    margin-left: 0.8rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 2rem;
+  margin-left: 0.8rem;
 }
 
 .link {
-    text-decoration: none;
-    color: var(--blueShadow10);
+  text-decoration: none;
+  color: var(--blueShadow10);
 }
 
 .link:hover {
-    color: var(--blueTint20);
-    text-decoration: underline;
+  color: var(--blueTint20);
+  text-decoration: underline;
 }
 
 .link:active {
-    color: var(--navyTint20);
-    text-decoration: none;
+  color: var(--navyTint20);
+  text-decoration: none;
 }
 
 .confirmationContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-self: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-self: center;
 }
 
 .confirmation {
-    align-self: center;
+  align-self: center;
 }
 
 .buttonContainer {
-    align-self: center;
+  align-self: center;
 }
 
 .sendButton {
-   justify-self: center;
+  justify-self: center;
 }
 
 .hide {
-    color: transparent;
+  color: transparent;
 }
 
 .show {
-    color: var(--navyTint20);
+  color: var(--navyTint20);
+}
+
+@media (max-width: 900px) {
+  .ContactForm,
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .ContactForm,
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 1.5rem;
+  }
 }

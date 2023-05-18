@@ -1,75 +1,81 @@
 @import url("../helpers/colors.css");
 
 .Button {
-    font-size: 2rem;
-    padding: 0.1rem 0.8rem;
-    border-radius: 20px;
-    border-width: 3px;
-    cursor:pointer;
-    transition: background-color .2s linear, border-color .2s linear, color .2s linear;
+  font-size: 2rem;
+  padding: 0.1rem 0.8rem;
+  border-radius: 20px;
+  border-width: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s linear, border-color 0.2s linear,
+    color 0.2s linear;
+  width: fit-content;
+}
+
+.link {
+  width: fit-content;
 }
 
 /* WITHOUT BORDER */
 
 .button__withoutBorder {
-    color: var(--textLight);
-    background-color: transparent;
-    border: none;
+  color: var(--textLight);
+  background-color: transparent;
+  border: none;
 }
 
-.button__withoutBorder:hover{
-    color: var(--blueTint10);
+.button__withoutBorder:hover {
+  color: var(--blueTint10);
 }
 
 /* EMPTY */
 
 .button__empty {
-    color: var(--textLight);
-    background-color: transparent;
-    border-style: solid;
-    border-color: var(--textLight);
+  color: var(--textLight);
+  background-color: transparent;
+  border-style: solid;
+  border-color: var(--textLight);
 }
 
 .button__empty:hover {
-    background-color: var(--cinnabarTint10);
-    border-color: var(--cinnabarTint10);
+  background-color: var(--cinnabarTint10);
+  border-color: var(--cinnabarTint10);
 }
 
 .button__emptyColored {
-    color: var(--cinnabarTint30);
-    background-color: transparent;
-    border-style: solid;
-    border-color: var(--cinnabarTint30);
+  color: var(--cinnabarTint30);
+  background-color: transparent;
+  border-style: solid;
+  border-color: var(--cinnabarTint30);
 }
 
 .button__emptyColored:hover {
-    color: var(--textLight);
-    background-color: var(--cinnabarTint30);
-    border-color: var(--cinnabarTint30);
+  color: var(--textLight);
+  background-color: var(--cinnabarTint30);
+  border-color: var(--cinnabarTint30);
 }
 
 /* FULL */
 
 .button__full {
-    /* color: var(--navy); */
-    background-color: var(--cinnabarTint40);
-    border-style: solid;
-    border-color: var(--cinnabarTint40);
+  /* color: var(--navy); */
+  background-color: var(--cinnabarTint40);
+  border-style: solid;
+  border-color: var(--cinnabarTint40);
 }
 
 .button__full:hover {
-    background-color: var(--cinnabarTint40);
-    border-color: var(--cinnabarTint40);
-    color: var(--textLight);
+  background-color: var(--cinnabarTint40);
+  border-color: var(--cinnabarTint40);
+  color: var(--textLight);
 }
 
 /* GREYED OUT */
 
 .button__greyedOut {
-    color: grey;
-    background-color: transparent;
-    border-style: solid;
-    border-color: grey;
+  color: grey;
+  background-color: transparent;
+  border-style: solid;
+  border-color: grey;
 }
 
 .button__greyedOut:hover {
@@ -78,44 +84,49 @@
 /* --------------------------------------------- */
 
 .right:hover {
-    background-color: var(--navyTint10);
-    border-color: var(--navyTint10);
+  background-color: var(--navyTint10);
+  border-color: var(--navyTint10);
 }
 
 .underline {
-    text-decoration: underline;
-    text-decoration-color: var(--blueTint10);
+  text-decoration: underline;
+  text-decoration-color: var(--blueTint10);
 }
 
 .capitalize {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .capitalize__FirstLetter::first-letter {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 /* Mobile version */
 
 @media (max-width: 1470px) {
-    .underline {
-        text-decoration: none;
-    }
+  .underline {
+    text-decoration: none;
+  }
 }
 
-@media (max-width: 450px) {
-    .Button {
-        font-size: 1.5rem;
-    }
+@media (max-width: 900px) {
+  .Button {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .Button {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 300px) {
-    .Button {
-        font-size: 1rem;
-    }
+  .Button {
+    font-size: 1rem;
+  }
 }
-

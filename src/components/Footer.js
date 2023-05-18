@@ -45,7 +45,7 @@ export default function Footer() {
         vicentiuchesca@gmail.com
       </div>
       <div className={styles.terms}>Terms and conditions</div>
-      <Link to={"/"} className={styles.link}>
+      <Link to={"/"} className={`${styles.link} ${styles.aboutLink}`}>
         <div
           className={styles.about}
           onClick={() => handleSectionClick(aboutSectionPosition, "/", "aboutSection")}
@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
       </Link>
 
-      <Link to={"/"} className={styles.link}>
+      <Link to={"/"} className={`${styles.link} ${styles.contactLink}`}>
         <div
           className={styles.contact}
           onClick={() => handleSectionClick(contactSectionPosition, "/", "contactSection")}

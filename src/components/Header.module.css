@@ -19,6 +19,7 @@
 .navbar {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 70vw;
 }
 
@@ -75,7 +76,7 @@
     display: block;
 }
 
-@media (max-width: 1470px) {
+@media (max-width: 1655px) {
   .Header {
     width: 100vw;
     height: 100vh;
@@ -117,7 +118,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   .menu {
     font-size: 1.5rem;
     padding: 1rem 0.5rem;

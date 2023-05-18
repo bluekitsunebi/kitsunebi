@@ -1,7 +1,23 @@
-@import url('../../../../helpers/colors.css');
+@import url("../../../../helpers/colors.css");
 
 .faqSection {
-    height: 50vh;
-    background-color: var(--orangeTint90);
-    padding: 3rem 5rem 10rem 5rem;
+  /* box-sizing: content-box; */
+  background-color: var(--orangeTint90);
+  padding: 3rem 5rem 5rem 5rem;
+}
+
+@media (max-width: 900px) {
+  .description {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .faqSection {
+    padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+  }
 }

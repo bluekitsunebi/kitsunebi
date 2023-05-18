@@ -33,7 +33,7 @@ function AboutSection({ onRender }) {
       ref={aboutSectionRef}
       className={styles.aboutSection}
     >
-      <SectionTitle text="About us" />
+      <SectionTitle text="Despre noi" />
       <div className={styles.description}>{description}</div>
     </section>
   );

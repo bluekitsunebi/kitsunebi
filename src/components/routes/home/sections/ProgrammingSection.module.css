@@ -1,7 +1,48 @@
-@import url('../../../../helpers/colors.css');
+@import url("../../../../helpers/colors.css");
 
 .programmingSection {
-    height: 70vh;
-    background-color: var(--blueTint10);
-    padding: 3rem 5rem 10rem 5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blueTint10);
+  padding: 3rem 5rem 5rem 5rem;
+}
+
+.title {
+  margin-bottom: 5rem;
+}
+
+.description {
+  height: 100%;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .programmingSection {
+    padding: 2rem 4rem 4rem 4rem;
+  }
+
+  .title {
+    margin-bottom: 2rem;
+  }
+
+  .description {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .programmingSection {
+    padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+  }
+
+  .title {
+    margin-bottom: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
 }

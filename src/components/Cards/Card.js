@@ -6,7 +6,7 @@ import Arrows from "./Arrows";
 export default function Card(props) {
   const id = props.id;
   const imgSrc = props.imgSrc;
-  const title = [...props.title];
+  const title = props.title;
   const lessons = props.lessons;
   const details = [...props.details];
   const price = props.price;
@@ -36,9 +36,10 @@ export default function Card(props) {
           ${id === "CardsSubsectionRomanian" && styles.titleContainer__ro}
           `}>
           <div className={styles.title}>
-            {title[0] && <div>{title[0]}</div>}
+            {title}
+            {/* {title[0] && <div>{title[0]}</div>}
             {title[1] && <div>{title[1]}</div>}
-            {title[2] && <div>{title[2]}</div>}
+            {title[2] && <div>{title[2]}</div>} */}
           </div>
         </div>
         <div className={styles.lessons}>{lessons}</div>

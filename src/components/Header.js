@@ -101,7 +101,7 @@ export default function Header() {
       window.scrollTo(0, 0);
     }
   };
-  
+
   const handleMenu = () => {
     dispatch(setMenu());
   };
@@ -143,7 +143,7 @@ export default function Header() {
         <Button
           name="home"
           category="header"
-          text="home"
+          text="acasa"
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -155,7 +155,7 @@ export default function Header() {
         <Button
           name="about"
           category="header"
-          text="about"
+          text="despre"
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -168,7 +168,7 @@ export default function Header() {
           <Button
             name="language"
             category="header"
-            text="language courses"
+            text="cursuri limbi straine"
             type="withoutBorder"
             position=""
             underlinedButton={underlineButton}
@@ -182,7 +182,17 @@ export default function Header() {
           >
             <Button
               name="japanese"
-              text="japanese &nbsp; &nbsp; &nbsp; &nbsp; (in English)"
+              text="japoneza &nbsp; &nbsp; &nbsp; &nbsp; (predata in limba romana)"
+              type="withoutBorder"
+              position=""
+              underlinedButton=""
+              transform="capitalizeFirstLetter"
+              section="roSubsection"
+              link="/"
+            />
+            <Button
+              name="japanese"
+              text="japoneza &nbsp; &nbsp; &nbsp; &nbsp; (predata in limba engleza)"
               type="withoutBorder"
               position=""
               underlinedButton=""
@@ -192,22 +202,12 @@ export default function Header() {
             />
             <Button
               name="english"
-              text="english &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (in Japanese)"
+              text="engleza &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (predata in limba japoneza)"
               type="withoutBorder"
               position=""
               underlinedButton=""
               transform="capitalizeFirstLetter"
               section="jpSubsection"
-              link="/"
-            />
-            <Button
-              name="japanese"
-              text="japanese &nbsp; &nbsp; &nbsp; &nbsp; (in Romanian)"
-              type="withoutBorder"
-              position=""
-              underlinedButton=""
-              transform="capitalizeFirstLetter"
-              section="roSubsection"
               link="/"
             />
           </div>
@@ -216,7 +216,7 @@ export default function Header() {
         <Button
           name="programming"
           category="header"
-          text="programming"
+          text="Dezvoltare software"
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}

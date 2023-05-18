@@ -1,9 +1,31 @@
 .CardsGrid {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: 9rem;
-    justify-content: space-between;
-    justify-items: center;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+    row-gap: 8vw;
+}
+
+@media (max-width: 1530px) {
+    .CardsGrid {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 1050px) {
+    .CardsGrid {
+        grid-template-columns: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .CardsGrid {
+        row-gap: 10vw;
+    }
+}
+
+@media (max-width: 300px) {
+    .CardsGrid {
+        row-gap: 15vw;
+    }
 }

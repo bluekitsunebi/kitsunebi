@@ -1,16 +1,8 @@
 @import url("../../../../helpers/colors.css");
 
 .languageCoursesSection {
-  height: fit-content;
-  min-height: fit-content;
   background-color: var(--orangeTint90);
-  padding: 3rem 5rem 5rem 5rem;
-
-  overflow: hidden;
-}
-
-.title {
-  padding-bottom: 5rem;
+  padding: 3rem 0rem 5rem 0rem;
 }
 
 .description,
@@ -21,15 +13,28 @@
 .description {
   font-size: 2rem;
   margin-bottom: 5rem;
-  height: 60vh;
-  min-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 2.5rem 5rem 5rem 5rem;
 }
 
-.cardsDescription {
-  width: 100%;
-  height: fit-content;
-  font-size: 2rem;
+@media (max-width: 900px) {
+  .languageCoursesSection {
+    padding: 2rem 0rem 2rem 0rem;
+  }
+  .description {
+    font-size: 1.7rem;
+    margin: 2rem 4rem 4rem 4rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .languageCoursesSection {
+    padding: 1.5rem 0rem 0rem 0rem;
+  }
+  .description {
+    font-size: 1.5rem;
+    margin: 2.5rem 2.5rem 2.5rem 2.5rem;
+  }
 }

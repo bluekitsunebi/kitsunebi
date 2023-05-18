@@ -1,5 +1,5 @@
 .CardsSubsection {
-    margin-bottom: 7rem;
+    padding-bottom: 7rem;
 }
 
 .subtitle {
@@ -8,4 +8,10 @@
 
 .hide {
     display: none;
+}
+
+@media (max-width: 550px) {
+    .CardsSubsection {
+        padding-bottom: 2rem;
+    }
 }

@@ -6,7 +6,7 @@ export function languageCoursesCardsData__Japanese() {
     individualCustomEnglish: {
       id: "individual custom english",
       imgSrc: "[ ]",
-      title: ["individual custom", "english"],
+      title: "individual custom english",
       lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
@@ -24,7 +24,7 @@ export function languageCoursesCardsData__Japanese() {
     groupCustomEnglish: {
       id: "group custom english",
       imgSrc: "[ ]",
-      title: ["group custom", "english"],
+      title: "group custom english",
       lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
@@ -42,7 +42,7 @@ export function languageCoursesCardsData__Japanese() {
     individualCustomEnglishIntensive: {
       id: "individual custom english (intensive)",
       imgSrc: "[ ]",
-      title: ["individual custom", "english (intensive)"],
+      title: "individual custom english (intensive)",
       lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
@@ -60,7 +60,7 @@ export function languageCoursesCardsData__Japanese() {
     groupCustomEnglishIntensive: {
       id: "group custom english (intensive)",
       imgSrc: "[ ]",
-      title: ["group custom", "english (intensive)"],
+      title: "group custom english (intensive)",
       lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
