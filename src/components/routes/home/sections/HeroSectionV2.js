@@ -31,6 +31,25 @@ export default function HeroSection({ onRender }) {
     (state) => state.heroSection.descriptionLeft__entered
   );
 
+  let halfAnimation = "middle";
+
+  if (
+    isEntered__backgroundLeft === "false" ||
+    isEntered__titleLeft === "false" ||
+    isEntered__descriptionLeft === "false"
+  ) {
+    halfAnimation = "expand";
+  } else if (
+    isEntered__hero === "false" &&
+    isEntered__backgroundLeft === "true" &&
+    isEntered__titleLeft === "true" &&
+    isEntered__descriptionLeft === "true"
+  ) {
+    halfAnimation = "contract";
+  } else if (isEntered__hero === "true") {
+    halfAnimation = "middle";
+  }
+
   const handleMouseEnter__hero = () => {
     dispatch(setHeroSection__entered("false"));
   };
@@ -69,14 +88,11 @@ export default function HeroSection({ onRender }) {
         id="halfBackgroundLeft"
         ref={halfBackgroundLeftRef}
         className={`
-            ${styles.halfBackground} ${styles.halfBackground__left}
-            ${
-              isEntered__backgroundLeft === "false" ||
-              isEntered__titleLeft === "false" ||
-              isEntered__descriptionLeft === "false"
-                ? styles.expandLeft
-                : styles.contractLeft
-            }
+            ${styles.halfBackground} ${styles.halfBackgroundLeft}
+            ${halfAnimation === "middle" && styles.middle}
+            ${halfAnimation === "expand" && styles.expandLeft}
+            ${halfAnimation === "contract" && styles.contractLeft}
+
         `}
         onMouseEnter={handleMouseEnter__left}
         onMouseLeave={handleMouseLeave__left}
@@ -87,9 +103,7 @@ export default function HeroSection({ onRender }) {
         ${styles.titleImageContainer}
         ${styles.titleImageContainer__left}
         ${
-          isEntered__backgroundLeft === "false" ||
-          isEntered__titleLeft === "false" ||
-          isEntered__descriptionLeft === "false"
+          isEntered__hero === "false"
             ? styles.pushTitleLeft
             : styles.pullTitleLeft
         }
@@ -97,23 +111,27 @@ export default function HeroSection({ onRender }) {
         onMouseEnter={handleMouseEnter__titleLeft}
         onMouseLeave={handleMouseLeave__titleLeft}
       >
-        <div className={`${styles.coverContainer} ${styles.coverLeft}`}>
-          <div className={`${styles.iconLeft} ${styles.icon}`}>和</div>
+        <div className={styles.container__top}>
+            <div className={`${styles.coverContainer} ${styles.coverLeft}`}>
+            <div className={`${styles.iconLeft} ${styles.icon}`}>和</div>
+            </div>
         </div>
 
         <div id="titleLeft" ref={titleLeftRef} className={styles.title}>
           <div>Cursuri online</div>
           <div>de Japoneza</div>
         </div>
-        <Button
-          name="find out more"
-          text="afla mai multe"
-          type="empty"
-          position="left"
-          underlinedButton=""
-          transform="capitalizeFirstLetter"
-          section="languageCoursesSection"
-        />
+        <div className={`${styles.button} ${styles.button__top}`}>
+          <Button
+            name="find out more"
+            text="afla mai multe"
+            type="empty"
+            position="left"
+            underlinedButton=""
+            transform="capitalizeFirstLetter"
+            section="languageCoursesSection"
+          />
+        </div>
       </div>
 
       <ul
@@ -146,50 +164,58 @@ export default function HeroSection({ onRender }) {
         className={`
             ${styles.titleImageContainer}
             ${styles.titleImageContainer__right}
-            ${isEntered__hero === "false" &&
-            isEntered__backgroundLeft === "true" &&
-            isEntered__titleLeft === "true" &&
-            isEntered__descriptionLeft === "true" ? styles.pushTitleRight : styles.pullTitleRight}
+            ${
+              isEntered__hero === "false"
+                ? styles.pushTitleRight
+                : styles.pullTitleRight
+            }
         `}
       >
         {/* GEARS */}
-        <div className={`${styles.coverContainer} ${styles.coverRight}`}>
-          <span
-            className={`material-icons-round ${styles.iconRight} ${styles.gear1} ${styles.icon}`}
-          >
-            settings
-          </span>
-          <span
-            className={`material-icons-round ${styles.iconRight} ${styles.gear2} ${styles.icon}`}
-          >
-            settings
-          </span>
-          <span
-            className={`material-icons-round ${styles.iconRight} ${styles.gear3} ${styles.icon}`}
-          >
-            settings
-          </span>
+        <div className={styles.container__bottom}>
+            <div className={`${styles.coverContainer} ${styles.coverRight}`}>
+            <span
+                className={`material-icons-round ${styles.iconRight} ${styles.gear1} ${styles.icon}`}
+            >
+                settings
+            </span>
+            <span
+                className={`material-icons-round ${styles.iconRight} ${styles.gear2} ${styles.icon}`}
+            >
+                settings
+            </span>
+            <span
+                className={`material-icons-round ${styles.iconRight} ${styles.gear3} ${styles.icon}`}
+            >
+                settings
+            </span>
+            </div>
         </div>
 
         {/* TITLE */}
-        <div id="titleRight" className={`
+        <div
+          id="titleRight"
+          className={`
             ${styles.title}
-            
-        `}>
+            ${styles.title__right}
+        `}
+        >
           <div>Dezvoltare</div>
           <div>Software</div>
         </div>
 
         {/* BUTTON */}
-        <Button
-          name="find out more"
-          text="afla mai multe"
-          type="empty"
-          position="right"
-          underlinedButton=""
-          transform="capitalizeFirstLetter"
-          section="programmingSection"
-        />
+        <div className={`${styles.button} ${styles.button__bottom}`}>
+          <Button
+            name="find out more"
+            text="afla mai multe"
+            type="empty"
+            position="right"
+            underlinedButton=""
+            transform="capitalizeFirstLetter"
+            section="programmingSection"
+          />
+        </div>
       </div>
 
       {/* DESCRIPTION */}
