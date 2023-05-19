@@ -247,21 +247,6 @@
         font-size: 2.3rem;
     }
 
-    .gear1 {
-        transform: translate(-0.5rem, 1rem) rotate(0deg);
-        animation-name: spin1;
-    }
-    
-    .gear2 {
-        transform: translate(1rem) rotate(0deg);
-        animation-name: spin2;
-    }
-    
-    .gear3 {
-        transform: translate(-0.5rem, -1rem) rotate(0deg);
-        animation-name: spin3;
-    }
-
     .title {
         font-size: 2rem;
     }
@@ -286,18 +271,45 @@
     }
 
     .gear1 {
-        transform: translate(-0.4rem, 1.1rem) rotate(0deg);
+        transform: translate(-0.1rem, 0.5rem) rotate(0deg);
         animation-name: spin1;
     }
     
     .gear2 {
-        transform: translate(0.9rem) rotate(0deg);
+        transform: translate(0.7rem) rotate(0deg);
         animation-name: spin2;
     }
     
     .gear3 {
-        transform: translate(-0.4rem, -1.1rem) rotate(0deg);
+        transform: translate(-0.1rem, -0.5rem) rotate(0deg);
         animation-name: spin3;
+    }
+    
+    @keyframes spin1 {
+        0% {
+            transform: translate(-0.1rem, 0.5rem) rotate(0deg);
+        }
+        100% {
+            transform: translate(-0.1rem, 0.5rem) rotate(359deg);
+        }
+    }
+    
+    @keyframes spin2 {
+        0% {
+            transform: translate(0.7rem) rotate(0deg);
+        }
+        100% {
+            transform: translate(0.7rem) rotate(-359deg);
+        }
+    }
+    
+    @keyframes spin3 {
+        0% {
+            transform: translate(-0.1rem, -0.5rem) rotate(0deg);
+        }
+        100% {
+            transform: translate(-0.1rem, -0.5rem) rotate(359deg);
+        }
     }
 
     .title {
