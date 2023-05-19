@@ -1,0 +1,142 @@
+@import url("../../../../helpers/colors.css");
+
+.heroSection {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url("../../../../images/backgroundRight.jpg");
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+}
+
+.halfBackground {
+    transition: all .2s linear;
+    content: "";
+    width: 60vw;
+    height: 100vh;
+}
+
+.halfBackground__left {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("../../../../images/backgroundLeft.jpg");
+    background-size: cover;
+    clip-path: polygon(0% 0%, 0% 100%, 66.6% 100%, 100% 0%);
+}
+
+.titleImageCategoriesContainer {
+    transition: all .2s linear;
+    position: absolute;
+    top: 0;
+    /* left: 10vw; */
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10vh 0rem 0 0rem;
+}
+
+.coverContainer {
+    height: 9rem;
+    width: 9rem;
+    min-height: fit-content;
+    min-width: fit-content;
+    border-radius: 50%;
+    display: flex;
+}
+
+.coverLeft {
+    background-color: var(--cinnabarTint10);
+    justify-content: center;
+}
+
+.iconLeft {
+    font-size: 6rem;
+    color: var(--textLight);
+    align-self: center;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    color: var(--textLight);
+    background-color: transparent;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    position: absolute;
+    top: 0;
+    left: 30vw;
+
+    color: var(--textLight);
+    height: 100%;
+    width: 20vw;
+    font-size: 2rem;
+    
+    flex-direction: column;
+    justify-content: center;
+    
+    transition: width .2s linear;
+    transition-delay: 0s;
+    -webkit-mask-image: linear-gradient(to left, transparent 40%, var(--textLight) 60%);
+    -webkit-mask-size: 250% 100%;
+    animation: show 1s linear forwards;
+    animation-direction: reverse;
+}
+
+.description li {
+    text-align: left;
+    padding: 1.5rem 0;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+.expandLeft {
+    width: 70vw;
+    clip-path: polygon(0% 0%, 0% 100%, 71.42% 100%, 100% 0%);
+}
+
+.contractLeft {
+    width: 50vw;
+    clip-path: polygon(0% 0%, 0% 100%, 60% 100%, 100% 0%);
+}
+
+.pushTitleLeft {
+    left: 5vw;
+}
+
+.pullTitleLeft {
+    left: 10vw;    
+}
+
+/* MOBILE HERO SECTION */
+
+@media (max-width: 900px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1.3rem
+    }
+}
+
+@media (max-width: 550px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 1rem
+    }
+}

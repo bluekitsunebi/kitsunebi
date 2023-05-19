@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import headerReducer from './headerSlice';
+import heroSectionReducer from './heroSectionSlice';
 import aboutSectionReducer from './aboutSectionSlice';
 import contactSectionReducer from './contactSectionSlice';
 import FAQsectionReducer from './FAQsectionSlice';
@@ -13,6 +14,7 @@ import routerSlice from './routerSlice';
 export const store = configureStore({
   reducer: {
     header: headerReducer,
+    heroSection: heroSectionReducer,
     aboutSection: aboutSectionReducer,
     contactSection: contactSectionReducer,
     FAQsection: FAQsectionReducer,
