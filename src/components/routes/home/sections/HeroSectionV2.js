@@ -5,11 +5,8 @@ import Button from "../../../Button";
 import {
   setHeroSection__entered,
   setBackgroundLeft__entered,
-  setBackgroundRight__entered,
   setTitleLeft__entered,
-  setTitleRight__entered,
   setDescriptionLeft__entered,
-  setDescriptionRight__entered,
 } from "../../../../store/heroSectionSlice";
 
 let timer = 0;
@@ -17,60 +14,47 @@ let timer = 0;
 export default function HeroSection({ onRender }) {
   const heroSectionRef = useRef(null);
   const halfBackgroundLeftRef = useRef(null);
-  const halfBackgroundRightRef = useRef(null);
-  const coverContentContainerLeftRef = useRef(null);
-  const coverContentContainerRightRef = useRef(null);
   const titleLeftRef = useRef(null);
-  const titleRightRef = useRef(null);
-  const descriptionLeftRef = useRef(null);
   const descriptionRightRef = useRef(null);
 
   const dispatch = useDispatch();
-  let isEntered__heroSection = useSelector(
+  let isEntered__hero = useSelector(
     (state) => state.heroSection.heroSection__entered
   );
   let isEntered__backgroundLeft = useSelector(
     (state) => state.heroSection.backgroundLeft__entered
   );
-  let isEntered__backgroundRight = useSelector(
-    (state) => state.heroSection.backgroundRight__entered
-  );
   let isEntered__titleLeft = useSelector(
     (state) => state.heroSection.titleLeft__entered
-  );
-  let isEntered__titleRight = useSelector(
-    (state) => state.heroSection.titleRight__entered
   );
   let isEntered__descriptionLeft = useSelector(
     (state) => state.heroSection.descriptionLeft__entered
   );
-  let isEntered__descriptionRight = useSelector(
-    (state) => state.heroSection.descriptionRight__entered
-  );
+
+  const handleMouseEnter__hero = () => {
+    dispatch(setHeroSection__entered("false"));
+  };
+  const handleMouseLeave__hero = () => {
+    dispatch(setHeroSection__entered("true"));
+  };
 
   const handleMouseEnter__left = () => {
     dispatch(setBackgroundLeft__entered("false"));
-    // console.log("backgroundLeft: ", isEntered__backgroundLeft);
   };
   const handleMouseLeave__left = () => {
     dispatch(setBackgroundLeft__entered("true"));
-    // console.log("backgroundLeft: ", isEntered__backgroundLeft);
   };
   const handleMouseEnter__titleLeft = () => {
     dispatch(setTitleLeft__entered("false"));
-    // console.log("titleLeft: ", isEntered__titleLeft);
   };
   const handleMouseLeave__titleLeft = () => {
     dispatch(setTitleLeft__entered("true"));
-    // console.log("titleLeft: ", isEntered__titleLeft);
   };
   const handleMouseEnter__descriptionLeft = () => {
     dispatch(setDescriptionLeft__entered("false"));
-    // console.log("descriptionLeft: ", isEntered__descriptionLeft);
   };
   const handleMouseLeave__descriptionLeft = () => {
     dispatch(setDescriptionLeft__entered("true"));
-    // console.log("descriptionLeft: ", isEntered__descriptionLeft);
   };
 
   return (
@@ -78,13 +62,21 @@ export default function HeroSection({ onRender }) {
       id="heroSection"
       ref={heroSectionRef}
       className={styles.heroSection}
+      onMouseEnter={handleMouseEnter__hero}
+      onMouseLeave={handleMouseLeave__hero}
     >
       <div
         id="halfBackgroundLeft"
         ref={halfBackgroundLeftRef}
         className={`
             ${styles.halfBackground} ${styles.halfBackground__left}
-            ${(isEntered__backgroundLeft === "false" || isEntered__titleLeft === "false" || isEntered__descriptionLeft === "false") ? styles.expandLeft : styles.contractLeft}
+            ${
+              isEntered__backgroundLeft === "false" ||
+              isEntered__titleLeft === "false" ||
+              isEntered__descriptionLeft === "false"
+                ? styles.expandLeft
+                : styles.contractLeft
+            }
         `}
         onMouseEnter={handleMouseEnter__left}
         onMouseLeave={handleMouseLeave__left}
@@ -92,8 +84,15 @@ export default function HeroSection({ onRender }) {
 
       <div
         className={`
-        ${styles.titleImageCategoriesContainer}
-        ${(isEntered__backgroundLeft === "false" || isEntered__titleLeft === "false" || isEntered__descriptionLeft === "false") ? styles.pushTitleLeft : styles.pullTitleLeft}
+        ${styles.titleImageContainer}
+        ${styles.titleImageContainer__left}
+        ${
+          isEntered__backgroundLeft === "false" ||
+          isEntered__titleLeft === "false" ||
+          isEntered__descriptionLeft === "false"
+            ? styles.pushTitleLeft
+            : styles.pullTitleLeft
+        }
         `}
         onMouseEnter={handleMouseEnter__titleLeft}
         onMouseLeave={handleMouseLeave__titleLeft}
@@ -119,10 +118,15 @@ export default function HeroSection({ onRender }) {
 
       <ul
         id="descriptionLeft"
-        ref={descriptionLeftRef}
         className={`
-            ${styles.description}
-            ${(isEntered__backgroundLeft === "false" || isEntered__titleLeft === "false" || isEntered__descriptionLeft === "false") ? styles.show : styles.hide}
+            ${styles.description} ${styles.description__left}
+            ${
+              isEntered__backgroundLeft === "false" ||
+              isEntered__titleLeft === "false" ||
+              isEntered__descriptionLeft === "false"
+                ? styles.show
+                : styles.hide
+            }
         `}
         onMouseEnter={handleMouseEnter__descriptionLeft}
         onMouseLeave={handleMouseLeave__descriptionLeft}
@@ -135,6 +139,84 @@ export default function HeroSection({ onRender }) {
           de 24 de ore.
         </li>
         <li>materiale de studiu personalizate</li>
+      </ul>
+
+      {/* ------------------------ RIGHT ---------------------------- */}
+      <div
+        className={`
+            ${styles.titleImageContainer}
+            ${styles.titleImageContainer__right}
+            ${isEntered__hero === "false" &&
+            isEntered__backgroundLeft === "true" &&
+            isEntered__titleLeft === "true" &&
+            isEntered__descriptionLeft === "true" ? styles.pushTitleRight : styles.pullTitleRight}
+        `}
+      >
+        {/* GEARS */}
+        <div className={`${styles.coverContainer} ${styles.coverRight}`}>
+          <span
+            className={`material-icons-round ${styles.iconRight} ${styles.gear1} ${styles.icon}`}
+          >
+            settings
+          </span>
+          <span
+            className={`material-icons-round ${styles.iconRight} ${styles.gear2} ${styles.icon}`}
+          >
+            settings
+          </span>
+          <span
+            className={`material-icons-round ${styles.iconRight} ${styles.gear3} ${styles.icon}`}
+          >
+            settings
+          </span>
+        </div>
+
+        {/* TITLE */}
+        <div id="titleRight" className={`
+            ${styles.title}
+            
+        `}>
+          <div>Dezvoltare</div>
+          <div>Software</div>
+        </div>
+
+        {/* BUTTON */}
+        <Button
+          name="find out more"
+          text="afla mai multe"
+          type="empty"
+          position="right"
+          underlinedButton=""
+          transform="capitalizeFirstLetter"
+          section="programmingSection"
+        />
+      </div>
+
+      {/* DESCRIPTION */}
+      <ul
+        id="descriptionRight"
+        className={`
+            ${styles.description}  ${styles.description__right}
+            ${
+              isEntered__hero === "false" &&
+              isEntered__backgroundLeft === "true" &&
+              isEntered__titleLeft === "true" &&
+              isEntered__descriptionLeft === "true"
+                ? styles.show
+                : styles.hide
+            }
+        `}
+      >
+        <li>realizare de siteuri de prezentare custom</li>
+        <li>dezvoltare de aplicatii pentru mobil</li>
+        <li>utilizarea tehnologiilor dorite de clienti</li>
+        <li>
+          adaptare rapida la orice tip de proiect, echipa si mediu de dezvoltare
+        </li>
+        <li>
+          familiarizati cu React, Laravel, Flutter, Python, Docker, PostrgreSQL
+          si multe altele.
+        </li>
       </ul>
     </section>
   );

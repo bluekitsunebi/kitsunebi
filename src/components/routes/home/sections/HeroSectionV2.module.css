@@ -21,17 +21,24 @@
     clip-path: polygon(0% 0%, 0% 100%, 66.6% 100%, 100% 0%);
 }
 
-.titleImageCategoriesContainer {
+.titleImageContainer {
     transition: all .2s linear;
     position: absolute;
     top: 0;
-    /* left: 10vw; */
     height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin: 10vh 0rem 0 0rem;
+}
+
+.titleImageContainer__left {
+    left: 10vw;
+}
+
+.titleImageContainer__right {
+    right: 10vw;
 }
 
 .coverContainer {
@@ -48,10 +55,19 @@
     justify-content: center;
 }
 
+.coverRight {
+    background-color: var(--navyTint10);
+    flex-direction: column;
+}
+
 .iconLeft {
     font-size: 6rem;
     color: var(--textLight);
     align-self: center;
+}
+
+.iconRight {
+    font-size: 3rem;
 }
 
 .title {
@@ -70,16 +86,12 @@
 .description {
     position: absolute;
     top: 0;
-    left: 30vw;
-
     color: var(--textLight);
     height: 100%;
     width: 20vw;
     font-size: 2rem;
-    
     flex-direction: column;
     justify-content: center;
-    
     transition: width .2s linear;
     transition-delay: 0s;
     -webkit-mask-image: linear-gradient(to left, transparent 40%, var(--textLight) 60%);
@@ -88,10 +100,91 @@
     animation-direction: reverse;
 }
 
+.description__left {
+    left: 30vw;
+}
+
+.description__right {
+    right: 30vw;
+}
+
 .description li {
     text-align: left;
     padding: 1.5rem 0;
 }
+
+/* GEARS ANIMATION */
+
+
+.gear1 {
+    color: var(--blue);
+}
+
+.gear2 {
+    color:  var(--blueTint20);
+}
+
+.gear3 {
+    color: var(--blueTint40);
+}
+
+.gear1, .gear2, .gear3 {
+    text-align: center;
+    animation: spin 2.5s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+}
+
+.gear1 {
+    transform: translate(-0.5rem, 1rem) rotate(0deg);
+    animation-name: spin1;
+}
+
+.gear2 {
+    transform: translate(1rem) rotate(0deg);
+    animation-name: spin2;
+}
+
+.gear3 {
+    transform: translate(-0.5rem, -1rem) rotate(0deg);
+    animation-name: spin3;
+}
+
+@keyframes spin1 {
+    0% {
+        transform: translate(-0.5rem, 1rem) rotate(0deg);
+    }
+    100% {
+        transform: translate(-0.5rem, 1rem) rotate(359deg);
+    }
+}
+
+@keyframes spin2 {
+    0% {
+        transform: translate(1rem) rotate(0deg);
+    }
+    100% {
+        transform: translate(1rem) rotate(-359deg);
+    }
+}
+
+@keyframes spin3 {
+    0% {
+        transform: translate(-0.5rem, -1rem) rotate(0deg);
+    }
+    100% {
+        transform: translate(-0.5rem, -1rem) rotate(359deg);
+    }
+}
+
+/* HALF BACKGROUND ANIMATION */
 
 .hide {
     display: none;
@@ -119,9 +212,56 @@
     left: 10vw;    
 }
 
+.pushTitleRight {
+    right: 5vw;
+}
+
+.pullTitleRight {
+    right: 10vw;    
+}
+
+/* DESCRIPTION ANIMATION */
+
+@keyframes show {
+    from {
+      -webkit-mask-position: left;
+    }
+    to {
+      -webkit-mask-position: right;
+    }
+}
+
 /* MOBILE HERO SECTION */
 
 @media (max-width: 900px) {
+    .coverContainer {
+        height: 7rem;
+        width: 7rem;
+    }
+    
+    .iconLeft {
+        font-size: 5rem;
+    }
+
+    .iconRight {
+        font-size: 2.3rem;
+    }
+
+    .gear1 {
+        transform: translate(-0.5rem, 1rem) rotate(0deg);
+        animation-name: spin1;
+    }
+    
+    .gear2 {
+        transform: translate(1rem) rotate(0deg);
+        animation-name: spin2;
+    }
+    
+    .gear3 {
+        transform: translate(-0.5rem, -1rem) rotate(0deg);
+        animation-name: spin3;
+    }
+
     .title {
         font-size: 2rem;
     }
@@ -132,6 +272,34 @@
 }
 
 @media (max-width: 550px) {
+    .coverContainer {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    .iconLeft {
+        font-size: 2.5rem;
+    }
+
+    .iconRight {
+        font-size: 1.4rem;
+    }
+
+    .gear1 {
+        transform: translate(-0.4rem, 1.1rem) rotate(0deg);
+        animation-name: spin1;
+    }
+    
+    .gear2 {
+        transform: translate(0.9rem) rotate(0deg);
+        animation-name: spin2;
+    }
+    
+    .gear3 {
+        transform: translate(-0.4rem, -1.1rem) rotate(0deg);
+        animation-name: spin3;
+    }
+
     .title {
         font-size: 1.5rem;
     }
