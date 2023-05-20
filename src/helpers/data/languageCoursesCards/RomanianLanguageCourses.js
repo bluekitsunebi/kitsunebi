@@ -7,7 +7,7 @@ export function languageCoursesCardsData__Romanian() {
     individualCustomJapanese: {
       id: "individual custom japanese",
       imgSrc: "[ ]",
-      title: "individual custom japanese",
+      title: "Japoneza Individual",
       lessons,
       details: [
         "---- ---- ---- --- --- --- - - -",
@@ -25,13 +25,13 @@ export function languageCoursesCardsData__Romanian() {
     groupCustomJapanese: {
       id: "group custom japanese",
       imgSrc: "[ ]",
-      title: "group custom japanese",
+      title: "Japoneza Grup",
       lessons,
       details: [
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
+        "adu-ti prietenii si formeaza un grup sau asteapta sa-ti gasim noi",
+        "materiale personalizate pe nivelul grupului",
+        "profesor cu nivel avansat de japoneza",
+        "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore",
       ],
       price: "90 RON",
       timeframe,

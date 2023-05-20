@@ -6,18 +6,44 @@
   padding: 3rem 5rem 5rem 5rem;
 }
 
+.description {
+  color: var(--navy);
+  font-size: 2rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 4rem;
+}
+
+.questionAnswerContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
 @media (max-width: 900px) {
   .description {
     font-size: 1.7rem;
+    margin-top: 2rem;
+  }
+
+  .faqSection {
+    padding: 2rem 4rem 4rem 4rem;
   }
 }
 
 @media (max-width: 550px) {
-  .description {
-    font-size: 1.5rem;
-  }
-
   .faqSection {
     padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    row-gap: 2rem;
+  }
+
+  .questionAnswerContainer {
+    row-gap: 1rem;
   }
 }

@@ -437,7 +437,7 @@
     grid-template-columns: auto auto;
     height: fit-content;
     width: 100%;
-    row-gap: 10vh;
+    row-gap: 3vh;
   }
 
   .button {
@@ -555,7 +555,13 @@
 }
 
 /* ---------------------------------------------------------------- */
+@media (max-width: 585px) {
+  .title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
 
+}
 @media (max-width: 550px) {
   .coverContainer {
     height: 4rem;
@@ -618,5 +624,11 @@
 
   .description {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .title {
+    font-size: 1.2rem;
   }
 }
