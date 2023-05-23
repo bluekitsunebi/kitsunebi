@@ -7,7 +7,7 @@ export function aboutSectionDescription() {
       Oferim cursuri online pentru limba japoneza (cu predare in romana/engleza) si pentru limba engleza (cu predare in japoneza). Facem tot posibilul pentru a asigura o experienta unica, deosebita in explorarea acestor limbi, concentrandu-ne pe obiectivele fiecarui elev in parte atunci cand concepem lectiile. Suntem de parere ca motivatia este cheia atunci cand vine vorba de insusirea unor abilitati noi precum stapanirea unei limbi straine.
       <br />
       <br />
-      Serviciile noastre de dezvoltare software au ca obiect principal realizarea de siteuri de prezentare custom (precum acesta) si de aplicatii pentru mobil, dar experienta noastra nu se limiteaza doar la aceste doua categorii. Avem experienta cu React, Laravel, Flutter, Python, Docker, PostrgreSQL si multe altele, insa suntem deschisi la orice tip de oferte chiar daca sunt pe alte tehnologii decat acestea.
+      Serviciile noastre de dezvoltare software au ca obiect principal realizarea de site-uri de prezentare custom (precum acesta) si de aplicatii pentru mobil, dar experienta noastra nu se limiteaza doar la aceste doua categorii. Avem experienta cu React, Laravel, Flutter, Python, Docker, PostrgreSQL si multe altele, insa suntem deschisi la orice tip de oferte chiar daca sunt pe alte tehnologii decat acestea.
     </div>
   );
 
@@ -17,7 +17,7 @@ export function aboutSectionDescription() {
 export function languageModulesDescription() {
   const description = (
     <div>
-      Instructorul nostru de limba japoneza si-a dedicat o mare parte din timp invatarii acestei limbi si o stapaneste la nivel avansat. Modul de predare este unul cat mai eficient cu putinta si se bazeaza pe experientele acestuia atat ca student cat si ca profesor. Predarea se face in ritmul elevului/grupei de elevi, punandu-se accent pe construirea unor baze solide si pe intelegerea in profunzime a limbii. Compania noastra mai ofera cursuri de engleza japonezilor nativi si colaboreaza cu japonezi si pe partea de IT, deci puteti fi siguri ca nivelul de japoneza al instructorului nostru este unul mai mult decat suficient pentru a va satisface cerintele.
+      Profesorul nostru de limba japoneza si-a dedicat o mare parte din timp invatarii acestei limbi si o stapaneste la nivel avansat. Modul de predare este unul cat mai eficient cu putinta si se bazeaza pe experientele acestuia atat ca student cat si ca profesor. Predarea se face in ritmul elevului/grupei de elevi, punandu-se accent pe construirea unor baze solide si pe intelegerea in profunzime a limbii. Compania noastra mai ofera cursuri de engleza japonezilor nativi si colaboreaza cu japonezi si pe partea de IT, deci puteti fi siguri ca nivelul de japoneza al profesorului nostru este unul mai mult decat suficient pentru a va satisface cerintele.
       <br />
       <br />
       Limba japoneza nu este atat de grea pe cat se crede, ba chiar consideram ca prezinta mai multe elemente logice decat majoritatea celorlaltor limbi. Fie ca o faci din pasiune, fie ca iti este necesara dintr-un anumit motiv, noi iti putem oferi exact cunostintele de care ai nevoie pentru a-ti realiza scopul.
@@ -36,10 +36,10 @@ export function languageModulesDescription() {
 export function programmingSectionDescription() {
   const description = (
     <div>
-      Ne folosim de tehnologii precum React, Laravel, Flutter, Python, Docker, PostgreSQL etc. pentru a dezvolta aplicatii software conform dorintelor clientilor nostrii. Principalul obiect al activitatii noastre este acela de realizare de siteuri de prezentare custom si de aplicatii pentru mobil. Putem urma fie un desingn deja intocmit de client, fie putem prezenta o structura si un design la care ne-am gandit noi, specificand desigur si costurile implicate in realizarea acestuia.
+      Ne folosim de tehnologii precum React, Laravel, Flutter, Python, Docker, PostgreSQL etc. pentru a dezvolta aplicatii software conform dorintelor clientilor nostrii. Principalul obiect al activitatii noastre este acela de realizare de site-uri de prezentare custom si de aplicatii pentru mobil. Putem urma fie un desingn deja intocmit de client, fie putem prezenta o structura si un design la care ne-am gandit noi, specificand desigur si costurile implicate in realizarea acestuia.
       <br />
       <br />
-      Ne place sa realizam siteuri si aplicatii unice, interactive, cu animatii sugestive si moderne, care sa atraga atentia vizitatorilor si sa creeze o impresie puternic pozitiva in ochii acestora. Ne consultam in permanenta cu clientii nostrii pentru o buna sincronizare si pentru a ne asigura ca produsul final este cat mai pe placul acestora.
+      Ne place sa realizam site-uri si aplicatii unice, interactive, cu animatii sugestive si moderne, care sa atraga atentia vizitatorilor si sa creeze o impresie puternic pozitiva in ochii acestora. Ne consultam in permanenta cu clientii nostrii pentru o buna sincronizare si pentru a ne asigura ca produsul final este cat mai pe placul acestora.
       <br />
       <br />
       Avand experienta pe frontend, backend, scripturi, microservicii, AI si realizare de algoritmi complecsi, suntem flexibili in tehnologiile pe care le folosim, putand sa ne adaptam foarte usor la orice tehnologie si mediu de dezvoltare. Suntem deschisi la a lucra in echipa pe proiecte mai mari si avem incredere ca ne descurcam pe orice tip de proiect din aceasta industrie.

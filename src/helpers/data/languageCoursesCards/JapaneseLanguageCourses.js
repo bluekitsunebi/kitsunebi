@@ -3,34 +3,18 @@ export function languageCoursesCardsData__Japanese() {
   const lessons = "First lesson free";
 
   const cards = {
-    individualCustomEnglish: {
-      id: "individual custom english",
-      imgSrc: "[ ]",
-      title: "individual custom english",
-      lessons,
-      details: [
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
-      ],
-      price: "$45",
-      timeframe,
-      total: "6",
-      greyedOut: "false",
-      arrows: "hide",
-      link: "/jp-individual-custom-english",
-    },
+
+    // GROUP
     groupCustomEnglish: {
       id: "group custom english",
       imgSrc: "[ ]",
-      title: "group custom english",
+      title: "Engleza Grup",
       lessons,
       details: [
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
+        "adu-ti prietenii si formeaza un grup sau asteapta sa-ti gasim noi",
+        "materiale personalizate pe nivelul grupului",
+        "profesor cu nivel avansat de engleza",
+        "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore",
       ],
       price: "$30",
       timeframe,
@@ -39,34 +23,39 @@ export function languageCoursesCardsData__Japanese() {
       arrows: "hide",
       link: "/jp-group-custom-english",
     },
-    individualCustomEnglishIntensive: {
-      id: "individual custom english (intensive)",
+    
+    // INDIVIDUAL
+    individualCustomEnglish: {
+      id: "individual custom english",
       imgSrc: "[ ]",
-      title: "individual custom english (intensive)",
+      title: "Engleza Individual",
       lessons,
       details: [
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
+        "elevul alege o zi si o ora si incepem imediat",
+        "materiale personalizate pe nivelul elevului",
+        "profesor cu nivel avansat de engleza",
+        "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore",
       ],
-      price: "$40",
+      price: "$45",
       timeframe,
-      total: "12",
+      total: "6",
       greyedOut: "false",
-      arrows: "show",
-      link: "/jp-individual-custom-english-intensive",
+      arrows: "hide",
+      link: "/jp-individual-custom-english",
     },
+
+    // GROUP INTENSIVE
     groupCustomEnglishIntensive: {
       id: "group custom english (intensive)",
       imgSrc: "[ ]",
-      title: "group custom english (intensive)",
+      title: "Engleza Grup Intensiv",
       lessons,
       details: [
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
-        "---- ---- ---- --- --- --- - - -",
+        "evolutie de 2 ori mai rapida",
+        "adu-ti prietenii si formeaza un grup sau asteapta sa-ti gasim noi",
+        "materiale personalizate pe nivelul grupului",
+        "profesor cu nivel avansat de engleza",
+        "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore",
       ],
       price: "$25",
       timeframe,
@@ -75,7 +64,28 @@ export function languageCoursesCardsData__Japanese() {
       arrows: "hide",
       link: "/jp-group-custom-english-intensive",
     },
+    
+    // INDIVIDUAL INTENSIVE
+    individualCustomEnglishIntensive: {
+      id: "individual custom english (intensive)",
+      imgSrc: "[ ]",
+      title: "Engleza Individual Intensiv",
+      lessons,
+      details: [
+        "evolutie de 2 ori mai rapida",
+        "elevul alege o zi si o ora si incepem imediat",
+        "materiale personalizate pe nivelul elevului",
+        "profesor cu nivel avansat de engleza",
+        "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore",
+      ],
+      price: "$40",
+      timeframe,
+      total: "12",
+      greyedOut: "false",
+      arrows: "show",
+      link: "/jp-individual-custom-english-intensive",
+    },
   };
-
+  
   return cards;
 }

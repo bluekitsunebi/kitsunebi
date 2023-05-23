@@ -77,11 +77,12 @@ export default function LanguageCoursesSection({ onRender }) {
 
       <div className={styles.description}>{description}</div>
 
-      <CardsSubsection id="CardsSubsectionEnglish" ref={engSubsectionRef} />
+      <CardsSubsection id="CardsSubsectionRomanian" ref={roSubsectionRef} />
 
+      <CardsSubsection id="CardsSubsectionEnglish" ref={engSubsectionRef} />
+      
       <CardsSubsection id="CardsSubsectionJapanese" ref={jpSubsectionRef} />
 
-      <CardsSubsection id="CardsSubsectionRomanian" ref={roSubsectionRef} />
     </section>
   );
 }
