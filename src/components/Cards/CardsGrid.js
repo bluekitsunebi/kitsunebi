@@ -22,7 +22,7 @@ export default function CardsGrid(props) {
           price={cards[item].price}
           timeframe={cards[item].timeframe}
           total={cards[item].total}
-          buttonText={cards[item].greyedOut === "true" ? "coming soon" : "register"}
+          buttonText={cards[item].greyedOut === "true" ? "in curand" : "inscrie-te"}
           buttonType={cards[item].greyedOut === "true" ? "greyedOut" : "empty__colored"}
           buttonTransform="uppercase"
           arrows={cards[item].arrows}

@@ -82,7 +82,7 @@ export default function LanguageCustomCourses(props) {
       <Header />
       <section className={styles.LanguageCustomCourses}>
         <div className={styles.title}>{title}</div>
-        <div className={styles.description}>{description}</div>
+        {/* <div className={styles.description}>{description}</div> */}
         <div className={styles.title}>Register for a free lesson</div>
         <ContactForm className={styles.ContactForm}/>
       </section>

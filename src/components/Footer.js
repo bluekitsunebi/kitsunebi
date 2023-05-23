@@ -12,9 +12,11 @@ export default function Footer() {
   
   const headerHeight = useSelector((state) => state.header.height);
   
+  const heroSectionPosition = 0;
   const aboutSectionPosition = useSelector((state) => state.aboutSection.yAxisPosition) - headerHeight;
   const FAQsectionPosition = useSelector((state) => state.FAQsection.yAxisPosition) - headerHeight;
   const contactSectionPosition = useSelector((state) => state.contactSection.yAxisPosition) - headerHeight;
+
 
   const handleSectionClick = (sectionPosition, link, section) => {
     window.scroll({
@@ -38,13 +40,23 @@ export default function Footer() {
 
   return (
     <footer className={styles.Footer}>
+      {/* MAIL */}
       <div className={styles.email} onClick={handleEmailClick}>
         <span className={`${"material-icons-round"} ${styles.mailIcon}`}>
           email
         </span>
-        vicentiuchesca@gmail.com
+        bluekitsunebi@gmail.com
       </div>
-      <div className={styles.terms}>Terms and conditions</div>
+
+      {/* TERMENII CONDITIILE */}
+      <div 
+        className={styles.terms}
+        onClick={() => handleSectionClick(heroSectionPosition, "/", "HeroSection")}
+      >
+        Termenii si conditiile
+      </div>
+
+      {/* ABOUT */}
       <Link to={"/"} className={`${styles.link} ${styles.aboutLink}`}>
         <div
           className={styles.about}
@@ -54,13 +66,23 @@ export default function Footer() {
         </div>
       </Link>
 
+      {/* PHONE */}
       <div className={styles.phone}>
         <span className={`${"material-icons-round"} ${styles.phoneIcon}`}>
           phone
         </span>
         +40 745 984 726
       </div>
-      <div className={styles.privacy}>Privacy policy</div>
+
+      {/* PRIVACY */}
+      <div
+        className={styles.privacy}
+        onClick={() => handleSectionClick(heroSectionPosition, "/", "HeroSection")}
+      >
+        Politica de confidentialitate
+      </div>
+
+      {/* FAQ */}
       <Link to={"/"} className={styles.link}>
         <div
           className={styles.faq}
@@ -70,6 +92,7 @@ export default function Footer() {
         </div>
       </Link>
 
+      {/* CONTACT SECTION */}
       <Link to={"/"} className={`${styles.link} ${styles.contactLink}`}>
         <div
           className={styles.contact}
@@ -78,6 +101,8 @@ export default function Footer() {
           Contact
         </div>
       </Link>
+
+      {/* SOCIAL */}
       <div className={styles.social}>
         <SocialIcon
           url="https://www.facebook.com/vicentiu.chesca"

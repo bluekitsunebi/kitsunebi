@@ -113,6 +113,7 @@ export default function HeroSection({ onRender }) {
                   underlinedButton=""
                   transform="capitalizeFirstLetter"
                   section="languageCoursesSection"
+                  link="/"
                 />
               </div>
               <ul
@@ -213,6 +214,7 @@ export default function HeroSection({ onRender }) {
                   underlinedButton=""
                   transform="capitalizeFirstLetter"
                   section="programmingSection"
+                  link="/"
                 />
               </div>
             </div>
