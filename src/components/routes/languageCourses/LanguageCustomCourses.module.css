@@ -1,33 +1,71 @@
 @import url("../../../helpers/colors.css");
 
 .LanguageCustomCourses {
-    min-height: 100vh;
-    background-color: var(--orangeTint90);
-    padding: 10rem 6rem 5rem 6rem;
+  min-height: 100vh;
+  background-color: var(--orangeTint90);
+  padding: 10rem 6rem 5rem 6rem;
 }
 
-.title {
-    font-size: 3rem;
+.title, .title_form {
     font-weight: 500;
     color: var(--navy);
     display: flex;
     width: 100%;
     justify-content: center;
     margin-bottom: 4rem;
-    /* padding-top: 10rem; */
+}
+
+.title {
+  font-size: 2.5rem;
+  /* padding-top: 10rem; */
+}
+
+.title_form {
+  font-size: 2.3rem;
 }
 
 .description {
-    font-size: 2rem;
-    color: black;
-    height: fit-content;
-    margin-bottom: 10rem;
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  font-size: 2rem;
+  color: black;
+  height: fit-content;
+  margin-bottom: 10rem;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ContactForm {
+}
 
+@media (max-width: 900px) {
+  .aboutSection {
+    /* padding: 2rem 4rem 4rem 4rem; */
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .title_form {
+    font-size: 1.7rem;
+  }
+  .description {
+    font-size: 1.5rem;
+    /* margin-top: 2rem; */
+  }
+}
+
+@media (max-width: 550px) {
+  .aboutSection {
+    /* padding: 1.5rem 2.5rem 2.5rem 2.5rem; */
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+  .title_form {
+    font-size: 1.1rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
 }

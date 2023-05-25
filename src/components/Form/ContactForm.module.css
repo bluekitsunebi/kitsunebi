@@ -51,6 +51,11 @@ label {
   text-decoration: none;
 }
 
+/* .recaptcha {
+  transform:scale(2rem);
+  transform-origin:0 0;
+} */
+
 .confirmationContainer {
   width: 100%;
   display: flex;
@@ -84,8 +89,12 @@ label {
   input[type="text"],
   input[type="email"],
   textarea {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
+  /* .recaptcha {
+    transform:scale(1.4);
+    transform-origin:0 0;
+  } */
 }
 
 @media (max-width: 550px) {
@@ -93,6 +102,10 @@ label {
   input[type="text"],
   input[type="email"],
   textarea {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
+  /* .recaptcha {
+    transform:scale(0.9);
+    transform-origin:0 0;
+  } */
 }

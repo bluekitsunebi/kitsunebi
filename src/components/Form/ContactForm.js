@@ -57,7 +57,7 @@ export default function ContactForm(props) {
         </label>
       </div>
 
-      <ReCAPTCHA sitekey={RECAPTCHA_KEY} onChange={handleRecaptchaChange} />
+      <ReCAPTCHA sitekey={RECAPTCHA_KEY} onChange={handleRecaptchaChange} className={styles.recaptcha} />
 
 
       <div className={styles.confirmationContainer}>
