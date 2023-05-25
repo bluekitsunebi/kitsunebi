@@ -3,7 +3,7 @@
 .contactSection {
   /* box-sizing: content-box; */
   background-color: var(--blueTint90);
-  padding: 2.5rem 5rem 2rem 5rem;
+  padding: 5rem;
 }
 
 .title {
@@ -11,8 +11,14 @@
   margin-bottom: 1.5rem;
 }
 
+@media (max-width: 900px) {
+  .contactSection {
+    padding: 3rem;
+  }
+}
+
 @media (max-width: 550px) {
   .contactSection{
-    padding: 1.5rem 2.5rem 1rem 2.5rem;
+    padding: 1.5rem;
   }
 }

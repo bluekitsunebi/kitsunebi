@@ -2,7 +2,7 @@
 
 .languageCoursesSection {
   background-color: var(--orangeTint90);
-  padding: 3rem 0rem 5rem 0rem;
+  padding: 5rem 0rem;
 }
 
 .description,
@@ -12,29 +12,28 @@
 
 .description {
   font-size: 2rem;
-  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2.5rem 5rem 5rem 5rem;
+  margin: 5rem;
 }
 
 @media (max-width: 900px) {
   .languageCoursesSection {
-    padding: 2rem 0rem 2rem 0rem;
+    padding: 3rem 0rem;
   }
   .description {
     font-size: 1.5rem;
-    margin: 2rem 4rem 4rem 4rem;
+    margin: 3rem;
   }
 }
 
 @media (max-width: 550px) {
   .languageCoursesSection {
-    padding: 1.5rem 0rem 0rem 0rem;
+    padding: 1.5rem 0rem;
   }
   .description {
     font-size: 1rem;
-    margin: 2.5rem 2.5rem 2.5rem 2.5rem;
+    margin: 1.5rem;
   }
 }

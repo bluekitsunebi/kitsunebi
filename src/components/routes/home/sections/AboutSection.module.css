@@ -2,13 +2,13 @@
 
 .aboutSection {
   background-color: var(--blueTint10);
-  padding: 3rem 5rem 5rem 5rem;
+  padding: 5rem;
 }
 
 .description {
   color: var(--navy);
   font-size: 2rem;
-  margin-top: 4rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,19 +16,20 @@
 
 @media (max-width: 900px) {
   .aboutSection {
-    padding: 2rem 4rem 4rem 4rem;
+    padding: 3rem;
   }
   .description {
     font-size: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 }
 
 @media (max-width: 550px) {
   .aboutSection {
-    padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+    padding: 1.5rem;
   }
   .description {
     font-size: 1rem;
+    margin-top: 1.5rem;
   }
 }
