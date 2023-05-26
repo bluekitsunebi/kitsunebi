@@ -18,23 +18,29 @@ export default function Card(props) {
   const buttonTransform = props.buttonTransform;
   const arrows = props.arrows;
   const link = props.link;
-  const isGreyed = ((id === "CardsSubsectionRomanian" || id === "CardsSubsectionEnglish") && buttonType === "greyedOut");
-  const slash = !isGreyed ? "/" : ""; 
+  const isGreyed =
+    (id === "CardsSubsectionRomanian" || id === "CardsSubsectionEnglish") &&
+    buttonType === "greyedOut";
+  const slash = !isGreyed ? "/" : "";
 
   return (
-    <div className={`
+    <div
+      className={`
       ${styles.Card}
       ${id === "CardsSubsectionEnglish" && styles.Card__eng}
       ${id === "CardsSubsectionJapanese" && styles.Card__jp}
       ${id === "CardsSubsectionRomanian" && styles.Card__ro}
-      `}>
+      `}
+    >
       <div className={styles.cardContainer}>
-        <div className={`
+        <div
+          className={`
           ${styles.titleContainer}
           ${id === "CardsSubsectionEnglish" && styles.titleContainer__eng}
           ${id === "CardsSubsectionJapanese" && styles.titleContainer__jp}
           ${id === "CardsSubsectionRomanian" && styles.titleContainer__ro}
-          `}>
+          `}
+        >
           <div className={styles.title}>
             {title}
             {/* {title[0] && <div>{title[0]}</div>}
@@ -53,20 +59,21 @@ export default function Card(props) {
       </div>
 
       <div className={styles.buttonContainer}>
-        <div className={styles.price}>
-          {price}
-          {slash}
+        <div className={styles.priceContainer}>
+          <div className={styles.price}>{price}</div>
+          <div className={styles.slash}>{slash}</div>
           <div className={styles.timeframe}>
             <div>{timeframeFirstRow}</div>
             <div>{timeframeSecondRow}</div>
-          </div>        
+          </div>
         </div>
-        
+
         <div className={styles.total}>
-          {((id === "CardsSubsectionRomanian" || id === "CardsSubsectionEnglish") 
-            && buttonType === "greyedOut") 
-            ? "" : `(payment once every ${total} classes)`
-          }
+          {(id === "CardsSubsectionRomanian" ||
+            id === "CardsSubsectionEnglish") &&
+          buttonType === "greyedOut"
+            ? ""
+            : `(payment once every ${total} classes)`}
         </div>
 
         <div className={styles.Button}>

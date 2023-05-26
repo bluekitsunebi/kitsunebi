@@ -12,6 +12,7 @@
   border-width: 3px;
   border-radius: 20px;
   box-shadow: 5px 5px 10px rgb(200, 200, 200);
+  justify-self: center;
 }
 
 .Card__eng {
@@ -28,7 +29,7 @@
 
 .titleContainer {
   height: 6rem;
-  padding: 1rem 1rem;
+  padding: 1rem;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
   display: flex;
@@ -51,24 +52,30 @@
   color: var(--cinnabarTint90);
 }
 
+/* --------------------- CARD FONT-SIZE --------------------- */
 .title,
-.lessons,
-.details li,
-.price,
-.slash,
-.timeframe,
-.total {
+.price {
   font-size: 2rem;
 }
+.lessons,
+.details li,
+.total {
+  font-size: 1.5rem;
+}
+.slash {
+  font-size: 3rem;
+}
+.timeframe {
+  font-size: 1.2rem;
+}
+/* ---------------------------------------------------------------- */
 
 .title {
-  /* font-size: 2rem; */
   text-transform: uppercase;
   text-align: center;
 }
 
 .lessons {
-  /* font-size: 1.5rem; */
   display: flex;
   justify-content: center;
   margin-top: 1rem;
@@ -83,23 +90,23 @@
 
 .details {
   margin: 0;
+  list-style-position: inside;
+  padding-left: 0rem;
 }
 
 .details li {
   margin: 1rem 0;
-  /* font-size: 1.5rem; */
 }
 
 .buttonContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 12rem;
+  height: fit-content;
   margin-top: 1rem;
 }
 
-.price {
-  /* font-size: 2rem; */
+.priceContainer {
   align-self: center;
   color: var(--cinnabarTint30);
   display: flex;
@@ -107,19 +114,13 @@
   gap: 0.5rem;
 }
 
-.slash {
-  /* font-size: 2.8rem; */
-}
-
 .timeframe {
-  /* font-size: 1.2rem; */
   display: flex;
   flex-direction: column;
   color: var(--navy);
 }
 
 .total {
-  /* font-size: 1.5rem; */
   display: flex;
   justify-content: center;
   margin-top: 1rem;
@@ -131,28 +132,78 @@
   margin-bottom: 1.5rem;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 1050px) {
   .Card {
-    margin: 0 2rem;
+    max-width: 34rem;
   }
-  /* .title,
+}
+
+@media (max-width: 900px) {
+  .Card {
+    max-width: 22rem;
+  }
+  .titleContainer {
+    height: 3.5rem;
+    padding: 0.5rem 1rem;
+  }
+  .detailsContainer {
+    padding: 0 1.5rem;
+  }
+  /* --------------------- CARD FONT-SIZE --------------------- */
+  .title,
   .price {
     font-size: 1.5rem;
-  } */
-  
-  /* .lessons,
+  }
+  .lessons,
   .details li,
   .total {
-    font-size: 1.3rem;
-  } */
-  
-  /* .timeframe {
+    font-size: 1.2rem;
+  }
+  .slash {
+    font-size: 2.2rem;
+  }
+  .timeframe {
     font-size: 1rem;
-  } */
+  }
+  /* ---------------------------------------------------------------- */
+}
+
+@media (max-width: 800px) {
+  .Card {
+    max-width: 26rem;
+  }
 }
 
 @media (max-width: 550px) {
+  .Card {
+    margin: 0 1.5rem;
+    max-width: 23rem;
+  }
+  .titleContainer {
+    height: 3rem;
+    padding: 0.5rem;
+  }
   .title {
     align-items: start;
   }
+  .detailsContainer {
+    padding: 0 0.8rem;
+  }
+  /* --------------------- CARD FONT-SIZE --------------------- */
+  .title,
+  .price {
+    font-size: 1.1rem;
+  }
+  .lessons,
+  .details li,
+  .total {
+    font-size: 1rem;
+  }
+  .slash {
+    font-size: 1.8rem;
+  }
+  .timeframe {
+    font-size: 0.8rem;
+  }
+  /* ---------------------------------------------------------------- */
 }

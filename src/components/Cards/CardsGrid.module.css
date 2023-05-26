@@ -18,6 +18,18 @@
     }
 }
 
+@media (max-width: 900px) {
+    .CardsGrid {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .CardsGrid {
+        grid-template-columns: auto;
+    }
+}
+
 @media (max-width: 550px) {
     .CardsGrid {
         row-gap: 10vw;
