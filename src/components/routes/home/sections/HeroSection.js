@@ -1,226 +1,251 @@
 import React, { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./HeroSection.module.css";
 import Button from "../../../Button";
+import {
+  setHeroSection__entered,
+  setBackgroundLeft__entered,
+  setTitleLeft__entered,
+  setDescriptionLeft__entered,
+} from "../../../../store/heroSectionSlice";
 
 let timer = 0;
 
 export default function HeroSection({ onRender }) {
   const heroSectionRef = useRef(null);
   const halfBackgroundLeftRef = useRef(null);
-  const halfBackgroundRightRef = useRef(null);
-  const coverContentContainerLeftRef = useRef(null);
-  const coverContentContainerRightRef = useRef(null);
-  const descriptionLeftRef = useRef(null);
-  const descriptionRightRef = useRef(null);
   const titleLeftRef = useRef(null);
-  const titleRightRef = useRef(null);
+  const descriptionRightRef = useRef(null);
 
-  useEffect(() => {
-    if (typeof onRender === "function") {
-      onRender();
-    }
-  }, [onRender]);
+  const dispatch = useDispatch();
+  let isEntered__hero = useSelector(
+    (state) => state.heroSection.heroSection__entered
+  );
+  let isEntered__backgroundLeft = useSelector(
+    (state) => state.heroSection.backgroundLeft__entered
+  );
+  let isEntered__titleLeft = useSelector(
+    (state) => state.heroSection.titleLeft__entered
+  );
+  let isEntered__descriptionLeft = useSelector(
+    (state) => state.heroSection.descriptionLeft__entered
+  );
 
-  window.addEventListener("resize", function () {
-    if (timer) {
-      clearTimeout(timer);
-      timer = null;
-    } else {
-      halfBackgroundLeftRef.current.style.transition = "none";
-      halfBackgroundRightRef.current.style.transition = "none";
-      coverContentContainerLeftRef.current.style.transition = "none";
-      coverContentContainerRightRef.current.style.transition = "none";
-    }
-    timer = setTimeout(() => {
-      halfBackgroundLeftRef.current.style.transition = "all .2s linear";
-      halfBackgroundRightRef.current.style.transition = "all .2s linear";
-      coverContentContainerLeftRef.current.style.transition = "all .2s linear";
-      coverContentContainerRightRef.current.style.transition = "all .2s linear";
-      timer = null;
-    }, 100);
-  });
+  let halfAnimation = "middle";
+
+  if (
+    isEntered__backgroundLeft === "false" ||
+    isEntered__titleLeft === "false" ||
+    isEntered__descriptionLeft === "false"
+  ) {
+    halfAnimation = "expand";
+  } else if (
+    isEntered__hero === "false" &&
+    isEntered__backgroundLeft === "true" &&
+    isEntered__titleLeft === "true" &&
+    isEntered__descriptionLeft === "true"
+  ) {
+    halfAnimation = "contract";
+  } else if (isEntered__hero === "true") {
+    halfAnimation = "middle";
+  }
+
+  const handleMouseEnter__hero = () => {
+    dispatch(setHeroSection__entered("false"));
+  };
+  const handleMouseLeave__hero = () => {
+    dispatch(setHeroSection__entered("true"));
+  };
+
+  const handleMouseEnter__left = () => {
+    dispatch(setBackgroundLeft__entered("false"));
+  };
+  const handleMouseLeave__left = () => {
+    dispatch(setBackgroundLeft__entered("true"));
+  };
+  const handleMouseEnter__titleLeft = () => {
+    dispatch(setTitleLeft__entered("false"));
+  };
+  const handleMouseLeave__titleLeft = () => {
+    dispatch(setTitleLeft__entered("true"));
+  };
+  const handleMouseEnter__descriptionLeft = () => {
+    dispatch(setDescriptionLeft__entered("false"));
+  };
+  const handleMouseLeave__descriptionLeft = () => {
+    dispatch(setDescriptionLeft__entered("true"));
+  };
 
   return (
     <section
       id="heroSection"
       ref={heroSectionRef}
       className={styles.heroSection}
+      onMouseEnter={handleMouseEnter__hero}
+      onMouseLeave={handleMouseLeave__hero}
     >
       <div
-        className={styles.cover}
-        onMouseLeave={() => {
-          // changing title
-          // titleLeftRef.current.innerHTML = "Language Courses";
-          halfBackgroundLeftRef.current.style.width = "60vw";
-          halfBackgroundRightRef.current.style.width = "60vw";
-          halfBackgroundLeftRef.current.style.clipPath =
-            "polygon(0% 0%, 0% 100%, 66.6% 100%, 100% 0%)";
-          halfBackgroundRightRef.current.style.clipPath =
-            "polygon(33.4% 0%, 0% 100%, 100% 100%, 100% 0%)";
-          coverContentContainerLeftRef.current.style.width = "40vw";
-          coverContentContainerRightRef.current.style.width = "40vw";
-        }}
-      >
-        <div
-          id="halfBackgroundLeft"
-          ref={halfBackgroundLeftRef}
-          className={`${styles.halfBackground} ${styles.halfBackground__left}`}
-          onMouseEnter={() => {
-            descriptionRightRef.current.style.display = "none";
-            // changing title
-            // titleLeftRef.current.innerHTML = "Language<br>Courses";
-            halfBackgroundLeftRef.current.style.width = "70vw";
-            halfBackgroundRightRef.current.style.width = "50vw";
-            halfBackgroundLeftRef.current.style.clipPath =
-              "polygon(0% 0%, 0% 100%, 71.42% 100%, 100% 0%)";
-            halfBackgroundRightRef.current.style.clipPath =
-              "polygon(40% 0%, 0% 100%, 100% 100%, 100% 0%)";
-            coverContentContainerLeftRef.current.style.width = "50vw";
-            coverContentContainerRightRef.current.style.width = "30vw";
-            descriptionLeftRef.current.style.display = "flex";
-            descriptionLeftRef.current.style.color = "transparent";
-            descriptionLeftRef.current.style.width = "0";
-            setTimeout(() => {
-              descriptionLeftRef.current.style.width = "30vw";
-            }, 0);
-            setTimeout(() => {
-              descriptionLeftRef.current.style.color = "aliceblue";
-            }, 200);
-          }}
-          onMouseLeave={() => {
-            descriptionLeftRef.current.style.display = "none";
-          }}
-        >
-          <div
-            id="coverContentContainerLeft"
-            ref={coverContentContainerLeftRef}
-            className={styles.coverContentContainer}
-          >
-            <div className={styles.coverText}>
-              <div className={styles.titleImageCategoriesContainer}>
-                <div className={`${styles.coverContainer} ${styles.coverLeft}`}>
-                  <div className={`${styles.iconLeft} ${styles.icon}`}>和</div>
-                </div>
+        id="halfBackgroundLeft"
+        ref={halfBackgroundLeftRef}
+        className={`
+            ${styles.halfBackground} ${styles.halfBackgroundLeft}
+            ${halfAnimation === "middle" && styles.middle}
+            ${halfAnimation === "expand" && styles.expandLeft}
+            ${halfAnimation === "contract" && styles.contractLeft}
 
-                <div id="titleLeft" ref={titleLeftRef} className={styles.title}>
-                  Cursuri online de Japoneza
-                </div>
-                <Button
-                  name="find out more"
-                  text="afla mai multe"
-                  type="empty"
-                  position="left"
-                  underlinedButton=""
-                  transform="capitalizeFirstLetter"
-                  section="languageCoursesSection"
-                  link="/"
-                />
-              </div>
-              <ul
-                id="descriptionLeft"
-                ref={descriptionLeftRef}
-                className={`${styles.description} ${styles.description__left}`}
-              >
-                <li>disponibile pentru toate nivelurile</li>
-                <li>sedinte individuale sau de grup</li>
-                <li>personalizate pe nivelul si ritmul de studiu al cursantilor</li>
-                <li>raspuns la orice intrabare chiar si in afara orelor de curs, in decurs de 24 de ore.</li>
-                <li>materiale de studiu personalizate</li>
-              </ul>
+        `}
+        onMouseEnter={handleMouseEnter__left}
+        onMouseLeave={handleMouseLeave__left}
+      ></div>
+
+      <div
+        className={`
+        ${styles.titleImageContainer}
+        ${styles.titleImageContainer__left}
+        ${
+          isEntered__hero === "false"
+            ? styles.pushTitleLeft
+            : styles.pullTitleLeft
+        }
+        `}
+        onMouseEnter={handleMouseEnter__titleLeft}
+        onMouseLeave={handleMouseLeave__titleLeft}
+      >
+        <div className={styles.container__top}>
+            <div className={`${styles.coverContainer} ${styles.coverLeft}`}>
+            <div className={`${styles.iconLeft} ${styles.icon}`}>和</div>
             </div>
-          </div>
         </div>
 
-        <div
-          id="halfBackgroundRight"
-          ref={halfBackgroundRightRef}
-          className={`${styles.halfBackground} ${styles.halfBackground__right}`}
-          onMouseEnter={() => {
-            descriptionLeftRef.current.style.display = "none";
-            // changing title
-            // titleLeftRef.current.innerHTML = "Language<br>Courses";
-            halfBackgroundLeftRef.current.style.width = "50vw";
-            halfBackgroundRightRef.current.style.width = "70vw";
-            halfBackgroundLeftRef.current.style.clipPath =
-              "polygon(0% 0%, 0% 100%, 60% 100%, 100% 0%)";
-            halfBackgroundRightRef.current.style.clipPath =
-              "polygon(28.57% 0%, 0% 100%, 100% 100%, 100% 0%)";
-            coverContentContainerLeftRef.current.style.width = "30vw";
-            coverContentContainerRightRef.current.style.width = "50vw";
-            descriptionRightRef.current.style.display = "flex";
-            descriptionRightRef.current.style.color = "transparent";
-            descriptionRightRef.current.style.width = "0";
-            setTimeout(() => {
-              descriptionRightRef.current.style.width = "30vw";
-            }, 0);
-            setTimeout(() => {
-              descriptionRightRef.current.style.color = "aliceblue";
-            }, 200);
-          }}
-          onMouseLeave={() => {
-            descriptionRightRef.current.style.display = "none";
-          }}
-        >
-          <div
-            id="coverContentContainerRight"
-            ref={coverContentContainerRightRef}
-            className={`${styles.coverContentContainer} ${styles.coverContentContainer__right}`}
-          >
-            <div className={styles.coverText}>
-              <ul
-                id="descriptionRight"
-                ref={descriptionRightRef}
-                className={`${styles.description} ${styles.description__right}`}
-              >
-                <li>realizare de siteuri de prezentare custom</li>
-                <li>dezvoltare de aplicatii pentru mobil</li>
-                <li>utilizarea tehnologiilor dorite de clienti</li>
-                <li>adaptare rapida la orice tip de proiect, echipa si mediu de dezvoltare</li>
-                <li>familiarizati cu React, Laravel, Flutter, Python, Docker, PostrgreSQL si multe altele.</li>
-              </ul>
-              <div className={styles.titleImageCategoriesContainer}>
-                <div
-                  className={`${styles.coverContainer} ${styles.coverRight}`}
-                >
-                  <span
-                    className={`material-icons-round ${styles.iconRight} ${styles.gear1} ${styles.icon}`}
-                  >
-                    settings
-                  </span>
-                  <span
-                    className={`material-icons-round ${styles.iconRight} ${styles.gear2} ${styles.icon}`}
-                  >
-                    settings
-                  </span>
-                  <span
-                    className={`material-icons-round ${styles.iconRight} ${styles.gear3} ${styles.icon}`}
-                  >
-                    settings
-                  </span>
-                </div>
-
-                <div
-                  id="titleRight"
-                  ref={titleRightRef}
-                  className={styles.title}
-                >
-                  Dezvoltare Software
-                </div>
-                <Button
-                  name="find out more"
-                  text="afla mai multe"
-                  type="empty"
-                  position="right"
-                  underlinedButton=""
-                  transform="capitalizeFirstLetter"
-                  section="programmingSection"
-                  link="/"
-                />
-              </div>
-            </div>
-          </div>
+        <div id="titleLeft" ref={titleLeftRef} className={styles.title}>
+          <div>Cursuri online</div>
+          <div>de Japoneza</div>
+        </div>
+        <div className={`${styles.button} ${styles.button__top}`}>
+          <Button
+            name="find out more"
+            text="afla mai multe"
+            type="empty"
+            position="left"
+            underlinedButton=""
+            transform="capitalizeFirstLetter"
+            section="languageCoursesSection"
+            link="/"
+          />
         </div>
       </div>
+
+      <ul
+        id="descriptionLeft"
+        className={`
+            ${styles.description} ${styles.description__left}
+            ${
+              isEntered__backgroundLeft === "false" ||
+              isEntered__titleLeft === "false" ||
+              isEntered__descriptionLeft === "false"
+                ? styles.show
+                : styles.hide
+            }
+        `}
+        onMouseEnter={handleMouseEnter__descriptionLeft}
+        onMouseLeave={handleMouseLeave__descriptionLeft}
+      >
+        <li>disponibile pentru toate nivelurile</li>
+        <li>sedinte individuale sau de grup</li>
+        <li>personalizate pe nivelul si ritmul de studiu al cursantilor</li>
+        <li>
+          raspuns la orice intrabare chiar si in afara orelor de curs, in decurs
+          de 24 de ore.
+        </li>
+        <li>materiale de studiu personalizate</li>
+      </ul>
+
+      {/* ------------------------ RIGHT ---------------------------- */}
+      <div
+        className={`
+            ${styles.titleImageContainer}
+            ${styles.titleImageContainer__right}
+            ${
+              isEntered__hero === "false"
+                ? styles.pushTitleRight
+                : styles.pullTitleRight
+            }
+        `}
+      >
+        {/* GEARS */}
+        <div className={styles.container__bottom}>
+            <div className={`${styles.coverContainer} ${styles.coverRight}`}>
+            <span
+                className={`material-icons-round ${styles.iconRight} ${styles.gear1} ${styles.icon}`}
+            >
+                settings
+            </span>
+            <span
+                className={`material-icons-round ${styles.iconRight} ${styles.gear2} ${styles.icon}`}
+            >
+                settings
+            </span>
+            <span
+                className={`material-icons-round ${styles.iconRight} ${styles.gear3} ${styles.icon}`}
+            >
+                settings
+            </span>
+            </div>
+        </div>
+
+        {/* TITLE */}
+        <div
+          id="titleRight"
+          className={`
+            ${styles.title}
+            ${styles.title__right}
+        `}
+        >
+          <div>Dezvoltare</div>
+          <div>Software</div>
+        </div>
+
+        {/* BUTTON */}
+        <div className={`${styles.button} ${styles.button__bottom}`}>
+          <Button
+            name="find out more"
+            text="afla mai multe"
+            type="empty"
+            position="right"
+            underlinedButton=""
+            transform="capitalizeFirstLetter"
+            section="programmingSection"
+            link="/"
+          />
+        </div>
+      </div>
+
+      {/* DESCRIPTION */}
+      <ul
+        id="descriptionRight"
+        className={`
+            ${styles.description}  ${styles.description__right}
+            ${
+              isEntered__hero === "false" &&
+              isEntered__backgroundLeft === "true" &&
+              isEntered__titleLeft === "true" &&
+              isEntered__descriptionLeft === "true"
+                ? styles.show
+                : styles.hide
+            }
+        `}
+      >
+        <li>realizare de siteuri de prezentare custom</li>
+        <li>dezvoltare de aplicatii pentru mobil</li>
+        <li>utilizarea tehnologiilor dorite de clienti</li>
+        <li>
+          adaptare rapida la orice tip de proiect, echipa si mediu de dezvoltare
+        </li>
+        <li>
+          familiarizati cu React, Laravel, Flutter, Python, Docker, PostrgreSQL
+          si multe altele.
+        </li>
+      </ul>
     </section>
   );
 }

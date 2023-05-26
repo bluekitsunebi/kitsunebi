@@ -6,7 +6,7 @@ import { switchWasClicked } from "../../../store/routerSlice";
 
 // SECTIONS
 import Header from "../../../components/Header";
-import HeroSection from "./sections/HeroSectionV2";
+import HeroSection from "./sections/HeroSection";
 import AboutSection from "./sections/AboutSection";
 import LanguageCoursesSection from "./sections/LanguageCoursesSection";
 import ProgrammingSection from "./sections/ProgrammingSection";

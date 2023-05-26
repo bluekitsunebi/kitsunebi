@@ -5,6 +5,7 @@ import buttonstyles from "../Button.module.css";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm(props) {
+  const subject = props.subject;
   const form = useRef();
   const [isSend, setIsSend] = useState("false");
 
@@ -56,9 +57,9 @@ export default function ContactForm(props) {
           I agree to the <a href="" className={styles.link}>Confidentiality and GDPR Policy</a>
         </label>
       </div>
+      <input type="hidden" name="subject" value={subject} />
 
       <ReCAPTCHA sitekey={RECAPTCHA_KEY} onChange={handleRecaptchaChange} className={styles.recaptcha} />
-
 
       <div className={styles.confirmationContainer}>
         <div className={`${styles.confirmation} ${isSend === "false" && styles.hide} ${isSend === "true" && styles.show}`}>The message was sent!</div>
@@ -66,7 +67,6 @@ export default function ContactForm(props) {
           <input type="submit" value="send" className={`${buttonstyles.button__full} ${buttonstyles.Button} ${buttonstyles.capitalize} ${styles.sendButton}`} />
         </div>
       </div>
-      
     </form>
   );
 }
