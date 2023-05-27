@@ -18,6 +18,70 @@
   margin: 5rem;
 }
 
+.buttonsContainer {
+  margin: 1rem 0 6rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonsContainer > * {
+  margin: 0 1rem;
+}
+
+.button {
+  font-size: 2rem;
+  padding: 0.1rem 0.8rem;
+  border-radius: 20px;
+  border-width: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s linear, border-color 0.2s linear,
+    color 0.2s linear;
+  width: fit-content;
+}
+
+.empty,
+.selected_ro,
+.selected_eng,
+.selected_jp {
+  border-style: solid;
+  border-radius: 12px;
+}
+
+.empty {
+  background-color: transparent;
+  color: var(--navyTint10);
+  border-color: var(--navyTint10);
+}
+
+.empty:hover,
+.empty:active {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.selected_ro,
+.selected_eng,
+.selected_jp {
+  color: var(--textLight);
+}
+
+.selected_ro {
+  background-color: var(--cinnabarTint20);
+  border-color: var(--cinnabarTint20);
+}
+.selected_eng {
+  background-color: var(--navyTint20);
+  border-color: var(--navyTint20);
+}
+.selected_jp {
+  background-color: var(--orangeTint20);
+  border-color: var(--orangeTint20);
+}
+.hide {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .languageCoursesSection {
     padding: 3rem 0rem;

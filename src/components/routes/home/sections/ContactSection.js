@@ -19,7 +19,7 @@ function ContactSection() {
       <div className={styles.title}>
         <SectionTitle text="Contact" />
       </div>
-      <ContactForm subject="contact"/>
+      <ContactForm subject="contact" section="contact"/>
     </section>
   );
 }

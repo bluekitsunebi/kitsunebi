@@ -21,6 +21,7 @@ function Button(props) {
   const section = props.section;
   const link = props.link === undefined ? "*" : props.link;
   const category = props.category;
+  const card = props.card;
   let sectionPosition = undefined;
 
   const aboutSectionPosition = useSelector(

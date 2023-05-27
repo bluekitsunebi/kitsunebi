@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   height: undefined,
   yAxisPosition: undefined,
+  selectedButton: "romanian",
 };
 
 export const languageCoursesSectionSlice = createSlice({
@@ -15,9 +16,12 @@ export const languageCoursesSectionSlice = createSlice({
     setYaxisPosition: (state, action) => {
       state.yAxisPosition = action.payload;
     },
+    setSelectedButton: (state, action) => {
+      state.selectedButton = action.payload;
+    },
   },
 });
 
-export const { setHeight, setYaxisPosition } = languageCoursesSectionSlice.actions;
+export const { setHeight, setYaxisPosition, setSelectedButton } = languageCoursesSectionSlice.actions;
 
 export default languageCoursesSectionSlice.reducer;

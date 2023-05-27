@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   setHeight,
   setYaxisPosition,
+  setSelectedButton,
 } from "../../../../store/languageCoursesSectionSlice";
 import {
   setHeight__eng,
@@ -20,6 +21,8 @@ import styles from "./LanguageCoursesSection.module.css";
 import SectionTitle from "../../../title/SectionTitle";
 import CardsSubsection from "../../../Cards/CardsSubsection";
 import { languageModulesDescription } from "../../../../helpers/data/generalData";
+import Subtitle from "../../../title/Subtitle";
+import Button from "../../../Button";
 
 export default function LanguageCoursesSection({ onRender }) {
   useEffect(() => {
@@ -64,6 +67,20 @@ export default function LanguageCoursesSection({ onRender }) {
     );
   }, [dispatch]);
 
+  let selectedButton = useSelector(
+    (state) => state.languageCoursesSection.selectedButton
+  );
+
+  const handleClick__ro = () => {
+    dispatch(setSelectedButton("romanian"));
+  };
+  const handleClick__eng = () => {
+    dispatch(setSelectedButton("english"));
+  };
+  const handleClick__jp = () => {
+    dispatch(setSelectedButton("japanese"));
+  };
+
   const description = languageModulesDescription();
   return (
     <section
@@ -77,12 +94,47 @@ export default function LanguageCoursesSection({ onRender }) {
 
       <div className={styles.description}>{description}</div>
 
-      <CardsSubsection id="CardsSubsectionRomanian" ref={roSubsectionRef} />
+      <Subtitle
+        text="Cursuri cu predare in limba:"
+        className={styles.subtitle}
+      />
 
-      <CardsSubsection id="CardsSubsectionEnglish" ref={engSubsectionRef} />
-      
-      <CardsSubsection id="CardsSubsectionJapanese" ref={jpSubsectionRef} />
+      <div className={styles.buttonsContainer}>
+        <div
+          className={`${styles.button} ${
+            selectedButton === "romanian" ? styles.selected_ro : styles.empty
+          }`}
+          onClick={handleClick__ro}
+        >
+          Romana
+        </div>
+        <div
+          className={`${styles.button} ${
+            selectedButton === "english" ? styles.selected_eng : styles.empty
+          }`}
+          onClick={handleClick__eng}
+        >
+          Engleza
+        </div>
+        <div
+          className={`${styles.button} ${
+            selectedButton === "japanese" ? styles.selected_jp : styles.empty
+          }`}
+          onClick={handleClick__jp}
+        >
+          Japoneza
+        </div>
+      </div>
 
+      <div className={`${selectedButton !== "romanian" && styles.hide}`}>
+        <CardsSubsection id="CardsSubsectionRomanian" ref={roSubsectionRef} />
+      </div>
+      <div className={`${selectedButton !== "english" && styles.hide}`}>
+        <CardsSubsection id="CardsSubsectionEnglish" ref={engSubsectionRef} />
+      </div>
+      <div className={`${selectedButton !== "japanese" && styles.hide}`}>
+        <CardsSubsection id="CardsSubsectionJapanese" ref={jpSubsectionRef} />
+      </div>
     </section>
   );
 }

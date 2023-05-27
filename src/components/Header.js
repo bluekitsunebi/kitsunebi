@@ -168,7 +168,7 @@ export default function Header() {
           <Button
             name="language"
             category="header"
-            text="cursuri limbi straine"
+            text="cursuri japoneza"
             type="withoutBorder"
             position=""
             underlinedButton={underlineButton}

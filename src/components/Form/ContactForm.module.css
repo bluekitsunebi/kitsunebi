@@ -8,6 +8,16 @@
   color: var(--navy);
 }
 
+.label {
+  display: flex;
+}
+.star {
+  color: var(--cinnabar);
+  transform: scale(0.8);
+  transform-origin: 0 -10px;
+  display: block;
+}
+
 input,
 textarea {
   margin-bottom: 1rem;
@@ -16,6 +26,8 @@ textarea {
 .ContactForm,
 input[type="text"],
 input[type="email"],
+input[type="tel"],
+.phone,
 textarea {
   font-size: 2rem;
   color: var(--navy);
@@ -23,6 +35,29 @@ textarea {
 
 label {
   font-weight: 600;
+}
+
+.phoneContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.phone{
+  margin-bottom: 0;
+}
+.countryCode {
+  width: 12.5rem;
+  display: flex;
+  align-items: center;
+}
+input[type="tel"] {
+  margin-bottom: 0;
+  margin-left: 1rem;
+}
+.phoneNumber {
+  width: 100%;
+  margin-left: 2rem;
+  height: fit-content;
 }
 
 .checkbox {
@@ -85,6 +120,8 @@ label {
   .ContactForm,
   input[type="text"],
   input[type="email"],
+  input[type="tel"],
+  .phone,
   textarea {
     font-size: 1.5rem;
   }
@@ -92,8 +129,18 @@ label {
     gap: 0.6rem;
   }
   input,
-  textarea {
+  textarea,
+  .phoneContainer {
     margin-bottom: 0.4rem;
+  }
+  .countryCode{
+    width: 9rem
+  }
+  .phoneNumber {
+    margin-left: 1.5rem;
+  }
+  input[type="tel"] {
+    margin-left: 0.5rem;
   }
   .checkbox {
     margin-right: 1.5rem;
@@ -113,6 +160,8 @@ label {
   .ContactForm,
   input[type="text"],
   input[type="email"],
+  input[type="tel"],
+  .phone,
   textarea {
     font-size: 1rem;
   }
@@ -120,8 +169,18 @@ label {
     gap: 0.5rem;
   }
   input,
-  textarea {
+  textarea,
+  .phoneContainer {
     margin-bottom: 0.2rem;
+  }
+  .countryCode{
+    width: 6.1rem
+  }
+  .phoneNumber {
+    margin-left: 1rem;
+  }
+  input[type="tel"] {
+    margin-left: 0.2rem;
   }
   .checkbox {
     margin-right: 1rem;
@@ -129,9 +188,8 @@ label {
     height: 1.3rem;
   }
   .recaptcha {
-    transform: scale(1);
+    transform: scale(0.8);
     transform-origin: 0 0;
-    align-self: center;
   }
   .confirmationContainer {
     margin-top: 0.5rem;
