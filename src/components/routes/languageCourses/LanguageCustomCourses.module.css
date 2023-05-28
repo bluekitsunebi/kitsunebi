@@ -4,38 +4,57 @@
   background-color: var(--orangeTint90);
   padding: 10rem 5rem 5rem 5rem;
 }
+.title,
+.subtitle,
+.title_form {
+  text-align: center;
+}
 
 .title,
 .title_form {
-  font-weight: 500;
+  color: var(--navy);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.title,
+.subtitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.title {
+  /* margin-bottom: 1rem; */
+}
+
+.subtitle {
   color: var(--navy);
   display: flex;
   width: 100%;
   justify-content: center;
   margin-bottom: 5rem;
-  text-align: center;
-}
-
-.title {
-  font-size: 2.5rem;
 }
 
 .title_form {
-  font-size: 2.3rem;
+  font-size: 2.2rem;
+  margin-bottom: 5rem;
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
   .LanguageCustomCourses {
     padding: 7rem 3rem 2rem 3rem;
   }
-  .title {
+  .title,
+  .subtitle {
     font-size: 2rem;
   }
   .title_form {
     font-size: 1.7rem;
   }
-  .title,
-  .title_form {
+  .title_form,
+  .subtitle {
     margin-bottom: 3rem;
   }
 }
@@ -44,13 +63,14 @@
   .LanguageCustomCourses {
     padding: 5.5rem 1.5rem 1rem 1.5rem;
   }
-  .title {
-    font-size: 1.2rem;
+  .title,
+  .subtitle {
+    font-size: 1.3rem;
   }
   .title_form {
     font-size: 1.1rem;
   }
-  .title,
+  .subtitle,
   .title_form {
     margin-bottom: 1.5rem;
   }

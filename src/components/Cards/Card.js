@@ -70,7 +70,7 @@ export default function Card(props) {
             id === "CardsSubsectionEnglish") &&
           buttonType === "greyedOut"
             ? ""
-            : `(payment once every ${total} classes)`}
+            : `(plata o data la ${total} lectii)`}
         </div>
 
         <div className={styles.Button}>

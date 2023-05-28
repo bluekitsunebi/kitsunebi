@@ -62,7 +62,7 @@ export default function Footer() {
           className={styles.about}
           onClick={() => handleSectionClick(aboutSectionPosition, "/", "aboutSection")}
         >
-          About
+          Despre noi
         </div>
       </Link>
 
@@ -88,7 +88,7 @@ export default function Footer() {
           className={styles.faq}
           onClick={() => handleSectionClick(FAQsectionPosition, "/", "FAQsection")}
         >
-          FAQ
+          Intrebari frecvente
         </div>
       </Link>
 

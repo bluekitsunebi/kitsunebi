@@ -9,8 +9,19 @@ import buttonstyles from "../Button.module.css";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm(props) {
-  const subject = props.subject;
+  let subject = props.subject;
+  let answer = props.answer;
   const section = props.section;
+  if (section === "languageCourses") {
+    subject = (
+      subject[0].slice(0, 4) +
+      "ul" +
+      subject[0].slice(4) +
+      " " +
+      subject[1]
+    ).toLowerCase();
+    console.log(subject);
+  }
   const form = useRef();
   const [countryCode, setCountryCode] = useState();
   const handleKeyPress = (e) => {
@@ -31,6 +42,12 @@ export default function ContactForm(props) {
 
     if (!isRecaptchaCompleted) {
       return;
+    }
+
+    const phoneInput = form.current.elements.form_phone;
+    const countryCodeInput = form.current.elements.form_countryCode;
+    if (phoneInput.value === "") {
+      countryCodeInput.value = "";
     }
 
     emailjs
@@ -55,7 +72,7 @@ export default function ContactForm(props) {
   return (
     <form ref={form} onSubmit={sendEmail} className={styles.ContactForm}>
       <label className={styles.label}>
-        First name<span className={styles.star}>*</span>
+        Prenume<span className={styles.star}>*</span>
       </label>
       <input
         type="text"
@@ -65,7 +82,7 @@ export default function ContactForm(props) {
         required
       />
       <label className={styles.label}>
-        Last name<span className={styles.star}>*</span>
+        Nume de familie<span className={styles.star}>*</span>
       </label>
       <input
         type="text"
@@ -85,7 +102,7 @@ export default function ContactForm(props) {
         required
       />
       <label style={{ display: section === "contact" && "none" }}>
-        Phone number
+        Numar de telefon
       </label>
 
       <div
@@ -116,7 +133,7 @@ export default function ContactForm(props) {
         />
       </div>
       <label className={styles.label}>
-        Message
+        Mesaj
         <span
           className={styles.star}
           style={{ display: section === "languageCourses" && "none" }}
@@ -135,24 +152,26 @@ export default function ContactForm(props) {
           type="checkbox"
           id="gdprContact"
           name="form_checkbox"
-          value="agree"
+          value="Sunt de acord"
           className={styles.checkbox}
           onFocus={() => setIsSend("false")}
           required
         />
         <label>
-          I agree to the{" "}
+          Sunt de acord cu{" "}
           <a href="" className={styles.link}>
-            Confidentiality and GDPR Policy
+            politica de confidentialitate, termenii si conditiile
           </a>
         </label>
       </div>
       <input type="hidden" name="subject" value={subject} />
+      <input type="hidden" name="answer" value={answer} />
 
       <ReCAPTCHA
         sitekey={RECAPTCHA_KEY}
         onChange={handleRecaptchaChange}
         className={styles.recaptcha}
+        hl="ro"
       />
 
       <div className={styles.confirmationContainer}>
@@ -161,12 +180,12 @@ export default function ContactForm(props) {
             isSend === "false" && styles.hide
           } ${isSend === "true" && styles.show}`}
         >
-          The message was sent!
+          Formularul a fost trimis!
         </div>
         <div className={styles.buttonContainer}>
           <input
             type="submit"
-            value="send"
+            value="trimite"
             className={`${buttonstyles.button__full} ${buttonstyles.Button} ${buttonstyles.capitalize} ${styles.sendButton}`}
           />
         </div>

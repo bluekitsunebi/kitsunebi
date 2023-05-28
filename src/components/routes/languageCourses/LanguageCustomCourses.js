@@ -81,9 +81,10 @@ export default function LanguageCustomCourses(props) {
     <Fragment>
       <Header />
       <section className={styles.LanguageCustomCourses}>
-        <div className={styles.title}>{title}</div>
-        <div className={styles.title_form}>Register for a free lesson</div>
-        <ContactForm className={styles.ContactForm} subject={title} section="languageCourses"/>
+        <div className={styles.title}>{title[0]}</div>
+        <div className={styles.subtitle}>{title[1]}</div>
+        <div className={styles.title_form}>Inscrie-te pentru o lectie gratuita</div>
+        <ContactForm className={styles.ContactForm} subject={title} answer="cererea ta de inscriere" section="languageCourses"/>
       </section>
       <Footer />
     </Fragment>

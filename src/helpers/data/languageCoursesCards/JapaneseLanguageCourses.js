@@ -1,6 +1,6 @@
 export function languageCoursesCardsData__Japanese() {
-  const timeframe = ["1 hour and", "30 minutes"];
-  const lessons = "First lesson free";
+  const timeframe = ["1 ora si", "30 minute"];
+  const lessons = "Prima lectie gratis";
 
   const cards = {
 

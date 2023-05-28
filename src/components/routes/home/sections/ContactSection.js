@@ -43,7 +43,7 @@ function ContactSection({ onRender }) {
       <div className={styles.title}>
         <SectionTitle text="Contact" />
       </div>
-      <ContactForm subject="contact" section="contact" />
+      <ContactForm subject="contact" section="contact" answer="mesajul tău" />
     </section>
   );
 }

@@ -1,7 +1,7 @@
 export function languageCoursesCardsData__Romanian() {
-  const timeframe = ["1 hour and", "30 minutes"];
+  const timeframe = ["1 ora si", "30 minute"];
   const greyedOut = "true";
-  const lessons = "First lesson free";
+  const lessons = "Prima lectie gratis";
 
   const cards = {
 

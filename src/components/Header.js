@@ -241,11 +241,11 @@ export default function Header({ onRender }) {
         <Button
           name="faq"
           category="header"
-          text="faq"
+          text="Intrebari frecvente"
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
-          transform="uppercase"
+          transform="capitalizeFirstLetter"
           section="FAQsection"
           link="/"
         ></Button>
