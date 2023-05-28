@@ -33,7 +33,8 @@
   cursor: pointer;
   transition: background-color 0.2s linear, border-color 0.2s linear,
     color 0.2s linear;
-  width: fit-content;
+  width: 10rem;
+  text-align: center;
 }
 
 .empty,
@@ -63,16 +64,16 @@
 }
 
 .selected_ro {
-  background-color: var(--cinnabarTint20);
-  border-color: var(--cinnabarTint20);
+  background-color: var(--orangeTint20);
+  border-color: var(--orangeTint20);
 }
 .selected_eng {
   background-color: var(--navyTint20);
   border-color: var(--navyTint20);
 }
 .selected_jp {
-  background-color: var(--orangeTint20);
-  border-color: var(--orangeTint20);
+  background-color: var(--cinnabarTint20);
+  border-color: var(--cinnabarTint20);
 }
 .hide {
   display: none;
@@ -88,6 +89,7 @@
   }
   .button {
     font-size: 1.5rem;
+    width: 7rem;
   }
   .buttonsContainer {
     margin: 1rem 0 3rem 0;
@@ -109,6 +111,7 @@
   .button {
     margin: 0;
     font-size: 1.2rem;
+    width: 6rem;
   }
 }
 

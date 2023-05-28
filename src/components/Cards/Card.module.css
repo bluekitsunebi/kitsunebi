@@ -20,11 +20,11 @@
 }
 
 .Card__jp {
-  border-color: var(--orange);
+  border-color: var(--cinnabar);
 }
 
 .Card__ro {
-  border-color: var(--cinnabar);
+  border-color: var(--orange);
 }
 
 .titleContainer {
@@ -43,13 +43,13 @@
 }
 
 .titleContainer__jp {
-  background-color: var(--orange);
-  color: var(--navy);
+  background-color: var(--cinnabar);
+  color: var(--cinnabarTint90);
 }
 
 .titleContainer__ro {
-  background-color: var(--cinnabar);
-  color: var(--cinnabarTint90);
+  background-color: var(--orange);
+  color: var(--navy);
 }
 
 /* --------------------- CARD FONT-SIZE --------------------- */
