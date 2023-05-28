@@ -1,20 +1,27 @@
 import { React, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setHeight, setYaxisPosition } from "../../../../store/FAQsectionSlice";
 import styles from "./FAQsection.module.css";
 import SectionTitle from "../../../title/SectionTitle";
 
-function FAQsection() {
+function FAQsection({ onRender }) {
+  const homeWasRendered = useSelector((state) => state.home.wasRendered);
   const FAQsectionRef = useRef(null);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setHeight(FAQsectionRef.current.offsetHeight));
-    dispatch(
-      setYaxisPosition(
-        FAQsectionRef.current.getBoundingClientRect().top + window.pageYOffset
-      )
-    );
-  }, [dispatch]);
+    if(homeWasRendered === "true") {
+      dispatch(setHeight(FAQsectionRef.current.offsetHeight));
+  
+      const rect = FAQsectionRef.current.getBoundingClientRect();
+      const yOffset = window.pageYOffset || document.documentElement.scrollTop;
+      const yPosition = rect.top + yOffset - parseFloat(getComputedStyle(FAQsectionRef.current).paddingTop);
+      dispatch(setYaxisPosition(yPosition));
+      console.log("setting the faqSection position")
+    }
+    if (typeof onRender === "function") {
+      onRender();
+    }
+  }, [onRender, homeWasRendered]);
 
   return (
     <section id="faqSection" ref={FAQsectionRef} className={styles.faqSection}>

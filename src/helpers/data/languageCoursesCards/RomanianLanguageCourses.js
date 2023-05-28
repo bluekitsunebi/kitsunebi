@@ -52,7 +52,7 @@ export function languageCoursesCardsData__Romanian() {
       title: "Japoneza Grup Intensiv",
       lessons,
       details: [
-        "evolutie de 2 ori mai rapida",
+        "evolutie de 2 ori mai rapida cu sedinte de 2 ori pe saptamana",
         "adu-ti prietenii si formeaza un grup sau asteapta sa-ti gasim noi",
         "materiale personalizate pe nivelul grupului",
         "profesor cu nivel avansat de japoneza",
@@ -73,7 +73,7 @@ export function languageCoursesCardsData__Romanian() {
       title: "Japoneza Individual Intensiv",
       lessons,
       details: [
-        "evolutie de 2 ori mai rapida",
+        "evolutie de 2 ori mai rapida cu sedinte de 2 ori pe saptamana",
         "elevul alege o zi si o ora si incepem imediat",
         "materiale personalizate pe nivelul elevului",
         "profesor cu nivel avansat de japoneza",

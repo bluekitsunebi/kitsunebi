@@ -176,7 +176,7 @@ export default function Header() {
             section="languageCoursesSection"
             link="/"
           />
-          <div
+          {/* <div
             className={styles.dropdownContent}
             style={{ background: headerColor }}
           >
@@ -210,7 +210,7 @@ export default function Header() {
               section="jpSubsection"
               link="/"
             />
-          </div>
+          </div> */}
         </div>
 
         <Button

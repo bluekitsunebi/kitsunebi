@@ -5,67 +5,19 @@ import {
   setYaxisPosition,
   setSelectedButton,
 } from "../../../../store/languageCoursesSectionSlice";
-import {
-  setHeight__eng,
-  setYaxisPosition__eng,
-} from "../../../../store/engSubsectionSlice";
-import {
-  setHeight__jp,
-  setYaxisPosition__jp,
-} from "../../../../store/jpSubsectionSlice";
-import {
-  setHeight__ro,
-  setYaxisPosition__ro,
-} from "../../../../store/roSubsectionSlice";
 import styles from "./LanguageCoursesSection.module.css";
 import SectionTitle from "../../../title/SectionTitle";
 import CardsSubsection from "../../../Cards/CardsSubsection";
 import { languageModulesDescription } from "../../../../helpers/data/generalData";
 import Subtitle from "../../../title/Subtitle";
-import Button from "../../../Button";
 
 export default function LanguageCoursesSection({ onRender }) {
-  useEffect(() => {
-    if (typeof onRender === "function") {
-      onRender();
-    }
-  }, [onRender]);
-
+  const homeWasRendered = useSelector((state) => state.home.wasRendered);
   const languageCoursesSectionRef = useRef(null);
   const engSubsectionRef = useRef(null);
   const jpSubsectionRef = useRef(null);
   const roSubsectionRef = useRef(null);
-
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(setHeight(languageCoursesSectionRef.current.offsetHeight));
-    dispatch(
-      setYaxisPosition(
-        languageCoursesSectionRef.current.getBoundingClientRect().top +
-          window.pageYOffset
-      )
-    );
-
-    dispatch(setHeight__eng(engSubsectionRef.current.offsetHeight));
-    dispatch(
-      setYaxisPosition__eng(
-        engSubsectionRef.current.getBoundingClientRect().top +
-          window.pageYOffset
-      )
-    );
-    dispatch(setHeight__jp(jpSubsectionRef.current.offsetHeight));
-    dispatch(
-      setYaxisPosition__jp(
-        jpSubsectionRef.current.getBoundingClientRect().top + window.pageYOffset
-      )
-    );
-    dispatch(setHeight__ro(roSubsectionRef.current.offsetHeight));
-    dispatch(
-      setYaxisPosition__ro(
-        roSubsectionRef.current.getBoundingClientRect().top + window.pageYOffset
-      )
-    );
-  }, [dispatch]);
 
   let selectedButton = useSelector(
     (state) => state.languageCoursesSection.selectedButton
@@ -80,6 +32,25 @@ export default function LanguageCoursesSection({ onRender }) {
   const handleClick__jp = () => {
     dispatch(setSelectedButton("japanese"));
   };
+
+  useEffect(() => {
+    if (homeWasRendered === "true") {
+      dispatch(setHeight(languageCoursesSectionRef.current.offsetHeight));
+      const rect = languageCoursesSectionRef.current.getBoundingClientRect();
+      const yOffset = window.pageYOffset || document.documentElement.scrollTop;
+      const yPosition =
+        rect.top +
+        yOffset -
+        parseFloat(
+          getComputedStyle(languageCoursesSectionRef.current).paddingTop
+        );
+      dispatch(setYaxisPosition(yPosition));
+      console.log("setting the languageCoursesSection position")
+    }
+    if (typeof onRender === "function") {
+      onRender();
+    }
+  }, [onRender, homeWasRendered]);
 
   const description = languageModulesDescription();
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   setHeight,
   setYaxisPosition,
@@ -9,23 +9,28 @@ import SectionTitle from "../../../title/SectionTitle";
 import { aboutSectionDescription } from "../../../../helpers/data/generalData";
 
 function AboutSection({ onRender }) {
+  const homeWasRendered = useSelector((state) => state.home.wasRendered);
+  console.log("homeWasRendered: ", homeWasRendered)
   const aboutSectionRef = useRef(null);
   const dispatch = useDispatch();
+  const description = aboutSectionDescription();
 
   useEffect(() => {
-    dispatch(setHeight(aboutSectionRef.current.offsetHeight));
-    dispatch(
-      setYaxisPosition(
-        aboutSectionRef.current.getBoundingClientRect().top + window.pageYOffset
-      )
-    );
-
+    if(homeWasRendered === "true") {
+      dispatch(setHeight(aboutSectionRef.current.offsetHeight));
+      const rect = aboutSectionRef.current.getBoundingClientRect();
+      const yOffset = window.pageYOffset || document.documentElement.scrollTop;
+      const yPosition =
+        rect.top +
+        yOffset -
+        parseFloat(getComputedStyle(aboutSectionRef.current).paddingTop);
+      dispatch(setYaxisPosition(yPosition));
+      console.log("setting the aboutSection position")
+    }
     if (typeof onRender === "function") {
       onRender();
     }
-  }, [onRender]);
-
-  const description = aboutSectionDescription();
+  }, [onRender, homeWasRendered]);
 
   return (
     <section

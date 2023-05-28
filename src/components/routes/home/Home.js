@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { setWasRendered } from "../../../store/homeSectionSlice";
 import { setColor } from "../../../store/headerSlice";
 import styles from "./Home.module.css";
 import { switchWasClicked } from "../../../store/routerSlice";
@@ -95,6 +96,11 @@ export default function Home() {
   useEffect(() => {
     dispatch(setColor("transparent"));
   }, [window.onbeforeunload]);
+
+  useEffect(() => {
+    dispatch(setWasRendered("true"));
+  }, [isAllRendered]);
+
 
   return (
     <section className={styles.Home}>

@@ -28,9 +28,6 @@ function CardsSubsection(props, ref) {
   return (
     <div>
       <div id={id} className={styles.CardsSubsection} ref={ref}>
-        {/* <div className={styles.subtitle}>
-          <Subtitle text={subtitleText} />
-        </div> */}
         <CardsGrid cards={cards} id={id} greyed={greyed} />
       </div>
     </div>

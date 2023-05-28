@@ -40,34 +40,19 @@ function Button(props) {
     (state) => state.programmingSection.yAxisPosition
   );
 
-  const engSubsectionPosition = useSelector(
-    (state) => state.engSubsection.yAxisPosition
-  );
-  const jpSubsectionPosition = useSelector(
-    (state) => state.jpSubsection.yAxisPosition
-  );
-  const roSubsectionPosition = useSelector(
-    (state) => state.roSubsection.yAxisPosition
-  );
-
   if (section === "aboutSection") {
-    sectionPosition = aboutSectionPosition - headerHeight;
+    // sectionPosition = aboutSectionPosition - headerHeight;
+    sectionPosition = aboutSectionPosition;
   } else if (section === "contactSection") {
-    sectionPosition = contactSectionPosition - headerHeight;
+    sectionPosition = contactSectionPosition;
   } else if (section === "FAQsection") {
-    sectionPosition = FAQsectionPosition - headerHeight;
+    sectionPosition = FAQsectionPosition;
   } else if (section === "languageCoursesSection") {
-    sectionPosition = languageCoursesSectionPosition - headerHeight;
+    sectionPosition = languageCoursesSectionPosition;
   } else if (section === "programmingSection") {
-    sectionPosition = programmingSectionPosition - headerHeight;
+    sectionPosition = programmingSectionPosition;
   } else if (section === "heroSection") {
     sectionPosition = 0;
-  } else if (section === "engSubsection") {
-    sectionPosition = engSubsectionPosition - headerHeight;
-  } else if (section === "jpSubsection") {
-    sectionPosition = jpSubsectionPosition - headerHeight;
-  } else if (section === "roSubsection") {
-    sectionPosition = roSubsectionPosition - headerHeight;
   }
 
   let isOpen = useSelector((state) => state.header.isOpen);

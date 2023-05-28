@@ -9,25 +9,25 @@ import SectionTitle from "../../../title/SectionTitle";
 import { programmingSectionDescription } from "../../../../helpers/data/generalData";
 
 export default function ProgrammingSection({ onRender }) {
-  useEffect(() => {
-    if (typeof onRender === "function") {
-      onRender();
-    }
-  }, [onRender]);
-
+  const homeWasRendered = useSelector((state) => state.home.wasRendered);
   const programmingSectionRef = useRef(null);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setHeight(programmingSectionRef.current.offsetHeight));
-    dispatch(
-      setYaxisPosition(
-        programmingSectionRef.current.getBoundingClientRect().top +
-          window.pageYOffset
-      )
-    );
-  }, [dispatch]);
+    if(homeWasRendered === "true") {
+      dispatch(setHeight(programmingSectionRef.current.offsetHeight));
+      
+      const rect = programmingSectionRef.current.getBoundingClientRect();
+      const yOffset = window.pageYOffset || document.documentElement.scrollTop;
+      const yPosition = rect.top + yOffset - parseFloat(getComputedStyle(programmingSectionRef.current).paddingTop);
+      dispatch(setYaxisPosition(yPosition));
+      console.log("setting the programmingSection position")
+    }
+    if (typeof onRender === "function") {
+      onRender();
+    }
+  }, [onRender, homeWasRendered]);
 
-  const headerHeight = useSelector((state) => state.header.height);
+  // const headerHeight = useSelector((state) => state.header.height);
   const description = programmingSectionDescription();
 
 
