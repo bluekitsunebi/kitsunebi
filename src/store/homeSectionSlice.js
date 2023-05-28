@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   wasRendered: "false",
+  isResizing: "false",
 };
 
 export const homeSlice = createSlice({
@@ -11,11 +12,14 @@ export const homeSlice = createSlice({
     setWasRendered: (state, action) => {
       state.wasRendered = action.payload;
     },
+    setIsResizing: (state, action) => {
+      state.isResizing = action.payload;
+    },
   },
 });
 
 export const {
-  setWasRendered,
+  setWasRendered, setIsResizing,
 } = homeSlice.actions;
 
 export default homeSlice.reducer;

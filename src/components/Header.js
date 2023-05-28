@@ -25,7 +25,6 @@ export default function Header({ onRender }) {
       const totalHeight = height + paddingTop + paddingBottom;
       dispatch(setHeight(totalHeight));
       middle = (window.innerHeight - headerHeight) / 2 + headerHeight;
-      console.log("setting the header's height and the middle");
     }
     if (typeof onRender === "function") {
       onRender();

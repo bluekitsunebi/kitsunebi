@@ -27,7 +27,6 @@ export default function ProgrammingSection({ onRender }) {
         rect.top +
         yOffset;
       dispatch(setYaxisPosition(yPosition));
-      console.log("setting the programmingSection position");
     }
     if (typeof onRender === "function") {
       onRender();

@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import { BrowserView, MobileView } from "react-device-detect";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 // ROUTES
@@ -8,13 +7,9 @@ import Home from "./components/routes/home/Home";
 import NotFound from "./components/routes/notFound/NotFound";
 import LanguageCustomCourses from "./components/routes/languageCourses/LanguageCustomCourses";
 
-// mobile (temporary)
-import Mobile from "./components/mobile/Mobile";
-
 function App() {
   return (
     <Fragment>
-      {/* <BrowserView> */}
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -99,10 +94,6 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-      {/* </BrowserView> */}
-      {/* <MobileView>
-        <Mobile />
-      </MobileView> */}
     </Fragment>
   );
 }

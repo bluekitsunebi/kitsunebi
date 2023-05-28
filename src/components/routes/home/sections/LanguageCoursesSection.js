@@ -47,7 +47,6 @@ export default function LanguageCoursesSection({ onRender }) {
       const yOffset = window.pageYOffset || document.documentElement.scrollTop;
       const yPosition = rect.top + yOffset;
       dispatch(setYaxisPosition(yPosition));
-      console.log("setting the languageCoursesSection position");
     }
     if (typeof onRender === "function") {
       onRender();

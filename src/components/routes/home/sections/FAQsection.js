@@ -21,7 +21,6 @@ function FAQsection({ onRender }) {
       const yOffset = window.pageYOffset || document.documentElement.scrollTop;
       const yPosition = rect.top + yOffset;
       dispatch(setYaxisPosition(yPosition));
-      console.log("setting the faqSection position");
     }
     if (typeof onRender === "function") {
       onRender();

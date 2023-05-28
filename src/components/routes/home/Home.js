@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setWasRendered } from "../../../store/homeSectionSlice";
+import { setWasRendered, setIsResizing } from "../../../store/homeSectionSlice";
 import { setColor } from "../../../store/headerSlice";
 import styles from "./Home.module.css";
 import { switchWasClicked } from "../../../store/routerSlice";
@@ -103,6 +103,42 @@ export default function Home() {
   useEffect(() => {
     dispatch(setWasRendered("true"));
   }, [isAllRendered]);
+
+  // DETECT WINDOW RESIZE
+
+  const isResizing = useSelector((state) => state.home.isResizing);
+
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+  
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  };
+
+  useEffect(() => {
+    const handleResizeStart = () => {
+      if (!isResizing) {
+        dispatch(setIsResizing(true));
+      }
+    };
+    const handleResizeEnd = debounce(() => {
+      if (isResizing) {
+        dispatch(setIsResizing(false));
+      }
+    }, 50);
+    window.addEventListener('resize', handleResizeStart);
+    window.addEventListener('resize', handleResizeEnd);
+    return () => {
+      window.removeEventListener('resize', handleResizeStart);
+      window.removeEventListener('resize', handleResizeEnd);
+    };
+  }, [isResizing, dispatch]);
 
   return (
     <section className={styles.Home}>

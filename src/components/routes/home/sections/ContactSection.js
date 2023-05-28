@@ -27,7 +27,6 @@ function ContactSection({ onRender }) {
         rect.top +
         yOffset;
       dispatch(setYaxisPosition(yPosition));
-      console.log("setting the contactSection position");
     }
     if (typeof onRender === "function") {
       onRender();

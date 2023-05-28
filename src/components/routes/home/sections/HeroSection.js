@@ -82,6 +82,25 @@ export default function HeroSection({ onRender }) {
     }
   }, [onRender]);
 
+  // STOP ANIMATION WHEN WINDOW IS RESIZING
+
+  let isResizing = useSelector((state) => state.home.isResizing);
+  const wasRendered = useSelector((state) => state.home.wasRendered);
+
+  useEffect(() => {
+    console.log(isResizing);
+    if (halfBackgroundLeftRef.current) {
+      if (isResizing == true) {
+        halfBackgroundLeftRef.current.style.transition = "none";
+        console.log("pause animation")
+      }
+      if (isResizing == false) {
+        halfBackgroundLeftRef.current.style.transition = "all 0.2s linear";
+        console.log("start animation")
+      }
+    }
+  }, [isResizing]);
+
   return (
     <section
       id="heroSection"
@@ -98,7 +117,6 @@ export default function HeroSection({ onRender }) {
             ${halfAnimation === "middle" && styles.middle}
             ${halfAnimation === "expand" && styles.expandLeft}
             ${halfAnimation === "contract" && styles.contractLeft}
-
         `}
         onMouseEnter={handleMouseEnter__left}
         onMouseLeave={handleMouseLeave__left}
@@ -118,9 +136,9 @@ export default function HeroSection({ onRender }) {
         onMouseLeave={handleMouseLeave__titleLeft}
       >
         <div className={styles.container__top}>
-            <div className={`${styles.coverContainer} ${styles.coverLeft}`}>
+          <div className={`${styles.coverContainer} ${styles.coverLeft}`}>
             <div className={`${styles.iconLeft} ${styles.icon}`}>和</div>
-            </div>
+          </div>
         </div>
 
         <div id="titleLeft" ref={titleLeftRef} className={styles.title}>
@@ -176,27 +194,28 @@ export default function HeroSection({ onRender }) {
                 ? styles.pushTitleRight
                 : styles.pullTitleRight
             }
+            
         `}
       >
         {/* GEARS */}
         <div className={styles.container__bottom}>
-            <div className={`${styles.coverContainer} ${styles.coverRight}`}>
+          <div className={`${styles.coverContainer} ${styles.coverRight}`}>
             <span
-                className={`material-icons-round ${styles.iconRight} ${styles.gear1} ${styles.icon}`}
+              className={`material-icons-round ${styles.iconRight} ${styles.gear1} ${styles.icon}`}
             >
-                settings
+              settings
             </span>
             <span
-                className={`material-icons-round ${styles.iconRight} ${styles.gear2} ${styles.icon}`}
+              className={`material-icons-round ${styles.iconRight} ${styles.gear2} ${styles.icon}`}
             >
-                settings
+              settings
             </span>
             <span
-                className={`material-icons-round ${styles.iconRight} ${styles.gear3} ${styles.icon}`}
+              className={`material-icons-round ${styles.iconRight} ${styles.gear3} ${styles.icon}`}
             >
-                settings
+              settings
             </span>
-            </div>
+          </div>
         </div>
 
         {/* TITLE */}

@@ -20,7 +20,6 @@ export default function ContactForm(props) {
       " " +
       subject[1]
     ).toLowerCase();
-    console.log(subject);
   }
   const form = useRef();
   const [countryCode, setCountryCode] = useState();
@@ -59,7 +58,6 @@ export default function ContactForm(props) {
       )
       .then(
         (result) => {
-          console.log(result.text);
           setIsSend("true");
           form.current.reset();
         },
