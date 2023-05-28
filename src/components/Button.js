@@ -41,16 +41,15 @@ function Button(props) {
   );
 
   if (section === "aboutSection") {
-    // sectionPosition = aboutSectionPosition - headerHeight;
-    sectionPosition = aboutSectionPosition;
+    sectionPosition = aboutSectionPosition - headerHeight + 1;
   } else if (section === "contactSection") {
-    sectionPosition = contactSectionPosition;
+    sectionPosition = contactSectionPosition - headerHeight + 1;
   } else if (section === "FAQsection") {
-    sectionPosition = FAQsectionPosition;
+    sectionPosition = FAQsectionPosition - headerHeight + 1;
   } else if (section === "languageCoursesSection") {
-    sectionPosition = languageCoursesSectionPosition;
+    sectionPosition = languageCoursesSectionPosition - headerHeight + 1;
   } else if (section === "programmingSection") {
-    sectionPosition = programmingSectionPosition;
+    sectionPosition = programmingSectionPosition - headerHeight + 1;
   } else if (section === "heroSection") {
     sectionPosition = 0;
   }

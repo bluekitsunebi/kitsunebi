@@ -9,14 +9,21 @@ function FAQsection({ onRender }) {
   const FAQsectionRef = useRef(null);
   const dispatch = useDispatch();
   useEffect(() => {
-    if(homeWasRendered === "true") {
-      dispatch(setHeight(FAQsectionRef.current.offsetHeight));
-  
+    if (homeWasRendered === "true") {
+      const computedStyle = getComputedStyle(FAQsectionRef.current);
+      const paddingTop = parseFloat(computedStyle.paddingTop);
+      const paddingBottom = parseFloat(computedStyle.paddingBottom);
+      const totalHeight =
+        FAQsectionRef.current.offsetHeight + paddingTop + paddingBottom;
+      dispatch(setHeight(totalHeight));
+
       const rect = FAQsectionRef.current.getBoundingClientRect();
       const yOffset = window.pageYOffset || document.documentElement.scrollTop;
-      const yPosition = rect.top + yOffset - parseFloat(getComputedStyle(FAQsectionRef.current).paddingTop);
+      const yPosition =
+        rect.top +
+        yOffset;
       dispatch(setYaxisPosition(yPosition));
-      console.log("setting the faqSection position")
+      console.log("setting the faqSection position");
     }
     if (typeof onRender === "function") {
       onRender();

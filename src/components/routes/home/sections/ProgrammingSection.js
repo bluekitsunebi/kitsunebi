@@ -13,14 +13,21 @@ export default function ProgrammingSection({ onRender }) {
   const programmingSectionRef = useRef(null);
   const dispatch = useDispatch();
   useEffect(() => {
-    if(homeWasRendered === "true") {
-      dispatch(setHeight(programmingSectionRef.current.offsetHeight));
-      
+    if (homeWasRendered === "true") {
+      const computedStyle = getComputedStyle(programmingSectionRef.current);
+      const paddingTop = parseFloat(computedStyle.paddingTop);
+      const paddingBottom = parseFloat(computedStyle.paddingBottom);
+      const totalHeight =
+        programmingSectionRef.current.offsetHeight + paddingTop + paddingBottom;
+      dispatch(setHeight(totalHeight));
+
       const rect = programmingSectionRef.current.getBoundingClientRect();
       const yOffset = window.pageYOffset || document.documentElement.scrollTop;
-      const yPosition = rect.top + yOffset - parseFloat(getComputedStyle(programmingSectionRef.current).paddingTop);
+      const yPosition =
+        rect.top +
+        yOffset;
       dispatch(setYaxisPosition(yPosition));
-      console.log("setting the programmingSection position")
+      console.log("setting the programmingSection position");
     }
     if (typeof onRender === "function") {
       onRender();
@@ -29,7 +36,6 @@ export default function ProgrammingSection({ onRender }) {
 
   // const headerHeight = useSelector((state) => state.header.height);
   const description = programmingSectionDescription();
-
 
   return (
     <section

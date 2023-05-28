@@ -35,17 +35,19 @@ export default function LanguageCoursesSection({ onRender }) {
 
   useEffect(() => {
     if (homeWasRendered === "true") {
-      dispatch(setHeight(languageCoursesSectionRef.current.offsetHeight));
+      const computedStyle = getComputedStyle(languageCoursesSectionRef.current);
+      const paddingTop = parseFloat(computedStyle.paddingTop);
+      const paddingBottom = parseFloat(computedStyle.paddingBottom);
+      const totalHeight =
+        languageCoursesSectionRef.current.offsetHeight +
+        paddingTop +
+        paddingBottom;
+      dispatch(setHeight(totalHeight));
       const rect = languageCoursesSectionRef.current.getBoundingClientRect();
       const yOffset = window.pageYOffset || document.documentElement.scrollTop;
-      const yPosition =
-        rect.top +
-        yOffset -
-        parseFloat(
-          getComputedStyle(languageCoursesSectionRef.current).paddingTop
-        );
+      const yPosition = rect.top + yOffset;
       dispatch(setYaxisPosition(yPosition));
-      console.log("setting the languageCoursesSection position")
+      console.log("setting the languageCoursesSection position");
     }
     if (typeof onRender === "function") {
       onRender();

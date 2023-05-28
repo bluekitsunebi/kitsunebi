@@ -23,6 +23,7 @@ window.onbeforeunload = function () {
 export default function Home() {
   const headerHeight = useSelector((state) => state.header.height);
 
+  const headerRef = useRef(null);
   const heroSectionRef = useRef(null);
   const aboutSectionRef = useRef(null);
   const languageCoursesSectionRef = useRef(null);
@@ -40,6 +41,7 @@ export default function Home() {
   const [isAllRendered, setIsAllRendered] = useState(false);
   const handleComponentRender = () => {
     if (
+      headerRef.current &&
       heroSectionRef.current &&
       aboutSectionRef.current &&
       languageCoursesSectionRef.current &&
@@ -75,7 +77,8 @@ export default function Home() {
 
       if (element) {
         const rect = element.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
         window.scrollTo({
           top: rect.top + scrollTop - headerHeight,
           behavior: "smooth",
@@ -101,10 +104,11 @@ export default function Home() {
     dispatch(setWasRendered("true"));
   }, [isAllRendered]);
 
-
   return (
     <section className={styles.Home}>
-      <Header />
+      <div ref={headerRef}>
+        <Header onRender={handleComponentRender} />
+      </div>
       <section ref={heroSectionRef}>
         <HeroSection onRender={handleComponentRender} />
       </section>
@@ -122,7 +126,7 @@ export default function Home() {
       </section>
       <section ref={contactSectionRef}>
         <ContactSection onRender={handleComponentRender} />
-      </section >
+      </section>
       <Footer />
     </section>
   );

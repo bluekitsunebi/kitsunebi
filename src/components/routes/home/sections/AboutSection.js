@@ -10,22 +10,32 @@ import { aboutSectionDescription } from "../../../../helpers/data/generalData";
 
 function AboutSection({ onRender }) {
   const homeWasRendered = useSelector((state) => state.home.wasRendered);
-  console.log("homeWasRendered: ", homeWasRendered)
+  console.log("homeWasRendered: ", homeWasRendered);
   const aboutSectionRef = useRef(null);
   const dispatch = useDispatch();
   const description = aboutSectionDescription();
+  let paddingBottom = 0;
+  let paddingTop = 0;
+  console.log(paddingBottom);
+  console.log(paddingTop);
 
   useEffect(() => {
-    if(homeWasRendered === "true") {
-      dispatch(setHeight(aboutSectionRef.current.offsetHeight));
+    if (homeWasRendered === "true") {
+      const computedStyle = getComputedStyle(aboutSectionRef.current);
+      paddingTop = parseFloat(computedStyle.paddingTop);
+      paddingBottom = parseFloat(computedStyle.paddingBottom);
+      console.log(paddingBottom);
+      console.log(paddingTop);
+      const totalHeight =
+        aboutSectionRef.current.offsetHeight + paddingTop + paddingBottom;
+      dispatch(setHeight(totalHeight));
       const rect = aboutSectionRef.current.getBoundingClientRect();
       const yOffset = window.pageYOffset || document.documentElement.scrollTop;
       const yPosition =
         rect.top +
-        yOffset -
-        parseFloat(getComputedStyle(aboutSectionRef.current).paddingTop);
+        yOffset;
       dispatch(setYaxisPosition(yPosition));
-      console.log("setting the aboutSection position")
+      console.log("setting the aboutSection position");
     }
     if (typeof onRender === "function") {
       onRender();

@@ -11,12 +11,26 @@ import styles from "./Header.module.css";
 import Logo from "./Logo";
 import Button from "./Button";
 
-export default function Header() {
+export default function Header({ onRender }) {
+  const homeWasRendered = useSelector((state) => state.home.wasRendered);
   const headerRef = useRef(null);
   const dispatch = useDispatch();
+  let middle = 0;
   useEffect(() => {
-    dispatch(setHeight(headerRef.current.offsetHeight));
-  }, [dispatch]);
+    if (homeWasRendered === "true") {
+      const style = window.getComputedStyle(headerRef.current);
+      const height = parseInt(style.height);
+      const paddingTop = parseInt(style.paddingTop);
+      const paddingBottom = parseInt(style.paddingBottom);
+      const totalHeight = height + paddingTop + paddingBottom;
+      dispatch(setHeight(totalHeight));
+      middle = (window.innerHeight - headerHeight) / 2 + headerHeight;
+      console.log("setting the header's height and the middle");
+    }
+    if (typeof onRender === "function") {
+      onRender();
+    }
+  }, [onRender, homeWasRendered]);
 
   const headerHeight = useSelector((state) => state.header.height);
   const color = useSelector((state) => state.header.color);
@@ -41,7 +55,6 @@ export default function Header() {
     (state) => state.programmingSection.yAxisPosition
   );
 
-  const middle = (window.innerHeight - headerHeight) / 2 + headerHeight;
   const location = useLocation().pathname;
 
   const listenScrollEvent = () => {

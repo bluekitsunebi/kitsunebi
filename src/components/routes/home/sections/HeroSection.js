@@ -76,6 +76,12 @@ export default function HeroSection({ onRender }) {
     dispatch(setDescriptionLeft__entered("true"));
   };
 
+  useEffect(() => {
+    if (typeof onRender === "function") {
+      onRender();
+    }
+  }, [onRender]);
+
   return (
     <section
       id="heroSection"
