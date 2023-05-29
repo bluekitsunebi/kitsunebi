@@ -6,6 +6,7 @@ import {
   setUnderlined,
   setColor,
   setMenu,
+  checkWidth,
 } from "../store/headerSlice";
 import styles from "./Header.module.css";
 import Logo from "./Logo";
@@ -109,12 +110,31 @@ export default function Header({ onRender }) {
   });
 
   const handleLogoClick = () => {
-      window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   };
 
   const handleMenu = () => {
     dispatch(setMenu());
   };
+
+  // CHECK HEADER WIDTH
+
+  const headerWidth = useSelector((state) => state.header.width);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const style = window.getComputedStyle(headerRef.current);
+      const width = parseInt(style.width);
+      dispatch(checkWidth(width));
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  if (headerWidth > 1380 && isOpen === true) {
+    dispatch(setMenu());
+  }
 
   return (
     <header

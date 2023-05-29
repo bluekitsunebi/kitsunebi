@@ -55,6 +55,7 @@ function Button(props) {
   }
 
   let isOpen = useSelector((state) => state.header.isOpen);
+  let headerWidth = useSelector((state) => state.header.width);
 
   const handleClick = () => {
     window.scroll({
@@ -66,7 +67,7 @@ function Button(props) {
     dispatch(setLink(link));
     dispatch(setSection(section));
     dispatch(switchWasClicked());
-    if(category === "header"){
+    if(category === "header" && headerWidth <= 1380){
       dispatch(setMenu());
     }
   };
