@@ -14,6 +14,8 @@ let timer = 0;
 export default function HeroSection({ onRender }) {
   const heroSectionRef = useRef(null);
   const halfBackgroundLeftRef = useRef(null);
+  const titleImageContainer__leftRef = useRef(null);
+  const titleImageContainer__rightRef = useRef(null);
   const titleLeftRef = useRef(null);
   const descriptionRightRef = useRef(null);
 
@@ -88,15 +90,16 @@ export default function HeroSection({ onRender }) {
   const wasRendered = useSelector((state) => state.home.wasRendered);
 
   useEffect(() => {
-    console.log(isResizing);
     if (halfBackgroundLeftRef.current) {
       if (isResizing == true) {
         halfBackgroundLeftRef.current.style.transition = "none";
-        console.log("pause animation")
+        titleImageContainer__leftRef.current.style.transition = "none";
+        titleImageContainer__rightRef.current.style.transition = "none";
       }
       if (isResizing == false) {
         halfBackgroundLeftRef.current.style.transition = "all 0.2s linear";
-        console.log("start animation")
+        titleImageContainer__leftRef.current.style.transition = "all 0.2s linear";
+        titleImageContainer__rightRef.current.style.transition = "all 0.2s linear";
       }
     }
   }, [isResizing]);
@@ -132,6 +135,7 @@ export default function HeroSection({ onRender }) {
             : styles.pullTitleLeft
         }
         `}
+        ref={titleImageContainer__leftRef}
         onMouseEnter={handleMouseEnter__titleLeft}
         onMouseLeave={handleMouseLeave__titleLeft}
       >
@@ -196,6 +200,7 @@ export default function HeroSection({ onRender }) {
             }
             
         `}
+        ref={titleImageContainer__rightRef}
       >
         {/* GEARS */}
         <div className={styles.container__bottom}>

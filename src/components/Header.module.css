@@ -76,7 +76,7 @@
     display: block;
 }
 
-@media (max-width: 1655px) {
+@media (max-width: 1380px) {
   .Header {
     width: 100vw;
     height: 100vh;

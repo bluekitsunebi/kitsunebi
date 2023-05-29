@@ -109,9 +109,7 @@ export default function Header({ onRender }) {
   });
 
   const handleLogoClick = () => {
-    if (location === "/") {
       window.scrollTo(0, 0);
-    }
   };
 
   const handleMenu = () => {
@@ -240,11 +238,11 @@ export default function Header({ onRender }) {
         <Button
           name="faq"
           category="header"
-          text="Intrebari frecvente"
+          text="faq"
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
-          transform="capitalizeFirstLetter"
+          transform="uppercase"
           section="FAQsection"
           link="/"
         ></Button>

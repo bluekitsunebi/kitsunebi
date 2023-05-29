@@ -131,7 +131,7 @@ export default function Home() {
       if (isResizing) {
         dispatch(setIsResizing(false));
       }
-    }, 50);
+    }, 100);
     window.addEventListener('resize', handleResizeStart);
     window.addEventListener('resize', handleResizeEnd);
     return () => {

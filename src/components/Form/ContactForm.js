@@ -31,6 +31,7 @@ export default function ContactForm(props) {
   };
   const [isSend, setIsSend] = useState("false");
   const RECAPTCHA_KEY = "6Leu5AUmAAAAAJVC7lT0cMLGgy4hzSK2kqRtE2_h";
+
   const [isRecaptchaCompleted, setIsRecaptchaCompleted] = useState(false);
   const handleRecaptchaChange = (value) => {
     setIsRecaptchaCompleted(true);
@@ -58,6 +59,7 @@ export default function ContactForm(props) {
       )
       .then(
         (result) => {
+          console.log(result.text);
           setIsSend("true");
           form.current.reset();
         },

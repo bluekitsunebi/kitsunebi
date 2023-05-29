@@ -18,6 +18,7 @@
 /* WITHOUT BORDER */
 
 .button__withoutBorder {
+  font-size: 1.7rem;
   color: var(--textLight);
   background-color: transparent;
   border: none;
