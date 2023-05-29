@@ -1,24 +1,163 @@
 @import url("../../../../helpers/colors.css");
 
 .contactSection {
-  /* box-sizing: content-box; */
   background-color: var(--blueTint90);
-  padding: 5rem;
+  padding: 5rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .title {
-  /* box-sizing: content-box; */
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
-@media (max-width: 900px) {
-  .contactSection {
-    padding: 3rem;
+.contactContainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: green; */
+}
+
+.formContainer {
+  width: 60%;
+  height: fit-content;
+}
+
+.companyDetails {
+  /* align-self: center; */
+  width: 31rem;
+  background-color: var(--blueTint70);
+  color: var(--navy);
+  font-size: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem;
+  margin-top: 3.7rem;
+  height: 44rem;
+}
+
+.companyDetails > * {
+  margin-bottom: 1rem;
+}
+
+.IBAN {
+  margin-top: 2rem;
+}
+
+.subtitle {
+  display: none;
+  color: var(--navy);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.subtitle__companyDetails {
+  font-size: 2rem;
+}
+
+.subtitle__form {
+  text-align: center;
+  font-size: 2.3rem;
+}
+
+@media (max-width: 1630px){
+  .formContainer {
+    width: 50%;
   }
 }
 
-@media (max-width: 550px) {
-  .contactSection{
+@media (max-width: 1300px){
+  .companyDetails {
+    font-size: 1.5rem;
+    width: 28rem;
+  }
+  .formContainer {
+    width: 40%;
+  }
+}
+
+@media (max-width: 1260px){
+  .contactSection {
+    padding: 5rem;
+  }
+  .contactContainer {
+    flex-direction: column-reverse;
+  }
+  .subtitle {
+    display: inline-block;
+  }
+  
+  .formContainer {
+    width: 100%;
+  }
+  .companyDetails {
+    width: 100%;
+    height: fit-content;
+    margin-top: 0;
+    margin-bottom: 5rem;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  .companyDetails > * {
+    margin-bottom: 0.7rem;
+  }
+  .IBAN {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 900px){
+  .contactSection {
+    padding: 3rem;
+  }
+  .subtitle__companyDetails {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+  .subtitle__form {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .companyDetails {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
     padding: 1.5rem;
+  }
+  .companyDetails > * {
+    margin-bottom: 0.4rem;
+  }
+  .IBAN {
+    margin-top: 0.7rem;
+  }
+}
+
+@media (max-width: 550px){
+  .title {
+    margin-bottom: 1.5rem;
+  }
+  .contactSection {
+    padding: 1.5rem;
+  }
+  .subtitle__companyDetails {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .subtitle__form {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .companyDetails {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.3rem;
+  }
+  .companyDetails > * {
+    margin-bottom: 0.2rem;
+  }
+  .IBAN {
+    margin-top: 0.5rem;
   }
 }

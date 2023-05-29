@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styles from "./Button.module.css";
 // import { scroll } from "../helpers/helpers";
 import { setLocation, setLink, setSection, switchWasClicked } from "../store/routerSlice";
-import { setMenu } from "../store/headerSlice";
+import { setMenu, closeMenu } from "../store/headerSlice";
 
 function Button(props) {
   const location = useLocation().pathname;
@@ -55,7 +55,6 @@ function Button(props) {
   }
 
   let isOpen = useSelector((state) => state.header.isOpen);
-  let headerWidth = useSelector((state) => state.header.width);
 
   const handleClick = () => {
     window.scroll({
@@ -67,8 +66,8 @@ function Button(props) {
     dispatch(setLink(link));
     dispatch(setSection(section));
     dispatch(switchWasClicked());
-    if(category === "header" && headerWidth <= 1380){
-      dispatch(setMenu());
+    if(category === "header" && window.innerWidth <= 1380){
+      dispatch(closeMenu());
     }
   };
 

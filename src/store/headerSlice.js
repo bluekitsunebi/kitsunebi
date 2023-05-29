@@ -5,7 +5,6 @@ const initialState = {
   underlined: "home",
   color: undefined,
   isOpen: false,
-  width: undefined,
 };
 
 export const headerSlice = createSlice({
@@ -24,12 +23,12 @@ export const headerSlice = createSlice({
     setMenu: (state) => {
       state.isOpen = !state.isOpen;
     },
-    checkWidth: (state, action) => {
-      state.width = action.payload;
-    }
+    closeMenu: (state) => {
+      state.isOpen = false;
+    },
   },
 });
 
-export const { setHeight, setUnderlined, setColor, setMenu, checkWidth } = headerSlice.actions;
+export const { setHeight, setUnderlined, setColor, setMenu, closeMenu } = headerSlice.actions;
 
 export default headerSlice.reducer;

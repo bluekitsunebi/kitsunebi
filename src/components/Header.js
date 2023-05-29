@@ -6,7 +6,7 @@ import {
   setUnderlined,
   setColor,
   setMenu,
-  checkWidth,
+  closeMenu,
 } from "../store/headerSlice";
 import styles from "./Header.module.css";
 import Logo from "./Logo";
@@ -117,24 +117,13 @@ export default function Header({ onRender }) {
     dispatch(setMenu());
   };
 
-  // CHECK HEADER WIDTH
-
-  const headerWidth = useSelector((state) => state.header.width);
-
   useEffect(() => {
-    const handleResize = () => {
-      const style = window.getComputedStyle(headerRef.current);
-      const width = parseInt(style.width);
-      dispatch(checkWidth(width));
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  if (headerWidth > 1380 && isOpen === true) {
-    dispatch(setMenu());
-  }
+    if (window.innerWidth > 1380 && isOpen === true) {
+      dispatch(closeMenu());
+      console.log(isOpen)
+      console.log("close");
+    }
+  }, [window.innerWidth > 1380]);
 
   return (
     <header
