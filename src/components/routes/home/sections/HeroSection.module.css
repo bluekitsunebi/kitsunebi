@@ -53,6 +53,7 @@
 .coverLeft {
   background-color: var(--cinnabarTint10);
   justify-content: center;
+  overflow: hidden;
 }
 
 .coverRight {
@@ -61,13 +62,22 @@
 }
 
 .iconLeft {
-  font-size: 6rem;
+  /* font-size: 6rem; */
   color: var(--textLight);
   align-self: center;
+  display: flex;
 }
 
 .iconRight {
   font-size: 3rem;
+}
+
+.kanjiDrawing {
+  height: 6rem;
+  width: 6rem;
+  align-self: center;
+  justify-self: center;
+  
 }
 
 .title {
@@ -341,7 +351,12 @@
   }
 
   .iconRight {
-    font-size: 2.1rem;
+    font-size: 2rem;
+  }
+
+  .kanjiDrawing {
+    height: 4.5rem;
+    width: 4.5rem;
   }
 
   .gear1 {
@@ -500,7 +515,12 @@
   }
 
   .iconRight {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
+  }
+
+  .kanjiDrawing {
+    height: 3.5rem;
+    width: 3.5rem;
   }
 
   .gear1 {
@@ -576,45 +596,50 @@
     font-size: 1.4rem;
   }
 
+  .kanjiDrawing {
+    height: 3rem;
+    width: 3rem;
+  }
+
   .gear1 {
-    transform: translate(-0.1rem, 0.5rem) rotate(0deg);
+    transform: translate(-0.1rem, 0.4rem) rotate(0deg);
     animation-name: spin1;
   }
 
   .gear2 {
-    transform: translate(0.7rem) rotate(0deg);
+    transform: translate(0.7rem, -0.12rem) rotate(0deg);
     animation-name: spin2;
   }
 
   .gear3 {
-    transform: translate(-0.1rem, -0.5rem) rotate(0deg);
+    transform: translate(-0.1rem, -0.7rem) rotate(0deg);
     animation-name: spin3;
   }
 
   @keyframes spin1 {
     0% {
-      transform: translate(-0.1rem, 0.5rem) rotate(0deg);
+      transform: translate(-0.1rem, 0.4rem) rotate(0deg);
     }
     100% {
-      transform: translate(-0.1rem, 0.5rem) rotate(359deg);
+      transform: translate(-0.1rem, 0.4rem) rotate(359deg);
     }
   }
 
   @keyframes spin2 {
     0% {
-      transform: translate(0.7rem) rotate(0deg);
+      transform: translate(0.7rem, -0.12rem) rotate(0deg);
     }
     100% {
-      transform: translate(0.7rem) rotate(-359deg);
+      transform: translate(0.7rem, -0.12rem) rotate(-359deg);
     }
   }
 
   @keyframes spin3 {
     0% {
-      transform: translate(-0.1rem, -0.5rem) rotate(0deg);
+      transform: translate(-0.1rem, -0.7rem) rotate(0deg);
     }
     100% {
-      transform: translate(-0.1rem, -0.5rem) rotate(359deg);
+      transform: translate(-0.1rem, -0.7rem) rotate(359deg);
     }
   }
 

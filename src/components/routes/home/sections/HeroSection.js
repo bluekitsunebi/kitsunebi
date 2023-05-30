@@ -8,6 +8,7 @@ import {
   setTitleLeft__entered,
   setDescriptionLeft__entered,
 } from "../../../../store/heroSectionSlice";
+import kanjiDrawing from "../../../../videos/kanjiAnimation.mp4";
 
 let timer = 0;
 
@@ -98,11 +99,37 @@ export default function HeroSection({ onRender }) {
       }
       if (isResizing == false) {
         halfBackgroundLeftRef.current.style.transition = "all 0.2s linear";
-        titleImageContainer__leftRef.current.style.transition = "all 0.2s linear";
-        titleImageContainer__rightRef.current.style.transition = "all 0.2s linear";
+        titleImageContainer__leftRef.current.style.transition =
+          "all 0.2s linear";
+        titleImageContainer__rightRef.current.style.transition =
+          "all 0.2s linear";
       }
     }
   }, [isResizing]);
+
+  // VIDEO FOR KANJI ANIMATION
+
+  const videoRef = useRef(null);
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.7;
+    }
+  }, []);
+
+  // pause video once every loop
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const handleVideoEnd = () => {
+      setTimeout(() => video.play(), 1000);
+    };
+    if (video) {
+      video.addEventListener("ended", handleVideoEnd);
+      return () => {
+        video.removeEventListener("ended", handleVideoEnd);
+      };
+    }
+  }, []);
 
   return (
     <section
@@ -141,7 +168,18 @@ export default function HeroSection({ onRender }) {
       >
         <div className={styles.container__top}>
           <div className={`${styles.coverContainer} ${styles.coverLeft}`}>
-            <div className={`${styles.iconLeft} ${styles.icon}`}>和</div>
+            <div className={`${styles.iconLeft} ${styles.icon}`}>
+              <video
+                autoPlay
+                muted
+                ref={videoRef}
+                className={styles.kanjiDrawing}
+              >
+                <source src={kanjiDrawing} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              {/* 和 */}
+            </div>
           </div>
         </div>
 
