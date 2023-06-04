@@ -110,6 +110,7 @@ export default function HeroSection({ onRender }) {
   // VIDEO FOR KANJI ANIMATION
 
   const videoRef = useRef(null);
+  
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 1.7;
@@ -172,6 +173,7 @@ export default function HeroSection({ onRender }) {
               <video
                 autoPlay
                 muted
+                playsInline
                 ref={videoRef}
                 className={styles.kanjiDrawing}
               >
