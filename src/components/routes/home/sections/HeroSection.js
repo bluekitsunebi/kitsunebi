@@ -288,6 +288,134 @@ export default function HeroSection({ onRender }) {
         </div>
       </div>
 
+      {/* ------------------------ MOBILE ------------------------ */}
+
+      <div className={styles.coverTop}>
+        {/* HEADER SPACING */}
+        <div className={styles.header__transparent}></div>
+        {/* JAPANESE COURSES */}
+        <div className={styles.coverTop__mobile}>
+          <div>
+            <div
+              className={`
+                ${styles.titleImageContainer__mobile}
+                ${styles.titleImageContainer__left}
+                ${
+                  isEntered__hero === "false"
+                    ? styles.pushTitleLeft
+                    : styles.pullTitleLeft
+                }
+              `}
+              ref={titleImageContainer__leftRef}
+              onMouseEnter={handleMouseEnter__titleLeft}
+              onMouseLeave={handleMouseLeave__titleLeft}
+            >
+              <div className={styles.container__top}>
+                <div className={`${styles.coverContainer} ${styles.coverLeft}`}>
+                  <div className={`${styles.iconLeft} ${styles.icon}`}>
+                    <video
+                      autoPlay
+                      muted
+                      ref={videoRef}
+                      className={styles.kanjiDrawing}
+                    >
+                      <source src={kanjiDrawing} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    {/* 和 */}
+                  </div>
+                </div>
+              </div>
+
+              <div id="titleLeft" ref={titleLeftRef} className={styles.title}>
+                <div>Cursuri online</div>
+                <div>de Japoneza</div>
+              </div>
+            </div>
+          </div>
+          <div
+            className={`${styles.button__mobile} ${styles.button__mobile__top} ${styles.buttonMobile__top}`}
+          >
+            <Button
+              name="find out more"
+              text="afla mai multe"
+              type="empty"
+              position="left"
+              underlinedButton=""
+              transform="capitalizeFirstLetter"
+              section="languageCoursesSection"
+              link="/"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* SOFTWARE DEV */}
+
+      <div className={styles.coverBottom__mobile}>
+        <div
+          className={`
+            ${styles.titleImageContainer__mobile}
+            ${styles.titleImageContainer__right}
+            ${
+              isEntered__hero === "false"
+                ? styles.pushTitleRight
+                : styles.pullTitleRight
+            }
+            
+        `}
+          ref={titleImageContainer__rightRef}
+        >
+          {/* GEARS */}
+          <div className={styles.container__bottom}>
+            <div className={`${styles.coverContainer} ${styles.coverRight}`}>
+              <span
+                className={`material-icons-round ${styles.iconRight} ${styles.gear1} ${styles.icon}`}
+              >
+                settings
+              </span>
+              <span
+                className={`material-icons-round ${styles.iconRight} ${styles.gear2} ${styles.icon}`}
+              >
+                settings
+              </span>
+              <span
+                className={`material-icons-round ${styles.iconRight} ${styles.gear3} ${styles.icon}`}
+              >
+                settings
+              </span>
+            </div>
+          </div>
+
+          {/* TITLE */}
+          <div
+            id="titleRight"
+            className={`
+            ${styles.title}
+            ${styles.title__right}
+        `}
+          >
+            <div>Dezvoltare</div>
+            <div>Software</div>
+          </div>
+        </div>
+
+        <div
+          className={`${styles.button__mobile} ${styles.button__mobile__bottom} ${styles.buttonMobile__bottom}`}
+        >
+          <Button
+            name="find out more"
+            text="afla mai multe"
+            type="empty"
+            position="right"
+            underlinedButton=""
+            transform="capitalizeFirstLetter"
+            section="programmingSection"
+            link="/"
+          />
+        </div>
+      </div>
+
       {/* DESCRIPTION */}
       <ul
         id="descriptionRight"

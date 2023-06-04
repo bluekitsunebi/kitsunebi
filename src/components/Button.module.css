@@ -120,13 +120,13 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 550px), (max-height: 780px) {
   .Button {
     font-size: 1.5rem;
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 300px), (max-height: 690px) {
   .Button {
     font-size: 1rem;
   }
