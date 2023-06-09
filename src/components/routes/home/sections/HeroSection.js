@@ -10,15 +10,12 @@ import {
 } from "../../../../store/heroSectionSlice";
 import kanjiDrawing from "../../../../videos/kanjiAnimation.mp4";
 
-let timer = 0;
-
 export default function HeroSection({ onRender }) {
   const heroSectionRef = useRef(null);
   const halfBackgroundLeftRef = useRef(null);
   const titleImageContainer__leftRef = useRef(null);
   const titleImageContainer__rightRef = useRef(null);
   const titleLeftRef = useRef(null);
-  const descriptionRightRef = useRef(null);
 
   const dispatch = useDispatch();
   let isEntered__hero = useSelector(
@@ -110,27 +107,51 @@ export default function HeroSection({ onRender }) {
   // VIDEO FOR KANJI ANIMATION
 
   const videoRef = useRef(null);
-  
+  const videoRef2 = useRef(null);
+
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 1.7;
+      videoRef.current.addEventListener('ended', (event) => {
+        setTimeout(() => {
+          event.target.play();
+        }, 1000);
+      });
     }
+  
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.removeEventListener('ended', (event) => {
+          setTimeout(() => {
+            event.target.play();
+          }, 1000);
+        });
+      }
+    };
   }, []);
-
-  // pause video once every loop
 
   useEffect(() => {
-    const video = videoRef.current;
-    const handleVideoEnd = () => {
-      setTimeout(() => video.play(), 1000);
-    };
-    if (video) {
-      video.addEventListener("ended", handleVideoEnd);
-      return () => {
-        video.removeEventListener("ended", handleVideoEnd);
-      };
+    if (videoRef2.current) {
+      videoRef2.current.playbackRate = 1.7;
+      videoRef2.current.addEventListener('ended', (event) => {
+        setTimeout(() => {
+          event.target.play();
+        }, 1000);
+      });
     }
+  
+    return () => {
+      if (videoRef2.current) {
+        videoRef2.current.removeEventListener('ended', (event) => {
+          setTimeout(() => {
+            event.target.play();
+          }, 1000);
+        });
+      }
+    };
   }, []);
+  
+  
 
   return (
     <section
@@ -180,7 +201,6 @@ export default function HeroSection({ onRender }) {
                 <source src={kanjiDrawing} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              {/* 和 */}
             </div>
           </div>
         </div>
@@ -293,8 +313,6 @@ export default function HeroSection({ onRender }) {
       {/* ------------------------ MOBILE ------------------------ */}
 
       <div className={styles.coverTop}>
-        {/* HEADER SPACING */}
-        <div className={styles.header__transparent}></div>
         {/* JAPANESE COURSES */}
         <div className={styles.coverTop__mobile}>
           <div>
@@ -318,13 +336,13 @@ export default function HeroSection({ onRender }) {
                     <video
                       autoPlay
                       muted
-                      ref={videoRef}
+                      playsInline
+                      ref={videoRef2}
                       className={styles.kanjiDrawing}
                     >
                       <source src={kanjiDrawing} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
-                    {/* 和 */}
                   </div>
                 </div>
               </div>
