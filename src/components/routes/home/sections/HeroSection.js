@@ -152,28 +152,18 @@ export default function HeroSection({ onRender }) {
   }, []);
   
   useEffect(() => {
-    const videoElem = videoRef.current;
-    const videoElem2 = videoRef2.current;
-  
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        if (videoElem) {
-          videoElem.play();
-        }
-        if (videoElem2) {
-          videoElem2.play();
-        }
+    const interval = setInterval(() => {
+      if (videoRef.current && videoRef.current.paused) {
+        videoRef.current.play();
       }
-    };
-  
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-  
-    return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, []);
-  
+    }, 1000);
 
+    return () => {
+      clearInterval(interval);
+    };
+}, []);
+
+  
   return (
     <section
       id="heroSection"
