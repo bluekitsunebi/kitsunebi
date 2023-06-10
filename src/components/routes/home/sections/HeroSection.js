@@ -150,18 +150,6 @@ export default function HeroSection({ onRender }) {
       }
     };
   }, []);
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (videoRef.current && videoRef.current.paused) {
-        videoRef.current.play();
-      }
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-}, []);
 
   
   return (

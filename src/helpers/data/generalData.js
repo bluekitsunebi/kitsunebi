@@ -26,7 +26,7 @@ export function languageModulesDescription() {
       Suntem nerabdatori sa intalnim noi iubitori de limba japoneza si fani anime cu care sa ne impartasim pasiunea (≧▽≦).
       <br />
       <br />
-      <em><b>Efortul</b> depus <b>cum trebuie</b> transforma <b>pasiunile</b> in <b>abilitati</b>.</em>
+      <em><b>Efortul</b> depus <b>cum trebuie</b> transforma <b>pasiunea</b> in <b>abilitati</b>.</em>
     </div>
   );
 
