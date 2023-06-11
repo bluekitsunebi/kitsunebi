@@ -90,10 +90,11 @@
 }
 
 .kanjiDrawing {
-  height: 6rem;
-  width: 6rem;
+  height: 9rem;
+  width: 9rem;
   align-self: center;
   justify-self: center;
+  border-radius: 50%;
 }
 
 .title {
@@ -360,8 +361,8 @@
   }
 
   .kanjiDrawing {
-    height: 4.2rem;
-    width: 4.2rem;
+    height: 6rem;
+    width: 6rem;
   }
 
   .gear1 {
@@ -541,8 +542,8 @@
   }
 
   .kanjiDrawing {
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 5rem;
+    width: 5rem;
   }
 
   .gear1 {
@@ -619,8 +620,8 @@
   }
 
   .kanjiDrawing {
-    height: 2.8rem;
-    width: 2.8rem;
+    height: 4rem;
+    width: 4rem;
   }
 
   .gear1 {

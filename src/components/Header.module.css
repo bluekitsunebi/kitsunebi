@@ -101,7 +101,7 @@
     justify-content: auto;
     align-items: center;
     width: fit-content;
-    height: 80%;
+    height: 85%;
     padding: 1rem;
   }
 
@@ -168,7 +168,6 @@
     font-size: 1rem;
     padding: 1rem 0.5rem;
     align-self: flex-start;
-    /* position: absolute; */
   }
 
   .menu__phone:hover, .menu__phone:active {

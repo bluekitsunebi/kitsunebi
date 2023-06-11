@@ -109,49 +109,6 @@ export default function HeroSection({ onRender }) {
   const videoRef = useRef(null);
   const videoRef2 = useRef(null);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 1.7;
-      videoRef.current.addEventListener('ended', (event) => {
-        setTimeout(() => {
-          event.target.play();
-        }, 1000);
-      });
-    }
-  
-    return () => {
-      if (videoRef.current) {
-        videoRef.current.removeEventListener('ended', (event) => {
-          setTimeout(() => {
-            event.target.play();
-          }, 1000);
-        });
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (videoRef2.current) {
-      videoRef2.current.playbackRate = 1.7;
-      videoRef2.current.addEventListener('ended', (event) => {
-        setTimeout(() => {
-          event.target.play();
-        }, 1000);
-      });
-    }
-  
-    return () => {
-      if (videoRef2.current) {
-        videoRef2.current.removeEventListener('ended', (event) => {
-          setTimeout(() => {
-            event.target.play();
-          }, 1000);
-        });
-      }
-    };
-  }, []);
-
-  
   return (
     <section
       id="heroSection"
@@ -187,22 +144,17 @@ export default function HeroSection({ onRender }) {
         onMouseEnter={handleMouseEnter__titleLeft}
         onMouseLeave={handleMouseLeave__titleLeft}
       >
-        <div className={styles.container__top}>
-          <div className={`${styles.coverContainer} ${styles.coverLeft}`}>
-            <div className={`${styles.iconLeft} ${styles.icon}`}>
-              <video
-                autoPlay
-                muted
-                playsInline
-                ref={videoRef}
-                className={styles.kanjiDrawing}
-              >
-                <source src={kanjiDrawing} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          ref={videoRef}
+          className={styles.kanjiDrawing}
+        >
+          <source src={kanjiDrawing} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
         <div id="titleLeft" ref={titleLeftRef} className={styles.title}>
           <div>Cursuri online</div>
@@ -329,23 +281,19 @@ export default function HeroSection({ onRender }) {
               onMouseEnter={handleMouseEnter__titleLeft}
               onMouseLeave={handleMouseLeave__titleLeft}
             >
-              <div className={styles.container__top}>
-                <div className={`${styles.coverContainer} ${styles.coverLeft}`}>
-                  <div className={`${styles.iconLeft} ${styles.icon}`}>
-                    <video
-                      autoPlay
-                      muted
-                      playsInline
-                      ref={videoRef2}
-                      className={styles.kanjiDrawing}
-                    >
-                      <source src={kanjiDrawing} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                </div>
+              <div className={`${styles.iconLeft} ${styles.icon}`}>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  ref={videoRef2}
+                  className={styles.kanjiDrawing}
+                >
+                  <source src={kanjiDrawing} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
-
               <div id="titleLeft" ref={titleLeftRef} className={styles.title}>
                 <div>Cursuri online</div>
                 <div>de Japoneza</div>
