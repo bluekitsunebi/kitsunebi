@@ -113,15 +113,29 @@ export default function Header({ onRender }) {
     window.scrollTo(0, 0);
   };
 
+  // STOP SCROLL WHEN MENU IS OPEN
+  const yRef = useRef();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.height = '100vh';
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.height = 'auto';
+      document.body.style.overflow = 'visible';
+    }
+  }, [isOpen]);
+
   const handleMenu = () => {
+    if (!isOpen) {
+      yRef.current = window.scrollY;
+    }
     dispatch(setMenu());
   };
 
   useEffect(() => {
     if (window.innerWidth > 1380 && isOpen === true) {
       dispatch(closeMenu());
-      console.log(isOpen)
-      console.log("close");
     }
   }, [window.innerWidth > 1380]);
 

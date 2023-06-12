@@ -21,10 +21,16 @@ export const headerSlice = createSlice({
       state.color = action.payload;
     },
     setMenu: (state) => {
-      state.isOpen = !state.isOpen;
+      if(state.isOpen === true) {
+        state.isOpen = false;
+      } else if(state.isOpen === false) {
+        state.isOpen = true;
+      }
     },
     closeMenu: (state) => {
-      state.isOpen = false;
+      if(state.isOpen === true) {
+        state.isOpen = false;
+      }
     },
   },
 });
