@@ -1,4 +1,4 @@
-import React, { useEffect, forwardRef, useState  } from "react";
+import React, { useEffect, forwardRef, useState } from "react";
 import styles from "./Card.module.css";
 import Button from "../Button";
 
@@ -53,17 +53,17 @@ const Card = forwardRef((props, ref) => {
     const el = event.target;
     const selectedValue = el.options[el.selectedIndex].value;
     switch (selectedValue) {
-      case 'oneHour':
+      case "oneHour":
         oneHour();
         break;
-      case 'oneHour30min':
+      case "oneHour30min":
         oneHour30min();
         break;
-      case 'twoHours':
+      case "twoHours":
         twoHours();
         break;
       default:
-        console.error('Unexpected option selected');
+        console.error("Unexpected option selected");
     }
   }
 
@@ -116,10 +116,9 @@ const Card = forwardRef((props, ref) => {
 
       <div className={styles.buttonContainer}>
         {/* dropdown */}
-        <p className={styles.selectTimeframe}>Selecteaza durata unei lectii:</p>
+        <p className={`${styles.selectTimeframe} ${isGreyed && styles.hide}`}>Selecteaza durata unei lectii:</p>
         <select
-          
-          className={styles.dropdown}
+          className={`${styles.dropdown} ${isGreyed && styles.hide}`}
           name="timeframe"
           id="timeframe"
           onChange={selectTimeframe}
@@ -127,7 +126,7 @@ const Card = forwardRef((props, ref) => {
           <option value="oneHour" selected className={styles.option}>
             1 ora
           </option>
-          <option value="oneHour30min"  className={styles.option}>
+          <option value="oneHour30min" className={styles.option}>
             1,5 ore (recomandat)
           </option>
           <option value="twoHours" className={styles.option}>

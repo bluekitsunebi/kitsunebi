@@ -16,19 +16,23 @@
   /* animation: card 2s ease-out 0s backwards;  */
 }
 
+.hide {
+  display: none;
+}
+
 .fadeIn {
   animation: fadeIn 0.75s ease-in both;
 }
 
 @keyframes fadeIn {
-	from {
-		opacity: 0;
-		transform: translate3d(0, 15%, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
+  from {
+    opacity: 0;
+    transform: translate3d(0, 15%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 /* @keyframes card {
@@ -63,7 +67,6 @@
 /* @keyframes head {
 	0% { transform: translate(-100%) skewx(35deg) }
 } */
-
 
 .titleContainer__eng {
   background-color: var(--navy);
@@ -145,23 +148,21 @@
   gap: 0.5rem;
 }
 
-.selectTimeframe {
-  margin: 0 2.5rem 1rem 2.5rem;
+.price {
+  text-align: center;
 }
 
-.dropdown {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
+.selectTimeframe {
+  margin: 0 auto 1rem auto;
 }
 
 .dropdown {
   border-radius: 5px;
   margin-bottom: 1rem;
   width: fit-content;
-  /* text-align: center; */
+  padding: 0.2rem 0.4rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 0.2rem 0.4rem;
 }
 
 .dropdown,
@@ -192,6 +193,7 @@ option:nth-child(2) {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  text-align: center;
 }
 
 .Button {
@@ -224,7 +226,9 @@ option:nth-child(2) {
   }
   .lessons,
   .details li,
-  .total {
+  .total,
+  .selectTimeframe,
+  .dropdown {
     font-size: 1.2rem;
   }
   .slash {
@@ -257,6 +261,7 @@ option:nth-child(2) {
   .detailsContainer {
     padding: 0 1.5rem;
   }
+
   /* --------------------- CARD FONT-SIZE --------------------- */
   .title,
   .price {
@@ -264,7 +269,9 @@ option:nth-child(2) {
   }
   .lessons,
   .details li,
-  .total {
+  .total,
+  .selectTimeframe,
+  .dropdown {
     font-size: 1rem;
   }
   .slash {
@@ -281,5 +288,25 @@ option:nth-child(2) {
   .titleContainer {
     height: 5.5rem;
   }
+  .priceContainer {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+@media (max-width: 350px) {
+  .selectTimeframe {
+    margin: 0 1.5rem 1rem 1.5rem;
+  }
 }
 
+@media (max-width: 305px) {
+  .dropdown,
+  .option,
+  .total {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  .price {
+    font-size: 1.3rem;
+  }
+}
