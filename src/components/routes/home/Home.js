@@ -20,7 +20,9 @@ window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
 
-export default function Home() {
+export default function Home(props) {
+  const language = props.language;
+  // console.log("header language: ", language);
   const headerHeight = useSelector((state) => state.header.height);
 
   const headerRef = useRef(null);
@@ -115,11 +117,11 @@ export default function Home() {
         clearTimeout(timeout);
         func(...args);
       };
-  
+
       clearTimeout(timeout);
       timeout = setTimeout(later, wait);
     };
-  };
+  }
 
   useEffect(() => {
     const handleResizeStart = () => {
@@ -132,18 +134,18 @@ export default function Home() {
         dispatch(setIsResizing(false));
       }
     }, 100);
-    window.addEventListener('resize', handleResizeStart);
-    window.addEventListener('resize', handleResizeEnd);
+    window.addEventListener("resize", handleResizeStart);
+    window.addEventListener("resize", handleResizeEnd);
     return () => {
-      window.removeEventListener('resize', handleResizeStart);
-      window.removeEventListener('resize', handleResizeEnd);
+      window.removeEventListener("resize", handleResizeStart);
+      window.removeEventListener("resize", handleResizeEnd);
     };
   }, [isResizing, dispatch]);
 
   return (
     <section className={styles.Home}>
       <div ref={headerRef}>
-        <Header onRender={handleComponentRender} />
+        <Header onRender={handleComponentRender} language={language} />
       </div>
       <section ref={heroSectionRef}>
         <HeroSection onRender={handleComponentRender} />

@@ -10,14 +10,19 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm(props) {
   let subject = props.subject;
+  let timeframe = props.timeframe;
+  let price = props.price;
   let answer = props.answer;
   const section = props.section;
   if (section === "languageCourses") {
+    console.log(subject[0].slice(0, 4))
+    console.log(subject[0].slice(4))
+    console.log(subject[1])
     subject = (
       subject[0].slice(0, 4) +
       "ul" +
       subject[0].slice(4) +
-      " " +
+      ", " +
       subject[1]
     ).toLowerCase();
   }
@@ -165,6 +170,8 @@ export default function ContactForm(props) {
         </label>
       </div>
       <input type="hidden" name="subject" value={subject} />
+      <input type="hidden" name="timeframe" value={timeframe} />
+      <input type="hidden" name="price" value={price} />
       <input type="hidden" name="answer" value={answer} />
 
       <ReCAPTCHA

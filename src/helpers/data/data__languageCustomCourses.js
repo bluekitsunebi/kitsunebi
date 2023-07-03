@@ -10,7 +10,7 @@ export function individualCustomJapanese__en() {
     </div>
   );
 
-  const title = ["Curs de limba japoneza predat in limba engleza", "(lectii individuale)"];
+  const title = ["Curs de limba japoneza predat in limba engleza", "lectii individuale"];
 
   return [description, title];
 }
@@ -25,7 +25,7 @@ export function groupCustomJapanese__en() {
     </div>
   );
 
-  const title = ["Curs de limba japoneza predat in limba engleza", "(lectii predate in grup)"];
+  const title = ["Curs de limba japoneza predat in limba engleza", "lectii predate in grup"];
 
   return [description, title];
 }
@@ -41,7 +41,7 @@ export function individualCustomJapaneseIntensive__en() {
   );
 
   const title =
-    ["Curs intensiv de limba japoneza predat in limba engleza", "(lectii individuale, de doua ori pe saptamana)"];
+    ["Curs intensiv de limba japoneza predat in limba engleza", "lectii individuale, de doua ori pe saptamana"];
 
   return [description, title];
 }
@@ -56,7 +56,7 @@ export function groupCustomJapaneseIntensive__en() {
     </div>
   );
 
-  const title = ["Curs intensiv de limba japoneza predat in limba engleza", "(lectii predate in grup, de doua ori pe saptamana)"];
+  const title = ["Curs intensiv de limba japoneza predat in limba engleza", "lectii predate in grup, de doua ori pe saptamana"];
 
   return [description, title];
 }
@@ -74,7 +74,7 @@ export function individualCustomEnglish__jp() {
     </div>
   );
 
-  const title = ["Curs de limba engleza predat in limba japoneza", "(lectii individuale)"];
+  const title = ["Curs de limba engleza predat in limba japoneza", "lectii individuale"];
 
   return [description, title];
 }
@@ -89,7 +89,7 @@ export function groupCustomEnglish__jp() {
     </div>
   );
 
-  const title = ["Curs de limba engleza predat in limba japoneza" , "(lectii predate in grup)"];
+  const title = ["Curs de limba engleza predat in limba japoneza" , "lectii predate in grup"];
 
   return [description, title];
 }
@@ -105,7 +105,7 @@ export function individualCustomEnglishIntensive__jp() {
   );
 
   const title =
-    ["Curs intensiv de limba engleza predat in limba japoneza", "(lectii individuale, de doua ori pe saptamana)"];
+    ["Curs intensiv de limba engleza predat in limba japoneza", "lectii individuale, de doua ori pe saptamana"];
 
   return [description, title];
 }
@@ -120,7 +120,7 @@ export function groupCustomEnglishIntensive__jp() {
     </div>
   );
 
-  const title = ["Curs intensiv de limba engleza predat in limba japoneza", "(lectii predate in grup, de doua ori pe saptamana)"];
+  const title = ["Curs intensiv de limba engleza predat in limba japoneza", "lectii predate in grup, de doua ori pe saptamana"];
 
   return [description, title];
 }
@@ -138,7 +138,7 @@ export function individualCustomJapanese__ro() {
     </div>
   );
 
-  const title = ["Curs de limba japoneza predat in limba romana", "(lectii individuale)"];
+  const title = ["Curs de limba japoneza predat in limba romana", "lectii individuale"];
 
   return [description, title];
 }
@@ -153,7 +153,7 @@ export function groupCustomJapanese__ro() {
     </div>
   );
 
-  const title = ["Curs de limba japoneza predat in limba romana", "(lectii predate in grup)"];
+  const title = ["Curs de limba japoneza predat in limba romana", "lectii predate in grup"];
 
   return [description, title];
 }
@@ -169,7 +169,7 @@ export function individualCustomJapaneseIntensive__ro() {
   );
 
   const title =
-    ["Curs intensiv de limba japoneza predat in limba romana", "(lectii individuale, de doua ori pe saptamana)"];
+    ["Curs intensiv de limba japoneza predat in limba romana", "lectii individuale, de doua ori pe saptamana"];
 
   return [description, title];
 }
@@ -184,7 +184,7 @@ export function groupCustomJapaneseIntensive__ro() {
     </div>
   );
 
-  const title = ["Curs intensiv de limba japoneza predat in limba romana", "(lectii predate in grup, de doua ori pe saptamana)"];
+  const title = ["Curs intensiv de limba japoneza predat in limba romana", "lectii predate in grup, de doua ori pe saptamana"];
 
   return [description, title];
 }

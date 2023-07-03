@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./CardsGrid.module.css";
 import Card from "./Card";
 
@@ -6,8 +6,11 @@ export default function CardsGrid(props) {
   const cards = { ...props.cards };
   const id = props.id;
   const modules = [...Object.keys(cards)];
+  const cardRefs = useRef({});
 
-  
+  const setCardRef = (itemId, ref) => {
+    cardRefs.current[itemId] = ref;
+  };
 
   return (
     <div className={styles.CardsGrid}>
@@ -15,17 +18,24 @@ export default function CardsGrid(props) {
         <Card
           id={id}
           key={cards[item].id}
-          imgSrc={cards[item].imgSrc}
+          ref={ref => setCardRef(`${cards[item].id}_${cards[item].title}`, ref)}
+          // ref={
+            // ref => {
+            // useEffect(() => {
+              // if (ref) {
+              //   setCardRef(`${cards[item].id}_${cards[item].title}`, ref);
+              // }
+            // }, [ref]);
+          // }
+        // }
           title={cards[item].title}
           lessons={cards[item].lessons}
           details={cards[item].details}
           price={cards[item].price}
-          timeframe={cards[item].timeframe}
           total={cards[item].total}
           buttonText={cards[item].greyedOut === "true" ? "in curand" : "inscrie-te"}
           buttonType={cards[item].greyedOut === "true" ? "greyedOut" : "empty__colored"}
           buttonTransform="uppercase"
-          arrows={cards[item].arrows}
           link={cards[item].link}
         />
       ))}

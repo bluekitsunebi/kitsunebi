@@ -21,7 +21,9 @@ function Button(props) {
   const section = props.section;
   const link = props.link === undefined ? "*" : props.link;
   const category = props.category;
-  const card = props.card;
+  let timeframe = props.timeframe;
+  let price = props.price;
+  // const card = props.card;
   let sectionPosition = undefined;
 
   const aboutSectionPosition = useSelector(
@@ -72,7 +74,7 @@ function Button(props) {
   };
 
   return (
-    <Link to={link}>
+    <Link to={`${link}?timeframe=${timeframe}&price=${price}`}>
       <button
         className={`
           ${styles.Button}
