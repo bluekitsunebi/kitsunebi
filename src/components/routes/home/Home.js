@@ -21,10 +21,7 @@ window.onbeforeunload = function () {
 };
 
 export default function Home(props) {
-  const language = props.language;
-  // console.log("header language: ", language);
   const headerHeight = useSelector((state) => state.header.height);
-
   const headerRef = useRef(null);
   const heroSectionRef = useRef(null);
   const aboutSectionRef = useRef(null);
@@ -145,7 +142,7 @@ export default function Home(props) {
   return (
     <section className={styles.Home}>
       <div ref={headerRef}>
-        <Header onRender={handleComponentRender} language={language} />
+        <Header onRender={handleComponentRender}/>
       </div>
       <section ref={heroSectionRef}>
         <HeroSection onRender={handleComponentRender} />

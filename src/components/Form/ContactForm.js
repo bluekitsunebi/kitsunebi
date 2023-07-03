@@ -15,9 +15,9 @@ export default function ContactForm(props) {
   let answer = props.answer;
   const section = props.section;
   if (section === "languageCourses") {
-    console.log(subject[0].slice(0, 4))
-    console.log(subject[0].slice(4))
-    console.log(subject[1])
+    console.log(subject[0].slice(0, 4));
+    console.log(subject[0].slice(4));
+    console.log(subject[1]);
     subject = (
       subject[0].slice(0, 4) +
       "ul" +
@@ -153,16 +153,16 @@ export default function ContactForm(props) {
         required={section === "contact" ? true : false}
       />
       <div className={styles.checkboxContainer}>
-        <input
-          type="checkbox"
-          id="gdprContact"
-          name="form_checkbox"
-          value="Sunt de acord"
-          className={styles.checkbox}
-          onFocus={() => setIsSend("false")}
-          required
-        />
         <label>
+          <input
+            type="checkbox"
+            // id="gdprContact"
+            name="form_checkbox"
+            value="Sunt de acord"
+            className={styles.checkbox}
+            onFocus={() => setIsSend("false")}
+            required
+          />
           Sunt de acord cu{" "}
           <a href="" className={styles.link}>
             politica de confidentialitate, termenii si conditiile

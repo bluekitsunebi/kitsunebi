@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
 import { setLanguage } from "./store/websiteLanguageSlice";
 import "./App.css";
 
@@ -11,39 +10,25 @@ import NotFound from "./components/routes/notFound/NotFound";
 import LanguageCustomCourses from "./components/routes/languageCourses/LanguageCustomCourses";
 
 function App() {
-  // get user country by IP
+  // get the preffered language of the user
   const dispatch = useDispatch();
-  const [country, setCountry] = useState("");
-
-  async function getUserCountry() {
-    try {
-      const response = await axios.get("http://ip-api.com/json/");
-      console.log(response.data.country);
-      setCountry(response.data.country);
-    } catch (error) {
-      console.error(error);
-      setCountry("error");
-    }
+  const userLanguages = navigator.languages;
+  if ( userLanguages.some(lang => lang.startsWith('ro') || lang.startsWith('mo'))) {
+    dispatch(setLanguage('ro'));
+  } else if (userLanguages[0].startsWith('ja')) {
+    dispatch(setLanguage('ja'));
+  } else {
+    dispatch(setLanguage('en'));
   }
 
-  useEffect(() => {
-    getUserCountry();
-  }, []);
-  let language = "eng";
-  if (country === "Romania") {
-    language = "ro";
-  }
-  // console.log(language);
+  console.log(useSelector(state => state.websiteLanguage.language));
+  console.log(userLanguages);
 
   return (
     <Fragment>
       <BrowserRouter>
         <Routes>
-          {language === "ro" ? (
-            <Route path="/" element={<Home language="ro"/>} />
-          ) : (
-            <Route path="/" element={<Home />} />
-          )}
+          {<Route path="/" element={<Home />} />}
 
           {/* ------------------------------- EN ------------------------------- */}
           <Route

@@ -139,6 +139,9 @@ export default function Header({ onRender }) {
     }
   }, [window.innerWidth > 1380]);
 
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+
   return (
     <header
       id="header"
@@ -176,7 +179,7 @@ export default function Header({ onRender }) {
         <Button
           name="home"
           category="header"
-          text="acasa"
+          text={language === "ro" ? "acasa" : (language === "ja" ? "ホームページ" : "home")}
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -188,7 +191,7 @@ export default function Header({ onRender }) {
         <Button
           name="about"
           category="header"
-          text="despre"
+          text={language === "ro" ? "despre" : (language === "ja" ? "????" : "about")}
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -201,7 +204,7 @@ export default function Header({ onRender }) {
           <Button
             name="language"
             category="header"
-            text="cursuri japoneza"
+            text={language === "ro" ? "cursuri japoneza" : (language === "ja" ? "????" : "japanese courses")}
             type="withoutBorder"
             position=""
             underlinedButton={underlineButton}
@@ -209,47 +212,12 @@ export default function Header({ onRender }) {
             section="languageCoursesSection"
             link="/"
           />
-          {/* <div
-            className={styles.dropdownContent}
-            style={{ background: headerColor }}
-          >
-            <Button
-              name="japanese"
-              text="japoneza &nbsp; &nbsp; &nbsp; &nbsp; (predata in limba romana)"
-              type="withoutBorder"
-              position=""
-              underlinedButton=""
-              transform="capitalizeFirstLetter"
-              section="roSubsection"
-              link="/"
-            />
-            <Button
-              name="japanese"
-              text="japoneza &nbsp; &nbsp; &nbsp; &nbsp; (predata in limba engleza)"
-              type="withoutBorder"
-              position=""
-              underlinedButton=""
-              transform="capitalizeFirstLetter"
-              section="engSubsection"
-              link="/"
-            />
-            <Button
-              name="english"
-              text="engleza &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (predata in limba japoneza)"
-              type="withoutBorder"
-              position=""
-              underlinedButton=""
-              transform="capitalizeFirstLetter"
-              section="jpSubsection"
-              link="/"
-            />
-          </div> */}
         </div>
 
         <Button
           name="programming"
           category="header"
-          text="Dezvoltare software"
+          text={language === "ro" ? "dezvoltare software" : (language === "ja" ? "????" : "software development")}
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -261,7 +229,7 @@ export default function Header({ onRender }) {
         <Button
           name="faq"
           category="header"
-          text="faq"
+          text={language === "ja" ? "????" : "faq"}
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -273,7 +241,7 @@ export default function Header({ onRender }) {
         <Button
           name="contact"
           category="header"
-          text="contact"
+          text={language === "ja" ? "????" : "contact"}
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
