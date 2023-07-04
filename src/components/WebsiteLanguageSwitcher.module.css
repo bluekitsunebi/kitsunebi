@@ -1,0 +1,86 @@
+@import url("../helpers/colors.css");
+
+.WebsiteLanguageSwitcher {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown,
+.websiteLangButton {
+  font-size: 1.7rem;
+  background-color: transparent;
+  border: none;
+  color: var(--textLight);
+}
+
+.dropdown:hover,
+.websiteLangButton:hover {
+  cursor: pointer;
+}
+
+.dropdown {
+  text-align: center;
+  position: relative;
+  margin-right: 2rem;
+}
+
+.triangle {
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  bottom: -1.8rem;
+  right: 5.3rem;
+  background-color: var(--cinnabarTint10);
+}
+
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: absolute;
+  bottom: -12.2rem;
+  right: 5.3rem;
+  background-color: var(--cinnabarTint10);
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+}
+
+.websiteLangButton {
+  padding: 0.4rem 0.6rem;
+  border: none;
+}
+
+.websiteLangButton:hover {
+  background-color: var(--cinnabarTint20);
+  border-radius: 20px;
+}
+
+.enWebsiteLang {
+}
+.jpWebsiteLang {
+}
+.roWebsiteLang {
+}
+
+.selected {
+  color: var(--navyTint20);
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 1540px) {
+    .dropdown {
+        margin-right: 0;
+        position: absolute;
+        right: 3rem;
+        top: 1.3rem;
+    }
+    .triangle,
+    .dropdownContent {
+        right: 4.5rem;
+    }
+}

@@ -68,7 +68,7 @@ function Button(props) {
     dispatch(setLink(link));
     dispatch(setSection(section));
     dispatch(switchWasClicked());
-    if(category === "header" && window.innerWidth <= 1380){
+    if(category === "header" && window.innerWidth <= 1540){
       dispatch(closeMenu());
     }
   };

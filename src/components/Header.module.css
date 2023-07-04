@@ -21,37 +21,9 @@
   justify-content: space-around;
   align-items: center;
   width: 70vw;
-}
-
-/* DROPDOWN */
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdownContent {
-  display: none;
-  position: absolute;
-  background-color: transparent;
-  z-index: 4;
-}
-
-.dropdownContent Button {
-  margin-top: 10px;
-  text-align: start;
-}
-
-.dropdownContent Button:hover {
-  color: var(--blueTint10);
-}
-
-.dropdown:hover .dropdownContent {
-  display: block;
-}
+}      
 
 /* Mobile Header */
-
 
 .menu {
   display: none;
@@ -76,7 +48,7 @@
     display: block;
 }
 
-@media (max-width: 1380px) {
+@media (max-width: 1540px) {
   .Header {
     width: 100vw;
     height: 100vh;

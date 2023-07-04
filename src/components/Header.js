@@ -11,6 +11,7 @@ import {
 import styles from "./Header.module.css";
 import Logo from "./Logo";
 import Button from "./Button";
+import WebsiteLanguageSwitcher from "./WebsiteLanguageSwitcher";
 
 export default function Header({ onRender }) {
   const homeWasRendered = useSelector((state) => state.home.wasRendered);
@@ -118,11 +119,11 @@ export default function Header({ onRender }) {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.height = '100vh';
-      document.body.style.overflow = 'hidden';
+      document.body.style.height = "100vh";
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.height = 'auto';
-      document.body.style.overflow = 'visible';
+      document.body.style.height = "auto";
+      document.body.style.overflow = "visible";
     }
   }, [isOpen]);
 
@@ -134,10 +135,10 @@ export default function Header({ onRender }) {
   };
 
   useEffect(() => {
-    if (window.innerWidth > 1380 && isOpen === true) {
+    if (window.innerWidth > 1540 && isOpen === true) {
       dispatch(closeMenu());
     }
-  }, [window.innerWidth > 1380]);
+  }, [window.innerWidth > 1540]);
 
   // get the website language
   let language = useSelector((state) => state.websiteLanguage.language);
@@ -179,7 +180,13 @@ export default function Header({ onRender }) {
         <Button
           name="home"
           category="header"
-          text={language === "ro" ? "acasa" : (language === "ja" ? "ホームページ" : "home")}
+          text={
+            language === "ro"
+              ? "acasa"
+              : language === "ja"
+              ? "ホームページ"
+              : "home"
+          }
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -191,7 +198,9 @@ export default function Header({ onRender }) {
         <Button
           name="about"
           category="header"
-          text={language === "ro" ? "despre" : (language === "ja" ? "????" : "about")}
+          text={
+            language === "ro" ? "despre" : language === "ja" ? "????" : "about"
+          }
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -200,24 +209,34 @@ export default function Header({ onRender }) {
           link="/"
         />
 
-        <div className={styles.dropdown}>
-          <Button
-            name="language"
-            category="header"
-            text={language === "ro" ? "cursuri japoneza" : (language === "ja" ? "????" : "japanese courses")}
-            type="withoutBorder"
-            position=""
-            underlinedButton={underlineButton}
-            transform="capitalizeFirstLetter"
-            section="languageCoursesSection"
-            link="/"
-          />
-        </div>
+        <Button
+          name="language"
+          category="header"
+          text={
+            language === "ro"
+              ? "cursuri japoneza"
+              : language === "ja"
+              ? "????"
+              : "japanese courses"
+          }
+          type="withoutBorder"
+          position=""
+          underlinedButton={underlineButton}
+          transform="capitalizeFirstLetter"
+          section="languageCoursesSection"
+          link="/"
+        />
 
         <Button
           name="programming"
           category="header"
-          text={language === "ro" ? "dezvoltare software" : (language === "ja" ? "????" : "software development")}
+          text={
+            language === "ro"
+              ? "dezvoltare software"
+              : language === "ja"
+              ? "????"
+              : "software development"
+          }
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -250,6 +269,7 @@ export default function Header({ onRender }) {
           link="/"
         ></Button>
       </nav>
+      <WebsiteLanguageSwitcher/>
     </header>
   );
 }

@@ -21,9 +21,6 @@ function App() {
     dispatch(setLanguage('en'));
   }
 
-  console.log(useSelector(state => state.websiteLanguage.language));
-  console.log(userLanguages);
-
   return (
     <Fragment>
       <BrowserRouter>
