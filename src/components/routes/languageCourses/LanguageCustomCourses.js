@@ -17,9 +17,15 @@ import {
   groupCustomJapanese__ro,
   individualCustomJapaneseIntensive__ro,
 } from "../../../helpers/data/data__languageCustomCourses";
-import { languageCoursesCardsData__English } from "../../../helpers/data/languageCoursesCards/EnglishLanguageCourses";
-import { languageCoursesCardsData__Japanese } from "../../../helpers/data/languageCoursesCards/JapaneseLanguageCourses";
-import { languageCoursesCardsData__Romanian } from "../../../helpers/data/languageCoursesCards/RomanianLanguageCourses";
+
+
+// import { languageCoursesCardsData__English } from "../../../helpers/data/languageCoursesCards/EnglishLanguageCourses";
+// import { languageCoursesCardsData__Japanese } from "../../../helpers/data/languageCoursesCards/JapaneseLanguageCourses";
+// import { languageCoursesCardsData__Romanian } from "../../../helpers/data/languageCoursesCards/RomanianLanguageCourses";
+
+import enData from "../../../helpers/data/lang/en.json";
+import jaData from "../../../helpers/data/lang/ja.json";
+import roData from "../../../helpers/data/lang/ro.json";
 
 // SCROLL TO TOP ON PAGE RELOAD
 window.onbeforeunload = function () {
@@ -30,6 +36,15 @@ export default function LanguageCustomCourses(props) {
   {
     window.scrollTo(0, 0);
   }
+  
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+  let langData = language === "en" ? enData : language === "ja" ? jaData : roData;
+  let courseInEnglish = langData.LanguageCoursesSection.Cards.courseInEnglish;
+  let courseInJapanese = langData.LanguageCoursesSection.Cards.courseInJapanese;
+  let courseInRomanian = langData.LanguageCoursesSection.Cards.courseInRomanian;
+
+
   const module = props.module;
   let title, description;
   const headerHeight = useSelector((state) => state.header.height);
@@ -47,76 +62,70 @@ export default function LanguageCustomCourses(props) {
     case "individualCustomJapanese__en":
       [description, title] = [...individualCustomJapanese__en()];
       if (!timeframe || !price) {
-        timeframe = languageCoursesCardsData__English().individualCustomJapanese.price[1][0];
-        price = languageCoursesCardsData__English().individualCustomJapanese.price[1][1];
+        timeframe = courseInEnglish.individualCustomJapanese.price[1][0];
+        price = courseInEnglish.individualCustomJapanese.price[1][1];
       }
       break;
     case "groupCustomJapanese__en":
       [description, title] = [...groupCustomJapanese__en()];
       if (!timeframe || !price) {
-        timeframe = languageCoursesCardsData__English().groupCustomJapanese.price[1][0];
-        price = languageCoursesCardsData__English().groupCustomJapanese.price[1][1];
+        timeframe = courseInEnglish.groupCustomJapanese.price[1][0];
+        price = courseInEnglish.groupCustomJapanese.price[1][1];
       }
       break;
     case "individualCustomJapaneseIntensive__en":
       [description, title] = [...individualCustomJapaneseIntensive__en()];
       if (!timeframe || !price) {
-        timeframe = languageCoursesCardsData__English().individualCustomJapaneseIntensive.price[1][0];
-        price = languageCoursesCardsData__English().individualCustomJapaneseIntensive.price[1][1];
+        timeframe = courseInEnglish.individualCustomJapaneseIntensive.price[1][0];
+        price = courseInEnglish.individualCustomJapaneseIntensive.price[1][1];
       }
       break;
     case "individualCustomEnglish__jp":
       [description, title] = [...individualCustomEnglish__jp()];
       if (!timeframe || !price) {
-        timeframe = languageCoursesCardsData__Japanese().individualCustomEnglish.price[1][0];
-        price = languageCoursesCardsData__Japanese().individualCustomEnglish.price[1][1];
+        timeframe = courseInJapanese.individualCustomEnglish.price[1][0];
+        price = courseInJapanese.individualCustomEnglish.price[1][1];
       }
       break;
     case "groupCustomEnglish__jp":
       [description, title] = [...groupCustomEnglish__jp()];
       if (!timeframe || !price) {
-        timeframe = languageCoursesCardsData__Japanese().groupCustomEnglish.price[1][0];
-        price = languageCoursesCardsData__Japanese().groupCustomEnglish.price[1][1];
+        timeframe = courseInJapanese.groupCustomEnglish.price[1][0];
+        price = courseInJapanese.groupCustomEnglish.price[1][1];
       }
       break;
     case "individualCustomEnglishIntensive__jp":
       [description, title] = [...individualCustomEnglishIntensive__jp()];
       if (!timeframe || !price) {
-        timeframe = languageCoursesCardsData__Japanese().individualCustomEnglishIntensive.price[1][0];
-        price = languageCoursesCardsData__Japanese().individualCustomEnglishIntensive.price[1][1];
+        timeframe = courseInJapanese.individualCustomEnglishIntensive.price[1][0];
+        price = courseInJapanese.individualCustomEnglishIntensive.price[1][1];
       }
       break;
     case "individualCustomJapanese__ro":
       [description, title] = [...individualCustomJapanese__ro()];
       if (!timeframe || !price) {
-        timeframe = languageCoursesCardsData__Romanian().individualCustomJapanese.price[1][0];
-        price = languageCoursesCardsData__Romanian().individualCustomJapanese.price[1][1];
+        timeframe = courseInRomanian.individualCustomJapanese.price[1][0];
+        price = courseInRomanian.individualCustomJapanese.price[1][1];
       }
       break;
     case "groupCustomJapanese__ro":
       [description, title] = [...groupCustomJapanese__ro()];
       if (!timeframe || !price) {
-        timeframe = languageCoursesCardsData__Romanian().groupCustomJapanese.price[1][0];
-        price = languageCoursesCardsData__Romanian().groupCustomJapanese.price[1][1];
+        timeframe = courseInRomanian.groupCustomJapanese.price[1][0];
+        price = courseInRomanian.groupCustomJapanese.price[1][1];
       }
       break;
     case "individualCustomJapaneseIntensive__ro":
       [description, title] = [...individualCustomJapaneseIntensive__ro()];
       if (!timeframe || !price) {
-        timeframe = languageCoursesCardsData__Romanian().individualCustomJapaneseIntensive.price[1][0];
-        price = languageCoursesCardsData__Romanian().individualCustomJapaneseIntensive.price[1][1];
+        timeframe = courseInRomanian.individualCustomJapaneseIntensive.price[1][0];
+        price = courseInRomanian.individualCustomJapaneseIntensive.price[1][1];
       }
       break;
     default:
       return null;
   }
 
-  // default values for timeframe and price
-  if (!timeframe || !price) {
-    languageCoursesCardsData__English();
-    languageCoursesCardsData__Japanese();
-    languageCoursesCardsData__Romanian();
-  }
 
   return (
     <Fragment>

@@ -9,6 +9,9 @@ import {
   setDescriptionLeft__entered,
 } from "../../../../store/heroSectionSlice";
 import kanjiDrawing from "../../../../videos/kanjiAnimation.mp4";
+import enData from "../../../../helpers/data/lang/en.json";
+import jaData from "../../../../helpers/data/lang/ja.json";
+import roData from "../../../../helpers/data/lang/ro.json";
 
 export default function HeroSection({ onRender }) {
   const heroSectionRef = useRef(null);
@@ -81,6 +84,14 @@ export default function HeroSection({ onRender }) {
       onRender();
     }
   }, [onRender]);
+
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+  let langData = language === "en" ? enData : language === "ja" ? jaData : roData;
+  let titleLeft = [...langData.HeroSection.title.left];
+  let titleRight = [...langData.HeroSection.title.right];
+  let descriptionLeft = [...langData.HeroSection.description.left];
+  let descriptionRight = [...langData.HeroSection.description.right];
 
   // STOP ANIMATION WHEN WINDOW IS RESIZING
 
@@ -157,13 +168,13 @@ export default function HeroSection({ onRender }) {
         </video>
 
         <div id="titleLeft" ref={titleLeftRef} className={styles.title}>
-          <div>Cursuri online</div>
-          <div>de Japoneza</div>
+          <div>{titleLeft[0]}</div>
+          <div>{titleLeft[1]}</div>
         </div>
         <div className={`${styles.button} ${styles.button__top}`}>
           <Button
             name="find out more"
-            text="afla mai multe"
+            text={langData.HeroSection.mainButton}
             type="empty"
             position="left"
             underlinedButton=""
@@ -189,14 +200,11 @@ export default function HeroSection({ onRender }) {
         onMouseEnter={handleMouseEnter__descriptionLeft}
         onMouseLeave={handleMouseLeave__descriptionLeft}
       >
-        <li>disponibile pentru toate nivelurile</li>
-        <li>sedinte individuale sau de grup</li>
-        <li>personalizate pe nivelul si ritmul de studiu al cursantilor</li>
-        <li>
-          raspuns la orice intrabare chiar si in afara orelor de curs, in decurs
-          de 24 de ore.
-        </li>
-        <li>materiale de studiu personalizate</li>
+        <li>{descriptionLeft[0]}</li>
+        <li>{descriptionLeft[1]}</li>
+        <li>{descriptionLeft[2]}</li>
+        <li>{descriptionLeft[3]}</li>
+        <li>{descriptionLeft[4]}</li>
       </ul>
 
       {/* ------------------------ RIGHT ---------------------------- */}
@@ -242,15 +250,15 @@ export default function HeroSection({ onRender }) {
             ${styles.title__right}
         `}
         >
-          <div>Dezvoltare</div>
-          <div>Software</div>
+          <div>{titleRight[0]}</div>
+          <div>{titleRight[1]}</div>
         </div>
 
         {/* BUTTON */}
         <div className={`${styles.button} ${styles.button__bottom}`}>
           <Button
             name="find out more"
-            text="afla mai multe"
+            text={langData.HeroSection.mainButton}
             type="empty"
             position="right"
             underlinedButton=""
@@ -295,8 +303,8 @@ export default function HeroSection({ onRender }) {
                 </video>
               </div>
               <div id="titleLeft" ref={titleLeftRef} className={styles.title}>
-                <div>Cursuri online</div>
-                <div>de Japoneza</div>
+                <div>{titleLeft[0]}</div>
+                <div>{titleLeft[1]}</div>
               </div>
             </div>
           </div>
@@ -305,7 +313,7 @@ export default function HeroSection({ onRender }) {
           >
             <Button
               name="find out more"
-              text="afla mai multe"
+              text={langData.HeroSection.mainButton}
               type="empty"
               position="left"
               underlinedButton=""
@@ -362,8 +370,8 @@ export default function HeroSection({ onRender }) {
             ${styles.title__right}
         `}
           >
-            <div>Dezvoltare</div>
-            <div>Software</div>
+            <div>{titleRight[0]}</div>
+            <div>{titleRight[1]}</div>
           </div>
         </div>
 
@@ -372,7 +380,7 @@ export default function HeroSection({ onRender }) {
         >
           <Button
             name="find out more"
-            text="afla mai multe"
+            text={langData.HeroSection.mainButton}
             type="empty"
             position="right"
             underlinedButton=""
@@ -398,16 +406,11 @@ export default function HeroSection({ onRender }) {
             }
         `}
       >
-        <li>realizare de siteuri de prezentare custom</li>
-        <li>dezvoltare de aplicatii pentru mobil</li>
-        <li>utilizarea tehnologiilor dorite de clienti</li>
-        <li>
-          adaptare rapida la orice tip de proiect, echipa si mediu de dezvoltare
-        </li>
-        <li>
-          familiarizati cu React, Laravel, Flutter, Python, Docker, PostrgreSQL
-          si multe altele.
-        </li>
+        <li>{descriptionRight[0]}</li>
+        <li>{descriptionRight[1]}</li>
+        <li>{descriptionRight[2]}</li>
+        <li>{descriptionRight[3]}</li>
+        <li>{descriptionRight[4]}</li>
       </ul>
     </section>
   );

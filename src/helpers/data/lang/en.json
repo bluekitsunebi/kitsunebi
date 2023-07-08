@@ -1,0 +1,300 @@
+{
+  "HeroSection": {
+    "title": {
+      "left": ["Japanese", "online courses"],
+      "right": ["Software", "development"]
+    },
+    "mainButton": "Find out more",
+    "description": {
+      "left": [
+        "available for all levels",
+        "individual or group sessions",
+        "customized to the students' level and pace of learning",
+        "answering any question even outside class hours, within 24 hours.",
+        "custom study materials."
+      ],
+      "right": [
+        "custom presentation website creation",
+        "mobile application development",
+        "utilization of technologies desired by clients",
+        "quick adaptation to any type of project, team and development environment",
+        "familiar with React, Laravel, Flutter, Python, Docker, PostgreSQL, and many others."
+      ]
+    }
+  },
+
+  "Header": {
+    "home": "home",
+    "about": "about",
+    "language": "japanese courses",
+    "programming": "software development",
+    "faq": "faq",
+    "contact": "contact"
+  },
+
+  "AboutSection": {
+    "title": "About us",
+    "description": [
+      "Here at Blue Kitsunebi, we blend our love for foreign languages with IT, offering services in both fields. In both cases, we emphasize providing quality services that meet our clients' expectations.",
+
+      "We offer online courses for Japanese language (taught in Romanian/English) and English language (taught in Japanese). We do everything possible to ensure a unique, distinct experience in exploring these languages, focusing on each student's individual objectives when designing the lessons. We believe that motivation is key when it comes to acquiring new skills such as mastering a foreign language.",
+
+      "Our software development services primarily focus on creating custom presentation websites (like this one) and mobile applications, but our experience doesn't limit us to just these two categories. We have experience with React, Laravel, Flutter, Python, Docker, PostgreSQL, and many others, but we are open to any kind of offers even if they are on other technologies than these."
+    ]
+  },
+
+  "LanguageCoursesSection": {
+    "title": "Language courses",
+    "description": [
+      "Our Japanese language teacher has dedicated a significant portion of his time learning this language and has mastered it at an advanced level. The teaching method is as efficient as possible and is based on his experiences both as a student and as a teacher. Teaching is done at the pace of the student/group of students, with an emphasis on building solid foundations and a deep understanding of the language. Our company also offers English courses to native Japanese speakers and collaborates with Japanese in the IT field, so you can be sure that the level of Japanese of our teacher is more than sufficient to meet your requirements.",
+
+      "The Japanese language is not as difficult as it is believed to be, in fact, we believe it presents more logical elements than most other languages. Whether you're doing it out of passion, or you need it for a certain reason, we can provide exactly the knowledge you need to achieve your goal.",
+
+      "We are eager to meet new lovers of the Japanese language and anime fans to share our passion (≧▽≦)."
+    ],
+
+    "motto": [
+      "Effort ",
+      "",
+      "properly ",
+      "exerted turns ",
+      "passion ",
+      "into ",
+      "skills ",
+      "."
+    ],
+
+    "subtitle": "Courses taught in:",
+    "langButtons": ["Romanian", "English", "Japanese"],
+
+
+    "Cards": {
+      "courseInEnglish": {
+        "groupCustomJapanese": {
+          "id": "group custom japanese",
+          "title": "Group Japanese",
+          "lessons": "First lesson free",
+          "details": [
+            "bring your friends and form a group or wait for us to find you one",
+            "custom materials based on the group's level",
+            "teacher with advanced level of Japanese",
+            "support even outside of class hours, with response within 24 hours"
+          ],
+          "price": [
+            ["1 hour", "$25"],
+            ["1 hour and 30 minutes", "$35"],
+            ["2 hours", "$45"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/en-group-custom-japanese"
+        },
+
+        "individualCustomJapanese": {
+          "id": "individual custom japanese",
+          "title": "Individual Japanese",
+          "lessons": "First lesson free",
+          "details": [
+            "the student chooses a day and time and we start immediately",
+            "custom materials based on the student's level",
+            "teacher with advanced level of Japanese",
+            "support even outside of class hours, with response within 24 hours"
+          ],
+          "price": [
+            ["1 hour", "$40"],
+            ["1 hour and 30 minutes", "$50"],
+            ["2 hours", "$60"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/en-individual-custom-japanese"
+        },
+
+        "individualCustomJapaneseIntensive": {
+          "id": "individual custom japanese (intensive)",
+          "title": "Intensive Individual Japanese",
+          "lessons": "First lesson free",
+          "details": [
+            "2 times faster progress with sessions twice a week",
+            "the student chooses a day and time and we start immediately",
+            "custom materials based on the student's level",
+            "teacher with advanced level of Japanese",
+            "support even outside of class hours, with response within 24 hours"
+          ],
+          "price": [
+            ["1 hour", "$35"],
+            ["1 hour and 30 minutes", "$45"],
+            ["2 hours", "$55"]
+          ],
+          "total": "8",
+          "greyedOut": "false",
+          "link": "/en-individual-custom-japanese-intensive"
+        },
+
+        "animeJapanese": {
+          "id": "anime japanese",
+          "title": "anime Japanese",
+          "lessons": "First lesson free",
+          "details": [
+            "special course focused on the Japanese spoken in anime",
+            "to enroll in this extra course, participation in any other course offered by us is required."
+          ],
+          "price": [
+            ["", ""],
+            ["", ""],
+            ["", ""]
+          ],
+          "total": "6",
+          "greyedOut": "true",
+          "link": "/en-anime"
+        }
+      },
+
+
+      "courseInJapanese": {
+        "groupCustomEnglish": {
+            "id": "group custom english",
+            "title": "Group English",
+            "lessons": "First lesson free",
+            "details": [
+              "bring your friends and form a group or wait for us to find you one",
+              "custom materials based on the group's level",
+              "teacher with advanced level of English",
+              "support even outside of class hours, with response within 24 hours"
+            ],
+            "price": [
+              ["1 hour", "$20"],
+              ["1 hour and 30 minutes", "$30"],
+              ["2 hours", "$40"]
+            ],
+            "total": "6",
+            "greyedOut": "false",
+            "link": "/jp-group-custom-english"
+          },
+      
+          "individualCustomEnglish": {
+            "id": "individual custom english",
+            "title": "Individual English",
+            "lessons": "First lesson free",
+            "details": [
+              "the student chooses a day and time and we start immediately",
+              "custom materials based on the student's level",
+              "teacher with advanced level of English",
+              "support even outside of class hours, with response within 24 hours"
+            ],
+            "price": [
+              ["1 hour", "$35"],
+              ["1 hour and 30 minutes", "$45"],
+              ["2 hours", "$55"]
+            ],
+            "total": "6",
+            "greyedOut": "false",
+            "link": "/jp-individual-custom-english"
+          },
+      
+          "individualCustomEnglishIntensive": {
+            "id": "individual custom english (intensive)",
+            "title": "Intensive Individual English",
+            "lessons": "First lesson free",
+            "details": [
+              "2 times faster progress with sessions twice a week",
+              "the student chooses a day and time and we start immediately",
+              "custom materials based on the student's level",
+              "teacher with advanced level of English",
+              "support even outside of class hours, with response within 24 hours"
+            ],
+            "price": [
+              ["1 hour", "$30"],
+              ["1 hour and 30 minutes", "$40"],
+              ["2 hours", "$50"]
+            ],
+            "total": "8",
+            "greyedOut": "false",
+            "link": "/jp-individual-custom-english-intensive"
+          }
+      },
+
+
+      "courseInRomanian": {
+        "groupCustomJapanese": {
+          "id": "group custom japanese",
+          "title": "Group Japanese",
+          "lessons": "First lesson free",
+          "details": [
+            "bring your friends and form a group or wait for us to find you one",
+            "custom materials based on the group's level",
+            "teacher with advanced level of Japanese",
+            "support even outside of class hours, with response within 24 hours"
+          ],
+          "price": [
+            ["1 hour", "65 RON"],
+            ["1 hour and 30 minutes", "85 RON"],
+            ["2 hours", "115 RON"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/ro-group-custom-japanese"
+        },
+
+        "individualCustomJapanese": {
+          "id": "individual custom japanese",
+          "title": "Individual Japanese",
+          "lessons": "First lesson free",
+          "details": [
+            "the student chooses a day and time and we start immediately",
+            "custom materials based on the student's level",
+            "teacher with advanced level of Japanese",
+            "support even outside of class hours, with response within 24 hours"
+          ],
+          "price": [
+            ["1 hour", "90 RON"],
+            ["1 hour and 30 minutes", "130 RON"],
+            ["2 hours", "170 RON"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/ro-individual-custom-japanese"
+        },
+
+        "individualCustomJapaneseIntensive": {
+          "id": "individual custom japanese (intensive)",
+          "title": "Intensive Individual Japanese",
+          "lessons": "First lesson free",
+          "details": [
+            "twice as fast progress with sessions twice a week",
+            "the student chooses a day and an hour and we start immediately",
+            "custom materials based on the student level",
+            "teacher with advanced level in Japanese",
+            "support even outside of class hours, with response within 24 hours"
+          ],
+          "price": [
+            ["1 hour", "85 RON"],
+            ["1 hour and 30 minutes", "115 RON"],
+            ["2 hours", "150 RON"]
+          ],
+          "total": "8",
+          "greyedOut": "false",
+          "link": "/ro-individual-custom-japanese-intensive"
+        },
+
+        "animeJapanese": {
+          "id": "anime japanese",
+          "title": "anime Japanese",
+          "lessons": "First lesson free",
+          "details": [
+            "special course focused on the Japanese spoken in anime",
+            "to enroll in this extra course, participation in any other course offered by us is required."
+          ],
+          "price": [
+            ["", ""],
+            ["", ""],
+            ["", ""]
+          ],
+          "total": "6",
+          "greyedOut": "true",
+          "link": "/ro-anime"
+        }
+      }
+    }
+  }
+}

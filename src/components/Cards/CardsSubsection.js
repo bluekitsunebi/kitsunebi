@@ -1,34 +1,32 @@
-import { React, forwardRef }from "react";
+import { React, forwardRef } from "react";
+import { useSelector } from "react-redux";
 
 import styles from "./CardsSubsection.module.css";
-import Subtitle from "../title/Subtitle";
 import CardsGrid from "../Cards/CardsGrid";
-import { languageCoursesCardsData__English } from "../../helpers/data/languageCoursesCards/EnglishLanguageCourses";
-import { languageCoursesCardsData__Japanese } from "../../helpers/data/languageCoursesCards/JapaneseLanguageCourses";
-import { languageCoursesCardsData__Romanian } from "../../helpers/data/languageCoursesCards/RomanianLanguageCourses";
+import enData from "../../helpers/data/lang/en.json";
+import jaData from "../../helpers/data/lang/ja.json";
+import roData from "../../helpers/data/lang/ro.json";
 
 function CardsSubsection(props, ref) {
   const id = props.id;
   let cards = "";
-  let subtitleText = "";
+
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+  let langData = language === "en" ? enData : language === "ja" ? jaData : roData;
 
   if (id === "CardsSubsectionEnglish") {
-    cards = languageCoursesCardsData__English();
-    subtitleText = "Courses taught in English:";
+    cards = langData.LanguageCoursesSection.Cards.courseInEnglish;
   } else if (id === "CardsSubsectionJapanese") {
-    cards = languageCoursesCardsData__Japanese();
-    subtitleText = "Courses taught in Japanese:";
+    cards = langData.LanguageCoursesSection.Cards.courseInJapanese;
   } else if (id === "CardsSubsectionRomanian") {
-    cards = languageCoursesCardsData__Romanian();
-    subtitleText = "Courses taught in Romanian:";
+    cards = langData.LanguageCoursesSection.Cards.courseInRomanian;
   }
-
-  const greyed = cards.greyed;
 
   return (
     <div>
       <div id={id} className={styles.CardsSubsection} ref={ref}>
-        <CardsGrid cards={cards} id={id} greyed={greyed} />
+        <CardsGrid cards={cards} id={id} />
       </div>
     </div>
   );

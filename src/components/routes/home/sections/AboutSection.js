@@ -6,13 +6,14 @@ import {
 } from "../../../../store/aboutSectionSlice";
 import styles from "./AboutSection.module.css";
 import SectionTitle from "../../../title/SectionTitle";
-import { aboutSectionDescription } from "../../../../helpers/data/generalData";
+import enData from "../../../../helpers/data/lang/en.json";
+import jaData from "../../../../helpers/data/lang/ja.json";
+import roData from "../../../../helpers/data/lang/ro.json";
 
 function AboutSection({ onRender }) {
   const homeWasRendered = useSelector((state) => state.home.wasRendered);
   const aboutSectionRef = useRef(null);
   const dispatch = useDispatch();
-  const description = aboutSectionDescription();
   let paddingBottom = 0;
   let paddingTop = 0;
 
@@ -26,9 +27,7 @@ function AboutSection({ onRender }) {
       dispatch(setHeight(totalHeight));
       const rect = aboutSectionRef.current.getBoundingClientRect();
       const yOffset = window.pageYOffset || document.documentElement.scrollTop;
-      const yPosition =
-        rect.top +
-        yOffset;
+      const yPosition = rect.top + yOffset;
       dispatch(setYaxisPosition(yPosition));
     }
     if (typeof onRender === "function") {
@@ -36,14 +35,26 @@ function AboutSection({ onRender }) {
     }
   }, [onRender, homeWasRendered]);
 
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+  let langData = language === "en" ? enData : language === "ja" ? jaData : roData;
+
   return (
     <section
       id="aboutSection"
       ref={aboutSectionRef}
       className={styles.aboutSection}
     >
-      <SectionTitle text="Despre noi" />
-      <div className={styles.description}>{description}</div>
+      <SectionTitle text={langData.AboutSection.title} />
+      <div className={styles.description}>
+        {langData.AboutSection.description[0]}
+        <br />
+        <br />
+        {langData.AboutSection.description[1]}
+        <br />
+        <br />
+        {langData.AboutSection.description[2]}
+      </div>
     </section>
   );
 }

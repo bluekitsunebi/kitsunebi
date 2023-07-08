@@ -1,0 +1,300 @@
+{
+  "HeroSection": {
+    "title": {
+      "left": ["Cursuri online", "de japoneza"],
+      "right": ["Dezvoltare de", "software"]
+    },
+    "mainButton": "Afla mai multe",
+    "description": {
+      "left": [
+        "disponibile pentru toate nivelurile",
+        "sedinte individuale sau de grup",
+        "personalizate pe nivelul si ritmul de studiu al cursantilor",
+        "raspuns la orice intrabare chiar si in afara orelor de curs, in decurs de 24 de ore.",
+        "materiale de studiu personalizate"
+      ],
+      "right": [
+        "realizare de siteuri de prezentare custom",
+        "dezvoltare de aplicatii pentru mobil",
+        "utilizarea tehnologiilor dorite de clienti",
+        "adaptare rapida la orice tip de proiect, echipa si mediu de dezvoltare",
+        "familiarizati cu React, Laravel, Flutter, Python, Docker, PostrgreSQL si multe altele."
+      ]
+    }
+  },
+
+  "Header": {
+    "home": "acasa",
+    "about": "despre",
+    "language": "cursuri japoneza",
+    "programming": "dezvoltare software",
+    "faq": "faq",
+    "contact": "contact"
+  },
+
+  "AboutSection": {
+    "title": "Despre noi",
+    "description": [
+      "Aici la Blue Kitsunebi imbinam dragostea de limbi straine cu IT-ul, oferind servicii pe ambele domenii. In ambele situatii punem accent pe prestarea serviciilor la un nivel calitativ conform asteptarilor clientilor nostrii.",
+
+      "Oferim cursuri online pentru limba japoneza (cu predare in romana/engleza) si pentru limba engleza (cu predare in japoneza). Facem tot posibilul pentru a asigura o experienta unica, deosebita in explorarea acestor limbi, concentrandu-ne pe obiectivele fiecarui elev in parte atunci cand concepem lectiile. Suntem de parere ca motivatia este cheia atunci cand vine vorba de insusirea unor abilitati noi precum stapanirea unei limbi straine.",
+
+      "Serviciile noastre de dezvoltare software au ca obiect principal realizarea de site-uri de prezentare custom (precum acesta) si de aplicatii pentru mobil, dar experienta noastra nu se limiteaza doar la aceste doua categorii. Avem experienta cu React, Laravel, Flutter, Python, Docker, PostrgreSQL si multe altele, insa suntem deschisi la orice tip de oferte chiar daca sunt pe alte tehnologii decat acestea."
+    ]
+  },
+
+  "LanguageCoursesSection": {
+    "title": "Cursuri de limbi straine",
+    "description": [
+      "Profesorul nostru de limba japoneza si-a dedicat o mare parte din timp invatarii acestei limbi si o stapaneste la nivel avansat. Modul de predare este unul cat mai eficient cu putinta si se bazeaza pe experientele acestuia atat ca student cat si ca profesor. Predarea se face in ritmul elevului/grupei de elevi, punandu-se accent pe construirea unor baze solide si pe intelegerea in profunzime a limbii. Compania noastra mai ofera cursuri de engleza japonezilor nativi si colaboreaza cu japonezi si pe partea de IT, deci puteti fi siguri ca nivelul de japoneza al profesorului nostru este unul mai mult decat suficient pentru a va satisface cerintele.",
+
+      "Limba japoneza nu este atat de grea pe cat se crede, ba chiar consideram ca prezinta mai multe elemente logice decat majoritatea celorlaltor limbi. Fie ca o faci din pasiune, fie ca iti este necesara dintr-un anumit motiv, noi iti putem oferi exact cunostintele de care ai nevoie pentru a-ti realiza scopul.",
+
+      "Suntem nerabdatori sa intalnim noi iubitori de limba japoneza si fani anime cu care sa ne impartasim pasiunea (≧▽≦)."
+    ],
+
+    "motto": [
+      "Efortul ",
+      "depus ",
+      "cum trebuie ",
+      "transforma ",
+      "pasiunea ",
+      "in ",
+      "abilitati",
+      "."
+    ],
+
+    "subtitle": "Cursuri cu predare in limba:",
+    "langButtons": ["Romana", "Engleza", "Japoneza"],
+
+
+    "Cards": {
+      "courseInEnglish": {
+        "groupCustomJapanese": {
+          "id": "group custom japanese",
+          "title": "Japoneza Grup",
+          "lessons": "Prima lectie gratis",
+          "details": [
+            "adu-ti prietenii si formeaza un grup sau asteapta sa-ti gasim noi",
+            "materiale personalizate pe nivelul grupului",
+            "profesor cu nivel avansat de japoneza",
+            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+          ],
+          "price": [
+            ["1 ora", "$25"],
+            ["1 ora si 30 de minute", "$35"],
+            ["2 ore", "$45"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/en-group-custom-japanese"
+        },
+
+        "individualCustomJapanese": {
+          "id": "individual custom japanese",
+          "title": "Japoneza Individual",
+          "lessons": "Prima lectie gratis",
+          "details": [
+            "elevul alege o zi si o ora si incepem imediat",
+            "materiale personalizate pe nivelul elevului",
+            "profesor cu nivel avansat de japoneza",
+            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+          ],
+          "price": [
+            ["1 ora", "$40"],
+            ["1 ora si 30 de minute", "$50"],
+            ["2 ore", "$60"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/en-individual-custom-japanese"
+        },
+
+        "individualCustomJapaneseIntensive": {
+          "id": "individual custom japanese (intensive)",
+          "title": "Japoneza Individual Intensiv",
+          "lessons": "Prima lectie gratis",
+          "details": [
+            "evolutie de 2 ori mai rapida cu sedinte de 2 ori pe saptamana",
+            "elevul alege o zi si o ora si incepem imediat",
+            "materiale personalizate pe nivelul elevului",
+            "profesor cu nivel avansat de japoneza",
+            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+          ],
+          "price": [
+            ["1 ora", "$35"],
+            ["1 ora si 30 de minute", "$45"],
+            ["2 ore", "$55"]
+          ],
+          "total": "8",
+          "greyedOut": "false",
+          "link": "/en-individual-custom-japanese-intensive"
+        },
+
+        "animeJapanese": {
+          "id": "anime japanese",
+          "title": "japoneza anime",
+          "lessons": "Prima lectie gratis",
+          "details": [
+            "curs special axat pe japoneza vorbita in anime",
+            "pentru inscrierea la acest curs extra se cere participarea la oricare alt curs oferit de noi."
+          ],
+          "price": [
+            ["", ""],
+            ["", ""],
+            ["", ""]
+          ],
+          "total": "6",
+          "greyedOut": "true",
+          "link": "/en-anime"
+        }
+      },
+
+
+      "courseInJapanese": {
+        "groupCustomEnglish": {
+            "id": "group custom english",
+            "title": "Engleza Grup",
+            "lessons": "Prima lectie gratis",
+            "details": [
+              "adu-ti prietenii si formeaza un grup sau asteapta sa-ti gasim noi",
+              "materiale personalizate pe nivelul grupului",
+              "profesor cu nivel avansat de engleza",
+              "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+            ],
+            "price": [
+              ["1 ora", "$20"],
+              ["1 ora si 30 de minute", "$30"],
+              ["2 ore", "$40"]
+            ],
+            "total": "6",
+            "greyedOut": "false",
+            "link": "/jp-group-custom-english"
+          },
+      
+          "individualCustomEnglish": {
+            "id": "individual custom english",
+            "title": "Engleza Individual",
+            "lessons": "Prima lectie gratis",
+            "details": [
+              "elevul alege o zi si o ora si incepem imediat",
+              "materiale personalizate pe nivelul elevului",
+              "profesor cu nivel avansat de engleza",
+              "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+            ],
+            "price": [
+              ["1 ora", "$35"],
+              ["1 ora si 30 de minute", "$45"],
+              ["2 ore", "$55"]
+            ],
+            "total": "6",
+            "greyedOut": "false",
+            "link": "/jp-individual-custom-english"
+          },
+      
+          "individualCustomEnglishIntensive": {
+            "id": "individual custom english (intensive)",
+            "title": "Engleza Individual Intensiv",
+            "lessons": "Prima lectie gratis",
+            "details": [
+              "evolutie de 2 ori mai rapida cu sedinte de 2 ori pe saptamana",
+              "elevul alege o zi si o ora si incepem imediat",
+              "materiale personalizate pe nivelul elevului",
+              "profesor cu nivel avansat de engleza",
+              "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+            ],
+            "price": [
+              ["1 ora", "$30"],
+              ["1 ora si 30 de minute", "$40"],
+              ["2 ore", "$50"]
+            ],
+            "total": "8",
+            "greyedOut": "false",
+            "link": "/jp-individual-custom-english-intensive"
+          }
+      },
+
+
+      "courseInRomanian": {
+        "groupCustomJapanese": {
+          "id": "group custom japanese",
+          "title": "Japoneza Grup",
+          "lessons": "Prima lectie gratis",
+          "details": [
+            "adu-ti prietenii si formeaza un grup sau asteapta sa-ti gasim noi",
+            "materiale personalizate pe nivelul grupului",
+            "profesor cu nivel avansat de japoneza",
+            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+          ],
+          "price": [
+            ["1 ora", "65 RON"],
+            ["1 ora si 30 de minute", "85 RON"],
+            ["2 ore", "115 RON"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/ro-group-custom-japanese"
+        },
+
+        "individualCustomJapanese": {
+          "id": "individual custom japanese",
+          "title": "Japoneza Individual",
+          "lessons": "Prima lectie gratis",
+          "details": [
+            "elevul alege o zi si o ora si incepem imediat",
+            "materiale personalizate pe nivelul elevului",
+            "profesor cu nivel avansat de japoneza",
+            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+          ],
+          "price": [
+            ["1 ora", "90 RON"],
+            ["1 ora si 30 de minute", "130 RON"],
+            ["2 ore", "170 RON"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/ro-individual-custom-japanese"
+        },
+
+        "individualCustomJapaneseIntensive": {
+          "id": "individual custom japanese (intensive)",
+          "title": "Japoneza Individual Intensiv",
+          "lessons": "Prima lectie gratis",
+          "details": [
+            "evolutie de 2 ori mai rapida cu sedinte de 2 ori pe saptamana",
+            "elevul alege o zi si o ora si incepem imediat",
+            "materiale personalizate pe nivelul elevului",
+            "profesor cu nivel avansat de japoneza",
+            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+          ],
+          "price": [
+            ["1 ora", "85 RON"],
+            ["1 ora si 30 de minute", "115 RON"],
+            ["2 ore", "150 RON"]
+          ],
+          "total": "8",
+          "greyedOut": "false",
+          "link": "/ro-individual-custom-japanese-intensive"
+        },
+
+        "animeJapanese": {
+          "id": "anime japanese",
+          "title": "japoneza anime",
+          "lessons": "Prima lectie gratis",
+          "details": [
+            "curs special axat pe japoneza vorbita in anime",
+            "pentru inscrierea la acest curs extra se cere participarea la oricare alt curs oferit de noi."
+          ],
+          "price": [
+            ["", ""],
+            ["", ""],
+            ["", ""]
+          ],
+          "total": "6",
+          "greyedOut": "true",
+          "link": "/ro-anime"
+        }
+      }
+    }
+  }
+}

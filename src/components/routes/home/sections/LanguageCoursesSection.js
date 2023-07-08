@@ -8,8 +8,10 @@ import {
 import styles from "./LanguageCoursesSection.module.css";
 import SectionTitle from "../../../title/SectionTitle";
 import CardsSubsection from "../../../Cards/CardsSubsection";
-import { languageModulesDescription } from "../../../../helpers/data/generalData";
 import Subtitle from "../../../title/Subtitle";
+import enData from "../../../../helpers/data/lang/en.json";
+import jaData from "../../../../helpers/data/lang/ja.json";
+import roData from "../../../../helpers/data/lang/ro.json";
 
 export default function LanguageCoursesSection({ onRender }) {
   const homeWasRendered = useSelector((state) => state.home.wasRendered);
@@ -53,7 +55,14 @@ export default function LanguageCoursesSection({ onRender }) {
     }
   }, [onRender, homeWasRendered]);
 
-  const description = languageModulesDescription();
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+  let langData =
+    language === "en" ? enData : language === "ja" ? jaData : roData;
+  let description = [...langData.LanguageCoursesSection.description];
+  let motto = [...langData.LanguageCoursesSection.motto];
+  let langButtons = [...langData.LanguageCoursesSection.langButtons];
+
   return (
     <section
       id="languageCoursesSection"
@@ -61,40 +70,66 @@ export default function LanguageCoursesSection({ onRender }) {
       className={styles.languageCoursesSection}
     >
       <div className={styles.title}>
-        <SectionTitle text="Cursuri de limbi straine" />
+        <SectionTitle text={langData.LanguageCoursesSection.title} />
       </div>
 
-      <div className={styles.description}>{description}</div>
+      <div className={styles.description}>
+        {description[0]}
+        <br />
+        <br />
+        {description[1]}
+        <br />
+        <br />
+        {description[2]}
+        <br />
+        <br />
+        <em>
+          <b>{motto[0]}</b>
+          {motto[1]}
+          <b>{motto[2]}</b>
+          {motto[3]}
+          <b>{motto[4]}</b>
+          {motto[5]}
+          <b>{motto[6]}</b>
+          {motto[7]}
+        </em>
+      </div>
 
       <Subtitle
-        text="Cursuri cu predare in limba:"
+        text={langData.LanguageCoursesSection.subtitle}
         className={styles.subtitle}
       />
 
       <div className={styles.buttonsContainer}>
         <div
-          className={`${styles.button} ${
-            selectedButton === "romanian" ? styles.selected_ro : styles.empty
-          }`}
+          className={`
+            ${styles.button}
+            ${language === "ja" ? styles.w12 : styles.w10}
+            ${selectedButton === "romanian" ? styles.selected_ro : styles.empty}
+            `}
           onClick={handleClick__ro}
         >
-          Romana
+          {langButtons[0]}
         </div>
         <div
-          className={`${styles.button} ${
-            selectedButton === "english" ? styles.selected_eng : styles.empty
-          }`}
+          className={`
+            ${styles.button}
+            ${language === "ja" ? styles.w12 : styles.w10}
+            ${selectedButton === "english" ? styles.selected_eng : styles.empty}
+            `}
           onClick={handleClick__eng}
         >
-          Engleza
+          {langButtons[1]}
         </div>
         <div
-          className={`${styles.button} ${
-            selectedButton === "japanese" ? styles.selected_jp : styles.empty
-          }`}
+          className={`
+          ${styles.button} 
+          ${language === "ja" ? styles.w12 : styles.w10}
+          ${selectedButton === "japanese" ? styles.selected_jp : styles.empty}
+          `}
           onClick={handleClick__jp}
         >
-          Japoneza
+          {langButtons[2]}
         </div>
       </div>
 

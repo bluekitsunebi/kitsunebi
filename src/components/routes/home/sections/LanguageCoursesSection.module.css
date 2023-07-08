@@ -33,8 +33,15 @@
   cursor: pointer;
   transition: background-color 0.2s linear, border-color 0.2s linear,
     color 0.2s linear;
-  width: 10rem;
   text-align: center;
+}
+
+.w10 {
+  width: 10rem;
+}
+
+.w12 {
+  width: 12rem;
 }
 
 .empty,

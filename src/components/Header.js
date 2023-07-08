@@ -12,6 +12,9 @@ import styles from "./Header.module.css";
 import Logo from "./Logo";
 import Button from "./Button";
 import WebsiteLanguageSwitcher from "./WebsiteLanguageSwitcher";
+import enData from "../helpers/data/lang/en.json";
+import jaData from "../helpers/data/lang/ja.json";
+import roData from "../helpers/data/lang/ro.json";
 
 export default function Header({ onRender }) {
   const homeWasRendered = useSelector((state) => state.home.wasRendered);
@@ -142,6 +145,7 @@ export default function Header({ onRender }) {
 
   // get the website language
   let language = useSelector((state) => state.websiteLanguage.language);
+  let langData = language === "en" ? enData : language === "ja" ? jaData : roData;
 
   return (
     <header
@@ -180,13 +184,7 @@ export default function Header({ onRender }) {
         <Button
           name="home"
           category="header"
-          text={
-            language === "ro"
-              ? "acasa"
-              : language === "ja"
-              ? "ホームページ"
-              : "home"
-          }
+          text={langData.Header.home}
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -198,9 +196,7 @@ export default function Header({ onRender }) {
         <Button
           name="about"
           category="header"
-          text={
-            language === "ro" ? "despre" : language === "ja" ? "????" : "about"
-          }
+          text={langData.Header.about}
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -212,13 +208,7 @@ export default function Header({ onRender }) {
         <Button
           name="language"
           category="header"
-          text={
-            language === "ro"
-              ? "cursuri japoneza"
-              : language === "ja"
-              ? "????"
-              : "japanese courses"
-          }
+          text={langData.Header.language}
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -230,13 +220,7 @@ export default function Header({ onRender }) {
         <Button
           name="programming"
           category="header"
-          text={
-            language === "ro"
-              ? "dezvoltare software"
-              : language === "ja"
-              ? "????"
-              : "software development"
-          }
+          text={langData.Header.programming}
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -248,7 +232,7 @@ export default function Header({ onRender }) {
         <Button
           name="faq"
           category="header"
-          text={language === "ja" ? "????" : "faq"}
+          text={langData.Header.faq}
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
@@ -260,7 +244,7 @@ export default function Header({ onRender }) {
         <Button
           name="contact"
           category="header"
-          text={language === "ja" ? "????" : "contact"}
+          text={langData.Header.contact}
           type="withoutBorder"
           position=""
           underlinedButton={underlineButton}
