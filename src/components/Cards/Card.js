@@ -1,16 +1,28 @@
 import React, { useEffect, forwardRef, useState } from "react";
+import { useSelector } from "react-redux";
 import styles from "./Card.module.css";
 import Button from "../Button";
+import enData from "../../helpers/data/lang/en.json";
+import jaData from "../../helpers/data/lang/ja.json";
+import roData from "../../helpers/data/lang/ro.json";
 
 const Card = forwardRef((props, ref) => {
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+  let langData =
+    language === "en" ? enData : language === "ja" ? jaData : roData;
+  let payment = [...langData.LanguageCoursesSection.Cards.payment];
+
   // const cardRef = useRef(null);
   let isInView;
 
   const id = props.id;
+  const courseLanguage = props.courseLanguage;
+  const module = props.module;
   const title = props.title;
   const lessons = props.lessons;
   const details = [...props.details];
-  const priceAndTime = [...props.price];
+  let priceAndTime = [...langData.LanguageCoursesSection.Cards[courseLanguage][module].price];
   const [timeframe, setTimeframe] = useState(priceAndTime[0][0]);
   const [price, setPrice] = useState(priceAndTime[0][1]);
   const total = props.total;
@@ -48,39 +60,39 @@ const Card = forwardRef((props, ref) => {
   });
 
   // SELECT LESSON DURATION
+  const [selectedValue, setSelectedValue] = useState("oneHour");
 
   function selectTimeframe(event) {
     const el = event.target;
-    const selectedValue = el.options[el.selectedIndex].value;
+    setSelectedValue(el.options[el.selectedIndex].value);
+  }
+
+  // change default value for timeframe when language changes
+  useEffect(() => {
+    priceAndTime = [...langData.LanguageCoursesSection.Cards[courseLanguage][module].price];
+    setTimeframe(priceAndTime[0][0]);
+    setPrice(priceAndTime[0][1]);
+}, [langData]);
+
+useEffect(() => {
     switch (selectedValue) {
       case "oneHour":
-        oneHour();
+        setTimeframe(priceAndTime[0][0]);
+        setPrice(priceAndTime[0][1]);
         break;
       case "oneHour30min":
-        oneHour30min();
+        setTimeframe(priceAndTime[1][0]);
+        setPrice(priceAndTime[1][1]);
         break;
       case "twoHours":
-        twoHours();
+        setTimeframe(priceAndTime[2][0]);
+        setPrice(priceAndTime[2][1]);
         break;
       default:
         console.error("Unexpected option selected");
     }
-  }
-
-  function oneHour() {
-    setTimeframe(priceAndTime[0][0]);
-    setPrice(priceAndTime[0][1]);
-  }
-
-  function oneHour30min() {
-    setTimeframe(priceAndTime[1][0]);
-    setPrice(priceAndTime[1][1]);
-  }
-
-  function twoHours() {
-    setTimeframe(priceAndTime[2][0]);
-    setPrice(priceAndTime[2][1]);
-  }
+}, [selectedValue, langData]);
+  
 
   return (
     <div
@@ -116,21 +128,24 @@ const Card = forwardRef((props, ref) => {
 
       <div className={styles.buttonContainer}>
         {/* dropdown */}
-        <p className={`${styles.selectTimeframe} ${isGreyed && styles.hide}`}>Selecteaza durata unei lectii:</p>
+        <p className={`${styles.selectTimeframe} ${isGreyed && styles.hide}`}>
+          {langData.LanguageCoursesSection.Cards.selectTimeframe}
+        </p>
         <select
           className={`${styles.dropdown} ${isGreyed && styles.hide}`}
           name="timeframe"
           id="timeframe"
+          value={selectedValue}
           onChange={selectTimeframe}
         >
-          <option value="oneHour" selected className={styles.option}>
-            1 ora
+          <option value="oneHour" className={styles.option}>
+            {priceAndTime[0][0]}
           </option>
           <option value="oneHour30min" className={styles.option}>
-            1,5 ore (recomandat)
+            {priceAndTime[1][0]}
           </option>
           <option value="twoHours" className={styles.option}>
-            2 ore
+            {priceAndTime[2][0]}
           </option>
         </select>
 
@@ -146,7 +161,7 @@ const Card = forwardRef((props, ref) => {
             id === "CardsSubsectionEnglish") &&
           buttonType === "greyedOut"
             ? ""
-            : `(plata o data la ${total} lectii)`}
+            : `${payment[0]}${total}${payment[1]}`}
         </div>
 
         <div className={styles.Button}>
@@ -154,13 +169,12 @@ const Card = forwardRef((props, ref) => {
             name={buttonText}
             text={buttonText}
             type={buttonType}
-            // position=""
-            // underlinedButton=""
             transform={buttonTransform}
             subsection={id}
             link={link}
-            timeframe={timeframe}
-            price={price}
+            courseLanguage={courseLanguage}
+            module={module}
+            selectedValue={selectedValue}
           />
         </div>
       </div>

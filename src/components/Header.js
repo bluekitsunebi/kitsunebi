@@ -145,7 +145,8 @@ export default function Header({ onRender }) {
 
   // get the website language
   let language = useSelector((state) => state.websiteLanguage.language);
-  let langData = language === "en" ? enData : language === "ja" ? jaData : roData;
+  let langData =
+    language === "en" ? enData : language === "ja" ? jaData : roData;
 
   return (
     <header
@@ -253,7 +254,7 @@ export default function Header({ onRender }) {
           link="/"
         ></Button>
       </nav>
-      <WebsiteLanguageSwitcher/>
+      <WebsiteLanguageSwitcher />
     </header>
   );
 }

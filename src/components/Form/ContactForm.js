@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import styles from "./ContactForm.module.css";
 import emailjs from "@emailjs/browser";
 
@@ -7,6 +8,9 @@ import PhoneInput from "react-phone-number-input";
 
 import buttonstyles from "../Button.module.css";
 import ReCAPTCHA from "react-google-recaptcha";
+import enData from "../../helpers/data/lang/en.json";
+import jaData from "../../helpers/data/lang/ja.json";
+import roData from "../../helpers/data/lang/ro.json";
 
 export default function ContactForm(props) {
   let subject = props.subject;
@@ -15,9 +19,6 @@ export default function ContactForm(props) {
   let answer = props.answer;
   const section = props.section;
   if (section === "languageCourses") {
-    console.log(subject[0].slice(0, 4));
-    console.log(subject[0].slice(4));
-    console.log(subject[1]);
     subject = (
       subject[0].slice(0, 4) +
       "ul" +
@@ -74,10 +75,17 @@ export default function ContactForm(props) {
       );
   };
 
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+  let langData =
+    language === "en" ? enData : language === "ja" ? jaData : roData;
+  const agree = langData.ContactSection.ContactForm.agree;
+
   return (
     <form ref={form} onSubmit={sendEmail} className={styles.ContactForm}>
       <label className={styles.label}>
-        Prenume<span className={styles.star}>*</span>
+        {langData.ContactSection.ContactForm.name}
+        <span className={styles.star}>*</span>
       </label>
       <input
         type="text"
@@ -87,7 +95,8 @@ export default function ContactForm(props) {
         required
       />
       <label className={styles.label}>
-        Nume de familie<span className={styles.star}>*</span>
+        {langData.ContactSection.ContactForm.surname}
+        <span className={styles.star}>*</span>
       </label>
       <input
         type="text"
@@ -97,7 +106,8 @@ export default function ContactForm(props) {
         required
       />
       <label className={styles.label}>
-        Email<span className={styles.star}>*</span>
+        {langData.ContactSection.ContactForm.email}
+        <span className={styles.star}>*</span>
       </label>
       <input
         type="email"
@@ -107,7 +117,7 @@ export default function ContactForm(props) {
         required
       />
       <label style={{ display: section === "contact" && "none" }}>
-        Numar de telefon
+        {langData.ContactSection.ContactForm.phone}
       </label>
 
       <div
@@ -117,7 +127,7 @@ export default function ContactForm(props) {
         <PhoneInput
           name="form_countryCode"
           international
-          defaultCountry="RO"
+          defaultCountry={langData.LanguageCustomCourses.countryCode}
           value={countryCode}
           autoComplete="off"
           onChange={setCountryCode}
@@ -138,7 +148,7 @@ export default function ContactForm(props) {
         />
       </div>
       <label className={styles.label}>
-        Mesaj
+        {langData.ContactSection.ContactForm.message}
         <span
           className={styles.star}
           style={{ display: section === "languageCourses" && "none" }}
@@ -163,9 +173,9 @@ export default function ContactForm(props) {
             onFocus={() => setIsSend("false")}
             required
           />
-          Sunt de acord cu{" "}
+          {agree[0]}
           <a href="" className={styles.link}>
-            politica de confidentialitate, termenii si conditiile
+            {agree[1]}
           </a>
         </label>
       </div>
@@ -175,10 +185,11 @@ export default function ContactForm(props) {
       <input type="hidden" name="answer" value={answer} />
 
       <ReCAPTCHA
+        key={language}
         sitekey={RECAPTCHA_KEY}
         onChange={handleRecaptchaChange}
         className={styles.recaptcha}
-        hl="ro"
+        hl={language}
       />
 
       <div className={styles.confirmationContainer}>
@@ -187,12 +198,12 @@ export default function ContactForm(props) {
             isSend === "false" && styles.hide
           } ${isSend === "true" && styles.show}`}
         >
-          Formularul a fost trimis!
+          {langData.ContactSection.ContactForm.confirmation}
         </div>
         <div className={styles.buttonContainer}>
           <input
             type="submit"
-            value="trimite"
+            value={langData.ContactSection.ContactForm.sendButton}
             className={`${buttonstyles.button__full} ${buttonstyles.Button} ${buttonstyles.capitalize} ${styles.sendButton}`}
           />
         </div>

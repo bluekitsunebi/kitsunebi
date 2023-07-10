@@ -6,7 +6,9 @@ import {
 } from "../../../../store/programmingSectionSlice";
 import styles from "./ProgrammingSection.module.css";
 import SectionTitle from "../../../title/SectionTitle";
-import { programmingSectionDescription } from "../../../../helpers/data/generalData";
+import enData from "../../../../helpers/data/lang/en.json";
+import jaData from "../../../../helpers/data/lang/ja.json";
+import roData from "../../../../helpers/data/lang/ro.json";
 
 export default function ProgrammingSection({ onRender }) {
   const homeWasRendered = useSelector((state) => state.home.wasRendered);
@@ -23,9 +25,7 @@ export default function ProgrammingSection({ onRender }) {
 
       const rect = programmingSectionRef.current.getBoundingClientRect();
       const yOffset = window.pageYOffset || document.documentElement.scrollTop;
-      const yPosition =
-        rect.top +
-        yOffset;
+      const yPosition = rect.top + yOffset;
       dispatch(setYaxisPosition(yPosition));
     }
     if (typeof onRender === "function") {
@@ -33,8 +33,11 @@ export default function ProgrammingSection({ onRender }) {
     }
   }, [onRender, homeWasRendered]);
 
-  // const headerHeight = useSelector((state) => state.header.height);
-  const description = programmingSectionDescription();
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+  let langData =
+    language === "en" ? enData : language === "ja" ? jaData : roData;
+  let description = [...langData.ProgrammingSection.description];
 
   return (
     <section
@@ -43,9 +46,17 @@ export default function ProgrammingSection({ onRender }) {
       className={styles.programmingSection}
     >
       <div className={styles.title}>
-        <SectionTitle text="Dezvoltare software" />
+        <SectionTitle text={langData.ProgrammingSection.title} />
       </div>
-      <div className={styles.description}>{description}</div>
+      <div className={styles.description}>
+        {description[0]}
+        <br />
+        <br />
+        {description[1]}
+        <br />
+        <br />
+        {description[2]}
+      </div>
     </section>
   );
 }

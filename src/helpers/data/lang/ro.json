@@ -67,7 +67,6 @@
     "subtitle": "Cursuri cu predare in limba:",
     "langButtons": ["Romana", "Engleza", "Japoneza"],
 
-
     "Cards": {
       "courseInEnglish": {
         "groupCustomJapanese": {
@@ -150,70 +149,68 @@
         }
       },
 
-
       "courseInJapanese": {
         "groupCustomEnglish": {
-            "id": "group custom english",
-            "title": "Engleza Grup",
-            "lessons": "Prima lectie gratis",
-            "details": [
-              "adu-ti prietenii si formeaza un grup sau asteapta sa-ti gasim noi",
-              "materiale personalizate pe nivelul grupului",
-              "profesor cu nivel avansat de engleza",
-              "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
-            ],
-            "price": [
-              ["1 ora", "$20"],
-              ["1 ora si 30 de minute", "$30"],
-              ["2 ore", "$40"]
-            ],
-            "total": "6",
-            "greyedOut": "false",
-            "link": "/jp-group-custom-english"
-          },
-      
-          "individualCustomEnglish": {
-            "id": "individual custom english",
-            "title": "Engleza Individual",
-            "lessons": "Prima lectie gratis",
-            "details": [
-              "elevul alege o zi si o ora si incepem imediat",
-              "materiale personalizate pe nivelul elevului",
-              "profesor cu nivel avansat de engleza",
-              "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
-            ],
-            "price": [
-              ["1 ora", "$35"],
-              ["1 ora si 30 de minute", "$45"],
-              ["2 ore", "$55"]
-            ],
-            "total": "6",
-            "greyedOut": "false",
-            "link": "/jp-individual-custom-english"
-          },
-      
-          "individualCustomEnglishIntensive": {
-            "id": "individual custom english (intensive)",
-            "title": "Engleza Individual Intensiv",
-            "lessons": "Prima lectie gratis",
-            "details": [
-              "evolutie de 2 ori mai rapida cu sedinte de 2 ori pe saptamana",
-              "elevul alege o zi si o ora si incepem imediat",
-              "materiale personalizate pe nivelul elevului",
-              "profesor cu nivel avansat de engleza",
-              "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
-            ],
-            "price": [
-              ["1 ora", "$30"],
-              ["1 ora si 30 de minute", "$40"],
-              ["2 ore", "$50"]
-            ],
-            "total": "8",
-            "greyedOut": "false",
-            "link": "/jp-individual-custom-english-intensive"
-          }
-      },
+          "id": "group custom english",
+          "title": "Engleza Grup",
+          "lessons": "Prima lectie gratis",
+          "details": [
+            "adu-ti prietenii si formeaza un grup sau asteapta sa-ti gasim noi",
+            "materiale personalizate pe nivelul grupului",
+            "profesor cu nivel avansat de engleza",
+            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+          ],
+          "price": [
+            ["1 ora", "$20"],
+            ["1 ora si 30 de minute", "$30"],
+            ["2 ore", "$40"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/jp-group-custom-english"
+        },
 
+        "individualCustomEnglish": {
+          "id": "individual custom english",
+          "title": "Engleza Individual",
+          "lessons": "Prima lectie gratis",
+          "details": [
+            "elevul alege o zi si o ora si incepem imediat",
+            "materiale personalizate pe nivelul elevului",
+            "profesor cu nivel avansat de engleza",
+            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+          ],
+          "price": [
+            ["1 ora", "$35"],
+            ["1 ora si 30 de minute", "$45"],
+            ["2 ore", "$55"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/jp-individual-custom-english"
+        },
+
+        "individualCustomEnglishIntensive": {
+          "id": "individual custom english (intensive)",
+          "title": "Engleza Individual Intensiv",
+          "lessons": "Prima lectie gratis",
+          "details": [
+            "evolutie de 2 ori mai rapida cu sedinte de 2 ori pe saptamana",
+            "elevul alege o zi si o ora si incepem imediat",
+            "materiale personalizate pe nivelul elevului",
+            "profesor cu nivel avansat de engleza",
+            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
+          ],
+          "price": [
+            ["1 ora", "$30"],
+            ["1 ora si 30 de minute", "$40"],
+            ["2 ore", "$50"]
+          ],
+          "total": "8",
+          "greyedOut": "false",
+          "link": "/jp-individual-custom-english-intensive"
+        }
+      },
 
       "courseInRomanian": {
         "groupCustomJapanese": {
@@ -294,7 +291,95 @@
           "greyedOut": "true",
           "link": "/ro-anime"
         }
+      },
+
+      "selectTimeframe": "Selecteaza durata unei lectii:",
+      "payment": ["(plata o data la ", " lectii)"],
+      "button": {
+        "active": "inscrie-te",
+        "greyed": "in curand"
       }
     }
+  },
+
+  "ProgrammingSection": {
+    "title": "Dezvoltare software",
+    "description": [
+      "Ne folosim de tehnologii precum React, Laravel, Flutter, Python, Docker, PostgreSQL etc. pentru a dezvolta aplicatii software conform dorintelor clientilor nostrii. Principalul obiect al activitatii noastre este acela de realizare de site-uri de prezentare custom si de aplicatii pentru mobil. Putem urma fie un desingn deja intocmit de client, fie putem prezenta o structura si un design la care ne-am gandit noi, specificand desigur si costurile implicate in realizarea acestuia.",
+
+      "Ne place sa realizam site-uri si aplicatii unice, interactive, cu animatii sugestive si moderne, care sa atraga atentia vizitatorilor si sa creeze o impresie puternic pozitiva in ochii acestora. Ne consultam in permanenta cu clientii nostrii pentru o buna sincronizare si pentru a ne asigura ca produsul final este cat mai pe placul acestora.",
+
+      "Avand experienta pe frontend, backend, scripturi, microservicii, AI si realizare de algoritmi complecsi, suntem flexibili in tehnologiile pe care le folosim, putand sa ne adaptam foarte usor la orice tehnologie si mediu de dezvoltare. Suntem deschisi la a lucra in echipa pe proiecte mai mari si avem incredere ca ne descurcam pe orice tip de proiect din aceasta industrie."
+    ]
+  },
+
+  "FAQsection": {
+    "title": "Intrebari frecvente",
+    "questionsAndAnswers": [
+      [
+        "Intrebare: Cum se efectueaza plata?",
+        "Raspuns: Plata se efectueaza dupa sedinta gratis de inceput, semnarea contractului si primirea facturii, in avans pentru un anumit numar de sedinte (6 pentru regim normal, 8 pentru intensiv), prin transfer bancar (gasiti datele in rubrica contact), punand numele elevului in descriere."
+      ],
+      [
+        "Intrebare: Daca nu pot intra intr-o zi, ce se intampla cu sedinta platita?",
+        "Raspuns: Pentru cei ce au ales un program individual de studiu, este posibila mutarea acesteia in alta zi din urmatoarele 4 saptamani. Cei carora li se preda in sistem grup vor pierde din pacate sedinta platita daca motivul absentarii nu este unul strict obiectiv."
+      ],
+      [
+        "Intrebare: Cum pot beneficia de asistenta oferita in afara orelor de curs?",
+        "Raspuns: Ne puteti pune intrebari privind limba studiata prin mail sau prin chat pe orice retea de socializare. Aveti dreptul la cate 4 intrebari deodata iar raspunsul va veni in decurs de 24 de ore."
+      ]
+    ]
+  },
+
+  "ContactSection": {
+    "title": "Contact",
+    "companyDetails": {
+      "subtitle": "Detalii companie",
+      "details": [
+        "Kitsunebi Miyabi SRL",
+        "Nr. ord. registrul com.: J29/63/2023",
+        "C.I.F.: 47442947",
+        "Sediu social: Str. Penes Curcanul, nr. 8, bl. 151C, sc. A, et. P, ap. 1, Ploiesti, Prahova, 100511, Romania",
+        "Tel: +40745984726",
+        "Email: bluekitsunebi@gmail.com",
+        "Cont LEI: RO84CECEB00030RON2569171"
+      ]
+    },
+    "ContactForm": {
+      "subtitle": "Formular de contact",
+      "name": "Prenume",
+      "surname": "Nume de familie",
+      "email": "Email",
+      "phone": "Numar de telefon",
+      "message": "Mesaj",
+      "agree": [
+        "Sunt de acord cu ",
+        "politica de confidentialitate, termenii si conditiile"
+      ],
+      "confirmation": "Formularul a fost trimis!",
+      "sendButton": "Trimite",
+      "answer": "mesajul tău",
+      "subject": "contact"
+    }
+  },
+
+  "Footer": {
+    "email": "bluekitsunebi@gmail.com",
+    "phone": "+40 745 984 726",
+    "terms": "Termenii si conditiile",
+    "policy": "Politica de confidentialitate",
+    "aboutUs": "Despre noi",
+    "faq": "Intrebari frecvente",
+    "contact": "Contact",
+    "copyright": "© Copyright 2023, Kitsunebi Miyabi SRL"
+  },
+  
+  "LanguageCustomCourses": {
+    "subtitle": "Inscrie-te pentru o lectie gratuita",
+    "ContactForm": {
+      "answer": "cererea ta de inscriere"
+    },
+    "countryCode": "RO"
   }
+
 }

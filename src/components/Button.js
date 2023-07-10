@@ -3,13 +3,21 @@ import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./Button.module.css";
 // import { scroll } from "../helpers/helpers";
-import { setLocation, setLink, setSection, switchWasClicked } from "../store/routerSlice";
+import {
+  setLocation,
+  setLink,
+  setSection,
+  switchWasClicked,
+} from "../store/routerSlice";
 import { setMenu, closeMenu } from "../store/headerSlice";
+import enData from "../helpers/data/lang/en.json";
+import jaData from "../helpers/data/lang/ja.json";
+import roData from "../helpers/data/lang/ro.json";
 
 function Button(props) {
   const location = useLocation().pathname;
   const dispatch = useDispatch();
-  
+
   const headerHeight = useSelector((state) => state.header.height);
 
   const name = props.name;
@@ -21,9 +29,15 @@ function Button(props) {
   const section = props.section;
   const link = props.link === undefined ? "*" : props.link;
   const category = props.category;
-  let timeframe = props.timeframe;
-  let price = props.price;
-  // const card = props.card;
+  const courseLanguage = props.courseLanguage;
+  const module = props.module;
+  const selectedValue = props.selectedValue;
+
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+  let langData =
+    language === "en" ? enData : language === "ja" ? jaData : roData;
+
   let sectionPosition = undefined;
 
   const aboutSectionPosition = useSelector(
@@ -68,13 +82,16 @@ function Button(props) {
     dispatch(setLink(link));
     dispatch(setSection(section));
     dispatch(switchWasClicked());
-    if(category === "header" && window.innerWidth <= 1540){
+    if (category === "header" && window.innerWidth <= 1540) {
       dispatch(closeMenu());
     }
   };
 
   return (
-    <Link to={`${link}?timeframe=${timeframe}&price=${price}`}>
+    // courseLanguage = props.courseLanguage;
+    // const module = props.module;
+    // const selectedValue
+    <Link to={`${link}?language=${courseLanguage}&type=${module}&time=${selectedValue}`}>
       <button
         className={`
           ${styles.Button}

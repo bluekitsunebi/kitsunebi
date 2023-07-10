@@ -8,6 +8,9 @@ import styles from "./ContactSection.module.css";
 
 import SectionTitle from "../../../title/SectionTitle";
 import ContactForm from "../../../Form/ContactForm";
+import enData from "../../../../helpers/data/lang/en.json";
+import jaData from "../../../../helpers/data/lang/ja.json";
+import roData from "../../../../helpers/data/lang/ro.json";
 
 function ContactSection({ onRender }) {
   const homeWasRendered = useSelector((state) => state.home.wasRendered);
@@ -31,6 +34,12 @@ function ContactSection({ onRender }) {
     }
   }, [onRender, homeWasRendered]);
 
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+  let langData =
+    language === "en" ? enData : language === "ja" ? jaData : roData;
+  let companyDetails = [...langData.ContactSection.companyDetails.details];
+
   return (
     <section
       id="contactSection"
@@ -38,30 +47,33 @@ function ContactSection({ onRender }) {
       className={styles.contactSection}
     >
       <div className={styles.title}>
-        <SectionTitle text="Contact" />
+        <SectionTitle text={langData.ContactSection.title} />
       </div>
       <div className={styles.contactContainer}>
         <div className={styles.formContainer}>
           <ContactForm
-            subject="contact"
+            subject={langData.ContactSection.ContactForm.subject}
             section="contact"
-            answer="mesajul tău"
+            answer={langData.ContactSection.ContactForm.answer}
           />
         </div>
-        <div className={`${styles.subtitle} ${styles.subtitle__form}`}>Formular de contact</div>
-        <div className={styles.companyDetails}>
-          <div>Kitsunebi Miyabi SRL</div>
-          <div>Nr. ord. registrul com.: J29/63/2023</div>
-          <div>C.I.F.: 47442947</div>
-          <div>
-            Sediu social: Str. Penes Curcanul, nr. 8, bl. 151C, sc. A, et. P,
-            ap. 1, Ploiesti, Prahova, 100511, Romania
-          </div>
-          <div>Tel: +40745984726</div>
-          <div>Email: bluekitsunebi@gmail.com</div>
-          <div className={styles.IBAN}>Cont LEI: RO84CECEB00030RON2569171</div>
+        <div className={`${styles.subtitle} ${styles.subtitle__form}`}>
+          {langData.ContactSection.ContactForm.subtitle}
         </div>
-        <div className={`${styles.subtitle} ${styles.subtitle__companyDetails}`}>Detalii companie</div>
+        <div className={styles.companyDetails}>
+          <div>{companyDetails[0]}</div>
+          <div>{companyDetails[1]}</div>
+          <div>{companyDetails[2]}</div>
+          <div>{companyDetails[3]}</div>
+          <div>{companyDetails[4]}</div>
+          <div>{companyDetails[5]}</div>
+          <div className={styles.IBAN}>{companyDetails[6]}</div>
+        </div>
+        <div
+          className={`${styles.subtitle} ${styles.subtitle__companyDetails}`}
+        >
+          {langData.ContactSection.companyDetails.subtitle}
+        </div>
       </div>
     </section>
   );

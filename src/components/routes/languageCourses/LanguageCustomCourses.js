@@ -40,6 +40,8 @@ export default function LanguageCustomCourses(props) {
   // get the website language
   let language = useSelector((state) => state.websiteLanguage.language);
   let langData = language === "en" ? enData : language === "ja" ? jaData : roData;
+
+  
   let courseInEnglish = langData.LanguageCoursesSection.Cards.courseInEnglish;
   let courseInJapanese = langData.LanguageCoursesSection.Cards.courseInJapanese;
   let courseInRomanian = langData.LanguageCoursesSection.Cards.courseInRomanian;
@@ -136,7 +138,7 @@ export default function LanguageCustomCourses(props) {
           className={styles.subtitle}
         >{`(${title[1]}, ${price} / ${timeframe})`}</div>
         <div className={styles.title_form}>
-          Inscrie-te pentru o lectie gratuita
+          {langData.LanguageCustomCourses.subtitle}
         </div>
         <ContactForm
           className={styles.ContactForm}

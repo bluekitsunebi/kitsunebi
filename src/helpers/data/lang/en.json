@@ -67,7 +67,6 @@
     "subtitle": "Courses taught in:",
     "langButtons": ["Romanian", "English", "Japanese"],
 
-
     "Cards": {
       "courseInEnglish": {
         "groupCustomJapanese": {
@@ -150,70 +149,68 @@
         }
       },
 
-
       "courseInJapanese": {
         "groupCustomEnglish": {
-            "id": "group custom english",
-            "title": "Group English",
-            "lessons": "First lesson free",
-            "details": [
-              "bring your friends and form a group or wait for us to find you one",
-              "custom materials based on the group's level",
-              "teacher with advanced level of English",
-              "support even outside of class hours, with response within 24 hours"
-            ],
-            "price": [
-              ["1 hour", "$20"],
-              ["1 hour and 30 minutes", "$30"],
-              ["2 hours", "$40"]
-            ],
-            "total": "6",
-            "greyedOut": "false",
-            "link": "/jp-group-custom-english"
-          },
-      
-          "individualCustomEnglish": {
-            "id": "individual custom english",
-            "title": "Individual English",
-            "lessons": "First lesson free",
-            "details": [
-              "the student chooses a day and time and we start immediately",
-              "custom materials based on the student's level",
-              "teacher with advanced level of English",
-              "support even outside of class hours, with response within 24 hours"
-            ],
-            "price": [
-              ["1 hour", "$35"],
-              ["1 hour and 30 minutes", "$45"],
-              ["2 hours", "$55"]
-            ],
-            "total": "6",
-            "greyedOut": "false",
-            "link": "/jp-individual-custom-english"
-          },
-      
-          "individualCustomEnglishIntensive": {
-            "id": "individual custom english (intensive)",
-            "title": "Intensive Individual English",
-            "lessons": "First lesson free",
-            "details": [
-              "2 times faster progress with sessions twice a week",
-              "the student chooses a day and time and we start immediately",
-              "custom materials based on the student's level",
-              "teacher with advanced level of English",
-              "support even outside of class hours, with response within 24 hours"
-            ],
-            "price": [
-              ["1 hour", "$30"],
-              ["1 hour and 30 minutes", "$40"],
-              ["2 hours", "$50"]
-            ],
-            "total": "8",
-            "greyedOut": "false",
-            "link": "/jp-individual-custom-english-intensive"
-          }
-      },
+          "id": "group custom english",
+          "title": "Group English",
+          "lessons": "First lesson free",
+          "details": [
+            "bring your friends and form a group or wait for us to find you one",
+            "custom materials based on the group's level",
+            "teacher with advanced level of English",
+            "support even outside of class hours, with response within 24 hours"
+          ],
+          "price": [
+            ["1 hour", "$20"],
+            ["1 hour and 30 minutes", "$30"],
+            ["2 hours", "$40"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/jp-group-custom-english"
+        },
 
+        "individualCustomEnglish": {
+          "id": "individual custom english",
+          "title": "Individual English",
+          "lessons": "First lesson free",
+          "details": [
+            "the student chooses a day and time and we start immediately",
+            "custom materials based on the student's level",
+            "teacher with advanced level of English",
+            "support even outside of class hours, with response within 24 hours"
+          ],
+          "price": [
+            ["1 hour", "$35"],
+            ["1 hour and 30 minutes", "$45"],
+            ["2 hours", "$55"]
+          ],
+          "total": "6",
+          "greyedOut": "false",
+          "link": "/jp-individual-custom-english"
+        },
+
+        "individualCustomEnglishIntensive": {
+          "id": "individual custom english (intensive)",
+          "title": "Intensive Individual English",
+          "lessons": "First lesson free",
+          "details": [
+            "2 times faster progress with sessions twice a week",
+            "the student chooses a day and time and we start immediately",
+            "custom materials based on the student's level",
+            "teacher with advanced level of English",
+            "support even outside of class hours, with response within 24 hours"
+          ],
+          "price": [
+            ["1 hour", "$30"],
+            ["1 hour and 30 minutes", "$40"],
+            ["2 hours", "$50"]
+          ],
+          "total": "8",
+          "greyedOut": "false",
+          "link": "/jp-individual-custom-english-intensive"
+        }
+      },
 
       "courseInRomanian": {
         "groupCustomJapanese": {
@@ -294,7 +291,91 @@
           "greyedOut": "true",
           "link": "/ro-anime"
         }
+      },
+
+      "selectTimeframe": "Select the duration of a lesson:",
+      "payment": ["(payment once every ", " lessons)"],
+      "button": {
+        "active": "sign up",
+        "greyed": "coming soon"
       }
     }
+  },
+
+  "ProgrammingSection": {
+    "title": "Software Development",
+    "description": [
+      "We use technologies such as React, Laravel, Flutter, Python, Docker, PostgreSQL etc. to develop software applications according to our customers' wishes. The main object of our activity is to create custom presentation websites and mobile applications. We can follow a design already prepared by the client, or we can present a structure and a design that we thought of, specifying of course the costs involved in its realization.",
+
+      "We like to create unique, interactive sites and applications, with suggestive and modern animations, that attract visitors' attention and create a strong positive impression in their eyes. We constantly consult with our clients for good synchronization and to ensure that the final product is as much to their liking as possible.",
+
+      "Having experience on frontend, backend, scripts, microservices, AI and creation of complex algorithms, we are flexible in the technologies we use, being able to adapt very easily to any technology and development environment. We are open to working in a team on larger projects and we are confident that we can handle any type of project in this industry."
+    ]
+  },
+
+  "FAQsection": {
+    "title": "Frequently Asked Questions",
+    "questionsAndAnswers": [
+      [
+        "Question: How is the payment made?",
+        "Answer: The payment is made after the initial free session, the signing of the contract, and the receipt of the invoice, in advance for a certain number of sessions (6 for the regular regime, 8 for intensive), by bank transfer (you can find the data in the contact section), by putting the student's name in the description."
+      ],
+      [
+        "Question: If I can't attend one day, what happens to the paid session?",
+        "Answer: For those who have chosen an individual study program, it is possible to move it to another day within the next 4 weeks. Those who are taught in a group system will unfortunately lose the paid session if the reason for the absence is not strictly objective."
+      ],
+      [
+        "Question: How can I benefit from the assistance offered outside of class hours?",
+        "Answer: You can ask us questions about the studied language by email or by chat on any social network. You are entitled to ask up to 4 questions at a time and the answer will come within 24 hours."
+      ]
+    ]
+  },
+
+  "ContactSection": {
+    "title": "Contact",
+    "companyDetails": {
+      "subtitle": "Company Details",
+      "details": [
+        "Kitsunebi Miyabi SRL",
+        "Reg. Order No.: J29/63/2023",
+        "T.I.N.: 47442947",
+        "Headquarters: Str. Penes Curcanul, nr. 8, bl. 151C, sc. A, fl. P, ap. 1, Ploiesti, Prahova, 100511, Romania",
+        "Tel: +40745984726",
+        "Email: bluekitsunebi@gmail.com",
+        "LEI Account: RO84CECEB00030RON2569171"
+      ]
+    },
+    "ContactForm": {
+      "subtitle": "Contact Form",
+      "name": "First name",
+      "surname": "Last name",
+      "email": "Email",
+      "phone": "Phone number",
+      "message": "Message",
+      "agree": ["I agree with ", "the privacy policy, terms and conditions"],
+      "confirmation": "The form has been sent!",
+      "sendButton": "Send",
+      "answer": "your message",
+      "subject": "contact"
+    }
+  },
+
+  "Footer": {
+    "email": "bluekitsunebi@gmail.com",
+    "phone": "+40 745 984 726",
+    "terms": "Terms and Conditions",
+    "policy": "Privacy Policy",
+    "aboutUs": "About Us",
+    "faq": "Frequently Asked Questions",
+    "contact": "Contact",
+    "copyright": "© Copyright 2023, Kitsunebi Miyabi SRL"
+  },
+
+  "LanguageCustomCourses": {
+    "subtitle": "Sign up for a free lesson",
+    "ContactForm": {
+      "answer": "your enrollment request"
+    },
+    "countryCode": "GB"
   }
 }
