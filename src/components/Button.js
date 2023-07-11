@@ -91,7 +91,7 @@ function Button(props) {
     // courseLanguage = props.courseLanguage;
     // const module = props.module;
     // const selectedValue
-    <Link to={`${link}?language=${courseLanguage}&type=${module}&time=${selectedValue}`}>
+    <Link to={`${link}?time=${selectedValue}`}>
       <button
         className={`
           ${styles.Button}

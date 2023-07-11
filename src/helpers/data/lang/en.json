@@ -355,7 +355,13 @@
       "agree": ["I agree with ", "the privacy policy, terms and conditions"],
       "confirmation": "The form has been sent!",
       "sendButton": "Send",
-      "answer": "your message",
+      "answer": {
+        "hello": "Hello, ",
+        "punctuation": "!",
+        "main": "We've received your message and we'll get back to you as soon as possible.",
+        "ending": "Best regards,",
+        "signature": "Blue Kitsunebi Team"
+      },
       "subject": "contact"
     }
   },
@@ -374,8 +380,70 @@
   "LanguageCustomCourses": {
     "subtitle": "Sign up for a free lesson",
     "ContactForm": {
-      "answer": "your enrollment request"
+      "answer": {
+        "hello": "Hello, ",
+        "punctuation": "!",
+        "main": "We've received your sign up request and we'll get back to you as soon as possible.",
+        "ending": "Best regards,",
+        "signature": "Blue Kitsunebi Team"
+      }
     },
-    "countryCode": "GB"
+    "countryCode": "GB",
+    "title": {
+      "courseInEnglish": {
+        "individualCustomJapanese": [
+          "Japanese language course taught in English",
+          "individual lessons"
+        ],
+        "groupCustomJapanese": [
+          "Japanese language course taught in English",
+          "group lessons"
+        ],
+        "individualCustomJapaneseIntensive": [
+          "Intensive Japanese language course taught in English",
+          "individual lessons, twice a week"
+        ],
+        "groupCustomJapaneseIntensive": [
+          "Intensive Japanese language course taught in English",
+          "group lessons, twice a week"
+        ]
+      },
+      "courseInJapanese": {
+        "individualCustomEnglish": [
+          "English language course taught in Japanese",
+          "individual lessons"
+        ],
+        "groupCustomEnglish": [
+          "English language course taught in Japanese",
+          "group lessons"
+        ],
+        "individualCustomEnglishIntensive": [
+          "Intensive English language course taught in Japanese",
+          "individual lessons, twice a week"
+        ],
+        "groupCustomEnglishIntensive": [
+          "Intensive English language course taught in Japanese",
+          "group lessons, twice a week"
+        ]
+      },
+      "courseInRomanian": {
+        "individualCustomJapanese": [
+          "Japanese language course taught in Romanian",
+          "individual lessons"
+        ],
+        "groupCustomJapanese": [
+          "Japanese language course taught in Romanian",
+          "group lessons"
+        ],
+        "individualCustomJapaneseIntensive": [
+          "Intensive Japanese language course taught in Romanian",
+          "individual lessons, twice a week"
+        ],
+        "groupCustomJapaneseIntensive": [
+          "Intensive Japanese language course taught in Romanian",
+          "group lessons, twice a week"
+        ]
+      }
+    }
   }
 }

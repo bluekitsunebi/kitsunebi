@@ -354,7 +354,13 @@
       "agree": ["同意する", "プライバシーポリシーと利用規約"],
       "confirmation": "フォームが送信されました！",
       "sendButton": "送信",
-      "answer": "あなたのメッセージ",
+      "answer": {
+        "hello": "こんにちは、",
+        "punctuation": "さん！",
+        "main": "あなたのメッセージを受け取りました。できるだけ早くご連絡します。",
+        "ending": "よろしくお願いいたします、",
+        "signature": "青い狐火チーム"
+      },
       "subject": "お問い合わせ"
     }
   },
@@ -373,8 +379,70 @@
   "LanguageCustomCourses": {
     "subtitle": "無料レッスンにサインアップする",
     "ContactForm": {
-      "answer": "あなたの登録リクエスト"
+      "answer": {
+        "hello": "こんにちは、",
+        "punctuation": "さん！",
+        "main": "あなたの登録リクエストを受け取りました。できるだけ早くご連絡します。",
+        "ending": "よろしくお願いいたします、",
+        "signature": "青い狐火チーム"
+      }
     },
-    "countryCode": "JP"
+    "countryCode": "JP",
+    "title": {
+      "courseInEnglish": {
+        "individualCustomJapanese": [
+          "英語で教えられる日本語のコース",
+          "個人レッスン"
+        ],
+        "groupCustomJapanese": [
+          "英語で教えられる日本語のコース",
+          "グループレッスン"
+        ],
+        "individualCustomJapaneseIntensive": [
+          "英語で教えられる集中日本語のコース",
+          "個人レッスン、週に2回"
+        ],
+        "groupCustomJapaneseIntensive": [
+          "英語で教えられる集中日本語のコース",
+          "グループレッスン、週に2回"
+        ]
+      },
+      "courseInJapanese": {
+        "individualCustomEnglish": [
+          "日本語で教えられる英語のコース",
+          "個人レッスン"
+        ],
+        "groupCustomEnglish": [
+          "日本語で教えられる英語のコース",
+          "グループレッスン"
+        ],
+        "individualCustomEnglishIntensive": [
+          "日本語で教えられる集中英語のコース",
+          "個人レッスン、週に2回"
+        ],
+        "groupCustomEnglishIntensive": [
+          "日本語で教えられる集中英語のコース",
+          "グループレッスン、週に2回"
+        ]
+      },
+      "courseInRomanian": {
+        "individualCustomJapanese": [
+          "ルーマニア語で教えられる日本語のコース",
+          "個人レッスン"
+        ],
+        "groupCustomJapanese": [
+          "ルーマニア語で教えられる日本語のコース",
+          "グループレッスン"
+        ],
+        "individualCustomJapaneseIntensive": [
+          "ルーマニア語で教えられる集中日本語のコース",
+          "個人レッスン、週に2回"
+        ],
+        "groupCustomJapaneseIntensive": [
+          "ルーマニア語で教えられる集中日本語のコース",
+          "グループレッスン、週に2回"
+        ]
+      }
+    }
   }
 }

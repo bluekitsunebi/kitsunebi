@@ -14,30 +14,30 @@ import roData from "../../helpers/data/lang/ro.json";
 
 export default function ContactForm(props) {
   let subject = props.subject;
-  let timeframe = props.timeframe;
   let price = props.price;
-  let answer = props.answer;
+  let timeframe = props.timeframe;
+  let answer = { ...props.answer };
+
+  //formatting answer
+  let hello = answer.hello;
+  let punctuation = answer.punctuation;
+  let main = answer.main;
+  let ending = answer.ending;
+  let signature = answer.signature;
   const section = props.section;
-  if (section === "languageCourses") {
-    subject = (
-      subject[0].slice(0, 4) +
-      "ul" +
-      subject[0].slice(4) +
-      ", " +
-      subject[1]
-    ).toLowerCase();
-  }
+
   const form = useRef();
   const [countryCode, setCountryCode] = useState();
+
   const handleKeyPress = (e) => {
     const pattern = /^[0-9\b]+$/;
     if (!pattern.test(e.key)) {
       e.preventDefault();
     }
   };
+
   const [isSend, setIsSend] = useState("false");
   const RECAPTCHA_KEY = "6Leu5AUmAAAAAJVC7lT0cMLGgy4hzSK2kqRtE2_h";
-
   const [isRecaptchaCompleted, setIsRecaptchaCompleted] = useState(false);
   const handleRecaptchaChange = (value) => {
     setIsRecaptchaCompleted(true);
@@ -45,29 +45,48 @@ export default function ContactForm(props) {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     if (!isRecaptchaCompleted) {
       return;
     }
 
-    const phoneInput = form.current.elements.form_phone;
-    const countryCodeInput = form.current.elements.form_countryCode;
+    const phoneInput = e.target.elements.phone;
+    const countryCodeInput = e.target.elements.countryCode;
     if (phoneInput.value === "") {
       countryCodeInput.value = "";
     }
 
+    let templateParams = {
+      hello: e.target.elements.hello.value,
+      firstName: e.target.elements.firstName.value, //
+      punctuation: e.target.elements.punctuation.value,
+      main: e.target.elements.main.value,
+      ending: e.target.elements.ending.value,
+      signature: e.target.elements.signature.value,
+      timeframe: e.target.elements.timeframe.value,
+      price: e.target.elements.price.value,
+      message: e.target.elements.message.value, //
+      email: e.target.elements.email.value,
+      phone: e.target.elements.phone.value,
+      countryCode: e.target.elements.countryCode.value,
+      checkbox: e.target.elements.checkbox.value, //
+      lastName: e.target.elements.lastName.value, //
+      subject: e.target.elements.subject.value, //
+      language: e.target.elements.language.value,
+    };
+    console.log(templateParams)
+
     emailjs
-      .sendForm(
+      .send(
         "BlueKitsunebiForm",
         "BlueKitsunebiForm",
-        form.current,
+        templateParams,
         "2kpClbJCkav0Qd87S"
       )
       .then(
         (result) => {
           console.log(result.text);
           setIsSend("true");
-          form.current.reset();
+          e.target.reset();
         },
         (error) => {
           console.log(error.text);
@@ -89,7 +108,7 @@ export default function ContactForm(props) {
       </label>
       <input
         type="text"
-        name="form_firstName"
+        name="firstName"
         autoComplete="given-name"
         onFocus={() => setIsSend("false")}
         required
@@ -100,7 +119,7 @@ export default function ContactForm(props) {
       </label>
       <input
         type="text"
-        name="form_lastName"
+        name="lastName"
         autoComplete="family-name"
         onFocus={() => setIsSend("false")}
         required
@@ -111,7 +130,7 @@ export default function ContactForm(props) {
       </label>
       <input
         type="email"
-        name="form_email"
+        name="email"
         autoComplete="email"
         onFocus={() => setIsSend("false")}
         required
@@ -125,7 +144,7 @@ export default function ContactForm(props) {
         style={{ display: section === "contact" && "none" }}
       >
         <PhoneInput
-          name="form_countryCode"
+          name="countryCode"
           international
           defaultCountry={langData.LanguageCustomCourses.countryCode}
           value={countryCode}
@@ -136,7 +155,7 @@ export default function ContactForm(props) {
         />
 
         <input
-          name="form_phone"
+          name="phone"
           type="text"
           inputMode="numeric"
           autoComplete="new-password"
@@ -167,7 +186,7 @@ export default function ContactForm(props) {
           <input
             type="checkbox"
             // id="gdprContact"
-            name="form_checkbox"
+            name="checkbox"
             value="Sunt de acord"
             className={styles.checkbox}
             onFocus={() => setIsSend("false")}
@@ -182,7 +201,12 @@ export default function ContactForm(props) {
       <input type="hidden" name="subject" value={subject} />
       <input type="hidden" name="timeframe" value={timeframe} />
       <input type="hidden" name="price" value={price} />
-      <input type="hidden" name="answer" value={answer} />
+      <input type="hidden" name="hello" value={hello} />
+      <input type="hidden" name="punctuation" value={punctuation} />
+      <input type="hidden" name="main" value={main} />
+      <input type="hidden" name="ending" value={ending} />
+      <input type="hidden" name="signature" value={signature} />
+      <input type="hidden" name="language" value={language} />
 
       <ReCAPTCHA
         key={language}

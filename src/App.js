@@ -13,12 +13,14 @@ function App() {
   // get the preffered language of the user
   const dispatch = useDispatch();
   const userLanguages = navigator.languages;
-  if ( userLanguages.some(lang => lang.startsWith('ro') || lang.startsWith('mo'))) {
-    dispatch(setLanguage('ro'));
-  } else if (userLanguages[0].startsWith('ja')) {
-    dispatch(setLanguage('ja'));
+  if (
+    userLanguages.some((lang) => lang.startsWith("ro") || lang.startsWith("mo"))
+  ) {
+    dispatch(setLanguage("ro"));
+  } else if (userLanguages[0].startsWith("ja")) {
+    dispatch(setLanguage("ja"));
   } else {
-    dispatch(setLanguage('en'));
+    dispatch(setLanguage("en"));
   }
 
   return (
@@ -31,23 +33,37 @@ function App() {
           <Route
             path="/en-individual-custom-japanese"
             element={
-              <LanguageCustomCourses module="individualCustomJapanese__en" />
+              <LanguageCustomCourses
+                module="individualCustomJapanese"
+                courseLanguage="courseInEnglish"
+              />
             }
           />
           <Route
             path="/en-group-custom-japanese"
-            element={<LanguageCustomCourses module="groupCustomJapanese__en" />}
+            element={
+              <LanguageCustomCourses
+                module="groupCustomJapanese"
+                courseLanguage="courseInEnglish"
+              />
+            }
           />
           <Route
             path="/en-individual-custom-japanese-intensive"
             element={
-              <LanguageCustomCourses module="individualCustomJapaneseIntensive__en" />
+              <LanguageCustomCourses
+                module="individualCustomJapaneseIntensive"
+                courseLanguage="courseInEnglish"
+              />
             }
           />
           <Route
             path="/en-group-custom-japanese-intensive"
             element={
-              <LanguageCustomCourses module="groupCustomJapaneseIntensive__en" />
+              <LanguageCustomCourses
+                module="groupCustomJapaneseIntensive"
+                courseLanguage="courseInEnglish"
+              />
             }
           />
 
@@ -55,23 +71,37 @@ function App() {
           <Route
             path="/jp-individual-custom-english"
             element={
-              <LanguageCustomCourses module="individualCustomEnglish__jp" />
+              <LanguageCustomCourses
+                module="individualCustomEnglish"
+                courseLanguage="courseInJapanese"
+              />
             }
           />
           <Route
             path="/jp-group-custom-english"
-            element={<LanguageCustomCourses module="groupCustomEnglish__jp" />}
+            element={
+              <LanguageCustomCourses
+                module="groupCustomEnglish"
+                courseLanguage="courseInJapanese"
+              />
+            }
           />
           <Route
             path="/jp-individual-custom-english-intensive"
             element={
-              <LanguageCustomCourses module="individualCustomEnglishIntensive__jp" />
+              <LanguageCustomCourses
+                module="individualCustomEnglishIntensive"
+                courseLanguage="courseInJapanese"
+              />
             }
           />
           <Route
             path="/jp-group-custom-english-intensive"
             element={
-              <LanguageCustomCourses module="groupCustomEnglishIntensive__jp" />
+              <LanguageCustomCourses
+                module="groupCustomEnglishIntensive"
+                courseLanguage="courseInJapanese"
+              />
             }
           />
 
@@ -79,23 +109,37 @@ function App() {
           <Route
             path="/ro-individual-custom-japanese"
             element={
-              <LanguageCustomCourses module="individualCustomJapanese__ro" />
+              <LanguageCustomCourses
+                module="individualCustomJapanese"
+                courseLanguage="courseInRomanian"
+              />
             }
           />
           <Route
             path="/ro-group-custom-japanese"
-            element={<LanguageCustomCourses module="groupCustomJapanese__ro" />}
+            element={
+              <LanguageCustomCourses
+                module="groupCustomJapanese"
+                courseLanguage="courseInRomanian"
+              />
+            }
           />
           <Route
             path="/ro-individual-custom-japanese-intensive"
             element={
-              <LanguageCustomCourses module="individualCustomJapaneseIntensive__ro" />
+              <LanguageCustomCourses
+                module="individualCustomJapaneseIntensive"
+                courseLanguage="courseInRomanian"
+              />
             }
           />
           <Route
             path="/ro-group-custom-japanese-intensive"
             element={
-              <LanguageCustomCourses module="groupCustomJapaneseIntensive__ro" />
+              <LanguageCustomCourses
+                module="groupCustomJapaneseIntensive"
+                courseLanguage="courseInRomanian"
+              />
             }
           />
           <Route path="*" element={<NotFound />} />

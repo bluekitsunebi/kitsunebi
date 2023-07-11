@@ -358,7 +358,15 @@
       ],
       "confirmation": "Formularul a fost trimis!",
       "sendButton": "Trimite",
-      "answer": "mesajul tău",
+      "answer": {
+        "answer": {
+          "hello": "Bună, ",
+          "punctuation": "!",
+          "main": "Am primit mesajul tău și vom reveni cu un răspuns în cel mai scurt timp.",
+          "ending": "Cu drag,",
+          "signature": "Echipa Blue Kitsunebi"
+        }
+      },
       "subject": "contact"
     }
   },
@@ -373,13 +381,74 @@
     "contact": "Contact",
     "copyright": "© Copyright 2023, Kitsunebi Miyabi SRL"
   },
-  
+
   "LanguageCustomCourses": {
     "subtitle": "Inscrie-te pentru o lectie gratuita",
     "ContactForm": {
-      "answer": "cererea ta de inscriere"
+      "answer": {
+        "hello": "Bună, ",
+        "punctuation": "!",
+        "main": "Am primit cererea ta de inscriere și vom reveni cu un răspuns în cel mai scurt timp.",
+        "ending": "Cu drag,",
+        "signature": "Echipa Blue Kitsunebi"
+      }
     },
-    "countryCode": "RO"
+    "countryCode": "RO",
+    "title": {
+      "courseInEnglish": {
+        "individualCustomJapanese": [
+          "Curs de limba japoneza predat in limba engleza",
+          "lectii individuale"
+        ],
+        "groupCustomJapanese": [
+          "Curs de limba japoneza predat in limba engleza",
+          "lectii predate in grup"
+        ],
+        "individualCustomJapaneseIntensive": [
+          "Curs intensiv de limba japoneza predat in limba engleza",
+          "lectii individuale, de doua ori pe saptamana"
+        ],
+        "groupCustomJapaneseIntensive": [
+          "Curs intensiv de limba japoneza predat in limba engleza",
+          "lectii predate in grup, de doua ori pe saptamana"
+        ]
+      },
+      "courseInJapanese": {
+        "individualCustomEnglish": [
+          "Curs de limba engleza predat in limba japoneza",
+          "lectii individuale"
+        ],
+        "groupCustomEnglish": [
+          "Curs de limba engleza predat in limba japoneza",
+          "lectii predate in grup"
+        ],
+        "individualCustomEnglishIntensive": [
+          "Curs intensiv de limba engleza predat in limba japoneza",
+          "lectii individuale, de doua ori pe saptamana"
+        ],
+        "groupCustomEnglishIntensive": [
+          "Curs intensiv de limba engleza predat in limba japoneza",
+          "lectii predate in grup, de doua ori pe saptamana"
+        ]
+      },
+      "courseInRomanian": {
+        "individualCustomJapanese": [
+          "Curs de limba japoneza predat in limba romana",
+          "lectii individuale"
+        ],
+        "groupCustomJapanese": [
+          "Curs de limba japoneza predat in limba romana",
+          "lectii predate in grup"
+        ],
+        "individualCustomJapaneseIntensive": [
+          "Curs intensiv de limba japoneza predat in limba romana",
+          "lectii individuale, de doua ori pe saptamana"
+        ],
+        "groupCustomJapaneseIntensive": [
+          "Curs intensiv de limba japoneza predat in limba romana",
+          "lectii predate in grup, de doua ori pe saptamana"
+        ]
+      }
+    }
   }
-
 }
