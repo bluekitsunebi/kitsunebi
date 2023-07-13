@@ -155,17 +155,23 @@ export default function Header({ onRender }) {
       className={`${styles.Header} ${!isOpen && styles.Header__close}`}
       style={{ background: headerColor }}
     >
-      <div
-        className={`${styles.menu} material-icons-round`}
-        onClick={handleMenu}
-      >
-        <span>{isOpen ? "close" : "menu"}</span>
-      </div>
-      <Link to={"/"} className={styles.Logo}>
-        <div onClick={handleLogoClick}>
-          <Logo />
+      <div className={styles.header_phone_close}>
+        <div
+          className={`${styles.menu} material-icons-round`}
+          onClick={handleMenu}
+        >
+          <span>{isOpen ? "close" : "menu"}</span>
         </div>
-      </Link>
+        <Link to={"/"} className={styles.Logo}>
+          <div onClick={handleLogoClick}>
+            <Logo />
+          </div>
+        </Link>
+        <div className={`${styles.WebsiteLanguageSwitcher_phone} ${!isOpen ? styles.show : styles.hide}`}>
+          <WebsiteLanguageSwitcher />
+        </div>
+        <div className={isOpen ? styles.show : styles.hide}></div>
+      </div>
 
       <div className={styles.header__phone}>
         <div
@@ -253,8 +259,13 @@ export default function Header({ onRender }) {
           section="contactSection"
           link="/"
         ></Button>
+        <div className={isOpen ? styles.show : styles.hide}>
+          <WebsiteLanguageSwitcher />
+        </div>
       </nav>
-      <WebsiteLanguageSwitcher />
+      <div className={`${styles.WebsiteLanguageSwitcher_pc} ${!isOpen ? styles.show : styles.hide}`}>
+          <WebsiteLanguageSwitcher />
+        </div>
     </header>
   );
 }

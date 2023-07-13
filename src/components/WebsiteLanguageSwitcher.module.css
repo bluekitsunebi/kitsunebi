@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   z-index: 4;
+  width: fit-content;
 }
 
 .dropdown,
@@ -14,6 +15,10 @@
   color: var(--textLight);
 }
 
+.langIcon {
+  font-size: 1.7rem;
+}
+
 .dropdown:hover,
 .websiteLangButton:hover {
   cursor: pointer;
@@ -21,16 +26,16 @@
 
 .dropdown {
   text-align: center;
-  position: relative;
-  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 0.8rem;
 }
 
 .triangle {
   clip-path: polygon(100% 0, 0 100%, 100% 100%);
-  position: absolute;
   height: 3rem;
   width: 3rem;
-  bottom: -1.8rem;
   right: 5.3rem;
   background-color: var(--cinnabarTint10);
 }
@@ -39,9 +44,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  position: absolute;
-  bottom: -12.2rem;
-  right: 5.3rem;
   background-color: var(--cinnabarTint10);
   border: none;
   border-radius: 20px;
@@ -50,19 +52,11 @@
 
 .websiteLangButton {
   padding: 0.4rem 0.6rem;
-  border: none;
 }
 
 .websiteLangButton:hover {
   background-color: var(--cinnabarTint20);
   border-radius: 20px;
-}
-
-.enWebsiteLang {
-}
-.jpWebsiteLang {
-}
-.roWebsiteLang {
 }
 
 .selected {
@@ -73,15 +67,81 @@
   display: none;
 }
 
+.show {
+  display: block !important;
+}
+
+.trianglePa {
+  position: absolute;
+  top: 3.7rem;
+  right: 4.3rem;
+}
+
+.dropdownContentPa {
+  position: absolute;
+  top: 5rem;
+  right: 4.3rem;
+}
+
+
 @media (max-width: 1540px) {
-    .dropdown {
-        margin-right: 0;
-        position: absolute;
-        right: 3rem;
-        top: 1.3rem;
-    }
-    .triangle,
-    .dropdownContent {
-        right: 4.5rem;
-    }
+  .pr {
+    position: relative;
+  }
+  .pa {
+    position: absolute;
+  }
+  .dropdownContentPa {
+    top: 3.7rem;
+    right: 1.5rem;
+  }
+  .trianglePa {
+    top: 2.5rem;
+    right: 1.5rem;
+  }
+  .dropdownMenu {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -110%);
+  }
+  .triangleMenu {
+    position: absolute;
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+}
+
+/* 690 1rem */
+
+
+@media (max-width: 550px) {
+  .dropdown, .websiteLangButton, .langIcon {
+    font-size: 1.5rem;
+  }
+  .dropdownContent {
+    padding: 0.1rem 0.2rem;
+  }
+}
+@media (max-height: 690px) {
+  .dropdown, .websiteLangButton, .langIcon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .dropdown, .websiteLangButton, .langIcon {
+    font-size: 1rem;
+  }
+}
+
+.disabled {
+  color: var(--gray);
+}
+
+.disabled:hover {
+  cursor: default;
+  background-color: transparent;
 }

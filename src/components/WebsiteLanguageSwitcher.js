@@ -12,8 +12,8 @@ export default function WebsiteLanguageSwitcher() {
   const dispatch = useDispatch();
   const changeLanguage = (lang) => {
     dispatch(setLanguage(lang));
-    setDropdownVisible(false)
-  }
+    setDropdownVisible(false);
+  };
 
   // toggle dropdown visibility
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -47,19 +47,34 @@ export default function WebsiteLanguageSwitcher() {
     };
   }, [wrapperRef]);
 
+  // check if mobile menu is open
+  let isOpen = useSelector((state) => state.header.isOpen);
+
   return (
-    <div className={styles.WebsiteLanguageSwitcher} ref={wrapperRef}>
-      <button className={styles.dropdown} onClick={toggleDropdown}>
-        🌐 {language === "ro" ? "RO" : language === "ja" ? "JA" : "EN"}
+    <div
+      className={`
+        ${styles.WebsiteLanguageSwitcher} 
+        ${styles.pr} 
+        ${!isOpen ? styles.WebsiteLanguageSwitcherPa : styles.pr}`}
+      ref={wrapperRef}
+    >
+      <button className={`${styles.dropdown}`} onClick={toggleDropdown}>
+        <span className={`material-icons-round ${styles.langIcon}`}>translate</span> {language === "ro" ? "RO" : language === "ja" ? "JA" : "EN"}
       </button>
       <div
-        className={`${styles.triangle} ${dropdownVisible ? "" : styles.hide}`}
+        className={`
+          ${styles.triangle} 
+          ${!isOpen ? styles.pa : ""} 
+          ${!isOpen ? styles.trianglePa : styles.triangleMenu} 
+          ${dropdownVisible ? "" : styles.hide}`}
       ></div>
 
       <div
-        className={`${styles.dropdownContent} ${
-          dropdownVisible ? "" : styles.hide
-        }`}
+        className={`
+        ${styles.dropdownContent} 
+        ${!isOpen ? styles.pa : ""}
+        ${!isOpen ? styles.dropdownContentPa : styles.dropdownMenu} 
+        ${dropdownVisible ? "" : styles.hide}`}
         onMouseLeave={() => setDropdownVisible(false)}
       >
         <button
@@ -67,8 +82,10 @@ export default function WebsiteLanguageSwitcher() {
             ${styles.websiteLangButton}
             ${styles.enWebsiteLang}
             ${language === "en" && styles.selected}
+            ${styles.disabled}
           `}
           onClick={() => changeLanguage("en")}
+          disabled
         >
           English
         </button>
@@ -77,8 +94,10 @@ export default function WebsiteLanguageSwitcher() {
             ${styles.websiteLangButton} 
             ${styles.jpWebsiteLang}
             ${language === "ja" && styles.selected}
+            ${styles.disabled}
           `}
           onClick={() => changeLanguage("ja")}
+          disabled
         >
           日本語
         </button>

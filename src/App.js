@@ -1,6 +1,6 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setLanguage } from "./store/websiteLanguageSlice";
 import "./App.css";
 
@@ -13,15 +13,16 @@ function App() {
   // get the preffered language of the user
   const dispatch = useDispatch();
   const userLanguages = navigator.languages;
-  if (
-    userLanguages.some((lang) => lang.startsWith("ro") || lang.startsWith("mo"))
-  ) {
-    dispatch(setLanguage("ro"));
-  } else if (userLanguages[0].startsWith("ja")) {
-    dispatch(setLanguage("ja"));
-  } else {
-    dispatch(setLanguage("en"));
-  }
+  
+  // if (
+  //   userLanguages.some((lang) => lang.startsWith("ro") || lang.startsWith("mo"))
+  // ) {
+  //   dispatch(setLanguage("ro"));
+  // } else if (userLanguages[0].startsWith("ja")) {
+  //   dispatch(setLanguage("ja"));
+  // } else {
+  //   dispatch(setLanguage("en"));
+  // }
 
   return (
     <Fragment>

@@ -4,12 +4,13 @@
   display: flex;
   justify-content: space-around;
   justify-items: center;
+  align-content: center;
   align-items: center;
   height: min-content;
   width: 100%;
   z-index: 3;
   position: fixed;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .Logo {
@@ -45,15 +46,39 @@
 }
 
 .show {
-    display: block;
+    display: inline-block;
+}
+
+.WebsiteLanguageSwitcher_phone{
+  height: fit-content;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+
+/* WebsiteLanguageSwitcher_phone */
+@media (min-width: 1540px) {
+  .WebsiteLanguageSwitcher_phone {
+    display: none;
+  }
+
 }
 
 @media (max-width: 1540px) {
+  .WebsiteLanguageSwitcher_pc {
+    display: none;
+  }
   .Header {
     width: 100vw;
     height: 100vh;
     flex-direction: column;
     justify-content: flex-start;
+  }
+
+  .header_phone_close {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
   }
 
   .logoContainer {
@@ -62,9 +87,7 @@
   }
 
   .menu {
-    display: block;
-    align-self: flex-start;
-    position: absolute;
+    display: inline-block;
   }
 
   .navbar {
@@ -73,7 +96,7 @@
     justify-content: auto;
     align-items: center;
     width: fit-content;
-    height: 85%;
+    height: 70vh;
     padding: 1rem;
   }
 
@@ -91,19 +114,30 @@
 }
 
 @media (max-width: 550px) {
+  .WebsiteLanguageSwitcher_phone{
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  }
+
   .menu {
     font-size: 1.5rem;
     padding: 1rem 0.5rem;
   }
 
   .Logo {
-    padding: 0.5rem 1rem 0rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
   }
 
   .navbar {
     padding: 0.5rem 0.5rem 1.5rem 0.5rem;
   }
 }
+
+@media (max-width: 400px) {
+  .Logo {
+    padding: 0.5rem 0rem 0.5rem 0rem;
+  }
+}
+
 
 @media (max-width: 300px) {
   .menu {
