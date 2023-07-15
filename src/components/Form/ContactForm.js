@@ -45,7 +45,6 @@ export default function ContactForm(props) {
   const [isRecaptchaCompleted, setIsRecaptchaCompleted] = useState(false);
   const handleRecaptchaChange = (value) => {
     setIsRecaptchaCompleted(true);
-    setCaptchaKey(value);
   };
 
   const sendEmail = (e) => {
@@ -121,19 +120,19 @@ export default function ContactForm(props) {
   )(ReCAPTCHA);
 
   // reload ReCAPTCHA
-  const [captchaKey, setCaptchaKey] = useState(null);
-  const [reloadRecaptcha, setReloadRecaptcha] = useState(false);
+  // const [captchaKey, setCaptchaKey] = useState(null);
+  // const [reloadRecaptcha, setReloadRecaptcha] = useState(false);
 
-  const handleReloadRecaptcha = () => {
-    setReloadRecaptcha(true);
-    setCaptchaKey(null);
-  };
+  // const handleReloadRecaptcha = () => {
+  //   setReloadRecaptcha(true);
+  //   setCaptchaKey(null);
+  // };
 
-  useEffect(() => {
-    if (reloadRecaptcha) {
-      setReloadRecaptcha(false);
-    }
-  }, [reloadRecaptcha]);
+  // useEffect(() => {
+  //   if (reloadRecaptcha) {
+  //     setReloadRecaptcha(false);
+  //   }
+  // }, [reloadRecaptcha]);
 
   return (
     <form ref={form} onSubmit={sendEmail} className={styles.ContactForm}>
@@ -249,7 +248,6 @@ export default function ContactForm(props) {
         onChange={handleRecaptchaChange}
         className={styles.recaptcha}
         hl={language}
-        onloadCallback={handleReloadRecaptcha}
       />
 
       <div className={styles.confirmationContainer}>
