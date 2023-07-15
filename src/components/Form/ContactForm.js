@@ -252,15 +252,6 @@ export default function ContactForm(props) {
         onloadCallback={handleReloadRecaptcha}
       />
 
-      <div
-        className={`${styles.recaptchaCompleted} ${
-          isRecaptchaCompleted ? "" : styles.hideElement
-        }`}
-      >
-        <div className={styles.checkmark}>✓</div>
-        <div className={styles.text}><b>ReCAPTCHA completat</b></div>
-      </div>
-
       <div className={styles.confirmationContainer}>
         <div
           className={`${styles.confirmation} ${

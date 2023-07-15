@@ -102,21 +102,6 @@ input[type="tel"] {
   align-self: center;
 }
 
-.recaptchaCompleted {
-  display: flex;
-  flex-direction: row;
-  margin-left: 1rem;
-}
-.checkmark, .text {
-  width: fit-content;
-}
-.checkmark {
-  margin-right: 0;
-}
-.text {
-  margin-left: 2rem;
-}
-
 .buttonContainer {
   align-self: center;
 }
