@@ -29,7 +29,8 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 .phone,
-textarea {
+textarea,
+.recaptchaCompleted {
   font-size: 2rem;
   color: var(--navy);
 }
@@ -43,7 +44,7 @@ label {
   align-items: center;
   margin-bottom: 1rem;
 }
-.phone{
+.phone {
   margin-bottom: 0;
 }
 .countryCode {
@@ -101,6 +102,21 @@ input[type="tel"] {
   align-self: center;
 }
 
+.recaptchaCompleted {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1rem;
+}
+.checkmark, .text {
+  width: fit-content;
+}
+.checkmark {
+  margin-right: 0;
+}
+.text {
+  margin-left: 2rem;
+}
+
 .buttonContainer {
   align-self: center;
 }
@@ -115,6 +131,14 @@ input[type="tel"] {
 
 .show {
   color: var(--navyTint20);
+}
+
+.showElement {
+  display: inline-block;
+}
+
+.hideElement {
+  display: none;
 }
 
 @media (max-width: 900px) {
@@ -134,8 +158,8 @@ input[type="tel"] {
   .phoneContainer {
     margin-bottom: 0.4rem;
   }
-  .countryCode{
-    width: 9rem
+  .countryCode {
+    width: 9rem;
   }
   .phoneNumber {
     margin-left: 1.5rem;
@@ -174,8 +198,8 @@ input[type="tel"] {
   .phoneContainer {
     margin-bottom: 0.2rem;
   }
-  .countryCode{
-    width: 6.1rem
+  .countryCode {
+    width: 6.1rem;
   }
   .phoneNumber {
     margin-left: 1rem;

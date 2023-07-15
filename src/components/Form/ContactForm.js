@@ -12,6 +12,10 @@ import enData from "../../helpers/data/lang/en.json";
 import jaData from "../../helpers/data/lang/ja.json";
 import roData from "../../helpers/data/lang/ro.json";
 
+// make ReCAPTCHA async
+import makeAsyncScriptLoader from "react-async-script";
+let ReCAPTCHAInstance = null;
+
 export default function ContactForm(props) {
   let subject = props.subject;
   let price = props.price;
@@ -41,6 +45,7 @@ export default function ContactForm(props) {
   const [isRecaptchaCompleted, setIsRecaptchaCompleted] = useState(false);
   const handleRecaptchaChange = (value) => {
     setIsRecaptchaCompleted(true);
+    setCaptchaKey(value);
   };
 
   const sendEmail = (e) => {
@@ -73,7 +78,7 @@ export default function ContactForm(props) {
       subject: e.target.elements.subject.value, //
       language: e.target.elements.language.value,
     };
-    console.log(templateParams)
+    console.log(templateParams);
 
     emailjs
       .send(
@@ -99,6 +104,36 @@ export default function ContactForm(props) {
   let langData =
     language === "en" ? enData : language === "ja" ? jaData : roData;
   const agree = langData.ContactSection.ContactForm.agree;
+
+  // async ReCAPTCHA
+  const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
+
+  const recaptchaLoaded = () => {
+    ReCAPTCHAInstance = require("react-google-recaptcha").default;
+    setIsRecaptchaLoaded(true);
+  };
+
+  const AsyncRecaptcha = makeAsyncScriptLoader(
+    "https://www.google.com/recaptcha/api.js",
+    {
+      onScriptLoad: recaptchaLoaded,
+    }
+  )(ReCAPTCHA);
+
+  // reload ReCAPTCHA
+  const [captchaKey, setCaptchaKey] = useState(null);
+  const [reloadRecaptcha, setReloadRecaptcha] = useState(false);
+
+  const handleReloadRecaptcha = () => {
+    setReloadRecaptcha(true);
+    setCaptchaKey(null);
+  };
+
+  useEffect(() => {
+    if (reloadRecaptcha) {
+      setReloadRecaptcha(false);
+    }
+  }, [reloadRecaptcha]);
 
   return (
     <form ref={form} onSubmit={sendEmail} className={styles.ContactForm}>
@@ -208,13 +243,23 @@ export default function ContactForm(props) {
       <input type="hidden" name="signature" value={signature} />
       <input type="hidden" name="language" value={language} />
 
-      <ReCAPTCHA
+      <AsyncRecaptcha
         key={language}
         sitekey={RECAPTCHA_KEY}
         onChange={handleRecaptchaChange}
         className={styles.recaptcha}
         hl={language}
+        onloadCallback={handleReloadRecaptcha}
       />
+
+      <div
+        className={`${styles.recaptchaCompleted} ${
+          isRecaptchaCompleted ? "" : styles.hideElement
+        }`}
+      >
+        <div className={styles.checkmark}>✓</div>
+        <div className={styles.text}><b>ReCAPTCHA completat</b></div>
+      </div>
 
       <div className={styles.confirmationContainer}>
         <div
