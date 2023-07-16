@@ -14,6 +14,7 @@ import roData from "../../helpers/data/lang/ro.json";
 
 // make ReCAPTCHA async
 import makeAsyncScriptLoader from "react-async-script";
+import RecaptchaComponent from "./RecaptchaComponent";
 let ReCAPTCHAInstance = null;
 
 export default function ContactForm(props) {
@@ -102,37 +103,7 @@ export default function ContactForm(props) {
   let language = useSelector((state) => state.websiteLanguage.language);
   let langData =
     language === "en" ? enData : language === "ja" ? jaData : roData;
-  const agree = langData.ContactSection.ContactForm.agree;
-
-  // async ReCAPTCHA
-  const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
-
-  const recaptchaLoaded = () => {
-    ReCAPTCHAInstance = require("react-google-recaptcha").default;
-    setIsRecaptchaLoaded(true);
-  };
-
-  const AsyncRecaptcha = makeAsyncScriptLoader(
-    "https://www.google.com/recaptcha/api.js",
-    {
-      onScriptLoad: recaptchaLoaded,
-    }
-  )(ReCAPTCHA);
-
-  // reload ReCAPTCHA
-  // const [captchaKey, setCaptchaKey] = useState(null);
-  // const [reloadRecaptcha, setReloadRecaptcha] = useState(false);
-
-  // const handleReloadRecaptcha = () => {
-  //   setReloadRecaptcha(true);
-  //   setCaptchaKey(null);
-  // };
-
-  // useEffect(() => {
-  //   if (reloadRecaptcha) {
-  //     setReloadRecaptcha(false);
-  //   }
-  // }, [reloadRecaptcha]);
+  const agree = langData.ContactSection.ContactForm.agree;  
 
   return (
     <form ref={form} onSubmit={sendEmail} className={styles.ContactForm}>
@@ -242,7 +213,7 @@ export default function ContactForm(props) {
       <input type="hidden" name="signature" value={signature} />
       <input type="hidden" name="language" value={language} />
 
-      <AsyncRecaptcha
+      <RecaptchaComponent
         key={language}
         sitekey={RECAPTCHA_KEY}
         onChange={handleRecaptchaChange}
