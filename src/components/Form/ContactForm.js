@@ -39,7 +39,9 @@ export default function ContactForm(props) {
   const [recaptchaCompletedOnce, setRecaptchaCompletedOnce] = useState(false);
   const handleRecaptchaChange = (value) => {
     setIsRecaptchaCompleted(true);
-    setRecaptchaCompletedOnce(true);
+    if (!recaptchaCompletedOnce) {
+      setRecaptchaCompletedOnce(true);
+    }
   };
 
   // get the website language
@@ -205,7 +207,8 @@ export default function ContactForm(props) {
       <input type="hidden" name="language" value={language} />
 
       <RecaptchaComponent
-        recaptchaKey={recaptchaCompletedOnce ? "completed" : language}
+        recaptchaCompletedOnce={recaptchaCompletedOnce}
+        recaptchaKey={language}
         sitekey={RECAPTCHA_KEY}
         onChange={handleRecaptchaChange}
         className={styles.recaptcha}

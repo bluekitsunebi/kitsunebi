@@ -8,8 +8,10 @@ export default function RecaptchaComponent(props) {
   const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
 
   const recaptchaLoaded = () => {
+    if (!props.recaptchaCompletedOnce) {
     ReCAPTCHAInstance = require("react-google-recaptcha").default;
     setIsRecaptchaLoaded(true);
+    }
   };
 
   const AsyncRecaptcha = makeAsyncScriptLoader(
