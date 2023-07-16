@@ -9,8 +9,8 @@ export default function RecaptchaComponent(props) {
 
   const recaptchaLoaded = () => {
     if (!props.recaptchaCompletedOnce) {
-    ReCAPTCHAInstance = require("react-google-recaptcha").default;
-    setIsRecaptchaLoaded(true);
+      ReCAPTCHAInstance = require("react-google-recaptcha").default;
+      setIsRecaptchaLoaded(true);
     }
   };
 
@@ -22,12 +22,14 @@ export default function RecaptchaComponent(props) {
   )(ReCAPTCHA);
 
   return (
-    <AsyncRecaptcha
-      key={props.recaptchaKey}
-      sitekey={props.sitekey}
-      onChange={props.onChange}
-      className={props.className}
-      hl={props.hl}
-    />
+    !props.recaptchaCompletedOnce && (
+      <AsyncRecaptcha
+        key={props.recaptchaKey}
+        sitekey={props.sitekey}
+        onChange={props.onChange}
+        className={props.className}
+        hl={props.hl}
+      />
+    )
   );
 }
