@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import makeAsyncScriptLoader from "react-async-script";
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -22,7 +21,7 @@ export default function RecaptchaComponent(props) {
 
   return (
     <AsyncRecaptcha
-      key={props.key}
+      key={props.recaptchaKey}
       sitekey={props.sitekey}
       onChange={props.onChange}
       className={props.className}

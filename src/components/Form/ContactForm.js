@@ -16,8 +16,8 @@ import RecaptchaComponent from "./RecaptchaComponent";
 
 export default function ContactForm(props) {
   let subject = props.subject;
-  if(subject !== "contact") {
-    subject = `${subject[0]}, ${subject[1]}`
+  if (subject !== "contact") {
+    subject = `${subject[0]}, ${subject[1]}`;
   }
   let price = props.price;
   let timeframe = props.timeframe;
@@ -36,8 +36,10 @@ export default function ContactForm(props) {
   const [isSend, setIsSend] = useState("false");
   const RECAPTCHA_KEY = "6Leu5AUmAAAAAJVC7lT0cMLGgy4hzSK2kqRtE2_h";
   const [isRecaptchaCompleted, setIsRecaptchaCompleted] = useState(false);
+  const [recaptchaCompletedOnce, setRecaptchaCompletedOnce] = useState(false);
   const handleRecaptchaChange = (value) => {
     setIsRecaptchaCompleted(true);
+    setRecaptchaCompletedOnce(true);
   };
 
   // get the website language
@@ -203,7 +205,7 @@ export default function ContactForm(props) {
       <input type="hidden" name="language" value={language} />
 
       <RecaptchaComponent
-        key={language}
+        recaptchaKey={recaptchaCompletedOnce ? "completed" : language}
         sitekey={RECAPTCHA_KEY}
         onChange={handleRecaptchaChange}
         className={styles.recaptcha}
