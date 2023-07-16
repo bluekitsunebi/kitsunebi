@@ -84,10 +84,10 @@ input[type="tel"] {
   text-decoration: none;
 }
 
-/* .recaptcha {
-  transform: scale(1.2);
-  transform-origin: 0 0;
-} */
+.recaptchaText {
+  margin-left: 1rem;
+  font-weight: 600;
+}
 
 .confirmationContainer {
   width: 100%;
