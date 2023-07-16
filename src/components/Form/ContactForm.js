@@ -206,14 +206,16 @@ export default function ContactForm(props) {
       <input type="hidden" name="price" value={price} />
       <input type="hidden" name="language" value={language} />
 
-      <RecaptchaComponent
-        recaptchaCompletedOnce={recaptchaCompletedOnce}
-        recaptchaKey={language}
-        sitekey={RECAPTCHA_KEY}
-        onChange={handleRecaptchaChange}
-        className={styles.recaptcha}
-        hl={language}
-      />
+      {!recaptchaCompletedOnce && (
+        <RecaptchaComponent
+          recaptchaCompletedOnce={recaptchaCompletedOnce}
+          recaptchaKey={language}
+          sitekey={RECAPTCHA_KEY}
+          onChange={handleRecaptchaChange}
+          className={styles.recaptcha}
+          hl={language}
+        />
+      )}
 
       <div className={styles.confirmationContainer}>
         <div

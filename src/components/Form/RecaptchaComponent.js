@@ -22,14 +22,12 @@ export default function RecaptchaComponent(props) {
   )(ReCAPTCHA);
 
   return (
-    !props.recaptchaCompletedOnce && (
-      <AsyncRecaptcha
-        key={props.recaptchaKey}
-        sitekey={props.sitekey}
-        onChange={props.onChange}
-        className={props.className}
-        hl={props.hl}
-      />
-    )
+    <AsyncRecaptcha
+      key={props.recaptchaKey}
+      sitekey={props.sitekey}
+      onChange={props.onChange}
+      className={props.className}
+      hl={props.hl}
+    />
   );
 }
