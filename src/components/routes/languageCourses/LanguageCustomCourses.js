@@ -95,7 +95,6 @@ export default function LanguageCustomCourses(props) {
           subject={title}
           timeframe={timeframe}
           price={price}
-          answer={langData.LanguageCustomCourses.ContactForm.answer}
           section="languageCourses"
         />
       </section>

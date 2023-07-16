@@ -358,15 +358,6 @@
       ],
       "confirmation": "Formularul a fost trimis!",
       "sendButton": "Trimite",
-      "answer": {
-        "answer": {
-          "hello": "Bună, ",
-          "punctuation": "!",
-          "main": "Am primit mesajul tău și vom reveni cu un răspuns în cel mai scurt timp.",
-          "ending": "Cu drag,",
-          "signature": "Echipa Blue Kitsunebi"
-        }
-      },
       "subject": "contact"
     }
   },
@@ -384,15 +375,6 @@
 
   "LanguageCustomCourses": {
     "subtitle": "Inscrie-te pentru o lectie gratuita",
-    "ContactForm": {
-      "answer": {
-        "hello": "Bună, ",
-        "punctuation": "!",
-        "main": "Am primit cererea ta de inscriere și vom reveni cu un răspuns în cel mai scurt timp.",
-        "ending": "Cu drag,",
-        "signature": "Echipa Blue Kitsunebi"
-      }
-    },
     "countryCode": "RO",
     "title": {
       "courseInEnglish": {

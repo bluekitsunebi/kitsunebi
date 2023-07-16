@@ -354,13 +354,6 @@
       "agree": ["同意する", "プライバシーポリシーと利用規約"],
       "confirmation": "フォームが送信されました！",
       "sendButton": "送信",
-      "answer": {
-        "hello": "こんにちは、",
-        "punctuation": "さん！",
-        "main": "あなたのメッセージを受け取りました。できるだけ早くご連絡します。",
-        "ending": "よろしくお願いいたします、",
-        "signature": "青い狐火チーム"
-      },
       "subject": "お問い合わせ"
     }
   },
@@ -378,15 +371,6 @@
 
   "LanguageCustomCourses": {
     "subtitle": "無料レッスンにサインアップする",
-    "ContactForm": {
-      "answer": {
-        "hello": "こんにちは、",
-        "punctuation": "さん！",
-        "main": "あなたの登録リクエストを受け取りました。できるだけ早くご連絡します。",
-        "ending": "よろしくお願いいたします、",
-        "signature": "青い狐火チーム"
-      }
-    },
     "countryCode": "JP",
     "title": {
       "courseInEnglish": {

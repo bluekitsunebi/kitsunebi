@@ -355,13 +355,6 @@
       "agree": ["I agree with ", "the privacy policy, terms and conditions"],
       "confirmation": "The form has been sent!",
       "sendButton": "Send",
-      "answer": {
-        "hello": "Hello, ",
-        "punctuation": "!",
-        "main": "We've received your message and we'll get back to you as soon as possible.",
-        "ending": "Best regards,",
-        "signature": "Blue Kitsunebi Team"
-      },
       "subject": "contact"
     }
   },
@@ -379,15 +372,6 @@
 
   "LanguageCustomCourses": {
     "subtitle": "Sign up for a free lesson",
-    "ContactForm": {
-      "answer": {
-        "hello": "Hello, ",
-        "punctuation": "!",
-        "main": "We've received your sign up request and we'll get back to you as soon as possible.",
-        "ending": "Best regards,",
-        "signature": "Blue Kitsunebi Team"
-      }
-    },
     "countryCode": "GB",
     "title": {
       "courseInEnglish": {

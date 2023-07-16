@@ -7,28 +7,20 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 
 import buttonstyles from "../Button.module.css";
-import ReCAPTCHA from "react-google-recaptcha";
 import enData from "../../helpers/data/lang/en.json";
 import jaData from "../../helpers/data/lang/ja.json";
 import roData from "../../helpers/data/lang/ro.json";
 
 // make ReCAPTCHA async
-import makeAsyncScriptLoader from "react-async-script";
 import RecaptchaComponent from "./RecaptchaComponent";
-let ReCAPTCHAInstance = null;
 
 export default function ContactForm(props) {
   let subject = props.subject;
+  if(subject !== "contact") {
+    subject = `${subject[0]}, ${subject[1]}`
+  }
   let price = props.price;
   let timeframe = props.timeframe;
-  let answer = { ...props.answer };
-
-  //formatting answer
-  let hello = answer.hello;
-  let punctuation = answer.punctuation;
-  let main = answer.main;
-  let ending = answer.ending;
-  let signature = answer.signature;
   const section = props.section;
 
   const form = useRef();
@@ -48,6 +40,13 @@ export default function ContactForm(props) {
     setIsRecaptchaCompleted(true);
   };
 
+  // get the website language
+  let language = useSelector((state) => state.websiteLanguage.language);
+  let langData =
+    language === "en" ? enData : language === "ja" ? jaData : roData;
+  const agree = langData.ContactSection.ContactForm.agree;
+
+  // send email
   const sendEmail = (e) => {
     e.preventDefault();
     if (!isRecaptchaCompleted) {
@@ -61,29 +60,30 @@ export default function ContactForm(props) {
     }
 
     let templateParams = {
-      hello: e.target.elements.hello.value,
-      firstName: e.target.elements.firstName.value, //
-      punctuation: e.target.elements.punctuation.value,
-      main: e.target.elements.main.value,
-      ending: e.target.elements.ending.value,
-      signature: e.target.elements.signature.value,
+      firstName: e.target.elements.firstName.value,
+      lastName: e.target.elements.lastName.value,
       timeframe: e.target.elements.timeframe.value,
       price: e.target.elements.price.value,
-      message: e.target.elements.message.value, //
+      message: e.target.elements.message.value,
       email: e.target.elements.email.value,
       phone: e.target.elements.phone.value,
       countryCode: e.target.elements.countryCode.value,
-      checkbox: e.target.elements.checkbox.value, //
-      lastName: e.target.elements.lastName.value, //
-      subject: e.target.elements.subject.value, //
+      checkbox: e.target.elements.checkbox.value,
+      subject: e.target.elements.subject.value,
       language: e.target.elements.language.value,
     };
-    console.log(templateParams);
+
+    let templateId = "";
+    if (subject === "contact") {
+      templateId = `contactForm_${language}`;
+    } else {
+      templateId = `registrationForm_${language}`;
+    }
 
     emailjs
       .send(
         "BlueKitsunebiForm",
-        "BlueKitsunebiForm",
+        templateId,
         templateParams,
         "2kpClbJCkav0Qd87S"
       )
@@ -98,12 +98,6 @@ export default function ContactForm(props) {
         }
       );
   };
-
-  // get the website language
-  let language = useSelector((state) => state.websiteLanguage.language);
-  let langData =
-    language === "en" ? enData : language === "ja" ? jaData : roData;
-  const agree = langData.ContactSection.ContactForm.agree;  
 
   return (
     <form ref={form} onSubmit={sendEmail} className={styles.ContactForm}>
@@ -206,11 +200,6 @@ export default function ContactForm(props) {
       <input type="hidden" name="subject" value={subject} />
       <input type="hidden" name="timeframe" value={timeframe} />
       <input type="hidden" name="price" value={price} />
-      <input type="hidden" name="hello" value={hello} />
-      <input type="hidden" name="punctuation" value={punctuation} />
-      <input type="hidden" name="main" value={main} />
-      <input type="hidden" name="ending" value={ending} />
-      <input type="hidden" name="signature" value={signature} />
       <input type="hidden" name="language" value={language} />
 
       <RecaptchaComponent
