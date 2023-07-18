@@ -12,6 +12,9 @@ import styles from "./Header.module.css";
 import Logo from "./Logo";
 import Button from "./Button";
 import WebsiteLanguageSwitcher from "./WebsiteLanguageSwitcher";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+
 import enData from "../helpers/data/lang/en.json";
 import jaData from "../helpers/data/lang/ja.json";
 import roData from "../helpers/data/lang/ro.json";
@@ -156,30 +159,38 @@ export default function Header({ onRender }) {
       style={{ background: headerColor }}
     >
       <div className={styles.header_phone_close}>
-        <div
-          className={`${styles.menu} material-icons-round`}
-          onClick={handleMenu}
-        >
-          <span>{isOpen ? "close" : "menu"}</span>
-        </div>
+        {isOpen ? (
+          <CloseRoundedIcon className={styles.menu} onClick={handleMenu} />
+        ) : (
+          <MenuRoundedIcon className={styles.menu} onClick={handleMenu} />
+        )}
         <Link to={"/"} className={styles.Logo}>
           <div onClick={handleLogoClick}>
             <Logo />
           </div>
         </Link>
-        <div className={`${styles.WebsiteLanguageSwitcher_phone} ${!isOpen ? styles.show : styles.hide}`}>
+        <div
+          className={`${styles.WebsiteLanguageSwitcher_phone} ${
+            !isOpen ? styles.show : styles.hide
+          }`}
+        >
           <WebsiteLanguageSwitcher />
         </div>
         <div className={isOpen ? styles.show : styles.hide}></div>
       </div>
 
       <div className={styles.header__phone}>
-        <div
-          className={`${styles.menu__phone} material-icons-round`}
-          onClick={handleMenu}
-        >
-          <span>{isOpen ? "close" : "menu"}</span>
-        </div>
+        {isOpen ? (
+          <CloseRoundedIcon
+            className={styles.menu__phone}
+            onClick={handleMenu}
+          />
+        ) : (
+          <MenuRoundedIcon
+            className={styles.menu__phone}
+            onClick={handleMenu}
+          />
+        )}
         <Link to={"/"} className={styles.Logo__phone}>
           <div onClick={handleLogoClick}>
             <Logo />
@@ -263,9 +274,13 @@ export default function Header({ onRender }) {
           <WebsiteLanguageSwitcher />
         </div>
       </nav>
-      <div className={`${styles.WebsiteLanguageSwitcher_pc} ${!isOpen ? styles.show : styles.hide}`}>
-          <WebsiteLanguageSwitcher />
-        </div>
+      <div
+        className={`${styles.WebsiteLanguageSwitcher_pc} ${
+          !isOpen ? styles.show : styles.hide
+        }`}
+      >
+        <WebsiteLanguageSwitcher />
+      </div>
     </header>
   );
 }

@@ -114,8 +114,6 @@
   }
 }
 
-/* 690 1rem */
-
 
 @media (max-width: 550px) {
   .dropdown, .websiteLangButton, .langIcon {
@@ -125,7 +123,7 @@
     padding: 0.1rem 0.2rem;
   }
 }
-@media (max-height: 690px) {
+@media (max-height: 690px) and (max-width: 550px) {
   .dropdown, .websiteLangButton, .langIcon {
     font-size: 1rem;
   }

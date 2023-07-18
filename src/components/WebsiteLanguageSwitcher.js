@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./WebsiteLanguageSwitcher.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage } from "../store/websiteLanguageSlice";
+import TranslateRoundedIcon from '@mui/icons-material/TranslateRounded';
 
 export default function WebsiteLanguageSwitcher() {
   let text = "";
@@ -59,7 +60,8 @@ export default function WebsiteLanguageSwitcher() {
       ref={wrapperRef}
     >
       <button className={`${styles.dropdown}`} onClick={toggleDropdown}>
-        <span className={`material-icons-round ${styles.langIcon}`}>translate</span> {language === "ro" ? "RO" : language === "ja" ? "JA" : "EN"}
+        <TranslateRoundedIcon className={styles.langIcon}/>
+        {language === "ro" ? "RO" : language === "ja" ? "JA" : "EN"}
       </button>
       <div
         className={`

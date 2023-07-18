@@ -9,6 +9,7 @@ import {
   setDescriptionLeft__entered,
 } from "../../../../store/heroSectionSlice";
 import kanjiDrawing from "../../../../videos/kanjiAnimation.mp4";
+import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import enData from "../../../../helpers/data/lang/en.json";
 import jaData from "../../../../helpers/data/lang/ja.json";
 import roData from "../../../../helpers/data/lang/ro.json";
@@ -87,7 +88,8 @@ export default function HeroSection({ onRender }) {
 
   // get the website language
   let language = useSelector((state) => state.websiteLanguage.language);
-  let langData = language === "en" ? enData : language === "ja" ? jaData : roData;
+  let langData =
+    language === "en" ? enData : language === "ja" ? jaData : roData;
   let titleLeft = [...langData.HeroSection.title.left];
   let titleRight = [...langData.HeroSection.title.right];
   let descriptionLeft = [...langData.HeroSection.description.left];
@@ -224,21 +226,15 @@ export default function HeroSection({ onRender }) {
         {/* GEARS */}
         <div className={styles.container__bottom}>
           <div className={`${styles.coverContainer} ${styles.coverRight}`}>
-            <span
-              className={`material-icons-round ${styles.iconRight} ${styles.gear1} ${styles.icon}`}
-            >
-              settings
-            </span>
-            <span
-              className={`material-icons-round ${styles.iconRight} ${styles.gear2} ${styles.icon}`}
-            >
-              settings
-            </span>
-            <span
-              className={`material-icons-round ${styles.iconRight} ${styles.gear3} ${styles.icon}`}
-            >
-              settings
-            </span>
+            <SettingsRoundedIcon
+              className={`${styles.iconRight} ${styles.gear1} ${styles.icon}`}
+            />
+            <SettingsRoundedIcon
+              className={`${styles.iconRight} ${styles.gear2} ${styles.icon}`}
+            />
+            <SettingsRoundedIcon
+              className={`${styles.iconRight} ${styles.gear3} ${styles.icon}`}
+            />
           </div>
         </div>
 
@@ -344,21 +340,15 @@ export default function HeroSection({ onRender }) {
           {/* GEARS */}
           <div className={styles.container__bottom}>
             <div className={`${styles.coverContainer} ${styles.coverRight}`}>
-              <span
-                className={`material-icons-round ${styles.iconRight} ${styles.gear1} ${styles.icon}`}
-              >
-                settings
-              </span>
-              <span
-                className={`material-icons-round ${styles.iconRight} ${styles.gear2} ${styles.icon}`}
-              >
-                settings
-              </span>
-              <span
-                className={`material-icons-round ${styles.iconRight} ${styles.gear3} ${styles.icon}`}
-              >
-                settings
-              </span>
+              <SettingsRoundedIcon
+                className={`${styles.iconRight} ${styles.gear1} ${styles.icon}`}
+              />
+              <SettingsRoundedIcon
+                className={`${styles.iconRight} ${styles.gear2} ${styles.icon}`}
+              />
+              <SettingsRoundedIcon
+                className={`${styles.iconRight} ${styles.gear3} ${styles.icon}`}
+              />
             </div>
           </div>
 

@@ -86,7 +86,8 @@
 }
 
 .iconRight {
-  font-size: 3rem;
+  font-size: 3rem !important;
+  align-self: center;
 }
 
 .kanjiDrawing {
@@ -357,7 +358,7 @@
   }
 
   .iconRight {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
 
   .kanjiDrawing {
@@ -538,7 +539,7 @@
   }
 
   .iconRight {
-    font-size: 1.7rem;
+    font-size: 1.7rem !important;
   }
 
   .kanjiDrawing {
@@ -616,7 +617,7 @@
   }
 
   .iconRight {
-    font-size: 1.4rem;
+    font-size: 1.4rem !important;
   }
 
   .kanjiDrawing {

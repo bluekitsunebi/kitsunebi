@@ -12,6 +12,8 @@ import {
 import enData from "../helpers/data/lang/en.json";
 import jaData from "../helpers/data/lang/ja.json";
 import roData from "../helpers/data/lang/ro.json";
+import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 
 export default function Footer() {
   const location = useLocation().pathname;
@@ -57,9 +59,7 @@ export default function Footer() {
     <footer className={styles.Footer}>
       {/* MAIL */}
       <div className={styles.email} onClick={handleEmailClick}>
-        <span className={`${"material-icons-round"} ${styles.mailIcon}`}>
-          email
-        </span>
+        <EmailRoundedIcon className={styles.mailIcon} />
         {langData.Footer.email}
       </div>
 
@@ -87,9 +87,7 @@ export default function Footer() {
 
       {/* PHONE */}
       <div className={styles.phone}>
-        <span className={`${"material-icons-round"} ${styles.phoneIcon}`}>
-          phone
-        </span>
+        <PhoneRoundedIcon className={styles.phoneIcon} />
         {langData.Footer.phone}
       </div>
 
