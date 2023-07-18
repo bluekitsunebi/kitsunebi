@@ -82,6 +82,19 @@ export default function ContactForm(props) {
     }
   }, [isFilling]);
 
+  // confirmation text dissapear after sending
+
+  useEffect(() => {
+    let timer;
+    if (isSend) {
+      timer = setTimeout(() => {
+        dispatch(setIsSend(false));
+      }, 5000);
+    }
+    return () => clearTimeout(timer);
+  }, [isSend, dispatch]);
+  
+
   // send email
   const sendEmail = (e) => {
     e.preventDefault();
