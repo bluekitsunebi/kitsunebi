@@ -27,7 +27,7 @@
 /* Mobile Header */
 
 .menu {
-  display: none;
+  display: none !important;
   color: var(--textLight);
   font-size: 2rem;
   padding: 1rem;
@@ -87,7 +87,7 @@
   }
 
   .menu {
-    display: inline-block;
+    display: inline-block !important;
   }
 
   .navbar {
