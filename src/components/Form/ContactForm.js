@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./ContactForm.module.css";
 import emailjs from "@emailjs/browser";
 
@@ -11,8 +11,16 @@ import enData from "../../helpers/data/lang/en.json";
 import jaData from "../../helpers/data/lang/ja.json";
 import roData from "../../helpers/data/lang/ro.json";
 
-// make ReCAPTCHA async
-import RecaptchaComponent from "./RecaptchaComponent";
+import {
+  setIsFilling,
+  setIsSend,
+  setIsSending,
+  setRecaptchaNeeded,
+} from "../../store/formSlice";
+//
+
+// ReCAPTCHA Lazy Loading
+const LazyReCAPTCHA = React.lazy(() => import("react-google-recaptcha"));
 
 export default function ContactForm(props) {
   let subject = props.subject;
@@ -33,15 +41,10 @@ export default function ContactForm(props) {
     }
   };
 
-  const [isSend, setIsSend] = useState("false");
   const RECAPTCHA_KEY = "6Leu5AUmAAAAAJVC7lT0cMLGgy4hzSK2kqRtE2_h";
   const [isRecaptchaCompleted, setIsRecaptchaCompleted] = useState(false);
-  const [recaptchaCompletedOnce, setRecaptchaCompletedOnce] = useState(false);
   const handleRecaptchaChange = (value) => {
     setIsRecaptchaCompleted(true);
-    if (!recaptchaCompletedOnce) {
-      setRecaptchaCompletedOnce(true);
-    }
   };
 
   // get the website language
@@ -50,12 +53,44 @@ export default function ContactForm(props) {
     language === "en" ? enData : language === "ja" ? jaData : roData;
   const agree = langData.ContactSection.ContactForm.agree;
 
+  // check when the form starts to be filled
+  const isFilling = useSelector((state) => state.form.isFilling);
+  const isSend = useSelector((state) => state.form.isSend);
+  const isSending = useSelector((state) => state.form.isSending);
+  const recaptchaNeeded = useSelector((state) => state.form.recaptchaNeeded);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (isRecaptchaCompleted) {
+      dispatch(setRecaptchaNeeded(false));
+    }
+  }, [isRecaptchaCompleted, dispatch]);
+  
+  const handleFocus = () => {
+    dispatch(setIsFilling(true));
+    dispatch(setIsSend(false));
+  };
+
+  // recaprcha transition
+  const [recaptchaClass, setRecaptchaClass] = useState("");
+  useEffect(() => {
+    if (isFilling) {
+      setTimeout(() => {
+        setRecaptchaClass("show");
+      }, 500);
+    } else {
+      setRecaptchaClass("");
+    }
+  }, [isFilling]);
+
   // send email
   const sendEmail = (e) => {
     e.preventDefault();
+
     if (!isRecaptchaCompleted) {
+      dispatch(setRecaptchaNeeded(true));
       return;
     }
+    dispatch(setIsSending(true));
 
     const phoneInput = e.target.elements.phone;
     const countryCodeInput = e.target.elements.countryCode;
@@ -94,7 +129,8 @@ export default function ContactForm(props) {
       .then(
         (result) => {
           console.log(result.text);
-          setIsSend("true");
+          dispatch(setIsSend(true));
+          dispatch(setIsSending(false));
           e.target.reset();
         },
         (error) => {
@@ -113,7 +149,7 @@ export default function ContactForm(props) {
         type="text"
         name="firstName"
         autoComplete="given-name"
-        onFocus={() => setIsSend("false")}
+        onFocus={handleFocus}
         required
       />
       <label className={styles.label}>
@@ -124,7 +160,7 @@ export default function ContactForm(props) {
         type="text"
         name="lastName"
         autoComplete="family-name"
-        onFocus={() => setIsSend("false")}
+        onFocus={handleFocus}
         required
       />
       <label className={styles.label}>
@@ -135,7 +171,7 @@ export default function ContactForm(props) {
         type="email"
         name="email"
         autoComplete="email"
-        onFocus={() => setIsSend("false")}
+        onFocus={handleFocus}
         required
       />
       <label style={{ display: section === "contact" && "none" }}>
@@ -165,7 +201,7 @@ export default function ContactForm(props) {
           maxLength="16"
           pattern="[0-9]*"
           onKeyPress={handleKeyPress}
-          onFocus={() => setIsSend("false")}
+          onFocus={handleFocus}
           className={`${styles.phone} ${styles.phoneNumber}`}
         />
       </div>
@@ -181,7 +217,7 @@ export default function ContactForm(props) {
       <textarea
         name="message"
         rows="8"
-        onFocus={() => setIsSend("false")}
+        onFocus={handleFocus}
         required={section === "contact" ? true : false}
       />
       <div className={styles.checkboxContainer}>
@@ -192,13 +228,15 @@ export default function ContactForm(props) {
             name="checkbox"
             value="Sunt de acord"
             className={styles.checkbox}
-            onFocus={() => setIsSend("false")}
+            onFocus={handleFocus}
             required
           />
+
           {agree[0]}
           <a href="" className={styles.link}>
             {agree[1]}
           </a>
+          <span className={styles.star}>*</span>
         </label>
       </div>
       <input type="hidden" name="subject" value={subject} />
@@ -206,24 +244,35 @@ export default function ContactForm(props) {
       <input type="hidden" name="price" value={price} />
       <input type="hidden" name="language" value={language} />
 
-      {!recaptchaCompletedOnce ? (
-        <RecaptchaComponent
-          recaptchaCompletedOnce={recaptchaCompletedOnce}
-          recaptchaKey={language}
-          sitekey={RECAPTCHA_KEY}
-          onChange={handleRecaptchaChange}
-          className={styles.recaptcha}
-          hl={language}
-        />
-      ) : (<div className={styles.recaptchaText}>✔ ReCAPTCHA</div>)}
+      {isFilling && (
+        <React.Suspense>
+          <div className={`${styles.recaptcha} ${styles[recaptchaClass]}`}>
+            <LazyReCAPTCHA
+              key={language}
+              sitekey={RECAPTCHA_KEY}
+              onChange={handleRecaptchaChange}
+              className={styles.recaptchaScale}
+              hl={language}
+            />
+          </div>
+        </React.Suspense>
+      )}
 
       <div className={styles.confirmationContainer}>
         <div
-          className={`${styles.confirmation} ${
-            isSend === "false" && styles.hide
-          } ${isSend === "true" && styles.show}`}
+          className={`${styles.confirmation}
+            ${recaptchaNeeded && styles.show}
+            ${!isSending && !isSend && styles.hide} 
+            ${(isSending || isSend) && styles.show}`}
         >
-          {langData.ContactSection.ContactForm.confirmation}
+          {recaptchaNeeded
+            ? langData.ContactSection.ContactForm.confirmation.recaptcha
+            : isSending && !isSend
+            ? langData.ContactSection.ContactForm.confirmation.sending
+            : !isSending && isSend
+            ? langData.ContactSection.ContactForm.confirmation.sent
+            : "..."}
+          {}
         </div>
         <div className={styles.buttonContainer}>
           <input

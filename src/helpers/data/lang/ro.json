@@ -356,7 +356,11 @@
         "Sunt de acord cu ",
         "politica de confidentialitate, termenii si conditiile"
       ],
-      "confirmation": "Formularul a fost trimis!",
+      "confirmation": {
+        "sending": "Se trimite...",
+        "sent": "Formularul a fost trimis!",
+        "recaptcha": "Te rugăm să completezi reCAPTCHA."
+      },
       "sendButton": "Trimite",
       "subject": "contact"
     }

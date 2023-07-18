@@ -352,7 +352,12 @@
       "phone": "電話番号",
       "message": "メッセージ",
       "agree": ["同意する", "プライバシーポリシーと利用規約"],
-      "confirmation": "フォームが送信されました！",
+      "recaptcha": "reCAPTCHAを完了してください。",
+      "confirmation": {
+        "sending": "送信中...",
+        "sent": "フォームが送信されました！",
+        "recaptcha": "reCAPTCHAを完了してください。"
+      },
       "sendButton": "送信",
       "subject": "お問い合わせ"
     }

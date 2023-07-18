@@ -353,7 +353,12 @@
       "phone": "Phone number",
       "message": "Message",
       "agree": ["I agree with ", "the privacy policy, terms and conditions"],
-      "confirmation": "The form has been sent!",
+      "recaptcha": "Please complete the reCAPTCHA.",
+      "confirmation": {
+        "sending": "Sending...",
+        "sent": "The form has been sent!",
+        "recaptcha": "Please complete the reCAPTCHA."
+      },
       "sendButton": "Send",
       "subject": "contact"
     }

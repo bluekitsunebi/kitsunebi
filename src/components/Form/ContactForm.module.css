@@ -16,7 +16,6 @@
   color: var(--cinnabar);
   transform: scale(0.8);
   transform-origin: 0 -10px;
-  display: block;
 }
 
 input,
@@ -29,8 +28,7 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 .phone,
-textarea,
-.recaptchaCompleted {
+textarea {
   font-size: 2rem;
   color: var(--navy);
 }
@@ -84,9 +82,24 @@ input[type="tel"] {
   text-decoration: none;
 }
 
-.recaptchaText {
-  margin-left: 1rem;
-  font-weight: 600;
+@keyframes heightExpand {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 5rem;
+  }
+}
+
+.recaptcha {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  animation-name: heightExpand;
+  animation-duration: 0.5s; 
+  animation-fill-mode: forwards; 
+}
+.recaptcha.show {
+  opacity: 1;
 }
 
 .confirmationContainer {
@@ -100,6 +113,7 @@ input[type="tel"] {
 
 .confirmation {
   align-self: center;
+  text-align: center;
 }
   
 .buttonContainer {
@@ -157,10 +171,6 @@ input[type="tel"] {
     width: 1.5rem;
     height: 1.5rem;
   }
-  /* .recaptcha {
-    transform: scale(1);
-    transform-origin: 0 0;
-  } */
   .confirmationContainer {
     margin-top: 1rem;
   }
@@ -197,7 +207,7 @@ input[type="tel"] {
     width: 1.3rem;
     height: 1.3rem;
   }
-  .recaptcha {
+  .recaptchaScale {
     transform: scale(0.8);
     transform-origin: 0 0;
   }

@@ -1,18 +1,19 @@
-import { configureStore } from '@reduxjs/toolkit';
-import headerReducer from './headerSlice';
-import homeReducer from './homeSectionSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import headerReducer from "./headerSlice";
+import homeReducer from "./homeSectionSlice";
 
-import heroSectionReducer from './heroSectionSlice';
-import aboutSectionReducer from './aboutSectionSlice';
-import contactSectionReducer from './contactSectionSlice';
-import FAQsectionReducer from './FAQsectionSlice';
-import languageCoursesSectionReducer from './languageCoursesSectionSlice';
-import programmingSectionReducer from './programmingSectionSlice';
+import heroSectionReducer from "./heroSectionSlice";
+import aboutSectionReducer from "./aboutSectionSlice";
+import contactSectionReducer from "./contactSectionSlice";
+import FAQsectionReducer from "./FAQsectionSlice";
+import languageCoursesSectionReducer from "./languageCoursesSectionSlice";
+import programmingSectionReducer from "./programmingSectionSlice";
 
-import cardSlice from './cardSlice';
+import cardSlice from "./cardSlice";
+import formSlice from "./formSlice";
 
-import routerSlice from './routerSlice';
-import websiteLanguageSlice from './websiteLanguageSlice';
+import routerSlice from "./routerSlice";
+import websiteLanguageSlice from "./websiteLanguageSlice";
 
 export const store = configureStore({
   reducer: {
@@ -25,7 +26,8 @@ export const store = configureStore({
     languageCoursesSection: languageCoursesSectionReducer,
     programmingSection: programmingSectionReducer,
     card: cardSlice,
+    form: formSlice,
     router: routerSlice,
     websiteLanguage: websiteLanguageSlice,
-  }
+  },
 });
