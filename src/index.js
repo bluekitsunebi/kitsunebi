@@ -6,6 +6,25 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+const loadFontAsync = () => {
+  const font = new FontFace("SHANTELL_SANS", 
+    "url(./src/fonts/Shantell_Sans/ShantellSans-VariableFont_BNCE,INFM,SPAC,wght.ttf)", 
+    {
+      style: 'normal',
+      weight: '400'
+    }
+  );
+
+  font.load().then(loadedFont => {
+    document.fonts.add(loadedFont);
+  }).catch(error => {
+    console.error("Failed to load font: ", error);
+  });
+};
+
+loadFontAsync();
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
