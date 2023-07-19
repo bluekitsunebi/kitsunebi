@@ -4,9 +4,14 @@
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../../../../images/backgroundRight.webp");
-  background-size: cover;
   background-position: bottom;
   position: relative;
+}
+
+.heroSection,
+.halfBackgroundLeft {
+  background-color: black;
+  background-size: cover;
 }
 
 .halfBackground {
@@ -18,7 +23,6 @@
 .halfBackgroundLeft {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../../../images/backgroundLeft.webp");
-  background-size: cover;
 }
 
 .header__transparent {
@@ -731,4 +735,3 @@
     margin: 0.1rem;
   }
 }
-

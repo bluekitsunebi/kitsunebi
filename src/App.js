@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setLanguage } from "./store/websiteLanguageSlice";
+// import { setLanguage } from "./store/websiteLanguageSlice";
 import "./App.css";
 
 // ROUTES
