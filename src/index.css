@@ -12,7 +12,8 @@ body,
 input,
 textarea,
 button {
-  font-family: "SHANTELL_SANS", "Segoe Print", "Apple Casual", "Chilanka";
+  font-family: "Shantell Sans", "Segoe Print", "Apple Casual", "Chilanka",
+    cursive;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
