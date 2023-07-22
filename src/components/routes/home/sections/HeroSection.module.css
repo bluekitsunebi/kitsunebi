@@ -2,8 +2,6 @@
 
 .heroSection {
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../../../../images/backgroundRight.webp");
   background-position: bottom;
   position: relative;
 }
@@ -21,9 +19,41 @@
 }
 
 .halfBackgroundLeft {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../../../images/backgroundLeft.webp");
 }
+
+/* ----------------------- fadein effect ----------------------- */
+
+.heroSection::before,
+.halfBackgroundLeft::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+
+.heroSection[data-bg-loaded="true"]::before {
+  opacity: 1;
+}
+
+.halfBackgroundLeft[data-bg-loaded="true"]::before {
+  opacity: 1;
+}
+
+.heroSection::before {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--hero-bg);
+}
+
+.halfBackgroundLeft::before {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--half-left-bg);
+}
+
+
+/* -------------------------------------------------------------- */
 
 .header__transparent {
   display: none;

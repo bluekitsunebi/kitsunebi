@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./HeroSection.module.css";
 import Button from "../../../Button";
@@ -13,15 +13,63 @@ import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import enData from "../../../../helpers/data/lang/en.json";
 import jaData from "../../../../helpers/data/lang/ja.json";
 import roData from "../../../../helpers/data/lang/ro.json";
+import bgHeroSectionSrc from "../../../../images/backgroundRight.webp";
+import bgLeftSrc from "../../../../images/backgroundLeft.webp";
 
 export default function HeroSection({ onRender }) {
+  // refference to the Hero section and the left half of the background
   const heroSectionRef = useRef(null);
   const halfBackgroundLeftRef = useRef(null);
+
+  // fadein effect for background
+  const bgHeroSectionImage = new Image();
+  bgHeroSectionImage.src = bgHeroSectionSrc;
+  const bgLeftImage = new Image();
+  bgLeftImage.src = bgLeftSrc;
+  const [imageHeroSectionLoaded, setImageHeroSectionLoaded] = useState(false);
+  const [imageLeftLoaded, setImageLeftLoaded] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // check when the images have loaded
+  useEffect(() => {
+    const handleImageHeroSectionLoad = () => {
+      setImageHeroSectionLoaded(true);
+    };
+    const handleImageLeftLoad = () => {
+      setImageLeftLoaded(true);
+    };
+    bgHeroSectionImage.addEventListener("load", handleImageHeroSectionLoad);
+    bgLeftImage.addEventListener("load", handleImageLeftLoad);
+    return () => {
+      bgHeroSectionImage.removeEventListener("load", handleImageHeroSectionLoad);
+      bgLeftImage.removeEventListener("load", handleImageLeftLoad);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (imageHeroSectionLoaded && imageLeftLoaded) {
+      setImagesLoaded(true);
+    }
+  }, [imageHeroSectionLoaded, imageLeftLoaded]);
+
+  // change background opacity
+  useEffect(() => {
+    if (imagesLoaded) {
+      console.log("change images");
+      heroSectionRef.current.setAttribute("data-bg-loaded", "true");
+      heroSectionRef.current.style.setProperty("--hero-bg", `url(${bgHeroSectionSrc})`);
+      halfBackgroundLeftRef.current.setAttribute("data-bg-loaded", "true");
+      halfBackgroundLeftRef.current.style.setProperty("--half-left-bg", `url(${bgLeftSrc})`);
+    }
+}, [imagesLoaded]);
+
+
+  //
   const titleImageContainer__leftRef = useRef(null);
   const titleImageContainer__rightRef = useRef(null);
   const titleLeftRef = useRef(null);
-
   const dispatch = useDispatch();
+
   let isEntered__hero = useSelector(
     (state) => state.heroSection.heroSection__entered
   );
