@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./HeroSection.module.css";
+import bgHeroSectionSrc from "../../../../images/backgroundRight.webp";
+import bgLeftSrc from "../../../../images/backgroundLeft.webp";
+import kanjiDrawing from "../../../../videos/kanjiAnimation.mp4";
 import Button from "../../../Button";
 import {
   setHeroSection__entered,
@@ -8,13 +11,10 @@ import {
   setTitleLeft__entered,
   setDescriptionLeft__entered,
 } from "../../../../store/heroSectionSlice";
-import kanjiDrawing from "../../../../videos/kanjiAnimation.mp4";
 import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import enData from "../../../../helpers/data/lang/en.json";
 import jaData from "../../../../helpers/data/lang/ja.json";
 import roData from "../../../../helpers/data/lang/ro.json";
-import bgHeroSectionSrc from "../../../../images/backgroundRight.webp";
-import bgLeftSrc from "../../../../images/backgroundLeft.webp";
 
 export default function HeroSection({ onRender }) {
   // refference to the Hero section and the left half of the background

@@ -4,6 +4,7 @@
   height: 100vh;
   background-position: bottom;
   position: relative;
+  overflow-y: hidden;
 }
 
 .heroSection,
