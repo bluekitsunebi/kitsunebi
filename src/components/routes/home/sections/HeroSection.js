@@ -41,7 +41,10 @@ export default function HeroSection({ onRender }) {
     bgHeroSectionImage.addEventListener("load", handleImageHeroSectionLoad);
     bgLeftImage.addEventListener("load", handleImageLeftLoad);
     return () => {
-      bgHeroSectionImage.removeEventListener("load", handleImageHeroSectionLoad);
+      bgHeroSectionImage.removeEventListener(
+        "load",
+        handleImageHeroSectionLoad
+      );
       bgLeftImage.removeEventListener("load", handleImageLeftLoad);
     };
   }, []);
@@ -55,16 +58,71 @@ export default function HeroSection({ onRender }) {
   // change background opacity
   useEffect(() => {
     if (imagesLoaded) {
-      console.log("change images");
       heroSectionRef.current.setAttribute("data-bg-loaded", "true");
-      heroSectionRef.current.style.setProperty("--hero-bg", `url(${bgHeroSectionSrc})`);
+      heroSectionRef.current.style.setProperty(
+        "--hero-bg",
+        `url(${bgHeroSectionSrc})`
+      );
       halfBackgroundLeftRef.current.setAttribute("data-bg-loaded", "true");
-      halfBackgroundLeftRef.current.style.setProperty("--half-left-bg", `url(${bgLeftSrc})`);
+      halfBackgroundLeftRef.current.style.setProperty(
+        "--half-left-bg",
+        `url(${bgLeftSrc})`
+      );
     }
-}, [imagesLoaded]);
+  }, [imagesLoaded]);
 
+  // check if the video has loaded
+
+  const videoRef = useRef(null);
+  const videoRef2 = useRef(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [video2Loaded, setVideo2Loaded] = useState(false);
+
+  useEffect(() => {
+    const handleVideoLoad = () => {
+      if (!videoLoaded) {
+        setVideoLoaded(true);
+      }
+    };
+    const handleVideo2Load = () => {
+      if (!video2Loaded) {
+        setVideo2Loaded(true);
+      }
+    };
+    if (videoRef.current) {
+      videoRef.current.addEventListener("canplay", handleVideoLoad);
+    }
+    if (videoRef2.current) {
+      videoRef2.current.addEventListener("canplay", handleVideo2Load);
+    }
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.removeEventListener("canplay", handleVideoLoad);
+      }
+
+      if (videoRef2.current) {
+        videoRef2.current.removeEventListener("canplay", handleVideo2Load);
+      }
+    };
+  }, [videoLoaded, video2Loaded, videoRef.current, videoRef2.current]);
 
   //
+
+  useEffect(() => {
+  }, [videoLoaded]);
+
+  useEffect(() => {
+  }, [video2Loaded]);
+
+  // fadein effect for .titleImageContainer, .description and .button
+  useEffect(() => {
+    if (videoLoaded && video2Loaded && heroSectionRef.current) {
+      heroSectionRef.current.setAttribute("data-video-loaded", "true");
+      heroSectionRef.current.setAttribute("data-video2-loaded", "true");
+    }
+  }, [videoLoaded, video2Loaded, heroSectionRef.current]);
+
+  // --------------------------------------------------------
   const titleImageContainer__leftRef = useRef(null);
   const titleImageContainer__rightRef = useRef(null);
   const titleLeftRef = useRef(null);
@@ -167,9 +225,6 @@ export default function HeroSection({ onRender }) {
 
   // VIDEO FOR KANJI ANIMATION
 
-  const videoRef = useRef(null);
-  const videoRef2 = useRef(null);
-
   return (
     <section
       id="heroSection"
@@ -190,7 +245,6 @@ export default function HeroSection({ onRender }) {
         onMouseEnter={handleMouseEnter__left}
         onMouseLeave={handleMouseLeave__left}
       ></div>
-
       <div
         className={`
         ${styles.titleImageContainer}
@@ -216,7 +270,6 @@ export default function HeroSection({ onRender }) {
           <source src={kanjiDrawing} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-
         <div id="titleLeft" ref={titleLeftRef} className={styles.title}>
           <div>{titleLeft[0]}</div>
           <div>{titleLeft[1]}</div>
@@ -234,7 +287,6 @@ export default function HeroSection({ onRender }) {
           />
         </div>
       </div>
-
       <ul
         id="descriptionLeft"
         className={`
@@ -430,6 +482,7 @@ export default function HeroSection({ onRender }) {
       </div>
 
       {/* DESCRIPTION */}
+
       <ul
         id="descriptionRight"
         className={`

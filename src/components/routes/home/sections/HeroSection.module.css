@@ -21,7 +21,7 @@
 .halfBackgroundLeft {
 }
 
-/* ----------------------- fadein effect ----------------------- */
+/* ----------------- fadein effect for background ----------------- */
 
 .heroSection::before,
 .halfBackgroundLeft::before {
@@ -45,13 +45,39 @@
 }
 
 .heroSection::before {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--hero-bg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    var(--hero-bg);
 }
 
 .halfBackgroundLeft::before {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--half-left-bg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    var(--half-left-bg);
 }
 
+/* fadein effect for .titleImageContainer, .description and .button */
+
+.description,
+.button__mobile {
+  transition: opacity 0.35s ease-in-out 0.35s;
+}
+.titleImageContainer,
+.titleImageContainer__mobile,
+.button__mobile {
+  opacity: 0;
+}
+
+.titleImageContainer,
+.titleImageContainer__mobile {
+  transition: opacity 0.35s ease-in-out 0.35s, left 0.2s linear,
+    right 0.2s linear;
+}
+
+[data-video-loaded="true"][data-video2-loaded="true"] .titleImageContainer,
+[data-video-loaded="true"][data-video2-loaded="true"] .titleImageContainer__mobile,
+[data-video-loaded="true"][data-video2-loaded="true"] .description,
+[data-video-loaded="true"][data-video2-loaded="true"] .button__mobile {
+  opacity: 1;
+}
 
 /* -------------------------------------------------------------- */
 
@@ -60,7 +86,6 @@
 }
 
 .titleImageContainer {
-  transition: all 0.2s linear;
   position: absolute;
   top: 0;
   height: 100%;
@@ -71,7 +96,6 @@
 }
 
 .titleImageContainer__mobile {
-  transition: all 0.2s linear;
   position: absolute;
   top: 0;
   height: 90vh;
@@ -160,7 +184,7 @@
   flex-direction: column;
   justify-content: center;
   transition: width 0.2s linear;
-  transition-delay: 0s;
+  /* transition-delay: 0s; */
   -webkit-mask-image: linear-gradient(
     to left,
     transparent 40%,
