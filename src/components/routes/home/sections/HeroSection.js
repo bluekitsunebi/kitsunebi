@@ -10,6 +10,7 @@ import {
   setBackgroundLeft__entered,
   setTitleLeft__entered,
   setDescriptionLeft__entered,
+  setVideosLoaded,
 } from "../../../../store/heroSectionSlice";
 import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import enData from "../../../../helpers/data/lang/en.json";
@@ -77,6 +78,7 @@ export default function HeroSection({ onRender }) {
   const videoRef2 = useRef(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [video2Loaded, setVideo2Loaded] = useState(false);
+  let videosLoaded = useSelector((state) => state.heroSection.videosLoaded);
 
   useEffect(() => {
     const handleVideoLoad = () => {
@@ -106,17 +108,10 @@ export default function HeroSection({ onRender }) {
     };
   }, [videoLoaded, video2Loaded, videoRef.current, videoRef2.current]);
 
-  //
-
-  useEffect(() => {
-  }, [videoLoaded]);
-
-  useEffect(() => {
-  }, [video2Loaded]);
-
   // fadein effect for .titleImageContainer, .description and .button
   useEffect(() => {
     if (videoLoaded && video2Loaded && heroSectionRef.current) {
+      dispatch(setVideosLoaded(true));
       heroSectionRef.current.setAttribute("data-video-loaded", "true");
       heroSectionRef.current.setAttribute("data-video2-loaded", "true");
     }

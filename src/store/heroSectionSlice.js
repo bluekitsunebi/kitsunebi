@@ -5,6 +5,7 @@ const initialState = {
   backgroundLeft__entered: "true",
   titleLeft__entered: "true",
   descriptionLeft__entered: "true",
+  videosLoaded: false,
 };
 
 export const heroSectionSlice = createSlice({
@@ -23,6 +24,9 @@ export const heroSectionSlice = createSlice({
     setDescriptionLeft__entered: (state, action) => {
       state.descriptionLeft__entered = action.payload;
     },
+    setVideosLoaded: (state, action) => {
+      state.videosLoaded = action.payload;
+    },
   },
 });
 
@@ -31,6 +35,7 @@ export const {
   setTitleLeft__entered,
   setDescriptionLeft__entered,
   setHeroSection__entered,
+  setVideosLoaded,
 } = heroSectionSlice.actions;
 
 export default heroSectionSlice.reducer;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -20,6 +20,18 @@ import jaData from "../helpers/data/lang/ja.json";
 import roData from "../helpers/data/lang/ro.json";
 
 export default function Header({ onRender }) {
+  // slide down animation
+  const [slideDown, setSlideDown] = useState(false);
+  let videosLoaded = useSelector((state) => state.heroSection.videosLoaded);
+
+  useEffect(() => {
+    if(videosLoaded){
+      setSlideDown(true);
+    }
+  }, [videosLoaded])
+
+  // ---------------------------------------------------------
+
   const homeWasRendered = useSelector((state) => state.home.wasRendered);
   const headerRef = useRef(null);
   const dispatch = useDispatch();
@@ -155,7 +167,11 @@ export default function Header({ onRender }) {
     <header
       id="header"
       ref={headerRef}
-      className={`${styles.Header} ${!isOpen && styles.Header__close}`}
+      className={`
+        ${styles.Header} 
+        ${slideDown ? styles.slideDown : styles.slideUp} 
+        ${!isOpen && styles.Header__close}
+      `}
       style={{ background: headerColor }}
     >
       <div className={styles.header_phone_close}>
