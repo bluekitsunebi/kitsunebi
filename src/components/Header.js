@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -7,6 +7,10 @@ import {
   setColor,
   setMenu,
   closeMenu,
+  setSlideDown,
+  setWasAnimated,
+  setPreviousLocation,
+  setCurrentLocation,
 } from "../store/headerSlice";
 import styles from "./Header.module.css";
 import Logo from "./Logo";
@@ -20,21 +24,43 @@ import jaData from "../helpers/data/lang/ja.json";
 import roData from "../helpers/data/lang/ro.json";
 
 export default function Header({ onRender }) {
+  const dispatch = useDispatch();
+  const location = useLocation().pathname;
+
   // slide down animation
-  const [slideDown, setSlideDown] = useState(false);
   let videosLoaded = useSelector((state) => state.heroSection.videosLoaded);
+  let slideDown = useSelector((state) => state.header.slideDown);
+  let wasAnimated = useSelector((state) => state.header.wasAnimated);
+  let currentLocation = useSelector((state) => state.header.currentLocation);
+  let previousLocation = useSelector((state) => state.header.previousLocation);
+  let headerAnimation = (location !== '/') ? false : ((previousLocation !== '/' && previousLocation) ? false : true);
 
   useEffect(() => {
-    if(videosLoaded){
-      setSlideDown(true);
+    dispatch(setCurrentLocation(location));
+  }, []);
+
+  useEffect(() => {
+    if (!wasAnimated && videosLoaded) {
+      dispatch(setWasAnimated(true));
+      dispatch(setSlideDown(true));
     }
-  }, [videosLoaded])
+  }, [videosLoaded, wasAnimated, slideDown, location]);
+
+  useEffect(() => {
+    dispatch(setPreviousLocation(currentLocation));
+    dispatch(setCurrentLocation(location));
+  }, [location]);
+  
+  useEffect(() => {
+    if(previousLocation && previousLocation !== '/' && location === '/'){
+      headerAnimation = false;
+    }
+  }, [previousLocation])
 
   // ---------------------------------------------------------
 
   const homeWasRendered = useSelector((state) => state.home.wasRendered);
   const headerRef = useRef(null);
-  const dispatch = useDispatch();
   let middle = 0;
   useEffect(() => {
     if (homeWasRendered === "true") {
@@ -73,8 +99,6 @@ export default function Header({ onRender }) {
   const programmingSectionPosition = useSelector(
     (state) => state.programmingSection.yAxisPosition
   );
-
-  const location = useLocation().pathname;
 
   const listenScrollEvent = () => {
     if (location === "/") {
@@ -168,8 +192,15 @@ export default function Header({ onRender }) {
       id="header"
       ref={headerRef}
       className={`
-        ${styles.Header} 
-        ${slideDown ? styles.slideDown : styles.slideUp} 
+        ${styles.Header}
+        ${headerAnimation && styles.headerAnimation}
+        ${
+          location !== "/"
+            ? styles.slideDown
+            : !slideDown
+            ? styles.slideUp
+            : styles.slideDown
+        } 
         ${!isOpen && styles.Header__close}
       `}
       style={{ background: headerColor }}
