@@ -33,7 +33,12 @@ export default function Header({ onRender }) {
   let wasAnimated = useSelector((state) => state.header.wasAnimated);
   let currentLocation = useSelector((state) => state.header.currentLocation);
   let previousLocation = useSelector((state) => state.header.previousLocation);
-  let headerAnimation = (location !== '/') ? false : ((previousLocation !== '/' && previousLocation) ? false : true);
+  let headerAnimation =
+    location !== "/"
+      ? false
+      : previousLocation !== "/" && previousLocation
+      ? false
+      : true;
 
   useEffect(() => {
     dispatch(setCurrentLocation(location));
@@ -50,18 +55,19 @@ export default function Header({ onRender }) {
     dispatch(setPreviousLocation(currentLocation));
     dispatch(setCurrentLocation(location));
   }, [location]);
-  
+
   useEffect(() => {
-    if(previousLocation && previousLocation !== '/' && location === '/'){
+    if (previousLocation && previousLocation !== "/" && location === "/") {
       headerAnimation = false;
     }
-  }, [previousLocation])
+  }, [previousLocation]);
 
   // ---------------------------------------------------------
 
   const homeWasRendered = useSelector((state) => state.home.wasRendered);
   const headerRef = useRef(null);
   let middle = 0;
+
   useEffect(() => {
     if (homeWasRendered === "true") {
       const style = window.getComputedStyle(headerRef.current);
@@ -70,7 +76,7 @@ export default function Header({ onRender }) {
       const paddingBottom = parseInt(style.paddingBottom);
       const totalHeight = height + paddingTop + paddingBottom;
       dispatch(setHeight(totalHeight));
-      middle = (window.innerHeight - headerHeight) / 2 + headerHeight;
+      middle = (window.innerHeight - totalHeight) / 2 + totalHeight;
     }
     if (typeof onRender === "function") {
       onRender();
@@ -112,30 +118,34 @@ export default function Header({ onRender }) {
     if (location === "/") {
       if (
         window.scrollY + middle >= 0 &&
-        window.scrollY + middle < aboutSectionPosition
+        window.scrollY + middle < aboutSectionPosition - headerHeight - ((window.innerHeight - headerHeight) / 2)
       ) {
         dispatch(setUnderlined("home"));
       } else if (
-        window.scrollY + middle >= aboutSectionPosition &&
-        window.scrollY + middle < languageCoursesSectionPosition
+        window.scrollY + middle >= aboutSectionPosition - headerHeight &&
+        window.scrollY + middle < languageCoursesSectionPosition - headerHeight - ((window.innerHeight - headerHeight) / 2)
       ) {
         dispatch(setUnderlined("about"));
       } else if (
-        window.scrollY + middle >= languageCoursesSectionPosition &&
-        window.scrollY + middle < programmingSectionPosition
+        window.scrollY + middle >=
+          languageCoursesSectionPosition - headerHeight &&
+        window.scrollY + middle < programmingSectionPosition - headerHeight - ((window.innerHeight - headerHeight) / 2)
       ) {
         dispatch(setUnderlined("language"));
       } else if (
-        window.scrollY + middle >= programmingSectionPosition &&
-        window.scrollY + middle < FAQsectionPosition
+        window.scrollY + middle >= programmingSectionPosition - headerHeight &&
+        window.scrollY + middle < FAQsectionPosition - headerHeight - ((window.innerHeight - headerHeight) / 2)
       ) {
         dispatch(setUnderlined("programming"));
       } else if (
-        window.scrollY + middle >= FAQsectionPosition &&
-        window.scrollY + middle < contactSectionPosition
+        window.scrollY + middle >= FAQsectionPosition - headerHeight &&
+        window.scrollY + middle < contactSectionPosition - headerHeight - ((window.innerHeight - headerHeight) / 2)
       ) {
         dispatch(setUnderlined("faq"));
-      } else if (window.scrollY + middle >= contactSectionPosition) {
+      } else if (
+        window.scrollY + middle >=
+        contactSectionPosition - headerHeight
+      ) {
         dispatch(setUnderlined("contact"));
       }
     } else if (

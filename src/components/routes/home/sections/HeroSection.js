@@ -196,28 +196,6 @@ export default function HeroSection({ onRender }) {
   let descriptionLeft = [...langData.HeroSection.description.left];
   let descriptionRight = [...langData.HeroSection.description.right];
 
-  // STOP ANIMATION WHEN WINDOW IS RESIZING
-
-  // let isResizing = useSelector((state) => state.home.isResizing);
-  // const wasRendered = useSelector((state) => state.home.wasRendered);
-
-  // useEffect(() => {
-  //   if (halfBackgroundLeftRef.current) {
-  //     if (isResizing == true) {
-  //       halfBackgroundLeftRef.current.style.transition = "none";
-  //       titleImageContainer__leftRef.current.style.transition = "none";
-  //       titleImageContainer__rightRef.current.style.transition = "none";
-  //     }
-  //     if (isResizing == false) {
-  //       halfBackgroundLeftRef.current.style.transition = "all 0.2s linear";
-  //       titleImageContainer__leftRef.current.style.transition =
-  //         "all 0.2s linear";
-  //       titleImageContainer__rightRef.current.style.transition =
-  //         "all 0.2s linear";
-  //     }
-  //   }
-  // }, [isResizing]);
-
   // VIDEO FOR KANJI ANIMATION
 
   return (
