@@ -107,28 +107,7 @@
           "total": "6",
           "greyedOut": "false",
           "link": "/en-individual-custom-japanese"
-        },
-
-        "individualCustomJapaneseIntensive": {
-          "id": "individual custom japanese (intensive)",
-          "title": "集中個別日本語",
-          "lessons": "最初のレッスンは無料",
-          "details": [
-            "週に2回のセッションで進行速度が2倍になります",
-            "生徒が日時を選び、すぐに開始します",
-            "生徒のレベルに合わせたカスタムマテリアル",
-            "上級レベルの日本語教師",
-            "クラス時間外でもサポートがあり、24時間以内に返信します"
-          ],
-          "price": [
-            ["1時間", "$35"],
-            ["1時間30分", "$45"],
-            ["2時間", "$55"]
-          ],
-          "total": "8",
-          "greyedOut": "false",
-          "link": "/en-individual-custom-japanese-intensive"
-        },
+        },        
 
         "animeJapanese": {
           "id": "anime japanese",
@@ -188,28 +167,7 @@
           "total": "6",
           "greyedOut": "false",
           "link": "/jp-individual-custom-english"
-        },
-
-        "individualCustomEnglishIntensive": {
-          "id": "individual custom english (intensive)",
-          "title": "集中個別英語",
-          "lessons": "最初のレッスンは無料",
-          "details": [
-            "週に2回のセッションで進行速度が2倍になります",
-            "生徒が日時を選び、すぐに開始します",
-            "生徒のレベルに合わせたカスタムマテリアル",
-            "英語の上級レベルの教師",
-            "クラス時間外でもサポートがあり、24時間以内に返信します"
-          ],
-          "price": [
-            ["1時間", "$30"],
-            ["1時間30分", "$40"],
-            ["2時間", "$50"]
-          ],
-          "total": "8",
-          "greyedOut": "false",
-          "link": "/jp-individual-custom-english-intensive"
-        }
+        }        
       },
 
       "courseInRomanian": {
@@ -251,28 +209,7 @@
           "total": "6",
           "greyedOut": "false",
           "link": "/ro-individual-custom-japanese"
-        },
-
-        "individualCustomJapaneseIntensive": {
-          "id": "individual custom japanese (intensive)",
-          "title": "集中個別日本語",
-          "lessons": "最初のレッスンは無料",
-          "details": [
-            "週に2回のセッションで進行速度が2倍になります",
-            "生徒が日時を選び、すぐに開始します",
-            "生徒のレベルに合わせたカスタムマテリアル",
-            "上級レベルの日本語教師",
-            "クラス時間外でもサポートがあり、24時間以内に返信します"
-          ],
-          "price": [
-            ["1時間", "85 RON"],
-            ["1時間30分", "115 RON"],
-            ["2時間", "150 RON"]
-          ],
-          "total": "8",
-          "greyedOut": "false",
-          "link": "/ro-individual-custom-japanese-intensive"
-        },
+        },        
 
         "animeJapanese": {
           "id": "anime japanese",
@@ -317,7 +254,8 @@
     "questionsAndAnswers": [
       [
         "質問：支払いはどのように行われますか？",
-        "回答：支払いは、初回の無料セッション、契約の締結、請求書の受領後に行われ、特定のセッション数（通常レジームでは6、集中レジームでは8）の前払いとなります。銀行振込による支払いで、連絡先セクションでデータを見つけ、説明欄に学生の名前を記入します。"
+        "回答：支払いは、初回の無料セッション、契約の締結、請求書の受領後に行われ、特定のセッション数（通常レジームでは6、集中レジームでは8）の前払いとなります。銀行振込による支払いで、連絡先セクションでデータを見つけ、説明欄に学生の名前を記入します。",
+        "回答：支払いは、初回の無料セッション、契約の締結、請求書の受領後に行われ、6回のセッションの前払いとなります。銀行振込による支払いで、連絡先セクションでデータを見つけ、説明欄に学生の名前を記入します。"
       ],
       [
         "質問：一日参加できない場合、支払ったセッションはどうなりますか？",
@@ -386,15 +324,9 @@
         "groupCustomJapanese": [
           "英語で教えられる日本語のコース",
           "グループレッスン"
-        ],
-        "individualCustomJapaneseIntensive": [
-          "英語で教えられる集中日本語のコース",
-          "個人レッスン、週に2回"
-        ],
-        "groupCustomJapaneseIntensive": [
-          "英語で教えられる集中日本語のコース",
-          "グループレッスン、週に2回"
         ]
+        
+        
       },
       "courseInJapanese": {
         "individualCustomEnglish": [
@@ -404,15 +336,7 @@
         "groupCustomEnglish": [
           "日本語で教えられる英語のコース",
           "グループレッスン"
-        ],
-        "individualCustomEnglishIntensive": [
-          "日本語で教えられる集中英語のコース",
-          "個人レッスン、週に2回"
-        ],
-        "groupCustomEnglishIntensive": [
-          "日本語で教えられる集中英語のコース",
-          "グループレッスン、週に2回"
-        ]
+        ]        
       },
       "courseInRomanian": {
         "individualCustomJapanese": [
@@ -422,15 +346,7 @@
         "groupCustomJapanese": [
           "ルーマニア語で教えられる日本語のコース",
           "グループレッスン"
-        ],
-        "individualCustomJapaneseIntensive": [
-          "ルーマニア語で教えられる集中日本語のコース",
-          "個人レッスン、週に2回"
-        ],
-        "groupCustomJapaneseIntensive": [
-          "ルーマニア語で教えられる集中日本語のコース",
-          "グループレッスン、週に2回"
-        ]
+        ]        
       }
     }
   }

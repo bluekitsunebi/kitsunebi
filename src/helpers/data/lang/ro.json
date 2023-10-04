@@ -106,28 +106,7 @@
           ],
           "total": "6",
           "greyedOut": "false",
-          "link": "/en-individual-custom-japanese"
-        },
-
-        "individualCustomJapaneseIntensive": {
-          "id": "individual custom japanese (intensive)",
-          "title": "Japoneza Individual Intensiv",
-          "lessons": "Prima lectie gratis",
-          "details": [
-            "evolutie de 2 ori mai rapida cu sedinte de 2 ori pe saptamana",
-            "elevul alege o zi si o ora si incepem imediat",
-            "materiale personalizate pe nivelul elevului",
-            "profesor cu nivel avansat de japoneza",
-            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
-          ],
-          "price": [
-            ["1 ora", "$35"],
-            ["1 ora si 30 de minute", "$45"],
-            ["2 ore", "$55"]
-          ],
-          "total": "8",
-          "greyedOut": "false",
-          "link": "/en-individual-custom-japanese-intensive"
+          "link": "/en-individual-custom-japanese"                
         },
 
         "animeJapanese": {
@@ -188,28 +167,7 @@
           "total": "6",
           "greyedOut": "false",
           "link": "/jp-individual-custom-english"
-        },
-
-        "individualCustomEnglishIntensive": {
-          "id": "individual custom english (intensive)",
-          "title": "Engleza Individual Intensiv",
-          "lessons": "Prima lectie gratis",
-          "details": [
-            "evolutie de 2 ori mai rapida cu sedinte de 2 ori pe saptamana",
-            "elevul alege o zi si o ora si incepem imediat",
-            "materiale personalizate pe nivelul elevului",
-            "profesor cu nivel avansat de engleza",
-            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
-          ],
-          "price": [
-            ["1 ora", "$30"],
-            ["1 ora si 30 de minute", "$40"],
-            ["2 ore", "$50"]
-          ],
-          "total": "8",
-          "greyedOut": "false",
-          "link": "/jp-individual-custom-english-intensive"
-        }
+        }        
       },
 
       "courseInRomanian": {
@@ -251,28 +209,7 @@
           "total": "6",
           "greyedOut": "false",
           "link": "/ro-individual-custom-japanese"
-        },
-
-        "individualCustomJapaneseIntensive": {
-          "id": "individual custom japanese (intensive)",
-          "title": "Japoneza Individual Intensiv",
-          "lessons": "Prima lectie gratis",
-          "details": [
-            "evolutie de 2 ori mai rapida cu sedinte de 2 ori pe saptamana",
-            "elevul alege o zi si o ora si incepem imediat",
-            "materiale personalizate pe nivelul elevului",
-            "profesor cu nivel avansat de japoneza",
-            "asistenta chiar si in afara orelor de curs, cu raspuns in decurs de 24 de ore"
-          ],
-          "price": [
-            ["1 ora", "85 RON"],
-            ["1 ora si 30 de minute", "115 RON"],
-            ["2 ore", "150 RON"]
-          ],
-          "total": "8",
-          "greyedOut": "false",
-          "link": "/ro-individual-custom-japanese-intensive"
-        },
+        },        
 
         "animeJapanese": {
           "id": "anime japanese",
@@ -318,7 +255,7 @@
     "questionsAndAnswers": [
       [
         "Intrebare: Cum se efectueaza plata?",
-        "Raspuns: Plata se efectueaza dupa sedinta gratis de inceput, semnarea contractului si primirea facturii, in avans pentru un anumit numar de sedinte (6 pentru regim normal, 8 pentru intensiv), prin transfer bancar (gasiti datele in rubrica contact), punand numele elevului in descriere."
+        "Raspuns: Plata se efectueaza dupa sedinta gratis de inceput, semnarea contractului si primirea facturii, in avans pentru un numar de 6 sedinte, prin transfer bancar (gasiti datele in rubrica contact), punand numele elevului in descriere."
       ],
       [
         "Intrebare: Daca nu pot intra intr-o zi, ce se intampla cu sedinta platita?",
@@ -389,15 +326,7 @@
         "groupCustomJapanese": [
           "Curs de limba japoneza predat in limba engleza",
           "lectii predate in grup"
-        ],
-        "individualCustomJapaneseIntensive": [
-          "Curs intensiv de limba japoneza predat in limba engleza",
-          "lectii individuale, de doua ori pe saptamana"
-        ],
-        "groupCustomJapaneseIntensive": [
-          "Curs intensiv de limba japoneza predat in limba engleza",
-          "lectii predate in grup, de doua ori pe saptamana"
-        ]
+        ]        
       },
       "courseInJapanese": {
         "individualCustomEnglish": [
@@ -407,15 +336,7 @@
         "groupCustomEnglish": [
           "Curs de limba engleza predat in limba japoneza",
           "lectii predate in grup"
-        ],
-        "individualCustomEnglishIntensive": [
-          "Curs intensiv de limba engleza predat in limba japoneza",
-          "lectii individuale, de doua ori pe saptamana"
-        ],
-        "groupCustomEnglishIntensive": [
-          "Curs intensiv de limba engleza predat in limba japoneza",
-          "lectii predate in grup, de doua ori pe saptamana"
-        ]
+        ]        
       },
       "courseInRomanian": {
         "individualCustomJapanese": [
@@ -425,15 +346,7 @@
         "groupCustomJapanese": [
           "Curs de limba japoneza predat in limba romana",
           "lectii predate in grup"
-        ],
-        "individualCustomJapaneseIntensive": [
-          "Curs intensiv de limba japoneza predat in limba romana",
-          "lectii individuale, de doua ori pe saptamana"
-        ],
-        "groupCustomJapaneseIntensive": [
-          "Curs intensiv de limba japoneza predat in limba romana",
-          "lectii predate in grup, de doua ori pe saptamana"
-        ]
+        ]        
       }
     }
   }

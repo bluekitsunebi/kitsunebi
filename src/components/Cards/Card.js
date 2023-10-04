@@ -1,4 +1,4 @@
-import React, { useEffect, forwardRef, useState } from "react";
+import React, { useEffect, forwardRef, useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import styles from "./Card.module.css";
 import Button from "../Button";
@@ -13,7 +13,7 @@ const Card = forwardRef((props, ref) => {
     language === "en" ? enData : language === "ja" ? jaData : roData;
   let payment = [...langData.LanguageCoursesSection.Cards.payment];
 
-  // const cardRef = useRef(null);
+  const cardRef = useRef(null);
   let isInView;
 
   const id = props.id;
@@ -39,16 +39,16 @@ const Card = forwardRef((props, ref) => {
     function animate() {
       let scrollY = window.scrollY || window.pageYOffset;
       let scrollPosition = scrollY + window.innerHeight;
-      // console.log(ref.current);
+      console.log(ref.current);
 
       if (ref.current) {
         let elementPosition = ref.current.getBoundingClientRect().top + scrollY;
         if (scrollPosition > elementPosition) {
           isInView = true;
-          // console.log(ref, "is animated")
+          console.log(ref, `is animated ${id}`)
         } else {
           isInView = false;
-          // console.log(ref, "isn't in view")
+          console.log(ref, `isn't in view`)
         }
       }
     }
@@ -102,7 +102,7 @@ useEffect(() => {
       ${id === "CardsSubsectionEnglish" && styles.Card__eng}
       ${id === "CardsSubsectionJapanese" && styles.Card__jp}
       ${id === "CardsSubsectionRomanian" && styles.Card__ro}
-      ${isInView && styles.fadeIn}
+      ${isInView ? styles.fadeIn : null}
       `}
     >
       <div className={styles.cardContainer}>
