@@ -12,6 +12,8 @@ import Subtitle from "../../../title/Subtitle";
 import enData from "../../../../helpers/data/lang/en.json";
 import jaData from "../../../../helpers/data/lang/ja.json";
 import roData from "../../../../helpers/data/lang/ro.json";
+import { talismans, reading, writeing } from "../../../../images/images";
+import teacherVideo from "../../../../videos/teacherVideo.mp4";
 
 export default function LanguageCoursesSection({ onRender }) {
   const homeWasRendered = useSelector((state) => state.home.wasRendered);
@@ -74,26 +76,90 @@ export default function LanguageCoursesSection({ onRender }) {
       </div>
 
       <div className={styles.description}>
-        {description[0]}
-        <br />
-        <br />
-        {description[1]}
-        <br />
-        <br />
-        {description[2]}
-        <br />
-        <br />
-        <em>
-          <b>{motto[0]}</b>
-          {motto[1]}
-          <b>{motto[2]}</b>
-          {motto[3]}
-          <b>{motto[4]}</b>
-          {motto[5]}
-          <b>{motto[6]}</b>
-          {motto[7]}
-        </em>
+        <img
+          src={talismans}
+          className={`${styles.chibiImg} ${styles.talismans}`}
+        ></img>
+        <div className={`${styles.description0}`}>{description[0]}</div>
+
+        <div className={`${styles.description1}`}>
+          <div>{description[1][0]}</div>
+          <div>{description[1][1]}</div>
+        </div>
+        <img
+          src={reading}
+          className={`${styles.chibiImg} ${styles.reading}`}
+        ></img>
+
+        <img
+          src={writeing}
+          className={`${styles.chibiImg} ${styles.writeing}`}
+        ></img>
+        <div className={`${styles.description2}`}>
+          <div>{description[2][0]}</div>
+          <div>{description[2][1]}</div>
+          <div>
+            <em>
+              <b>{motto[0]}</b>
+              {motto[1]}
+              <b>{motto[2]}</b>
+              {motto[3]}
+              <b>{motto[4]}</b>
+              {motto[5]}
+              <b>{motto[6]}</b>
+              {motto[7]}
+            </em>
+          </div>
+        </div>
       </div>
+
+      {/* <Subtitle
+        text={langData.LanguageCoursesSection.teacher.subtitle}
+        className={styles.subtitle}
+      />
+      <Subtitle
+        text={langData.LanguageCoursesSection.teacher.name}
+        className={styles.subtitle}
+      />
+
+      <div className={styles.teacherSubsection}>
+
+        <ul className={styles.teacherDescription}>
+          <li className={styles.teacherDescription_item}>
+            {langData.LanguageCoursesSection.teacher.description[0][0]}
+            <span className={styles.highlight}>{langData.LanguageCoursesSection.teacher.description[0][1]}</span>
+            {langData.LanguageCoursesSection.teacher.description[0][2]}
+          </li>
+
+          <li className={styles.teacherDescription_item}>
+            {langData.LanguageCoursesSection.teacher.description[1][0]}
+            <span className={styles.highlight}>{langData.LanguageCoursesSection.teacher.description[1][1]}</span>
+            {langData.LanguageCoursesSection.teacher.description[1][2]}
+          </li>
+
+          <li className={styles.teacherDescription_item}>
+            {langData.LanguageCoursesSection.teacher.description[2][0]}
+            <span className={styles.highlight}>{langData.LanguageCoursesSection.teacher.description[2][1]}</span>
+            {langData.LanguageCoursesSection.teacher.description[2][2]}
+          </li>
+
+          <li className={styles.teacherDescription_item}>
+            {langData.LanguageCoursesSection.teacher.description[3][0]}
+            <span className={styles.highlight}>{langData.LanguageCoursesSection.teacher.description[3][1]}</span>
+            {langData.LanguageCoursesSection.teacher.description[3][2]}
+          </li>
+
+          <li className={styles.teacherDescription_item}>
+            {langData.LanguageCoursesSection.teacher.description[4][0]}
+            <span className={styles.highlight}>{langData.LanguageCoursesSection.teacher.description[4][1]}</span>
+          </li>
+        </ul>
+
+        <div className={teacherVideo}>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/mdAUDdzrCBM?si=vNRJW8qnUIwovFYh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div> */}
+
 
       <Subtitle
         text={langData.LanguageCoursesSection.subtitle}

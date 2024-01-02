@@ -44,13 +44,20 @@
   },
 
   "LanguageCoursesSection": {
-    "title": "Cursuri de limbi straine",
+    "title": "Cursuri online de japoneza",
     "description": [
-      "Profesorul nostru de limba japoneza si-a dedicat o mare parte din timp invatarii acestei limbi si o stapaneste la nivel avansat. Modul de predare este unul cat mai eficient cu putinta si se bazeaza pe experientele acestuia atat ca student cat si ca profesor. Predarea se face in ritmul elevului/grupei de elevi, punandu-se accent pe construirea unor baze solide si pe intelegerea in profunzime a limbii. Compania noastra mai ofera cursuri de engleza japonezilor nativi si colaboreaza cu japonezi si pe partea de IT, deci puteti fi siguri ca nivelul de japoneza al profesorului nostru este unul mai mult decat suficient pentru a va satisface cerintele.",
+      ["Daca vrei sa ajungi profesionist, sa intelegi anime fara subtitrari, planuiesti sa vizitezi Japonia, sau pur si simplu vrei sa inveti japoneza ca hobby, ai ajuns unde trebuie. Ne mandrim cu lectiile noastre de calitate si cu ritmul in care avanseaza toti cursantii nostri, iar nivelul de cunostinte pe care il are profesorul nostru de japoneza este net superior multor altor optiuni de pe piata. Ideea este simpla: iti place si doresti sa aloci timpul necesar ➔ progresezi cum probabil nici tu nu iti imaginezi."],
 
-      "Limba japoneza nu este atat de grea pe cat se crede, ba chiar consideram ca prezinta mai multe elemente logice decat majoritatea celorlaltor limbi. Fie ca o faci din pasiune, fie ca iti este necesara dintr-un anumit motiv, noi iti putem oferi exact cunostintele de care ai nevoie pentru a-ti realiza scopul.",
+      [
+        "Japoneza este o limba accesibila tuturor, cu foarte multe elemente logice si usor de asimilat atunci cand este predata cum trebuie. Gramatica de baza este simplista, pronuntia usor de stapanit noua ca romani, iar vocabularul si cele trei alfabete pot fi biruite cu destul devotament. Avand in vedere ca deja vorbesti una dintre cele mai complexe limbi de pe planeta, sigur ii dai si japonezei de cap (≧▽≦).",
+      
+        "Un profesor bun poate raspunde la orice intrebare, indiferent de gradul acesteia de dificultate. La noi lucrurile stau mai bine de atat  ̶  poti intreba orice chiar si in afara orelor de curs. Ai auzit ceva intr-un anime sau ai citit un pasaj dificil undeva? Da-i drumul si intreaba! ( ￣▽￣)b"
+      ],
 
-      "Suntem nerabdatori sa intalnim noi iubitori de limba japoneza si fani anime cu care sa ne impartasim pasiunea (≧▽≦)."
+      [
+        "Poate iti doresti si sa obtii atestatele JLPT de limba japoneza daca tot inveti, nu? Nu-ti face griji, noi predam limba ca intreg, pentru a putea fi inteleasa si folosita in deplinatatea ei, deci daca te tii de treaba le vei trece si pe acelea cu brio.",
+        "Transforma-ti visul in obiectiv si nu rata experienta unica pe care ti-o ofera invatarea limbii japoneze. Si cel mai important, tine minte:"
+      ]
     ],
 
     "motto": [
@@ -63,6 +70,37 @@
       "abilitati",
       "."
     ],
+
+    "teacher": {
+      "subtitle": "Profesorul de japoneza",
+      "name": "~Chesca Vicentiu~",
+      "description": [
+        [
+          "vorbitor ",
+          "fluent",
+          " de japoneza"
+        ],
+        [
+          "experienta ca ",
+          "ghid turistic si interpret",
+          " pentru grupuri de turisti japonezi"
+        ],
+        [
+          "experienta de ",
+          "traducere online de documente si scrieri",
+          " din limba japoneza in engleza si vice-versa"
+        ],
+        [
+          "experienta de ",
+          "colaborare cu japonezi nativi",
+          " pe proiecte de dezvoltare software"
+        ],
+        [
+          "experienta de predare a limbii japoneze de peste ",
+          "5 ani"
+        ]
+      ]
+    },
 
     "subtitle": "Cursuri cu predare in limba:",
     "langButtons": ["Romana", "Engleza", "Japoneza"],

@@ -44,7 +44,7 @@
   },
 
   "LanguageCoursesSection": {
-    "title": "Language courses",
+    "title": "Japanese language online courses",
     "description": [
       "Our Japanese language teacher has dedicated a significant portion of his time learning this language and has mastered it at an advanced level. The teaching method is as efficient as possible and is based on his experiences both as a student and as a teacher. Teaching is done at the pace of the student/group of students, with an emphasis on building solid foundations and a deep understanding of the language. Our company also offers English courses to native Japanese speakers and collaborates with Japanese in the IT field, so you can be sure that the level of Japanese of our teacher is more than sufficient to meet your requirements.",
 
@@ -63,6 +63,17 @@
       "skills ",
       "."
     ],
+
+    "teacher": {
+      "name": "Chesca Vicentiu",
+      "description": [
+        "Fluent in Japanese",
+        "Experience as a tour guide and interpreter for Japanese tourist groups",
+        "Experience in online translation of documents and writings from Japanese to English and vice versa",
+        "Experience in collaborating with native Japanese on software development projects",
+        "Over 5 years of experience in teaching Japanese language"
+      ]
+    },
 
     "subtitle": "Courses taught in:",
     "langButtons": ["Romanian", "English", "Japanese"],

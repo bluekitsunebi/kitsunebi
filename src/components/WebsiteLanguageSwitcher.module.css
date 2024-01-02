@@ -129,9 +129,12 @@
   }
 }
 
-@media (max-width: 300px) {
-  .dropdown, .websiteLangButton, .langIcon {
+@media (max-width: 375px) {
+  .dropdown, .websiteLangButton, .dropdown_lang_text {
     font-size: 1rem;
+  }
+  .langIcon {
+    display: none;
   }
 }
 

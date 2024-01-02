@@ -61,7 +61,9 @@ export default function WebsiteLanguageSwitcher() {
     >
       <button className={`${styles.dropdown}`} onClick={toggleDropdown}>
         <TranslateRoundedIcon className={styles.langIcon}/>
-        {language === "ro" ? "RO" : language === "ja" ? "JA" : "EN"}
+        <span className={styles.dropdown_lang_text}>
+          {language === "ro" ? "RO" : language === "ja" ? "JA" : "EN"}
+        </span>
       </button>
       <div
         className={`

@@ -147,15 +147,15 @@ export default function Home(props) {
       <section ref={heroSectionRef}>
         <HeroSection onRender={handleComponentRender} />
       </section>
-      <section ref={aboutSectionRef}>
+      {/* <section ref={aboutSectionRef}>
         <AboutSection onRender={handleComponentRender} />
-      </section>
+      </section> */}
       <section ref={languageCoursesSectionRef}>
         <LanguageCoursesSection onRender={handleComponentRender} />
       </section>
-      <section ref={programmingSectionRef}>
+      {/* <section ref={programmingSectionRef}>
         <ProgrammingSection onRender={handleComponentRender} />
-      </section>
+      </section> */}
       <section ref={faqSectionRef}>
         <FAQsection onRender={handleComponentRender} />
       </section>

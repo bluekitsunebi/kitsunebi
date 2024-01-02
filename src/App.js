@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useEffect, Fragment } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useDispatch } from "react-redux";
 // import { setLanguage } from "./store/websiteLanguageSlice";
@@ -9,7 +9,17 @@ import Home from "./components/routes/home/Home";
 import NotFound from "./components/routes/notFound/NotFound";
 import LanguageCustomCourses from "./components/routes/languageCourses/LanguageCustomCourses";
 
+
+
 function App() {
+  // adjusts font based on pixel density
+  useEffect(() => {
+    let devicePixelRatio = window.devicePixelRatio || 1;
+    const baseFontSize = 16;
+    const adjustedFontSize = baseFontSize * 1 + ((devicePixelRatio - 1) / 4);
+    document.documentElement.style.fontSize = `${adjustedFontSize}px`;
+  }, []);
+
   // get the preffered language of the user
   const dispatch = useDispatch();
   const userLanguages = navigator.languages;
