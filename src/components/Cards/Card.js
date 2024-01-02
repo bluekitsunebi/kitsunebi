@@ -17,6 +17,7 @@ const Card = forwardRef((props, ref) => {
   let isInView;
 
   const id = props.id;
+  console.log(id);
   const courseLanguage = props.courseLanguage;
   const module = props.module;
   const title = props.title;
@@ -128,11 +129,11 @@ useEffect(() => {
 
       <div className={styles.buttonContainer}>
         {/* dropdown */}
-        <p className={`${styles.selectTimeframe} ${isGreyed && styles.hide}`}>
+        <p className={`${styles.selectTimeframe} ${(isGreyed || module === 'groupCustomJapanese') && styles.hide}`}>
           {langData.LanguageCoursesSection.Cards.selectTimeframe}
         </p>
         <select
-          className={`${styles.dropdown} ${isGreyed && styles.hide}`}
+          className={`${styles.dropdown} ${(isGreyed || module === 'groupCustomJapanese') && styles.hide}`}
           name="timeframe"
           id="timeframe"
           value={selectedValue}
