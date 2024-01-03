@@ -1,0 +1,71 @@
+:root {
+    /* Define a custom property for transition duration */
+    --QuestionAndAnswer__transitionDuration: 0.4s;
+  }
+
+.QuestionAndAnswer {
+  background-color: white;
+  border-radius: 30px 30px 5px 5px;
+  box-shadow: 2px 2px 8px rgb(200, 200, 200);
+  transition: height var(--QuestionAndAnswer__transitionDuration) linear, border-radius var(--QuestionAndAnswer__transitionDuration) linear;
+}
+
+.close {
+  border-radius: 30px;
+}
+
+.open {
+  border-radius: 30px 30px 5px 5px;
+}
+
+.question,
+.answer {
+  margin: 0;
+}
+
+/* --------------------------------------------------------- */
+/* question */
+
+.question {
+  border-color: var(--navy);
+  border-style: solid;
+  border-radius: 30px;
+  border-width: 1px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: white;
+  transition: box-shadow var(--QuestionAndAnswer__transitionDuration) ease-in-out;
+}
+
+.question__text {
+  padding: 1rem 0;
+  transition: color var(--QuestionAndAnswer__transitionDuration) ease-in-out;
+}
+
+.openButton {
+  font-size: 3rem;
+  transform: scaleY(-1);
+  transition: transform var(--QuestionAndAnswer__transitionDuration) ease-in-out, color var(--QuestionAndAnswer__transitionDuration) ease-in-out;
+
+  margin: 0;
+  padding: 1rem 0 0 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* --------------------------------------------------------- */
+/* answer */
+
+.answer {
+  padding: 1rem 2rem;
+  transition: height var(--QuestionAndAnswer__transitionDuration) linear;
+}
+
